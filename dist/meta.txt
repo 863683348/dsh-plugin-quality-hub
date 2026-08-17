@@ -1,0 +1,7 @@
+{
+ "generatedAt": "2026-08-17T13:49:03.525Z",
+ "source": "GitHub topic:dsh-plugin (stars desc) + npm registry + awesome membership",
+ "count": 100,
+ "npmProbed": 78,
+ "curatedCount": 1019
+}

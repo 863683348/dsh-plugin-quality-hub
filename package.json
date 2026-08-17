@@ -1,0 +1,12 @@
+{
+  "name": "dsh-plugin-quality-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Static quality hub for the DSH plugin ecosystem: ratings, security signals, rankings and a weekly digest.",
+  "scripts": {
+    "fetch": "node scripts/fetch-data.mjs",
+    "build": "node scripts/build-site.mjs",
+    "all": "node scripts/fetch-data.mjs && node scripts/build-site.mjs"
+  }
+}
