@@ -2,7 +2,7 @@
 
 Independent ratings and security signals for the DeepSeek Harness (DSH) plugin ecosystem — "which plugins are actually worth installing?"
 
-**Live site:** GitHub Pages (dist/) — set Pages source to **main branch / dist** folder.
+**Live site:** GitHub Pages (docs/) — set Pages source to **main branch / docs** folder.
 
 ## Pages
 
