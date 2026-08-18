@@ -102,6 +102,12 @@ const indexBody = `<h1>Which DSH plugins are actually worth installing?</h1>
 <table><tr><th>#</th><th>Plugin</th><th>Grade</th><th>Score</th><th>Stars</th><th>Push</th><th>Flags</th></tr>
 ${top.map(row).join("")}
 </table>
+<h2>Featured security &amp; memory tools</h2>
+<div class="note">
+<b><a href="https://github.com/863683348/dsh-plugin-gate">dsh-plugin-gate</a></b> — installation safety gate &amp; data-protection guard: <b>49 static signature rules</b> (22 high / 23 medium / 4 low) scan plugin sources before <code>dsh plugin add</code>, plus <b>12 destructive-command patterns</b> and workspace-boundary checks that block accidental deletion (rm -rf /, rmdir /s /q, format, dd, mkfs).<br>
+<b><a href="https://github.com/863683348/dsh-plugin-audit">dsh-audit</a></b> — the scoring engine behind this hub: 0-100 health scores (A-D), static security scan with grade veto, genuine-plugin verification against tag farming.<br>
+<b><a href="https://github.com/863683348/dsh-memory-setup">dsh-memory-setup</a></b> — a local, auditable personal memory layer: preferences, project conventions, evidence-backed lessons that promote into standing rules, snapshots &amp; restore, 20+ agent tools.
+</div>
 <h2 id="method">How scoring works</h2>
 <div class="note">Every plugin gets a 0-100 health score from four pure signals: <b>Maintenance</b> (30 — last push, stars, archive state), <b>Docs</b> (25 — README, description, license), <b>npm</b> (30 — package exists, publish recency, weekly downloads, dsh.bundle declaration), <b>Ecosystem</b> (15 — curated list membership). Grades: A 🛡️ 80+ · B ✅ 60+ · C ⚠️ 40+ · D 🚨 &lt;40 or any high flag. Install scripts that match dangerous patterns (curl|sh, /dev/tcp, base64 -d, iex, powershell -enc…) are flagged. All scores are explainable — every deduction carries a note on the detail page.</div>`;
 
