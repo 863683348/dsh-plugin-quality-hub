@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { fetchRankings } from '@/lib/api';
+import { fetchRankings, fetchPlugins } from '@/lib/api';
 import { mockData } from '@/lib/mock-data';
 import { HomeClient } from '@/components/home-client';
 
@@ -24,7 +24,10 @@ export default async function HomePage({ params }: HomePageProps) {
   // 后端未就绪 / 失败 → mock 兜底
   const ranking = (await fetchRankings('score', 100)) ?? mockData.rankings;
   const items = ranking?.items ?? [];
-  const total = items.length;
+
+  // 统计总数：用 plugins API 的 total（数据库真实条数），不依赖 limit
+  const countData = (await fetchPlugins(1, 1)) ?? null;
+  const total = countData?.total ?? items.length;
   const updatedAt = ranking?.updatedAt ?? new Date().toISOString();
 
   return (
