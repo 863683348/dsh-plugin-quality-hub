@@ -1,6 +1,6 @@
 # Vercel 部署手册 - DSH Plugin Quality Hub
 
-> 生成日期：2026-08-18
+> 生成日期：2026-08-18（已更新：修复 Root Directory 构建报错记录）
 > 目标：将 `app/` Next.js 应用部署到 Vercel，绑定域名 dshquality.com
 
 ## 前置检查（已全部就绪 ✅）
@@ -11,9 +11,11 @@
 | Vercel 登录 | ⚠️ 待登录 | `vercel whoami` → No credentials |
 | git 身份 | ✅ 863683348 | `git config --global user.name` |
 | SSH 443 通道 | ✅ | `ssh -T -p 443 git@ssh.github.com` → Hi 863683348 |
-| vercel.json | ✅ | framework: nextjs + prisma generate 构建钩子 |
+| app/vercel.json | ✅ | framework: nextjs + prisma generate 构建钩子 |
+| 根目录 vercel.json | ✅ 已补 | 文档守卫（提示 Root Directory 必须为 app） |
 | .env.local | ✅ | DATABASE_URL/DIRECT_URL 含 connect_timeout=30 |
 | .gitignore | ✅ | 已忽略 .env*.local / node_modules / .next |
+| 远程 main | ✅ 9e70c28 | 已合并静态版更新 + app/ + vercel.json |
 
 ## 部署步骤
 
