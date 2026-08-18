@@ -46,6 +46,8 @@ const en = {
     nav: {
       topRated: 'Top Rated',
       allPlugins: 'All Plugins',
+      tutorials: 'Tutorials',
+      examples: 'Examples',
       trending: 'Trending',
       security: 'Security Watch',
       weekly: 'Weekly',
@@ -91,6 +93,81 @@ const en = {
       monthsAgo: '{count} months ago',
       yearsAgo: '{count} years ago',
     },
+  },
+  tutorials: {
+    meta: {
+      title: 'DSH Plugin Tutorials — Learn by building',
+      description:
+        'Hands-on tutorials for building DeepSeek Harness plugins: from your first apply(ctx, config) to publishing on the dsh-plugin topic.',
+    },
+    section: {
+      eyebrow: 'Tutorials',
+      title: 'Learn DSH by building',
+      subtitle:
+        'Practical guides written from the builder perspective — not documentation rehashes. Every guide links to real plugins rated on the Hub.',
+    },
+    filter: {
+      all: 'All levels',
+      beginner: 'Beginner',
+      intermediate: 'Intermediate',
+      advanced: 'Advanced',
+    },
+    level: {
+      beginner: 'Beginner',
+      intermediate: 'Intermediate',
+      advanced: 'Advanced',
+    },
+    metaLabels: {
+      level: 'Level',
+      reading: 'Read time',
+    },
+    relatedExamples: 'Related examples',
+    relatedPlugins: 'Related rated plugins',
+    notFound: {
+      title: 'Tutorial not found',
+      body: 'This tutorial does not exist or is not published yet.',
+    },
+    backToList: 'All tutorials',
+    updated: 'Last updated: {date}',
+  },
+  examples: {
+    meta: {
+      title: 'DSH Plugin Examples — Real plugin teardowns',
+      description:
+        'Teardowns of real DeepSeek Harness plugins: config fragments, core code logic and scoring highlights backed by DSH Quality rating data.',
+    },
+    section: {
+      eyebrow: 'Examples',
+      title: 'Real plugins, taken apart',
+      subtitle:
+        'Config fragments, core code logic and scoring highlights from real DSH plugins — each linked to its rating on the Hub.',
+    },
+    category: {
+      'ui-enhancements': 'UI Enhancements',
+      'themes-appearance': 'Themes & Appearance',
+      'sessions-messages': 'Sessions & Messages',
+      memory: 'Memory',
+      'tools-capabilities': 'Tools & Capabilities',
+      skills: 'Skills',
+      'workflow-automation': 'Workflow & Automation',
+      'notifications-integrations': 'Notifications & Integrations',
+      'models-accounts': 'Models & Accounts',
+      'dev-runtime': 'Development & Runtime',
+      entertainment: 'Entertainment',
+    },
+    dims: {
+      config: 'Config fragment',
+      code: 'Core code',
+      highlights: 'Why it scores',
+    },
+    viewOnHub: 'View on Hub',
+    plugin: 'Plugin',
+    relatedTutorials: 'Related tutorials',
+    notFound: {
+      title: 'Example not found',
+      body: 'This example does not exist or is not published yet.',
+    },
+    backToList: 'All examples',
   },
   home: {
     hero: {
@@ -177,6 +254,11 @@ const en = {
     related: {
       title: 'Related plugins',
       subtitle: 'Similar plugins worth a look',
+    },
+    buildYourOwn: {
+      title: 'Build your own plugin',
+      body: 'Learn to create DSH plugins from scratch — from your first apply(ctx, config) to publishing on the dsh-plugin topic and getting rated.',
+      cta: 'Browse tutorials',
     },
   },
   trending: {
@@ -515,10 +597,26 @@ const en = {
       title: 'Blog',
       subtitle: 'Notes on the DSH plugin ecosystem: analysis, scoring deep dives, and security findings.',
       comingSoon: 'More articles are on the way — subscribe to DSH Weekly to stay in the loop.',
-      breadcrumb: {
-        home: 'Home',
-      },
-      backToList: 'Back to all articles',
+      posts: [
+        {
+          title: 'Welcome to DSH Quality',
+          date: 'August 18, 2026',
+          excerpt:
+            'Why we built an independent quality score for the DeepSeek Harness plugin ecosystem — and why heuristic detection is only half the story.',
+        },
+        {
+          title: 'Understanding the DSH plugin explosion',
+          date: 'August 18, 2026',
+          excerpt:
+            'The ecosystem grew to over 4,300 plugins in days. We break down the numbers, the tag-baiting problem, and what it means for installers.',
+        },
+        {
+          title: 'How install script scanning works',
+          date: 'August 18, 2026',
+          excerpt:
+            'A look inside our dangerous-pattern scanner: what it checks, what it misses, and how to read the results responsibly.',
+        },
+      ],
     },
     contact: {
       title: 'Contact Us',

@@ -10,6 +10,8 @@ import { cn } from '@/lib/utils';
 const navItems = [
   { href: '/', key: 'topRated' },
   { href: '/plugins', key: 'allPlugins' },
+  { href: '/tutorials', key: 'tutorials' },
+  { href: '/examples', key: 'examples' },
   { href: '/trending', key: 'trending' },
   { href: '/security', key: 'security' },
   { href: '/weekly', key: 'weekly' },

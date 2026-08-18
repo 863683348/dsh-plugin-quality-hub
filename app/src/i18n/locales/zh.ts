@@ -46,6 +46,8 @@ const zh = {
     nav: {
       topRated: '排行榜',
       allPlugins: '全部插件',
+      tutorials: '教程',
+      examples: '实例',
       trending: '趋势',
       security: '安全预警',
       weekly: '周刊',
@@ -91,6 +93,81 @@ const zh = {
       monthsAgo: '{count} 个月前',
       yearsAgo: '{count} 年前',
     },
+  },
+  tutorials: {
+    meta: {
+      title: 'DSH 插件教程 — 动手学会构建',
+      description:
+        '手把手教你构建 DeepSeek Harness 插件：从第一个 apply(ctx, config) 到发布到 dsh-plugin topic 并拿到评分。',
+    },
+    section: {
+      eyebrow: '教程',
+      title: '动手学会 DSH',
+      subtitle:
+        '以构建者视角写的实战指南，不是文档复读。每篇指南都关联 Hub 上真实评分的插件。',
+    },
+    filter: {
+      all: '全部难度',
+      beginner: '入门',
+      intermediate: '进阶',
+      advanced: '高级',
+    },
+    level: {
+      beginner: '入门',
+      intermediate: '进阶',
+      advanced: '高级',
+    },
+    metaLabels: {
+      level: '难度',
+      reading: '阅读时长',
+    },
+    relatedExamples: '相关实例',
+    relatedPlugins: '相关评分插件',
+    notFound: {
+      title: '教程不存在',
+      body: '这篇教程不存在或尚未发布。',
+    },
+    backToList: '全部教程',
+    updated: '最后更新：{date}',
+  },
+  examples: {
+    meta: {
+      title: 'DSH 插件实例 — 真实插件拆解',
+      description:
+        '真实 DeepSeek Harness 插件的拆解：配置片段、核心代码逻辑与评分亮点，全部由 DSH Quality 评分数据背书。',
+    },
+    section: {
+      eyebrow: '实例',
+      title: '真实插件，逐层拆解',
+      subtitle:
+        '真实 DSH 插件的配置片段、核心代码逻辑与评分亮点——每个实例都链接到 Hub 上的评分。',
+    },
+    category: {
+      'ui-enhancements': 'UI 增强',
+      'themes-appearance': '主题与外观',
+      'sessions-messages': '会话与消息',
+      memory: '记忆',
+      'tools-capabilities': '工具与能力',
+      skills: '技能包',
+      'workflow-automation': '工作流与自动化',
+      'notifications-integrations': '通知与集成',
+      'models-accounts': '模型与账号接入',
+      'dev-runtime': '开发与运行时',
+      entertainment: '娱乐',
+    },
+    dims: {
+      config: '配置片段',
+      code: '核心代码',
+      highlights: '为何高分',
+    },
+    viewOnHub: '在 Hub 查看',
+    plugin: '插件',
+    relatedTutorials: '相关教程',
+    notFound: {
+      title: '实例不存在',
+      body: '这个实例不存在或尚未发布。',
+    },
+    backToList: '全部实例',
   },
   home: {
     hero: {
@@ -177,6 +254,11 @@ const zh = {
     related: {
       title: '相关插件',
       subtitle: '值得一看的相似插件',
+    },
+    buildYourOwn: {
+      title: '自己动手做插件',
+      body: '从第一个 apply(ctx, config) 到发布到 dsh-plugin topic 并拿到评分，学会从零构建 DSH 插件。',
+      cta: '浏览教程',
     },
   },
   trending: {
@@ -511,10 +593,26 @@ const zh = {
       title: '博客',
       subtitle: 'DSH 插件生态笔记：分析、评分深度解读与安全发现。',
       comingSoon: '更多文章正在路上——订阅 DSH Weekly 第一时间获取。',
-      breadcrumb: {
-        home: '首页',
-      },
-      backToList: '返回全部文章',
+      posts: [
+        {
+          title: '欢迎来到 DSH Quality',
+          date: '2026 年 8 月 18 日',
+          excerpt:
+            '我们为什么为 DeepSeek Harness 插件生态构建独立的质量评分——以及为什么启发式检测只是故事的一半。',
+        },
+        {
+          title: '解读 DSH 插件的爆发式增长',
+          date: '2026 年 8 月 18 日',
+          excerpt:
+            '生态在几天内增长到 4300+ 插件。我们拆解数据、蹭标签问题，以及它对安装者意味着什么。',
+        },
+        {
+          title: '安装脚本扫描是如何工作的',
+          date: '2026 年 8 月 18 日',
+          excerpt:
+            '走进我们的危险模式扫描器：它检查什么、会漏掉什么，以及如何负责任地解读结果。',
+        },
+      ],
     },
     contact: {
       title: '联系我们',

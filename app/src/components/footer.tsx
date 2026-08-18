@@ -5,6 +5,8 @@ import { NewsletterSubscribe } from '@/components/newsletter-subscribe';
 
 const footerLinks = [
   { href: '/plugins', key: 'nav.allPlugins' },
+  { href: '/tutorials', key: 'nav.tutorials' },
+  { href: '/examples', key: 'nav.examples' },
   { href: '/trending', key: 'nav.trending' },
   { href: '/security', key: 'nav.security' },
   { href: '/weekly', key: 'nav.weekly' },

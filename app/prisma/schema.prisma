@@ -111,3 +111,72 @@ model RefreshLog {
   @@index([status, createdAt], name: "idx_refresh_status_time")
   @@map("refresh_logs")
 }
+
+// ============================================================
+// Tutorials 教程中心 (v1.2 新增)
+// 双语: En/Zh 双列标量; content* 为 Markdown 子集(自研渲染器 src/lib/markdown.ts)
+// 互链: String[] 数组列(编辑策展, 量小低频, 不建关系表; seed 断言保证引用完整)
+// ============================================================
+model Tutorial {
+  id        String   @id @default(cuid())
+  slug      String   @unique // "write-first-plugin"
+  status    String   @default("published") // published | backlog (backlog 不渲染)
+  level     String   @default("beginner") // beginner | intermediate | advanced
+  order     Int      @default(0) // 列表排序(同 status 内升序)
+  titleEn   String
+  titleZh   String
+  excerptEn String
+  excerptZh String
+  contentEn String // Markdown 子集正文
+  contentZh String
+  readingMinutes Int @default(5)
+
+  // Content Silo 互链: 编辑人工策展的上下文引用
+  relatedExampleSlugs String[] @default([]) // -> Example.slug
+  relatedPluginNames  String[] @default([]) // -> Plugin.name ("owner/repo")
+
+  publishedAt DateTime? // backlog 为空
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([status, level], name: "idx_tutorial_status_level")
+  @@index([status, order], name: "idx_tutorial_status_order")
+  @@map("tutorials")
+}
+
+// ============================================================
+// Examples 实例库 (v1.2 新增)
+// 三维度拆解: config / code / highlights, 各为 Markdown 子集文本
+// pluginName 松散引用 Plugin.name (对齐 SecurityAdvisory 既有约定, 不建 FK)
+// ============================================================
+model Example {
+  id        String @id @default(cuid())
+  slug      String @unique // "dsh-web-ui"
+  status    String @default("published") // published | draft
+  pluginName String // "owner/repo", 松散引用, 不建 FK relation
+  category  String // awesome 11 类键值(见 src/lib/content-constants.ts)
+
+  titleEn   String
+  titleZh   String
+  excerptEn String
+  excerptZh String
+
+  // 三维度拆解卡(每卡一段 Markdown)
+  configEn     String // 配置片段(典型为 json 代码块)
+  configZh     String
+  codeEn       String // 核心代码逻辑(典型为 ts 代码块)
+  codeZh       String
+  highlightsEn String // 评分亮点(典型为列表)
+  highlightsZh String
+
+  relatedTutorialSlugs String[] @default([]) // 1-2 个关联教程
+
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([category], name: "idx_example_category")
+  @@index([pluginName], name: "idx_example_plugin")
+  @@index([status], name: "idx_example_status")
+  @@map("examples")
+}

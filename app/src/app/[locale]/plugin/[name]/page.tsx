@@ -129,6 +129,23 @@ export default async function PluginPage({ params }: PluginPageProps) {
               <SecurityFlags flags={plugin.flags} />
             </CardContent>
           </Card>
+
+          {/* Build your own CTA（Content Silo 回链教程） */}
+          <Card className="border-[var(--color-primary-soft)] bg-[var(--color-primary-soft)]">
+            <CardContent className="flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-base font-semibold tracking-tight text-[var(--color-text)]">
+                  {t('buildYourOwn.title')}
+                </p>
+                <p className="mt-1 max-w-prose text-sm leading-relaxed text-[var(--color-muted)]">
+                  {t('buildYourOwn.body')}
+                </p>
+              </div>
+              <Button asChild variant="secondary" className="shrink-0">
+                <Link href="/tutorials">{t('buildYourOwn.cta')}</Link>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
 
         {/* ===== 侧栏 ===== */}
