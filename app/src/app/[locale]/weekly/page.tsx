@@ -14,9 +14,18 @@ export async function generateMetadata({
 }: WeeklyPageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "weekly" });
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://dshquality.com";
+  const path = locale === "en" ? "/weekly" : `/${locale}/weekly`;
   return {
     title: `${t("hero.title")} — DSH Quality`,
     description: t("hero.body"),
+    alternates: {
+      canonical: `${siteUrl}${path}`,
+      languages: {
+        en: `${siteUrl}/weekly`,
+        zh: `${siteUrl}/zh/weekly`,
+      },
+    },
   };
 }
 

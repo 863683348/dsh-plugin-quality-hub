@@ -11,10 +11,20 @@ interface PluginsPageProps {
 export async function generateMetadata({
   params,
 }: PluginsPageProps): Promise<Metadata> {
-  const t = await getTranslations({ locale: params.locale, namespace: "plugins" });
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: "plugins" });
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://dshquality.com";
+  const path = locale === "en" ? "/plugins" : `/${locale}/plugins`;
   return {
     title: `${t("title")} — DSH Quality`,
     description: t("subtitle", { total: "all" }),
+    alternates: {
+      canonical: `${siteUrl}${path}`,
+      languages: {
+        en: `${siteUrl}/plugins`,
+        zh: `${siteUrl}/zh/plugins`,
+      },
+    },
   };
 }
 

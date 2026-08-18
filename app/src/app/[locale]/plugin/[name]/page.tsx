@@ -32,9 +32,18 @@ export async function generateMetadata({
     locale: params.locale,
     namespace: 'meta',
   });
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dshquality.com';
+  const path = params.locale === 'en' ? `/plugin/${params.name}` : `/${params.locale}/plugin/${params.name}`;
   return {
     title: plugin ? `${plugin.name} | DSH Quality` : fallback('title'),
     description: plugin?.description ?? fallback('description'),
+    alternates: {
+      canonical: `${siteUrl}${path}`,
+      languages: {
+        en: `${siteUrl}/plugin/${params.name}`,
+        zh: `${siteUrl}/zh/plugin/${params.name}`,
+      },
+    },
   };
 }
 
@@ -53,9 +62,24 @@ export default async function PluginPage({ params }: PluginPageProps) {
   }
 
   const [, repo] = plugin.name.split('/');
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dshquality.com';
+  const softwareJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: repo,
+    description: plugin.description ?? undefined,
+    url: `${siteUrl}/${params.locale === 'en' ? '' : `${params.locale}/`}plugin/${params.name}`,
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'Any',
+    inLanguage: params.locale,
+  };
 
   return (
     <div className="container-page py-[var(--section-y-sm)] md:py-[var(--section-y)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
+      />
       {/* 面包屑 */}
       <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 text-sm text-[var(--color-muted)]">
         <Link

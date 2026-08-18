@@ -28,9 +28,27 @@ export async function generateMetadata({
   const { locale } = params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: 'meta' });
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dshquality.com';
+  // en 为默认 locale，走裸路径；zh 带 /zh 前缀
+  const pathFor = (l: string) => (l === 'en' ? '/' : `/${l}`);
   return {
     title: t('title'),
     description: t('description'),
+    alternates: {
+      canonical: `${siteUrl}${locale === 'en' ? '/' : `/${locale}`}`,
+      languages: {
+        en: `${siteUrl}${pathFor('en')}`,
+        zh: `${siteUrl}${pathFor('zh')}`,
+      },
+    },
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: `${siteUrl}${locale === 'en' ? '/' : `/${locale}`}`,
+      siteName: 'DSH Plugin Quality Hub',
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      type: 'website',
+    },
   };
 }
 
@@ -48,12 +66,37 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   const messages = await getMessages();
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dshquality.com';
+  const orgJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'DSH Plugin Quality Hub',
+    url: siteUrl,
+    description:
+      'Independent ratings and security signals for the DeepSeek Harness (DSH) plugin ecosystem.',
+  };
+  const webSiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'DSH Plugin Quality Hub',
+    url: siteUrl,
+    inLanguage: ['en', 'zh'],
+  };
 
   return (
     <html lang={locale} className={inter.variable} suppressHydrationWarning>
       <head>
-        {/* GA4 站点统计（next/script afterInteractive，不阻塞渲染） */}
+        {/* GA4 站点统计（next/script afterInteractive，不阻塞渲染；仅生产加载） */}
         <Analytics />
+        {/* JSON-LD 结构化数据 */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+        />
       </head>
       <body className="flex min-h-[100dvh] flex-col bg-bg text-text">
         <NextIntlClientProvider messages={messages}>

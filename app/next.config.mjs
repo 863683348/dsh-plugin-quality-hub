@@ -17,6 +17,10 @@ const nextConfig = {
           { key: 'X-Frame-Options', value: 'DENY' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains',
+          },
+          {
             key: 'Content-Security-Policy',
             // GA4 (gtag.js) 需要允许 googletagmanager.com 的脚本加载；
             // 数据上报走 connect-src https: / img-src https: 已覆盖 google-analytics.com
