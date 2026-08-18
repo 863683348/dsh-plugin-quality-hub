@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getBlogPosts } from "@/data/blog/posts";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dshquality.com";
 
@@ -35,6 +36,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly",
       priority: path === "" ? 1 : 0.8,
+    });
+  }
+
+  // 博客单篇：en 裸路径 + zh 前缀，每篇 0.7
+  for (const post of getBlogPosts()) {
+    entries.push({
+      url: `${SITE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.date + "T00:00:00Z"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
+    entries.push({
+      url: `${SITE_URL}/zh/blog/${post.slug}`,
+      lastModified: new Date(post.date + "T00:00:00Z"),
+      changeFrequency: "monthly",
+      priority: 0.7,
     });
   }
 
