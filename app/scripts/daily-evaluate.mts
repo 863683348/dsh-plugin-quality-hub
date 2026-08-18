@@ -8,7 +8,7 @@
 //  2. synthetic - deterministic name pool fallback to guarantee 50-100 new/day
 //
 // Usage (CI):
-//   DATABASE_URL=... DIRECT_URL=... GITHUB_TOKEN=... npm run evaluate:daily
+//   DATABASE_URL=... DIRECT_URL=... GH_TOKEN=... npm run evaluate:daily
 // Usage (local): same, values auto-loaded from app/.env.local
 import { PrismaClient } from "@prisma/client";
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
@@ -47,7 +47,7 @@ const prisma = new PrismaClient();
 // ===== Config =====
 const TARGET_NEW = Number(process.env.TARGET_NEW ?? "60"); // new plugins per run
 const MAX_GITHUB = Number(process.env.MAX_GITHUB ?? "30"); // cap on real GitHub fetches
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const GITHUB_TOKEN = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
 const TODAY = new Date().toISOString().slice(0, 10); // YYYY-MM-DD (UTC)
 const DATE_SEED = Number(TODAY.replace(/-/g, "")); // deterministic per-day seed
 
