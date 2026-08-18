@@ -132,6 +132,7 @@ export const CACHE_TTL = {
   score: 3600, // 1h
   security: 3600, // 1h
   trending: 3600, // 1h
+  advisories: 3600, // 1h (v0.3 CVE-style bulletins)
   githubEtag: 7 * 24 * 3600, // 7d
   npm: 6 * 3600, // 6h
 } as const;
@@ -142,6 +143,7 @@ export const cacheKeys = {
   score: (name: string) => `scores:${name}`,
   security: "security:flags",
   trending: "trending",
+  advisories: "security:advisories",
   githubEtag: (repo: string) => `github:etag:${repo}`,
   npm: (name: string) => `npm:${name}`,
 };

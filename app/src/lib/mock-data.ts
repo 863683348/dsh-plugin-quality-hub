@@ -1,7 +1,9 @@
 import type {
+  AdvisoryListData,
   Plugin,
   PluginDetail,
   RankingData,
+  SecurityAdvisory,
   SecurityData,
   SecurityFlag,
   TrendingData,
@@ -472,6 +474,76 @@ const mockSecurityData: SecurityData = {
   total: mockPlugins.filter((p) => p.flags.length > 0).length,
 };
 
+// ===== Security advisories (v0.3, CVE-style) =====
+function mkAdvisory(
+  advisoryId: string,
+  title: string,
+  severity: SecurityAdvisory['severity'],
+  pluginName: string,
+  description: string,
+  status: SecurityAdvisory['status'],
+  affectedRange = 'all versions',
+  publishedDaysAgo = 1
+): SecurityAdvisory {
+  return {
+    id: `adv-${advisoryId.toLowerCase()}`,
+    advisoryId,
+    title,
+    severity,
+    pluginName,
+    description,
+    affectedRange,
+    status,
+    publishedAt: daysAgo(publishedDaysAgo),
+    resolvedAt: status === 'resolved' ? daysAgo(1) : null,
+    updatedAt: daysAgo(1),
+  };
+}
+
+const mockAdvisories: SecurityAdvisory[] = [
+  mkAdvisory(
+    'DSH-SA-2026-001',
+    'yichen/dsh-miner install script executes remote code via curl|sh',
+    'critical',
+    'yichen/dsh-miner',
+    'The install script pipes a remote script directly into sh (curl ... | sh). A compromised CDN would execute arbitrary code on the host. Plugin grade forced to D.',
+    'active'
+  ),
+  mkAdvisory(
+    'DSH-SA-2026-002',
+    'hackerone/dsh-telemetry decodes base64 payload before execution',
+    'high',
+    'hackerone/dsh-telemetry',
+    'The telemetry package decodes a base64-encoded blob and executes it without review. Supply-chain risk is high.',
+    'active',
+    '<= 0.3.1',
+    2
+  ),
+  mkAdvisory(
+    'DSH-SA-2026-003',
+    'scriptkiddie/dsh-payload opens reverse connection via /dev/tcp',
+    'critical',
+    'scriptkiddie/dsh-payload',
+    'The plugin establishes an outbound connection to a remote host using /dev/tcp during installation, indicating possible command-and-control behavior.',
+    'investigating'
+  ),
+  mkAdvisory(
+    'DSH-SA-2026-004',
+    'Archived repositories no longer receive security fixes',
+    'medium',
+    'olddev/dsh-legacy',
+    'Repository is archived and unmaintained. Usage should be audited and pinned before install.',
+    'active',
+    'latest commit',
+    4
+  ),
+];
+
+const mockAdvisoryData: AdvisoryListData = {
+  items: mockAdvisories,
+  total: mockAdvisories.length,
+};
+
 function buildDetail(plugin: Plugin): PluginDetail {
   return {
     ...plugin,
@@ -511,6 +583,7 @@ export const mockData = {
   rankings: mockRankingData,
   trending: mockTrendingData,
   security: mockSecurityData,
+  advisories: mockAdvisoryData,
   pluginDetail: (name: string): PluginDetail | null => {
     const plugin = mockPlugins.find(
       (p) => p.name.toLowerCase() === name.toLowerCase()

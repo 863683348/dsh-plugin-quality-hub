@@ -11,7 +11,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-
 const dimensionConfig = [
   { key: 'maintenance', Icon: Wrench, color: 'var(--color-primary)' },
   { key: 'docs', Icon: FileText, color: 'var(--color-info)' },
@@ -39,6 +38,7 @@ const gradeLegendRows: Array<{
 
 export function MethodContent() {
   const t = useTranslations('method');
+  const ts = useTranslations('sponsor');
 
   return (
     <div className="container-page py-[var(--section-y-sm)] md:py-[var(--section-y)]">
@@ -177,6 +177,16 @@ export function MethodContent() {
         </h2>
         <p className="mt-2 max-w-prose text-sm leading-relaxed text-[var(--color-muted)]">
           {t('transparency.body')}
+        </p>
+      </section>
+
+      {/* 广告政策（v0.4 商业化透明声明） */}
+      <section className="mt-6 rounded-[var(--card-radius)] border border-[var(--color-border)] bg-[var(--color-surface-2)] p-5">
+        <h2 className="text-base font-semibold tracking-tight text-[var(--color-text)]">
+          {ts('policy')}
+        </h2>
+        <p className="mt-2 max-w-prose text-sm leading-relaxed text-[var(--color-muted)]">
+          {ts('transparency')}
         </p>
       </section>
     </div>

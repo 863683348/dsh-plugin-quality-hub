@@ -86,6 +86,32 @@ export interface SecurityData {
   total: number;
 }
 
+// ===== Security Advisory (v0.3, CVE-style) =====
+export type AdvisorySeverity = "critical" | "high" | "medium" | "low";
+export type AdvisoryStatus = "active" | "resolved" | "investigating";
+
+export interface SecurityAdvisory {
+  id: string;
+  /** CVE-style identifier, e.g. "DSH-SA-2026-001" */
+  advisoryId: string;
+  title: string;
+  severity: AdvisorySeverity;
+  /** "owner/repo" of the affected plugin */
+  pluginName: string;
+  plugin?: Plugin | null;
+  description: string;
+  affectedRange: string;
+  status: AdvisoryStatus;
+  publishedAt: string;
+  resolvedAt: string | null;
+  updatedAt: string;
+}
+
+export interface AdvisoryListData {
+  items: SecurityAdvisory[];
+  total: number;
+}
+
 export interface TrendingData {
   recentlyActive: Plugin[];
   mostStarred: Plugin[];

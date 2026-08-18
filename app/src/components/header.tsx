@@ -9,8 +9,10 @@ import { cn } from '@/lib/utils';
 
 const navItems = [
   { href: '/', key: 'topRated' },
+  { href: '/plugins', key: 'allPlugins' },
   { href: '/trending', key: 'trending' },
   { href: '/security', key: 'security' },
+  { href: '/weekly', key: 'weekly' },
   { href: '/method', key: 'method' },
   { href: '/about', key: 'about' },
 ];

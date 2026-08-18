@@ -53,6 +53,44 @@ model ScoreLog {
   @@map("score_logs")
 }
 
+// DSH Weekly newsletter subscribers (v0.2, Buttondown sync)
+// Local table is the source of truth; Buttondown is the delivery channel.
+// When BUTTONDOWN_API_KEY is missing, local rows are kept as pending until sync.
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  locale    String   @default("en") // en | zh
+  status    String   @default("subscribed") // subscribed | pending | unsubscribed
+  source    String   @default("web") // web | footer | home
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status], name: "idx_subscriber_status")
+  @@map("newsletter_subscribers")
+}
+
+// CVE-style security advisories (v0.3)
+// DSH-SA-YYYY-NNN format, published when a dangerous pattern is confirmed.
+// Linked to a plugin via pluginName (name = "owner/repo" on Plugin).
+model SecurityAdvisory {
+  id            String   @id @default(cuid())
+  advisoryId    String   @unique // e.g. "DSH-SA-2026-001"
+  title         String
+  severity      String   @default("high") // critical | high | medium | low
+  pluginName    String // "owner/repo", references Plugin.name
+  description   String
+  affectedRange String   @default("all versions") // e.g. "< 1.2.0", "<= 0.9.4"
+  status        String   @default("active") // active | resolved | investigating
+  publishedAt   DateTime @default(now())
+  resolvedAt    DateTime?
+  updatedAt     DateTime @updatedAt
+
+  @@index([severity], name: "idx_advisory_severity")
+  @@index([status], name: "idx_advisory_status")
+  @@index([pluginName], name: "idx_advisory_plugin")
+  @@map("security_advisories")
+}
+
 // Refresh pipeline execution log (Spec §6.1 / refresh-service.ts)
 model RefreshLog {
   id              String    @id @default(cuid())

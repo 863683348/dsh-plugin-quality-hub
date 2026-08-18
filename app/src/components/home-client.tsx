@@ -1,15 +1,19 @@
 'use client';
 
 import * as React from 'react';
-import { Activity, Database, ShieldCheck } from 'lucide-react';
+import { Activity, Database, Mail, ShieldCheck } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/button';
 import { SearchBar } from '@/components/search-bar';
 import { GradeDistribution } from '@/components/grade-distribution';
 import { PluginTable } from '@/components/plugin-table';
+import { NewsletterSubscribe } from '@/components/newsletter-subscribe';
+import { ShareButtons } from '@/components/share-buttons';
+import { AdSlot, PromoSlot, type AdSlotConfig } from '@/components/ad-slot';
 import { formatNumber } from '@/lib/format';
 import type { Plugin } from '@/types/api';
+import adsConfig from '@/config/ads.json';
 
 const PAGE_SIZE = 20;
 
@@ -19,9 +23,19 @@ interface HomeClientProps {
   updatedAt: string;
 }
 
+// v0.4 商业化：广告配置由 JSON 驱动，adsEnabled=false 时全部不渲染
+const homeBannerAd = (adsConfig.slots as AdSlotConfig[]).find(
+  (s) => s.placement === 'home-top'
+);
+const homePromo = (adsConfig.promos as AdSlotConfig[]).find(
+  (s) => s.placement === 'home-promo'
+);
+const adsEnabled = adsConfig.adsEnabled === true;
+
 export function HomeClient({ plugins, total, updatedAt }: HomeClientProps) {
   const t = useTranslations('home');
   const tc = useTranslations('common');
+  const tw = useTranslations('weekly');
 
   const [query, setQuery] = React.useState('');
   const [page, setPage] = React.useState(1);
@@ -56,6 +70,13 @@ export function HomeClient({ plugins, total, updatedAt }: HomeClientProps) {
 
   return (
     <div className="container-page">
+      {/* ===== 广告位（v0.4 商业化，adsEnabled=false 不渲染）===== */}
+      {adsEnabled && homeBannerAd ? (
+        <section className="pt-6">
+          <AdSlot slot={homeBannerAd} variant="banner" />
+        </section>
+      ) : null}
+
       {/* ===== Hero（非对称：左文案 + 右真实评分数据卡）===== */}
       <section className="grid gap-8 py-[var(--section-y-sm)] md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-[var(--section-y)]">
         <div>
@@ -140,6 +161,38 @@ export function HomeClient({ plugins, total, updatedAt }: HomeClientProps) {
       <section className="pb-[var(--section-y-sm)] md:pb-8">
         <GradeDistribution plugins={plugins} />
       </section>
+
+      {/* ===== DSH Weekly 订阅（v0.2）===== */}
+      <section className="pb-[var(--section-y-sm)] md:pb-8">
+        <div className="card flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-md">
+            <p className="label-caps text-[var(--color-primary)]">
+              {tw('section.eyebrow')}
+            </p>
+            <h2 className="mt-2 text-xl font-semibold tracking-tight text-[var(--color-text)]">
+              {tw('section.title')}
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">
+              {tw('section.subtitle')}
+            </p>
+            <ShareButtons className="mt-3" title={tw('share.defaultTitle')} />
+          </div>
+          <div className="w-full max-w-sm shrink-0">
+            <NewsletterSubscribe source="home" />
+            <p className="mt-2 flex items-center gap-1.5 text-xs text-[var(--color-meta)]">
+              <Mail className="h-3.5 w-3.5" aria-hidden="true" />
+              {tw('subscribe.privacy')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 推荐位（v0.4 商业化，Partner 标注）===== */}
+      {adsEnabled && homePromo ? (
+        <section className="pb-[var(--section-y-sm)] md:pb-8">
+          <PromoSlot slot={homePromo} />
+        </section>
+      ) : null}
 
       {/* ===== 排行榜 ===== */}
       <section>

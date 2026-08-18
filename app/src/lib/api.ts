@@ -1,6 +1,8 @@
 import type {
+  AdvisoryListData,
   ApiEnvelope,
   PluginDetail,
+  PluginListData,
   RankingData,
   SecurityData,
   TrendingData,
@@ -42,6 +44,25 @@ export async function fetchRankings(
   );
 }
 
+export async function fetchPlugins(
+  page = 1,
+  limit = 50,
+  q = '',
+  grade = 'all',
+  sort = 'score',
+  order = 'desc'
+): Promise<PluginListData | null> {
+  const params = new URLSearchParams({
+    page: String(page),
+    limit: String(limit),
+    sort,
+    order,
+  });
+  if (q.trim()) params.set('q', q.trim());
+  if (grade !== 'all') params.set('grade', grade);
+  return request<PluginListData>(`/api/v1/plugins?${params.toString()}`);
+}
+
 export async function fetchPluginDetail(
   name: string
 ): Promise<PluginDetail | null> {
@@ -55,6 +76,19 @@ export async function fetchSecurity(
 ): Promise<SecurityData | null> {
   const q = type ? `?type=${type}&limit=${limit}` : `?limit=${limit}`;
   return request<SecurityData>(`/api/v1/security${q}`);
+}
+
+export async function fetchAdvisories(
+  severity?: string,
+  status?: string,
+  limit = 50
+): Promise<AdvisoryListData | null> {
+  const params = new URLSearchParams({ limit: String(limit) });
+  if (severity) params.set('severity', severity);
+  if (status) params.set('status', status);
+  return request<AdvisoryListData>(
+    `/api/v1/security/advisories?${params.toString()}`
+  );
 }
 
 export async function fetchTrending(limit = 10): Promise<TrendingData | null> {

@@ -4,13 +4,51 @@ const en = {
     description:
       'Independent scoring and real-time security watch for DeepSeek Harness plugins. Heuristic detection, not a substitute for code review.',
   },
+  weekly: {
+    section: {
+      eyebrow: 'DSH Weekly',
+      title: 'The plugin digest, every week',
+      subtitle:
+        'New releases, grade movers, security advisories and ecosystem stats — one email, every Friday.',
+    },
+    subscribe: {
+      label: 'Email address',
+      placeholder: 'you@example.com',
+      cta: 'Subscribe',
+      submitting: 'Subscribing...',
+      successTitle: "You're on the list",
+      successBody: 'First issue lands this Friday. See you there.',
+      invalid: 'Please enter a valid email address.',
+      error: 'Something went wrong. Please try again.',
+      privacy: 'No spam. Unsubscribe anytime.',
+    },
+    share: {
+      label: 'Share this issue',
+      defaultTitle: 'DSH Weekly — Plugin quality digest',
+      hn: 'Share on Hacker News',
+      reddit: 'Share on Reddit',
+    },
+    hero: {
+      badge: 'Launching soon',
+      title: 'DSH Weekly',
+      body: 'A weekly digest of the DeepSeek Harness plugin ecosystem: new plugins, grade changes, security advisories and community picks.',
+      primary: 'Subscribe free',
+    },
+    content: {
+      new: 'New plugins & grade movers',
+      security: 'Security advisories',
+      ecosystem: 'Ecosystem stats & picks',
+    },
+  },
   common: {
     brandName: 'DSH Quality',
     tagline: 'Plugin quality, measured.',
     nav: {
       topRated: 'Top Rated',
+      allPlugins: 'All Plugins',
       trending: 'Trending',
       security: 'Security Watch',
+      weekly: 'Weekly',
       method: 'Methodology',
       about: 'About',
     },
@@ -143,6 +181,24 @@ const en = {
     lastPush: 'Last push',
     stars: 'Stars',
   },
+  plugins: {
+    title: 'All Plugins',
+    subtitle: 'Browse every evaluated plugin — {total} and counting. Search, filter by grade, and sort.',
+    searchPlaceholder: 'Search by name, author, or keyword...',
+    gradeFilter: {
+      all: 'All grades',
+    },
+    table: {
+      plugin: 'Plugin',
+      score: 'Score',
+      grade: 'Grade',
+      stars: 'Stars',
+      lastPush: 'Last push',
+    },
+    loading: 'Loading plugins...',
+    error: 'Failed to load plugins',
+    empty: 'No plugins found',
+  },
   security: {
     title: 'Security Watch',
     subtitle:
@@ -171,6 +227,32 @@ const en = {
       loading: 'Loading security data...',
     },
     notice: 'Heuristic detection, not a substitute for code review.',
+    advisories: {
+      tab: 'Advisories',
+      flagsTab: 'Flags',
+      searchPlaceholder: 'Search advisories...',
+      severity: {
+        critical: 'Critical',
+        high: 'High',
+        medium: 'Medium',
+        low: 'Low',
+      },
+      status: {
+        all: 'All statuses',
+        active: 'Active',
+        investigating: 'Investigating',
+        resolved: 'Resolved',
+      },
+      empty: 'No advisories match these filters.',
+      detail: {
+        affectedRange: 'Affected range',
+        status: 'Status',
+        description: 'Description',
+        affectedPlugin: 'Affected plugin',
+      },
+      notice:
+        'Advisories are published when a dangerous pattern is confirmed. Always inspect the code you run.',
+    },
   },
   method: {
     title: 'How We Score Plugins',
@@ -271,6 +353,12 @@ const en = {
       body: 'Questions or feedback? Open an issue on GitHub.',
       link: 'GitHub repository',
     },
+  },
+  sponsor: {
+    label: 'Sponsored',
+    transparency:
+      'Sponsored slots and promos are clearly labeled and completely separate from scoring, rankings, and security ratings. No paid placement ever influences a score.',
+    policy: 'Advertising policy',
   },
 };
 

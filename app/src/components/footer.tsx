@@ -1,10 +1,13 @@
 import { ShieldCheck } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
+import { NewsletterSubscribe } from '@/components/newsletter-subscribe';
 
 const footerLinks = [
+  { href: '/plugins', key: 'nav.allPlugins' },
   { href: '/trending', key: 'nav.trending' },
   { href: '/security', key: 'nav.security' },
+  { href: '/weekly', key: 'nav.weekly' },
   { href: '/method', key: 'nav.method' },
   { href: '/about', key: 'nav.about' },
 ] as const;
@@ -26,6 +29,9 @@ export async function Footer() {
           </div>
           <p className="mt-3 max-w-prose text-sm leading-relaxed text-[var(--color-muted)]">
             {t('footer.brandDescription')}
+          </p>
+          <p className="mt-3 max-w-prose text-xs leading-relaxed text-[var(--color-meta)]">
+            {t('footer.securityNotice')}
           </p>
         </div>
 
@@ -49,11 +55,16 @@ export async function Footer() {
 
         <div>
           <h3 className="label-caps text-[var(--color-text-2)]">
-            {t('footer.disclaimer')}
+            {t('weekly.section.title')}
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">
-            {t('footer.securityNotice')}
+            {t('weekly.section.subtitle')}
           </p>
+          <NewsletterSubscribe
+            source="footer"
+            compact
+            className="mt-3"
+          />
         </div>
       </div>
       <div className="border-t border-[var(--color-border)]">

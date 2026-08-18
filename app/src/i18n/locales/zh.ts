@@ -4,13 +4,51 @@ const zh = {
     description:
       'DeepSeek Harness 插件独立评分与实时安全预警。启发式检测，不能替代代码审查。',
   },
+  weekly: {
+    section: {
+      eyebrow: 'DSH Weekly',
+      title: '每周插件精选',
+      subtitle:
+        '新插件、评分变动、安全公告与生态数据——每周五一封邮件，全部掌握。',
+    },
+    subscribe: {
+      label: '邮箱地址',
+      placeholder: 'you@example.com',
+      cta: '订阅',
+      submitting: '订阅中…',
+      successTitle: '订阅成功',
+      successBody: '第一期将在本周五送达，敬请期待。',
+      invalid: '请输入有效的邮箱地址。',
+      error: '出错了，请稍后重试。',
+      privacy: '无垃圾邮件，随时可退订。',
+    },
+    share: {
+      label: '分享本期',
+      defaultTitle: 'DSH Weekly — 插件质量精选',
+      hn: '分享到 Hacker News',
+      reddit: '分享到 Reddit',
+    },
+    hero: {
+      badge: '即将上线',
+      title: 'DSH Weekly',
+      body: 'DeepSeek Harness 插件生态每周精选：新插件、评分变动、安全公告与社区推荐。',
+      primary: '免费订阅',
+    },
+    content: {
+      new: '新插件与评分变动',
+      security: '安全公告',
+      ecosystem: '生态数据与社区精选',
+    },
+  },
   common: {
     brandName: 'DSH Quality',
     tagline: '插件质量，可量化。',
     nav: {
       topRated: '排行榜',
+      allPlugins: '全部插件',
       trending: '趋势',
       security: '安全预警',
+      weekly: '周刊',
       method: '评分方法',
       about: '关于',
     },
@@ -143,6 +181,24 @@ const zh = {
     lastPush: '最后推送',
     stars: 'Stars',
   },
+  plugins: {
+    title: '全部插件',
+    subtitle: '浏览所有已评估插件——已有 {total} 个，持续更新中。支持搜索、等级筛选与排序。',
+    searchPlaceholder: '按名称、作者或关键词搜索…',
+    gradeFilter: {
+      all: '全部等级',
+    },
+    table: {
+      plugin: '插件',
+      score: '分数',
+      grade: '等级',
+      stars: 'Stars',
+      lastPush: '最后推送',
+    },
+    loading: '正在加载插件…',
+    error: '插件加载失败',
+    empty: '未找到插件',
+  },
   security: {
     title: '安全预警',
     subtitle:
@@ -171,6 +227,32 @@ const zh = {
       loading: '正在加载安全数据…',
     },
     notice: '启发式检测，不能替代代码审查。',
+    advisories: {
+      tab: '安全公告',
+      flagsTab: '标记列表',
+      searchPlaceholder: '搜索公告…',
+      severity: {
+        critical: '严重',
+        high: '高危',
+        medium: '中危',
+        low: '低危',
+      },
+      status: {
+        all: '全部状态',
+        active: '活跃',
+        investigating: '调查中',
+        resolved: '已解决',
+      },
+      empty: '没有符合筛选条件的公告。',
+      detail: {
+        affectedRange: '影响范围',
+        status: '状态',
+        description: '描述',
+        affectedPlugin: '受影响插件',
+      },
+      notice:
+        '公告在确认危险模式后发布。运行前请务必检查代码。',
+    },
   },
   method: {
     title: '评分方法',
@@ -267,6 +349,12 @@ const zh = {
       body: '有问题或反馈？欢迎在 GitHub 提 issue。',
       link: 'GitHub 仓库',
     },
+  },
+  sponsor: {
+    label: '赞助',
+    transparency:
+      '广告位与推荐位均有明确标注，与评分、排名、安全评级完全隔离。任何付费位都不会影响评分。',
+    policy: '广告政策',
   },
 };
 

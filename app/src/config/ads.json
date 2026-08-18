@@ -1,0 +1,35 @@
+{
+  "adsEnabled": false,
+  "notice": "广告位默认关闭。开启后广告仅出现在明确标注的 Sponsored 区域，绝不参与评分、排序或安全评级。启用请将 adsEnabled 设为 true。",
+  "slots": [
+    {
+      "id": "home-top-banner",
+      "placement": "home-top",
+      "label": "Sponsored",
+      "title": "Your plugin here",
+      "body": "Reach 5,000+ DSH developers every week. Sponsored slots are clearly labeled and never affect scores.",
+      "href": "mailto:ads@dshquality.com",
+      "cta": "Advertise"
+    },
+    {
+      "id": "plugins-side-1",
+      "placement": "plugins-side",
+      "label": "Sponsored",
+      "title": "Promote your plugin",
+      "body": "Get your DSH plugin in front of quality-conscious users.",
+      "href": "mailto:ads@dshquality.com",
+      "cta": "Learn more"
+    }
+  ],
+  "promos": [
+    {
+      "id": "promo-weekly",
+      "placement": "home-promo",
+      "label": "Partner",
+      "title": "DSH Weekly Newsletter",
+      "body": "The plugin digest, every Friday. Free forever.",
+      "href": "/weekly",
+      "cta": "Subscribe"
+    }
+  ]
+}

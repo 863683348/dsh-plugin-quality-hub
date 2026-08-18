@@ -7,6 +7,7 @@ import {
   Archive,
   Info,
   ShieldAlert,
+  ScrollText,
 } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
@@ -20,11 +21,13 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
+import { AdvisoryList } from '@/components/advisory-list';
 import { formatRelativeTime } from '@/lib/format';
 import { cn } from '@/lib/utils';
-import type { SecurityFlagType, SecurityItem } from '@/types/api';
+import type { SecurityAdvisory, SecurityFlagType, SecurityItem } from '@/types/api';
 
 type Filter = 'all' | SecurityFlagType;
+type Tab = 'advisories' | 'flags';
 
 const filterStyles: Record<Filter, { active: string; Icon?: typeof AlertOctagon }> = {
   all: { active: 'bg-[var(--color-primary)] text-[var(--color-primary-on)] border-transparent' },
@@ -47,11 +50,13 @@ const legendConfig: Array<{
 interface SecurityClientProps {
   items: SecurityItem[];
   total: number;
+  advisories?: SecurityAdvisory[];
 }
 
-export function SecurityClient({ items, total }: SecurityClientProps) {
+export function SecurityClient({ items, total, advisories = [] }: SecurityClientProps) {
   const t = useTranslations('security');
   const locale = useLocale() as 'en' | 'zh';
+  const [tab, setTab] = React.useState<Tab>('advisories');
   const [filter, setFilter] = React.useState<Filter>('all');
 
   const counts: Record<Filter, number> = React.useMemo(() => {
@@ -114,6 +119,46 @@ export function SecurityClient({ items, total }: SecurityClientProps) {
         </p>
       </div>
 
+      {/* Tab 切换：安全公告（v0.3）/ 标记列表 */}
+      <div className="mb-6 inline-flex rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface-2)] p-0.5" role="tablist" aria-label="Security views">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === 'advisories'}
+          onClick={() => setTab('advisories')}
+          className={cn(
+            'inline-flex items-center gap-1.5 rounded-[var(--radius-sm)] px-3 py-1.5 text-sm font-medium transition-colors duration-fast ease-standard focus-visible:outline-none focus-visible:shadow-focus',
+            tab === 'advisories'
+              ? 'bg-[var(--color-primary)] text-[var(--color-primary-on)]'
+              : 'text-[var(--color-text-2)] hover:bg-[var(--color-surface-3)] hover:text-[var(--color-text)]'
+          )}
+        >
+          <ScrollText className="h-4 w-4" aria-hidden="true" />
+          {t('advisories.tab')}
+          <span className="tabular-nums opacity-80">{advisories.length}</span>
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === 'flags'}
+          onClick={() => setTab('flags')}
+          className={cn(
+            'inline-flex items-center gap-1.5 rounded-[var(--radius-sm)] px-3 py-1.5 text-sm font-medium transition-colors duration-fast ease-standard focus-visible:outline-none focus-visible:shadow-focus',
+            tab === 'flags'
+              ? 'bg-[var(--color-primary)] text-[var(--color-primary-on)]'
+              : 'text-[var(--color-text-2)] hover:bg-[var(--color-surface-3)] hover:text-[var(--color-text)]'
+          )}
+        >
+          <ShieldAlert className="h-4 w-4" aria-hidden="true" />
+          {t('advisories.flagsTab')}
+          <span className="tabular-nums opacity-80">{total}</span>
+        </button>
+      </div>
+
+      {tab === 'advisories' ? (
+        <AdvisoryList items={advisories} total={advisories.length} />
+      ) : (
+        <>
       {/* FlagFilter */}
       <div className="mb-6 flex flex-wrap gap-2" role="group" aria-label="Filter">
         {(['all', 'danger', 'warning', 'info'] as Filter[]).map((f) => {
@@ -311,6 +356,8 @@ export function SecurityClient({ items, total }: SecurityClientProps) {
         <Info className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-info)]" aria-hidden="true" />
         <p>{t('notice')}</p>
       </div>
+        </>
+      )}
     </div>
   );
 }
