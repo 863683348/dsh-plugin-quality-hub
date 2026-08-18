@@ -36,7 +36,7 @@ The "which plugins are worth installing?" question has no good answer yet — th
 ## 4. What we shipped
 
 - **[dsh-audit](https://github.com/863683348/dsh-plugin-audit)** (npm `dsh-audit`) — v0.4: full-topic scoring (0-100, A-D), static security scan with grade veto, and genuine-plugin verification (tag-farming filter caps score at C).
-- **[dsh-plugin-gate](https://github.com/863683348/dsh-plugin-gate)** — the installation safety gate & data-protection guard: **49 static signature rules** (22 high / 23 medium / 4 low) scan plugin sources before `dsh plugin add`, and v1.1 adds **12 destructive-command patterns** (`rm -rf /`, `rmdir /s /q`, `format`, `dd`, `mkfs`) plus workspace-boundary checks — the "anti-accidental-deletion" guard that would have stopped the 400 GB wipe reported this week.
+- **[dsh-plugin-gate](https://github.com/863683348/dsh-plugin-gate)** — the installation safety gate & data-protection guard: **60 static signature rules** (31 high / 24 medium / 5 low) scan plugin sources for malicious install scripts, credential theft, persistence and network callbacks before `dsh plugin add`, plus **12 destructive-command patterns** (`rm -rf /`, `rmdir /s /q`, `format`, `dd`, `mkfs`) plus workspace-boundary checks — the "anti-accidental-deletion" guard that would have stopped the 400 GB wipe reported this week.
 - **[dsh-plugin-verify](https://github.com/863683348/dsh-plugin-verify)** — evidence-based verification toolkit for agents.
 - This hub — rankings refresh weekly from live data.
 
