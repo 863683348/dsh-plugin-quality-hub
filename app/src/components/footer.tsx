@@ -12,11 +12,19 @@ const footerLinks = [
   { href: '/about', key: 'nav.about' },
 ] as const;
 
+const legalLinks = [
+  { href: '/privacy', key: 'footer.legal.privacy' },
+  { href: '/terms', key: 'footer.legal.terms' },
+  { href: '/faq', key: 'footer.legal.faq' },
+  { href: '/blog', key: 'footer.legal.blog' },
+  { href: '/contact', key: 'footer.legal.contact' },
+] as const;
+
 export async function Footer() {
   const t = await getTranslations('common');
   return (
     <footer className="mt-16 border-t border-[var(--color-border)] bg-[var(--color-surface-2)]">
-      <div className="container-page grid gap-8 py-12 md:grid-cols-3">
+      <div className="container-page grid gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
             <ShieldCheck
@@ -55,6 +63,24 @@ export async function Footer() {
 
         <div>
           <h3 className="label-caps text-[var(--color-text-2)]">
+            {t('footer.legal.title')}
+          </h3>
+          <ul className="mt-3 space-y-2">
+            {legalLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-sm text-[var(--color-muted)] transition-colors duration-fast ease-standard hover:text-[var(--color-primary)] focus-visible:outline-none focus-visible:shadow-focus rounded-[var(--radius-sm)]"
+                >
+                  {t(link.key)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="label-caps text-[var(--color-text-2)]">
             {t('weekly.section.title')}
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">
@@ -72,7 +98,16 @@ export async function Footer() {
           <span>
             {t('brandName')} · dshquality.com
           </span>
-          <span>{t('footer.rights')}</span>
+          <span>
+            <a
+              href="mailto:ahmedlzany423@gmail.com"
+              className="text-[var(--color-meta)] transition-colors duration-fast ease-standard hover:text-[var(--color-primary)] focus-visible:outline-none focus-visible:shadow-focus rounded-[var(--radius-sm)]"
+            >
+              ahmedlzany423@gmail.com
+            </a>
+            {' · '}
+            {t('footer.rights')}
+          </span>
         </div>
       </div>
     </footer>

@@ -5,9 +5,14 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dshquality.com";
 const STATIC_PATHS = [
   "",
   "/about",
+  "/blog",
+  "/contact",
+  "/faq",
   "/method",
   "/plugins",
+  "/privacy",
   "/security",
+  "/terms",
   "/trending",
   "/weekly",
 ];
