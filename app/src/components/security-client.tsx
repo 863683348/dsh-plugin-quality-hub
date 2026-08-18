@@ -246,7 +246,9 @@ export function SecurityClient({ items, total, advisories = [] }: SecurityClient
                   >
                     <TableCell className="max-w-64">
                       <Link
-                        href={`/plugin/${item.plugin.name}`}
+                        href={item.plugin.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="block truncate rounded-[var(--radius-sm)] text-sm font-medium text-[var(--color-text)] transition-colors duration-fast ease-standard hover:text-[var(--color-primary)] focus-visible:outline-none focus-visible:shadow-focus"
                       >
                         {item.plugin.name}
@@ -310,7 +312,9 @@ export function SecurityClient({ items, total, advisories = [] }: SecurityClient
             return (
               <Link
                 key={item.plugin.id}
-                href={`/plugin/${item.plugin.name}`}
+                href={item.plugin.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
                   'block rounded-[var(--card-radius)] border p-4 transition-colors duration-fast ease-standard focus-visible:outline-none focus-visible:shadow-focus',
                   isDanger

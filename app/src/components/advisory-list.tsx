@@ -276,7 +276,9 @@ export function AdvisoryList({ items, total }: AdvisoryListProps) {
                           </dt>
                           <dd className="mt-1">
                             <Link
-                              href={`/plugin/${a.plugin.name}`}
+                              href={a.plugin.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
                               className="inline-flex items-center gap-1.5 rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface-2)] px-3 py-1.5 text-sm font-medium text-[var(--color-primary)] transition-colors duration-fast ease-standard hover:border-[var(--color-primary)] focus-visible:outline-none focus-visible:shadow-focus"
                             >
                               {a.plugin.name}

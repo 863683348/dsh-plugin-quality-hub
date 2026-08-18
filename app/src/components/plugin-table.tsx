@@ -94,7 +94,9 @@ function DesktopRow({ plugin, index }: { plugin: Plugin; index: number }) {
       </TableCell>
       <TableCell className="max-w-64">
         <Link
-          href={`/plugin/${plugin.name}`}
+          href={plugin.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="block truncate text-sm font-medium text-[var(--color-text)] transition-colors duration-fast ease-standard hover:text-[var(--color-primary)] focus-visible:outline-none focus-visible:shadow-focus rounded-[var(--radius-sm)]"
         >
           {plugin.name}
@@ -147,7 +149,9 @@ function MobileCard({ plugin, index }: { plugin: Plugin; index: number }) {
 
   return (
     <Link
-      href={`/plugin/${plugin.name}`}
+      href={plugin.githubUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       className="block rounded-[var(--card-radius)] border border-[var(--card-border)] bg-[var(--card-bg)] p-4 transition-colors duration-fast ease-standard hover:border-[var(--card-hover-border)] focus-visible:outline-none focus-visible:shadow-focus"
     >
       <div className="flex items-start justify-between gap-3">

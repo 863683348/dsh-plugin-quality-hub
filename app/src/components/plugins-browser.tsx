@@ -218,7 +218,9 @@ export function PluginsBrowser({ initialPlugins, initialTotal }: PluginsBrowserP
                 <TableRow key={p.id}>
                   <TableCell className="max-w-80">
                     <Link
-                      href={`/plugin/${p.name}`}
+                      href={p.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="block truncate rounded-[var(--radius-sm)] text-sm font-medium text-[var(--color-text)] transition-colors duration-fast ease-standard hover:text-[var(--color-primary)] focus-visible:outline-none focus-visible:shadow-focus"
                     >
                       {p.name}

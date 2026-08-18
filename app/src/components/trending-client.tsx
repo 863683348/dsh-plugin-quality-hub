@@ -20,7 +20,9 @@ function TrendItem({
 
   return (
     <Link
-      href={`/plugin/${plugin.name}`}
+      href={plugin.githubUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       className="flex items-center gap-3 rounded-[var(--radius-md)] px-3 py-2.5 transition-colors duration-fast ease-standard hover:bg-[var(--color-surface-2)] focus-visible:outline-none focus-visible:shadow-focus"
     >
       <span className="tabular-nums w-6 shrink-0 text-right text-sm text-[var(--color-meta)]">
