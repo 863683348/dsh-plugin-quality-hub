@@ -554,11 +554,11 @@ function buildDetail(plugin: Plugin): PluginDetail {
       maintenance: {
         score: plugin.maintenance,
         max: 30,
-        weight: 0.3,
+        weight: 0.28,
       },
-      docs: { score: plugin.docs, max: 25, weight: 0.25 },
-      npm: { score: plugin.npm, max: 30, weight: 0.3 },
-      ecosystem: { score: plugin.ecosystem, max: 15, weight: 0.15 },
+      docs: { score: plugin.docs, max: 25, weight: 0.28 },
+      npm: { score: plugin.npm, max: 30, weight: 0.24 },
+      ecosystem: { score: plugin.ecosystem, max: 15, weight: 0.2 },
       total: plugin.score,
       details: {
         maintenance: [],

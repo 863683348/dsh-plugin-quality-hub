@@ -137,7 +137,7 @@ const zh = {
       docs: '文档',
       npm: 'npm',
       ecosystem: '生态',
-      weightNote: '维护 30% · 文档 25% · npm 30% · 生态 15%',
+      weightNote: '维护 28% · 文档 28% · npm 24% · 生态 20%',
       reasons: '扣分原因',
       noReasons: '该维度无扣分。',
     },
@@ -261,22 +261,22 @@ const zh = {
     cards: {
       maintenance: {
         name: '维护',
-        weight: '30%',
+        weight: '28%',
         description: '近 90 天的提交频率、issue 响应与发布节奏。',
       },
       docs: {
         name: '文档',
-        weight: '25%',
+        weight: '28%',
         description: 'README 完整性、dsh.bundle 声明与使用示例。',
       },
       npm: {
         name: 'npm',
-        weight: '30%',
+        weight: '24%',
         description: 'npm 发布、版本稳定性与安装脚本安全性。',
       },
       ecosystem: {
         name: '生态',
-        weight: '15%',
+        weight: '20%',
         description: '仓库的 star、fork 与社区活跃度。',
       },
     },

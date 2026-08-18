@@ -137,7 +137,7 @@ const en = {
       docs: 'Docs',
       npm: 'npm',
       ecosystem: 'Ecosystem',
-      weightNote: 'Maintenance 30% · Docs 25% · npm 30% · Ecosystem 15%',
+      weightNote: 'Maintenance 28% · Docs 28% · npm 24% · Ecosystem 20%',
       reasons: 'Deductions',
       noReasons: 'No deductions for this dimension.',
     },
@@ -261,25 +261,25 @@ const en = {
     cards: {
       maintenance: {
         name: 'Maintenance',
-        weight: '30%',
+        weight: '28%',
         description:
           'Commit frequency, issue responsiveness, and release cadence over the last 90 days.',
       },
       docs: {
         name: 'Docs',
-        weight: '25%',
+        weight: '28%',
         description:
           'README completeness, dsh.bundle declaration presence, and usage examples.',
       },
       npm: {
         name: 'npm',
-        weight: '30%',
+        weight: '24%',
         description:
           'npm publishing, version stability, and install script safety.',
       },
       ecosystem: {
         name: 'Ecosystem',
-        weight: '15%',
+        weight: '20%',
         description:
           'Stars, forks, and community activity around the repository.',
       },

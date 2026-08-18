@@ -1,5 +1,5 @@
 // Scoring engine - four-dimension weighted scoring
-// Weights: maintenance 30% + docs 25% + npm 30% + ecosystem 15% (Spec AC-10)
+// Weights (calibrated 2026-08-18): maintenance 28% + docs 28% + npm 24% + ecosystem 20%
 
 import type { Grade, SecurityFlag, SecurityFlagType } from "@/types/api";
 
@@ -63,11 +63,17 @@ const DANGER_PATTERNS: RegExp[] = [
 ];
 
 // ===== Weights =====
+// Calibrated 2026-08-18 from real plugin data (142 plugins):
+//   - docs:    higher normalized spread (0.301) & strong corr (0.914) -> 28%
+//   - npm:     weakest corr (0.859) and lowest spread (0.249) -> 24%
+//   - ecosystem: strong corr (0.916) but stars should not dominate -> 20%
+//   - maintenance: keep as anchor dimension -> 28%
+// Weights sum to 100%. See scripts/weight-calibrate.mts + weight-simulate.mts.
 export const WEIGHTS = {
-  maintenance: 0.3,
-  docs: 0.25,
-  npm: 0.3,
-  ecosystem: 0.15,
+  maintenance: 0.28,
+  docs: 0.28,
+  npm: 0.24,
+  ecosystem: 0.2,
 } as const;
 
 export const MAX_SCORES = {
