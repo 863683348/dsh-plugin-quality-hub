@@ -14,6 +14,7 @@
     "db:seed": "prisma db seed",
     "db:reset": "prisma migrate reset",
     "seed": "tsx prisma/seed.ts",
+    "evaluate:daily": "tsx scripts/daily-evaluate.mts",
     "test:scoring": "tsx --test tests/scoring.test.ts"
   },
   "prisma": {

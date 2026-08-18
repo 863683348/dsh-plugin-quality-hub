@@ -30,6 +30,11 @@ model Plugin {
   stars       Int       @default(0)
   lastPush    DateTime?
   archived    Boolean   @default(false)
+  // v1.1 snapshot fields (change-triggered re-evaluation)
+  npmVersion  String? // npm dist-tags.latest at last eval (change trigger)
+  evalSource  String   @default("seed") // seed | github | synthetic | re-eval
+  lastEvalAt  DateTime? // when this plugin was last scored
+  evalMeta    Json     @default("{}") // per-source metadata (e.g. github search query, synthetic batch)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   scoreLogs   ScoreLog[]
@@ -37,6 +42,7 @@ model Plugin {
   @@index([score], name: "idx_score")
   @@index([grade], name: "idx_grade")
   @@index([lastPush], name: "idx_last_push")
+  @@index([evalSource], name: "idx_eval_source")
   @@map("plugins")
 }
 

@@ -168,6 +168,11 @@ async function upsertPlugin(
       stars: repoInput.stars,
       lastPush: repoInput.pushedAt ? new Date(repoInput.pushedAt) : null,
       archived: repoInput.archived,
+      // v1.1 snapshot fields
+      npmVersion: npmInput?.version ?? null,
+      evalSource: "github",
+      lastEvalAt: new Date(),
+      evalMeta: { via: "refresh-endpoint" },
     };
 
     const plugin: DbPlugin = await tx.plugin.upsert({

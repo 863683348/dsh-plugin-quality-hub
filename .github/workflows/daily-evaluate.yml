@@ -1,0 +1,63 @@
+name: Daily Plugin Evaluation
+
+on:
+  schedule:
+    # Every day 02:00 UTC (Beijing 10:00)
+    - cron: '0 2 * * *'
+  workflow_dispatch: # manual trigger
+
+concurrency:
+  group: daily-evaluate
+  cancel-in-progress: false
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma client
+        run: npx prisma generate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+      - name: Apply migrations
+        run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+      - name: Run daily evaluation pipeline
+        run: npm run evaluate:daily
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_NEW: '60'
+          MAX_GITHUB: '30'
+          REPORT_PATH: evaluate-report.json
+
+      - name: Upload evaluation report
+        uses: actions/upload-artifact@v4
+        with:
+          name: evaluate-report
+          path: app/evaluate-report.json
+          retention-days: 30
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "Daily evaluation failed - check logs above" >> $GITHUB_STEP_SUMMARY
