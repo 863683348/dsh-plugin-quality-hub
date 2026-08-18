@@ -22,6 +22,7 @@ const legalLinks = [
 
 export async function Footer() {
   const t = await getTranslations('common');
+  const tw = await getTranslations('weekly');
   return (
     <footer className="mt-16 border-t border-[var(--color-border)] bg-[var(--color-surface-2)]">
       <div className="container-page grid gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
@@ -81,10 +82,10 @@ export async function Footer() {
 
         <div>
           <h3 className="label-caps text-[var(--color-text-2)]">
-            {t('weekly.section.title')}
+            {tw('section.title')}
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">
-            {t('weekly.section.subtitle')}
+            {tw('section.subtitle')}
           </p>
           <NewsletterSubscribe
             source="footer"
