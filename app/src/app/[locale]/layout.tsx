@@ -6,6 +6,7 @@ import { hasLocale } from 'next-intl';
 import { Inter } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import { ThemeProvider } from '@/components/theme-provider';
+import { Analytics } from '@/components/analytics';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 
@@ -50,6 +51,10 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={inter.variable} suppressHydrationWarning>
+      <head>
+        {/* GA4 站点统计（next/script afterInteractive，不阻塞渲染） */}
+        <Analytics />
+      </head>
       <body className="flex min-h-[100dvh] flex-col bg-bg text-text">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
