@@ -203,16 +203,15 @@ function scoreEcosystem(repo: GithubRepoInput, npm: NpmInput | null): { score: n
   const details: string[] = [];
   let score = 0;
 
-  // Stars reflect community adoption
-  if (repo.stars >= 1000) {
-    score += 7;
-    details.push(`Stars over 1000 (${repo.stars}) (+7)`);
-  } else if (repo.stars >= 100) {
-    score += 5;
-    details.push(`Stars over 100 (${repo.stars}) (+5)`);
-  } else if (repo.stars >= 10) {
-    score += 2;
-    details.push(`Stars over 10 (${repo.stars}) (+2)`);
+  // Stars reflect community adoption.
+  // Log-scale scoring: every 10x of stars adds ~1.7 points, so a 5-star repo vs
+  // a 500-star repo are separated naturally without crushing small repos.
+  //   1 star  -> 0.0, 10 -> 1.7, 100 -> 3.4, 1000 -> 5.1, 10000 -> 6.8
+  if (repo.stars > 0) {
+    const logScore = Math.log10(repo.stars + 1);
+    // Cap at 7 (reached around 60k stars) so extreme repos cannot dominate
+    score += Math.min(7, logScore * 1.7);
+    details.push(`Stars ${repo.stars} (log-scale +${Math.min(7, logScore * 1.7).toFixed(1)})`);
   }
 
   // npm presence boosts ecosystem integration
