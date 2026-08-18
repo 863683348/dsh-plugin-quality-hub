@@ -1,0 +1,264 @@
+/* ============================================================
+   DSH Plugin Quality Hub — Design Tokens
+   锁定依据：Spec v1.0（2026-08-17 已确认）
+   图标：lucide-react（全项目唯一来源，禁止 emoji 功能图标）
+   模式：:root = light（默认），[data-theme="dark"] = dark
+   用法：所有组件颜色/间距/圆角一律引用 var(--*) 变量，禁止硬编码
+   ============================================================ */
+
+:root {
+  /* ---------- A1-identity ---------- */
+  --color-primary: #1E3A5F;            /* Deep Blue 品牌主色 */
+  --color-primary-hover: #16304F;
+  --color-primary-active: #10263F;
+  --color-primary-soft: #E9EEF4;       /* 主色浅底（选中态/标签） */
+  --color-primary-on: #FFFFFF;         /* 主色上的前景 */
+
+  /* 中性色 */
+  --color-bg: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #F8FAFC;
+  --color-surface-3: #F1F5F9;
+  --color-text: #0F172A;
+  --color-text-2: #334155;
+  --color-muted: #64748B;
+  --color-meta: #94A3B8;
+  --color-border: #E2E8F0;
+  --color-border-strong: #CBD5E1;
+
+  /* ---------- A2-semantic ---------- */
+  --color-success: #059669;
+  --color-success-soft: #ECFDF5;
+  --color-warning: #D97706;
+  --color-warning-soft: #FFFBEB;
+  --color-danger: #DC2626;
+  --color-danger-soft: #FEF2F2;
+  --color-info: #0284C7;
+  --color-info-soft: #F0F9FF;
+
+  /* ---------- C-extension: 等级色（Spec 锁定） ---------- */
+  --grade-a: #059669;
+  --grade-a-soft: #ECFDF5;
+  --grade-b: #2563EB;
+  --grade-b-soft: #EFF6FF;
+  --grade-c: #D97706;
+  --grade-c-soft: #FFFBEB;
+  --grade-d: #DC2626;
+  --grade-d-soft: #FEF2F2;
+
+  /* 焦点环 / 遮罩 */
+  --color-focus-ring: rgba(30, 58, 95, 0.35);
+  --color-overlay: rgba(15, 23, 42, 0.5);
+
+  /* ---------- Typography ---------- */
+  --font-sans: "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --text-xs: 0.75rem;      /* 12px 标签/元数据 */
+  --text-sm: 0.875rem;     /* 14px 辅助文字/表头 */
+  --text-base: 1rem;       /* 16px 正文 */
+  --text-lg: 1.125rem;     /* 18px 三级标题 */
+  --text-xl: 1.25rem;      /* 20px 二级标题 */
+  --text-2xl: 1.5rem;      /* 24px 一级标题 */
+  --text-3xl: 1.875rem;    /* 30px 页面标题 */
+  --text-4xl: 2.25rem;     /* 36px Hero 标题 */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+  --tracking-tight: -0.02em;   /* 标题负字距 */
+  --tracking-normal: 0em;      /* 正文 */
+  --tracking-wide: 0.06em;     /* ALL CAPS / 标签 */
+
+  /* ---------- Spacing（4px 网格，Spec 锁定） ---------- */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+
+  /* ---------- Radius（Spec 锁定） ---------- */
+  --radius-sm: 0.25rem;    /* 4px 小元素 */
+  --radius-md: 0.375rem;   /* 6px 按钮/输入框 */
+  --radius-lg: 0.5rem;     /* 8px 卡片 */
+  --radius-xl: 0.75rem;    /* 12px 弹窗/大卡 */
+  --radius-full: 9999px;   /* 徽章/胶囊 */
+
+  /* ---------- Elevation ---------- */
+  --shadow-ring: 0 0 0 1px var(--color-border);
+  --shadow-raised: 0 1px 3px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.06);
+  --shadow-focus: 0 0 0 3px var(--color-focus-ring);
+
+  /* ---------- Motion ---------- */
+  --motion-fast: 150ms;    /* hover/active 收敛值 */
+  --motion-base: 200ms;    /* 状态切换 */
+  --motion-slow: 300ms;    /* 面板/弹窗 */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ---------- Layout ---------- */
+  --container-max: 1280px;
+  --section-y: 4rem;       /* 桌面 section 间距 */
+  --section-y-sm: 2.5rem;  /* 移动 section 间距 */
+
+  /* ---------- Breakpoints ---------- */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+
+  /* ---------- Component: Button ---------- */
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-text: var(--color-primary-on);
+  --btn-primary-hover: var(--color-primary-hover);
+  --btn-primary-active: var(--color-primary-active);
+  --btn-secondary-bg: var(--color-surface);
+  --btn-secondary-text: var(--color-text);
+  --btn-secondary-border: var(--color-border-strong);
+  --btn-ghost-text: var(--color-text-2);
+  --btn-danger-bg: var(--color-danger);
+  --btn-danger-text: #FFFFFF;
+  --btn-radius: var(--radius-md);
+  --btn-padding-x: var(--space-4);
+  --btn-padding-y: var(--space-2);
+
+  /* ---------- Component: Input ---------- */
+  --input-bg: var(--color-surface);
+  --input-border: var(--color-border);
+  --input-text: var(--color-text);
+  --input-placeholder: var(--color-muted);
+  --input-focus-border: var(--color-primary);
+  --input-error-border: var(--color-danger);
+  --input-radius: var(--radius-md);
+
+  /* ---------- Component: Card ---------- */
+  --card-bg: var(--color-surface);
+  --card-border: var(--color-border);
+  --card-hover-border: var(--color-border-strong);
+  --card-radius: var(--radius-lg);
+  --card-padding: var(--space-6);
+
+  /* ---------- Component: Table ---------- */
+  --table-header-bg: var(--color-surface-2);
+  --table-header-text: var(--color-muted);
+  --table-row-hover: var(--color-surface-2);
+  --table-border: var(--color-border);
+  --table-radius: var(--radius-lg);
+
+  /* ---------- Component: Badge ---------- */
+  --badge-radius: var(--radius-full);
+  --badge-padding-x: var(--space-2);
+  --badge-padding-y: 0.125rem;
+  --badge-font-size: var(--text-xs);
+  --badge-weight: var(--weight-semibold);
+
+  /* ---------- Component: Nav ---------- */
+  --nav-height: 4rem;
+  --nav-border: var(--color-border);
+}
+
+/* ============================================================
+   深色主题
+   ============================================================ */
+[data-theme="dark"] {
+  --color-primary: #7CA3D4;            /* 深色下提亮主色保证对比 */
+  --color-primary-hover: #93B5E0;
+  --color-primary-active: #5E87B8;
+  --color-primary-soft: rgba(124, 163, 212, 0.14);
+  --color-primary-on: #0F172A;
+
+  --color-bg: #0F172A;
+  --color-surface: #1E293B;
+  --color-surface-2: #263449;
+  --color-surface-3: #2F3F57;
+  --color-text: #F8FAFC;
+  --color-text-2: #CBD5E1;
+  --color-muted: #94A3B8;
+  --color-meta: #64748B;
+  --color-border: #334155;
+  --color-border-strong: #475569;
+
+  --color-success: #34D399;
+  --color-success-soft: rgba(52, 211, 153, 0.12);
+  --color-warning: #FBBF24;
+  --color-warning-soft: rgba(251, 191, 36, 0.12);
+  --color-danger: #F87171;
+  --color-danger-soft: rgba(248, 113, 113, 0.12);
+  --color-info: #38BDF8;
+  --color-info-soft: rgba(56, 189, 248, 0.12);
+
+  --grade-a: #34D399;
+  --grade-a-soft: rgba(52, 211, 153, 0.14);
+  --grade-b: #60A5FA;
+  --grade-b-soft: rgba(96, 165, 250, 0.14);
+  --grade-c: #FBBF24;
+  --grade-c-soft: rgba(251, 191, 36, 0.14);
+  --grade-d: #F87171;
+  --grade-d-soft: rgba(248, 113, 113, 0.14);
+
+  --color-focus-ring: rgba(124, 163, 212, 0.45);
+  --color-overlay: rgba(2, 6, 23, 0.7);
+
+  --shadow-ring: 0 0 0 1px var(--color-border);
+  --shadow-raised: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-focus: 0 0 0 3px var(--color-focus-ring);
+
+  --btn-secondary-bg: var(--color-surface);
+  --btn-secondary-text: var(--color-text);
+  --input-bg: var(--color-surface);
+  --input-border: var(--color-border);
+  --card-bg: var(--color-surface);
+  --card-border: var(--color-border);
+  --table-header-bg: var(--color-surface-2);
+  --table-row-hover: var(--color-surface-2);
+  --nav-border: var(--color-border);
+}
+
+/* ============================================================
+   全局基础（引用 Token，禁止裸值）
+   ============================================================ */
+html {
+  color-scheme: light;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 数字等宽：评分/star/时间列 */
+.tabular-nums {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 焦点可见性（键盘导航） */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* 尊重减少动效 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

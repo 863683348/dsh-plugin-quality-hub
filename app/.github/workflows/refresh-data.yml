@@ -1,0 +1,27 @@
+name: Refresh Plugin Data
+
+on:
+  schedule:
+    # Weekly Monday 08:00 UTC (Beijing 16:00)
+    - cron: '0 8 * * 1'
+  workflow_dispatch: # manual trigger
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Trigger refresh endpoint
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
+            -H "Content-Type: application/json" \
+            https://dshquality.com/api/v1/refresh
+      - name: Notify on failure
+        if: failure()
+        run: echo "Data refresh failed" >> $GITHUB_STEP_SUMMARY

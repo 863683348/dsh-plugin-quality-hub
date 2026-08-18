@@ -1,0 +1,69 @@
+// DSH Plugin Quality Hub — Prisma Schema
+// 依据: Spec v1.0 第 6 节 + docs/api/db-schema.md
+// 数据库: Neon PostgreSQL
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Plugin {
+  id          String    @id @default(cuid())
+  name        String    @unique // "owner/repo"
+  owner       String
+  repoName    String
+  githubUrl   String    @unique
+  npmName     String?
+  description String?
+  score       Int       @default(0) // 0-100
+  grade       String    @default("F") // A/B/C/D
+  maintenance Int       @default(0) // /30
+  docs        Int       @default(0) // /25
+  npm         Int       @default(0) // /30
+  ecosystem   Int       @default(0) // /15
+  flags       Json      @default("[]") // SecurityFlag[]
+  stars       Int       @default(0)
+  lastPush    DateTime?
+  archived    Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  scoreLogs   ScoreLog[]
+
+  @@index([score], name: "idx_score")
+  @@index([grade], name: "idx_grade")
+  @@index([lastPush], name: "idx_last_push")
+  @@map("plugins")
+}
+
+model ScoreLog {
+  id        String   @id @default(cuid())
+  pluginId  String
+  plugin    Plugin   @relation(fields: [pluginId], references: [id], onDelete: Cascade)
+  score     Int
+  grade     String
+  details   Json
+  createdAt DateTime @default(now())
+
+  @@index([pluginId, createdAt], name: "idx_plugin_score")
+  @@map("score_logs")
+}
+
+// Refresh pipeline execution log (Spec §6.1 / refresh-service.ts)
+model RefreshLog {
+  id              String    @id @default(cuid())
+  trigger         String    @default("manual") // cron | manual | deploy
+  status          String    @default("running") // running | success | failed
+  pluginsFetched  Int       @default(0)
+  pluginsUpdated  Int       @default(0)
+  error           String?
+  createdAt       DateTime  @default(now())
+  finishedAt      DateTime?
+
+  @@index([status, createdAt], name: "idx_refresh_status_time")
+  @@map("refresh_logs")
+}
