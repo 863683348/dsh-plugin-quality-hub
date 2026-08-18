@@ -530,6 +530,24 @@ const zh = {
           excerpt:
             '走进我们的危险模式扫描器：它检查什么、会漏掉什么，以及如何负责任地解读结果。',
         },
+        {
+          title: 'DeepSeek Harness 入门：一切皆插件',
+          date: '2026 年 8 月 19 日',
+          excerpt:
+            'deepseek-ai/deepseek-harness 仓库于 2026 年 6 月 10 日上线，带着一个大胆的前提：一切皆插件。本文拆解 dsh 运行时、Cordis 内核与 Python SDK 如何组合在一起。',
+        },
+        {
+          title: 'dsh CLI 之旅：v0.1.0-rc.7 与通往 1.0 之路',
+          date: '2026 年 8 月 20 日',
+          excerpt:
+            '一万二千次提交之后，dsh CLI 停在 v0.1.0-rc.7，Web UI 成为主要上手路径。早期采用者应该了解的插件架构要点，以及八月发生了什么变化。',
+        },
+        {
+          title: 'Landlock 沙箱：deepseek-harness 如何隔离插件',
+          date: '2026 年 8 月 21 日',
+          excerpt:
+            'landlock-run 原生沙箱把 Linux Landlock 引入 dsh 运行时。深入看插件隔离为何重要，以及它如何改变安装者的安全计算。',
+        },
       ],
     },
     contact: {

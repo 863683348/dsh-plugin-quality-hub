@@ -534,6 +534,24 @@ const en = {
           excerpt:
             'A look inside our dangerous-pattern scanner: what it checks, what it misses, and how to read the results responsibly.',
         },
+        {
+          title: 'DeepSeek Harness 101: Everything Is a Plugin',
+          date: 'August 19, 2026',
+          excerpt:
+            'The deepseek-ai/deepseek-harness repository launched on June 10, 2026 with a bold premise: everything is a plugin. Here is how the dsh runtime, Cordis core, and the Python SDK fit together.',
+        },
+        {
+          title: 'The dsh CLI Journey: v0.1.0-rc.7 and the Road to 1.0',
+          date: 'August 20, 2026',
+          excerpt:
+            'Twelve thousand commits later, the dsh CLI sits at v0.1.0-rc.7 with the Web UI as the primary onboarding path. What early adopters should know about the plugin architecture and what changed in August.',
+        },
+        {
+          title: 'Landlock Sandboxing: How deepseek-harness Isolates Plugins',
+          date: 'August 21, 2026',
+          excerpt:
+            'The landlock-run native sandbox brings Linux Landlock to the dsh runtime. A closer look at why plugin isolation matters and how it changes the security math for installers.',
+        },
       ],
     },
     contact: {
