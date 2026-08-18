@@ -31,6 +31,11 @@ vercel login
 4. Framework Preset 自动识别为 Next.js
 5. 配置环境变量（见第 3 步）后 Deploy
 
+> ⚠️ **已踩坑（2026-08-18）**：如果 Root Directory 未设为 `app`，Vercel 会把仓库根目录当作项目，
+> 运行根目录 package.json 的 `node scripts/build-site.mjs`（静态版脚本），因缺少 `data/catalog.json`
+> 报 `ENOENT: no such file or directory, open '/vercel/path0/data/catalog.json'`。
+> **修复**：Settings → General → Root Directory 填 `app` → Redeploy。
+
 **方案 B：CLI 部署（从 app/ 目录）**
 ```bash
 cd "C:/Users/l'x/WorkBuddy/2026-08-17-21-54-54/app"
