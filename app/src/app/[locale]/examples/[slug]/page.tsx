@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { ArrowUpRight, ChevronLeft } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, Lock } from 'lucide-react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import {
@@ -9,10 +9,12 @@ import {
   getRelatedTutorials,
   getRelatedPlugins,
 } from '@/lib/content-service';
+import { getExampleBySlugGated } from '@/lib/content-gate';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MarkdownContent } from '@/components/markdown-content';
+import { ProGatedContent } from '@/components/pro-gated-content';
 import { RelatedTutorials } from '@/components/related-tutorials';
 import { RelatedPlugins } from '@/components/related-plugins';
 
@@ -84,7 +86,7 @@ export default async function ExampleDetailPage({
   const locale = params.locale as 'en' | 'zh';
   const t = await getTranslations('examples');
 
-  const example = await getExampleBySlug(params.slug);
+  const example = await getExampleBySlugGated(params.slug);
   if (!example) notFound();
 
   const isZh = locale === 'zh';
@@ -120,6 +122,12 @@ export default async function ExampleDetailPage({
           <span className="font-mono text-sm text-[var(--color-meta)]">
             {example.pluginName}
           </span>
+          {example.locked ? (
+            <span className="inline-flex items-center gap-1 rounded-full border border-[var(--color-border)] bg-[var(--color-surface-2)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-text-2)]">
+              <Lock className="h-3 w-3 text-[var(--color-primary)]" aria-hidden="true" />
+              Pro
+            </span>
+          ) : null}
         </div>
         <h1 className="mt-4 text-3xl font-bold tracking-tight text-[var(--color-text)]">
           {isZh ? example.titleZh : example.titleEn}
@@ -139,7 +147,14 @@ export default async function ExampleDetailPage({
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <MarkdownContent content={dim.content} />
+                <ProGatedContent
+                  type="examples"
+                  slug={example.slug}
+                  locked={example.locked}
+                  locale={locale}
+                >
+                  <MarkdownContent content={dim.content} />
+                </ProGatedContent>
               </CardContent>
             </Card>
           ))}

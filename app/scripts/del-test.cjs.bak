@@ -1,0 +1,10 @@
+const fs = require('fs');
+const logPath = process.env.TEMP + '\\del-test2.txt';
+const lines = [];
+try {
+  fs.rmSync("C:/Users/l'x/WorkBuddy/2026-08-17-21-54-54/app/node_modules/next", { recursive: true, force: true });
+  lines.push('OK deleted next');
+} catch (e) {
+  lines.push('FAIL:' + e.code + ':' + e.message);
+}
+fs.writeFileSync(logPath, lines.join('\n'), 'utf8');

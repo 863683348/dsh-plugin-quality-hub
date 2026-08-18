@@ -1,0 +1,34 @@
+import { scorePlugin, type GithubRepoInput, type NpmInput } from "../src/lib/scoring";
+
+const repo: GithubRepoInput = {
+  name: "owner/repo",
+  owner: "owner",
+  repoName: "repo",
+  githubUrl: "https://github.com/owner/repo",
+  description: "A test plugin",
+  stars: 100,
+  pushedAt: new Date().toISOString(),
+  archived: false,
+  readmeLength: 2000,
+  hasLicense: true,
+  hasCi: true,
+  openIssues: 5,
+  hasDshBundle: true,
+  installScriptText: "",
+};
+
+const npm: NpmInput = {
+  name: "repo",
+  version: "1.0.0",
+  lastPublishAt: new Date().toISOString(),
+  weeklyDownloads: 5000,
+  hasInstallScripts: false,
+  exists: true,
+};
+
+const result = scorePlugin({ repo, npm });
+console.log("SCORE:", result.score);
+console.log("GRADE:", result.grade);
+console.log("DIMENSIONS:", JSON.stringify(result.dimensions, null, 2));
+console.log("DETAILS:", JSON.stringify(result.details, null, 2));
+console.log("FLAGS:", JSON.stringify(result.flags, null, 2));

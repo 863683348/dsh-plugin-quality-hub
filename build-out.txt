@@ -1,0 +1,116 @@
+﻿  鈻?Next.js 14.2.35
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ 鉁?Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/67) ...
+   Generating static pages (16/67) 
+   Generating static pages (33/67) 
+   Generating static pages (50/67) 
+ 鉁?Generating static pages (67/67)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                          Size     First Load JS
+鈹?茠 /                                                142 B          87.5 kB
+鈹?茠 /_not-found                                      142 B          87.5 kB
+鈹?鈼?/[locale]                                        10.8 kB         128 kB
+鈹?  鈹?/en
+鈹?  鈹?/zh
+鈹?鈼?/[locale]/about                                  1.64 kB         101 kB
+鈹?  鈹?/en/about
+鈹?  鈹?/zh/about
+鈹?鈼?/[locale]/account                                3.83 kB         114 kB
+鈹?  鈹?/en/account
+鈹?  鈹?/zh/account
+鈹?鈼?/[locale]/blog                                   15.9 kB         126 kB
+鈹?  鈹?/en/blog
+鈹?  鈹?/zh/blog
+鈹?鈼?/[locale]/blog/[slug]                            192 B           110 kB
+鈹?  鈹?/en/blog/landlock-sandboxing-plugin-isolation
+鈹?  鈹?/zh/blog/landlock-sandboxing-plugin-isolation
+鈹?  鈹?/en/blog/dsh-cli-journey-rc7-road-to-1.0
+鈹?  鈹?[+9 more paths]
+鈹?鈼?/[locale]/contact                                2.09 kB         102 kB
+鈹?  鈹?/en/contact
+鈹?  鈹?/zh/contact
+鈹?鈼?/[locale]/examples                               192 B           110 kB
+鈹?  鈹?/en/examples
+鈹?  鈹?/zh/examples
+鈹?鈼?/[locale]/examples/[slug]                        140 B           114 kB
+鈹?  鈹?/en/examples/dsh-web-ui
+鈹?  鈹?/en/examples/modlens
+鈹?  鈹?/en/examples/dsh-agent-teams
+鈹?  鈹?[+5 more paths]
+鈹?鈼?/[locale]/faq                                    774 B           100 kB
+鈹?  鈹?/en/faq
+鈹?  鈹?/zh/faq
+鈹?鈼?/[locale]/login                                  2.33 kB         113 kB
+鈹?  鈹?/en/login
+鈹?  鈹?/zh/login
+鈹?鈼?/[locale]/method                                 2.6 kB          109 kB
+鈹?  鈹?/en/method
+鈹?  鈹?/zh/method
+鈹?茠 /[locale]/plugin/[name]                          3.16 kB         121 kB
+鈹?鈼?/[locale]/plugins                                5.91 kB         123 kB
+鈹?  鈹?/en/plugins
+鈹?  鈹?/zh/plugins
+鈹?鈼?/[locale]/pricing                                3.58 kB         121 kB
+鈹?  鈹?/en/pricing
+鈹?  鈹?/zh/pricing
+鈹?鈼?/[locale]/privacy                                622 B           100 kB
+鈹?  鈹?/en/privacy
+鈹?  鈹?/zh/privacy
+鈹?鈼?/[locale]/security                               7.93 kB         126 kB
+鈹?  鈹?/en/security
+鈹?  鈹?/zh/security
+鈹?鈼?/[locale]/terms                                  622 B           100 kB
+鈹?  鈹?/en/terms
+鈹?  鈹?/zh/terms
+鈹?鈼?/[locale]/trending                               3.18 kB         121 kB
+鈹?  鈹?/en/trending
+鈹?  鈹?/zh/trending
+鈹?鈼?/[locale]/tutorials                              192 B           110 kB
+鈹?  鈹?/en/tutorials
+鈹?  鈹?/zh/tutorials
+鈹?鈼?/[locale]/tutorials/[slug]                       141 B           114 kB
+鈹?  鈹?/en/tutorials/write-first-plugin
+鈹?  鈹?/en/tutorials/connect-mcp-tools
+鈹?  鈹?/en/tutorials/publish-and-get-rated
+鈹?  鈹?[+3 more paths]
+鈹?鈼?/[locale]/weekly                                 2.52 kB         109 kB
+鈹?  鈹?/en/weekly
+鈹?  鈹?/zh/weekly
+鈹?鈼?/api/v1/auth/google                              0 B                0 B
+鈹?茠 /api/v1/auth/google/callback                     0 B                0 B
+鈹?茠 /api/v1/auth/logout                              0 B                0 B
+鈹?茠 /api/v1/content/examples/[slug]                  0 B                0 B
+鈹?茠 /api/v1/content/tutorials/[slug]                 0 B                0 B
+鈹?茠 /api/v1/me                                       0 B                0 B
+鈹?茠 /api/v1/newsletter/subscribe                     0 B                0 B
+鈹?茠 /api/v1/plugins                                  0 B                0 B
+鈹?茠 /api/v1/plugins/[name]                           0 B                0 B
+鈹?茠 /api/v1/rankings                                 0 B                0 B
+鈹?茠 /api/v1/refresh                                  0 B                0 B
+鈹?茠 /api/v1/security                                 0 B                0 B
+鈹?茠 /api/v1/security/advisories                      0 B                0 B
+鈹?茠 /api/v1/trending                                 0 B                0 B
+鈹?茠 /api/v1/waffo/cancel                             0 B                0 B
+鈹?茠 /api/v1/waffo/checkout                           0 B                0 B
+鈹?茠 /api/v1/waffo/webhook                            0 B                0 B
+鈹?鈼?/robots.txt                                      0 B                0 B
+鈹?鈼?/sitemap.xml                                     0 B                0 B
++ First Load JS shared by all                        87.3 kB
+  鈹?chunks/117-088af8e1d146026d.js                   31.7 kB
+  鈹?chunks/fd9d1056-71d44004bf4dd15b.js              53.6 kB
+  鈹?other shared chunks (total)                      1.96 kB
+
+
+茠 Middleware                                         37.5 kB
+
+鈼? (Static)   prerendered as static content
+鈼? (SSG)      prerendered as static HTML (uses getStaticProps)
+茠  (Dynamic)  server-rendered on demand
+

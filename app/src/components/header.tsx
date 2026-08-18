@@ -5,6 +5,7 @@ import { Globe, Menu, Moon, ShieldCheck, Sun, X } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter, Link } from '@/i18n/navigation';
 import { useTheme } from '@/components/theme-provider';
+import { AccountStatus } from '@/components/account-status';
 import { cn } from '@/lib/utils';
 
 const navItems = [
@@ -15,6 +16,7 @@ const navItems = [
   { href: '/trending', key: 'trending' },
   { href: '/security', key: 'security' },
   { href: '/weekly', key: 'weekly' },
+  { href: '/pricing', key: 'pricing' },
   { href: '/method', key: 'method' },
   { href: '/about', key: 'about' },
 ];
@@ -140,6 +142,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <LocaleSwitch />
           <ThemeToggle />
+          <AccountStatus />
           <button
             type="button"
             className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-md)] text-[var(--color-text-2)] transition-colors duration-fast ease-standard hover:bg-[var(--color-surface-2)] focus-visible:outline-none focus-visible:shadow-focus md:hidden"

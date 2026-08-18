@@ -10,6 +10,7 @@ const footerLinks = [
   { href: '/trending', key: 'nav.trending' },
   { href: '/security', key: 'nav.security' },
   { href: '/weekly', key: 'nav.weekly' },
+  { href: '/pricing', key: 'nav.pricing' },
   { href: '/method', key: 'nav.method' },
   { href: '/about', key: 'nav.about' },
 ] as const;

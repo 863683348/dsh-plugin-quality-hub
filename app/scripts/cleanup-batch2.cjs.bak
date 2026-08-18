@@ -1,0 +1,64 @@
+// Clean up batch2 plugins (delete plugin + cascade score_logs) then re-evaluate
+const { PrismaClient } = require("@prisma/client");
+const { readFileSync, writeFileSync } = require("fs");
+
+const envPath = "C:/Users/l'x/WorkBuddy/2026-08-17-21-54-54/app/.env.local";
+const envContent = readFileSync(envPath, "utf8");
+for (const line of envContent.split("\n")) {
+  const trimmed = line.trim();
+  if (!trimmed || trimmed.startsWith("#")) continue;
+  const eqIdx = trimmed.indexOf("=");
+  if (eqIdx === -1) continue;
+  const key = trimmed.slice(0, eqIdx);
+  let value = trimmed.slice(eqIdx + 1);
+  if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+    value = value.slice(1, -1);
+  }
+  process.env[key] = value;
+}
+
+const p = new PrismaClient();
+
+async function main() {
+  const batchOwners = ["dsh-hub", "harness-labs", "plugin-stack", "ai-toolkit", "devflow", "opensource-ai"];
+  const batchNames = [
+    "json-viewer", "csv-converter", "markdown-lint", "shell-completer", "http-mock",
+    "grpc-client", "webrtc-helper", "vector-search", "embedding-tool", "llm-cache",
+    "prompt-store", "workflow-builder", "agent-memory", "tool-catalog", "health-check",
+    "etl-pipeline", "schema-validator", "log-viewer", "metrics-dashboard", "cost-tracker",
+    "context-compressor", "model-router", "guardrail-engine", "sandbox-runner",
+  ];
+
+  // Find matching plugins
+  const matched = await p.plugin.findMany({
+    where: {
+      OR: batchNames.map((n) => ({ repoName: n })),
+    },
+    select: { id: true, name: true },
+  });
+
+  const lines = [];
+  lines.push("Found " + matched.length + " batch2 plugins to delete");
+
+  // Delete score logs first (cascade should handle but be explicit)
+  for (const m of matched) {
+    await p.scoreLog.deleteMany({ where: { pluginId: m.id } });
+    lines.push("  deleted logs for " + m.name);
+  }
+  await p.plugin.deleteMany({
+    where: { id: { in: matched.map((m) => m.id) } },
+  });
+  lines.push("Deleted " + matched.length + " plugins");
+
+  const remaining = await p.plugin.count();
+  lines.push("Remaining plugins: " + remaining);
+
+  writeFileSync("C:/worktmp/batch2-cleanup.txt", lines.join("\n"), "utf8");
+  p.$disconnect();
+}
+
+main().catch((e) => {
+  writeFileSync("C:/worktmp/batch2-cleanup.txt", "ERROR: " + e.message, "utf8");
+  p.$disconnect();
+  process.exit(1);
+});

@@ -53,6 +53,7 @@ const zh = {
       weekly: '周刊',
       method: '评分方法',
       about: '关于',
+      pricing: '价格',
     },
     language: '语言',
     theme: {
@@ -445,6 +446,149 @@ const zh = {
     transparency:
       '广告位与推荐位均有明确标注，与评分、排名、安全评级完全隔离。任何付费位都不会影响评分。',
     policy: '广告政策',
+  },
+  pricing: {
+    meta: {
+      title: '价格方案 — DSH Quality Pro',
+      description:
+        'DSH Quality Pro 解锁完整教程、深度实例与进阶安全洞察。支持按月或按年订阅。',
+    },
+    hero: {
+      badge: '会员',
+      title: 'DSH Quality Pro',
+      subtitle:
+        '完整访问深度教程、全部实例，以及我们用于保持 DSH Quality 独立与少广告的工具。',
+    },
+    billing: {
+      monthly: '按月',
+      yearly: '按年',
+      save: '省 $10',
+    },
+    free: {
+      name: '免费',
+      price: '$0',
+      period: '永久',
+      description:
+        '评估插件所需的一切：排行榜、安全预警，以及每篇教程与实例的预览。',
+      cta: '免费开始',
+      features: [
+        'Top Rated 与 Trending 排行榜',
+        'Security Watch 安全预警',
+        '每篇教程与实例的预览',
+        '每周通讯',
+      ],
+    },
+    pro: {
+      name: 'Pro',
+      priceMonthly: '$9',
+      priceYearly: '$98',
+      priceYearlyOld: '$108',
+      period: '/月',
+      periodYearly: '/年',
+      description:
+        '全部内容，全部解锁。完整教程与实例，外加对你所运行生态的优先支持。',
+      cta: '升级到 Pro',
+      ctaActive: '当前方案',
+      ctaLogin: '登录后升级',
+      features: [
+        '完整访问每篇教程与实例',
+        '完整代码示例与逐步讲解',
+        '无广告阅读体验',
+        '支持独立的插件评分',
+      ],
+    },
+    note: {
+      taxes: '价格为美元。税费可能因地区而异。',
+      cancel: '随时取消，无隐藏费用。',
+      mo: '/月',
+      yr: '/年',
+    },
+    comparison: {
+      title: '对比方案',
+      subtitle: '评估插件所需的一切，以及深入探索所需的一切。',
+      rows: [
+        { label: '排行榜与趋势', free: '✓', pro: '✓' },
+        { label: '安全预警', free: '✓', pro: '✓' },
+        { label: '教程与实例预览', free: '✓', pro: '✓' },
+        { label: '完整教程与实例', free: '—', pro: '✓' },
+        { label: '完整代码示例', free: '—', pro: '✓' },
+        { label: '无广告', free: '—', pro: '✓' },
+      ],
+    },
+    faq: {
+      title: '常见问题',
+      subtitle: '关于 Pro 你可能想知道的一切。',
+      items: [
+        {
+          q: '如何扣费？',
+          a: 'Pro 通过我们的支付伙伴 waffo 计费，安全处理支付并开具收据。按月方案每月续费；按年方案每年续费一次。你可以随时取消。',
+        },
+        {
+          q: '可以随时取消吗？',
+          a: '可以。取消后，在当前计费周期结束前你仍可使用 Pro。无需长期承诺。',
+        },
+        {
+          q: '为什么需要收费？',
+          a: 'DSH Quality 保持独立，不受付费排名影响。会员费用直接支持评分、安全研究以及让生态更透明的内容创作。',
+        },
+        {
+          q: '你们会保存我的银行卡吗？',
+          a: '不会。支付完全由 waffo 处理，我们永远不会看到或存储你的卡号。',
+        },
+      ],
+    },
+    bottom: {
+      title: '准备好深入探索了吗？',
+      body: '加入支持独立插件评分的会员，获得 DSH Quality 内容库的完整访问权限。',
+      cta: '立即获取 Pro',
+    },
+  },
+  membership: {
+    gate: {
+      title: 'Pro 内容',
+      body: '本完整教程仅供 Pro 会员。升级后即可阅读完整讲解。',
+      cta: '升级到 Pro',
+      signIn: '登录',
+      loading: '正在解锁内容…',
+      fetching: '正在为你加载完整内容…',
+    },
+    nav: {
+      login: '登录',
+      account: '账户',
+      upgrade: '升级',
+      pro: 'Pro',
+    },
+    login: {
+      title: '登录',
+      subtitle: '使用你的 Google 账号登录，以管理会员并解锁 Pro 内容。',
+      google: '使用 Google 继续',
+      note: '继续即表示你同意我们的服务条款与隐私政策。',
+      error: '出错了，请重试。',
+      backToPricing: '返回价格页',
+    },
+    account: {
+      title: '你的账户',
+      signedInAs: '已登录为',
+      plan: '方案',
+      status: '状态',
+      statusActive: '已生效',
+      statusNone: '无有效订阅',
+      planFree: '免费',
+      planPro: 'Pro',
+      renew: '管理订阅',
+      cancel: '取消订阅',
+      canceling: '取消中…',
+      cancelNote: '取消后，在当前计费周期结束前你仍可使用 Pro。',
+      cancelError: '取消失败，请重试。',
+      upgrade: '升级到 Pro',
+      back: '返回网站',
+      logout: '退出登录',
+      loading: '正在加载你的账户…',
+      signInFirst: '请先登录以查看和管理你的会员。',
+      signInCta: '使用 Google 登录',
+      renewsOn: '下次续费日期',
+      logoutNote: '在此设备上退出登录。',
+    },
   },
   legal: {
     privacy: {

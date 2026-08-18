@@ -1,0 +1,14 @@
+﻿Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "neondb", schema "public" at "ep-green-salad-ay0jfmy7.c-5.us-east-2.aws.neon.tech"
+
+4 migrations found in prisma/migrations
+
+Applying migration `20260819010000_add_membership_models`
+
+The following migration(s) have been applied:
+
+migrations/
+  鈹斺攢 20260819010000_add_membership_models/
+    鈹斺攢 migration.sql
+      
+All migrations have been successfully applied.

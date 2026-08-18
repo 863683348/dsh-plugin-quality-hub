@@ -53,6 +53,7 @@ const en = {
       weekly: 'Weekly',
       method: 'Methodology',
       about: 'About',
+      pricing: 'Pricing',
     },
     language: 'Language',
     theme: {
@@ -449,6 +450,151 @@ const en = {
     transparency:
       'Sponsored slots and promos are clearly labeled and completely separate from scoring, rankings, and security ratings. No paid placement ever influences a score.',
     policy: 'Advertising policy',
+  },
+  pricing: {
+    meta: {
+      title: 'Pricing — DSH Quality Pro',
+      description:
+        'DSH Quality Pro unlocks full tutorials, deep-dive examples and advanced security insight. Monthly or yearly plans.',
+    },
+    hero: {
+      badge: 'Membership',
+      title: 'DSH Quality Pro',
+      subtitle:
+        'Full access to in-depth tutorials, complete examples and the tools we use to keep DSH Quality independent and ad-light.',
+    },
+    billing: {
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save: 'Save $10',
+    },
+    free: {
+      name: 'Free',
+      price: '$0',
+      period: 'forever',
+      description:
+        'Everything you need to evaluate plugins: rankings, security watch, and previews of every tutorial and example.',
+      cta: 'Start free',
+      features: [
+        'Top Rated & Trending rankings',
+        'Security Watch alerts',
+        'Preview of every tutorial & example',
+        'Weekly newsletter',
+      ],
+    },
+    pro: {
+      name: 'Pro',
+      priceMonthly: '$9',
+      priceYearly: '$98',
+      priceYearlyOld: '$108',
+      period: 'per month',
+      periodYearly: 'per year',
+      description:
+        'Full content, unlocked. Complete tutorials and examples, plus priority support for the ecosystem you run.',
+      cta: 'Upgrade to Pro',
+      ctaActive: 'Your plan',
+      ctaLogin: 'Sign in to upgrade',
+      features: [
+        'Full access to every tutorial & example',
+        'Complete code samples & walkthroughs',
+        'Ad-free reading experience',
+        'Support independent plugin scoring',
+      ],
+    },
+    note: {
+      taxes: 'Prices in USD. Taxes may apply depending on your region.',
+      cancel: 'Cancel anytime. No hidden fees.',
+      mo: '/month',
+      yr: '/year',
+    },
+    comparison: {
+      title: 'Compare plans',
+      subtitle: 'Everything you need to evaluate plugins — and everything you need to go deeper.',
+      rows: [
+        { label: 'Rankings & trending', free: '✓', pro: '✓' },
+        { label: 'Security Watch', free: '✓', pro: '✓' },
+        { label: 'Tutorial & example previews', free: '✓', pro: '✓' },
+        { label: 'Full tutorials & examples', free: '—', pro: '✓' },
+        { label: 'Complete code samples', free: '—', pro: '✓' },
+        { label: 'Ad-free', free: '—', pro: '✓' },
+      ],
+    },
+    faq: {
+      title: 'Frequently asked questions',
+      subtitle: 'Everything you might want to know about Pro.',
+      items: [
+        {
+          q: 'How does billing work?',
+          a: 'Pro is billed through waffo, our payment partner, which handles secure payment processing and receipts. Monthly plans renew each month; yearly plans renew once a year. You can cancel anytime.',
+        },
+        {
+          q: 'Can I cancel anytime?',
+          a: 'Yes. You keep Pro access until the end of your current billing period after you cancel. No long-term commitment.',
+        },
+        {
+          q: 'Why do you charge at all?',
+          a: 'DSH Quality stays independent and free of paid ranking influence. Membership directly funds the scoring, security research, and content that keeps the ecosystem honest.',
+        },
+        {
+          q: 'Is my card stored by you?',
+          a: 'No. Payments are processed entirely by waffo. We never see or store your card details.',
+        },
+      ],
+    },
+    bottom: {
+      title: 'Ready to go deeper?',
+      body: 'Join the members who support independent plugin scoring and get full access to the DSH Quality library.',
+      cta: 'Get Pro now',
+    },
+  },
+  membership: {
+    gate: {
+      title: 'Pro content',
+      body: 'This full tutorial is available to Pro members. Upgrade to read the complete walkthrough.',
+      cta: 'Upgrade to Pro',
+      signIn: 'Sign in',
+      loading: 'Unlocking content…',
+      fetching: 'Loading the full content for you…',
+    },
+    nav: {
+      login: 'Sign in',
+      account: 'Account',
+      upgrade: 'Upgrade',
+      pro: 'Pro',
+    },
+    login: {
+      title: 'Sign in',
+      subtitle:
+        'Sign in with your Google account to manage your membership and unlock Pro content.',
+      google: 'Continue with Google',
+      note: 'By continuing you agree to our Terms of Service and Privacy Policy.',
+      error: 'Something went wrong. Please try again.',
+      backToPricing: 'Back to pricing',
+    },
+    account: {
+      title: 'Your account',
+      signedInAs: 'Signed in as',
+      plan: 'Plan',
+      status: 'Status',
+      statusActive: 'Active',
+      statusNone: 'No active subscription',
+      planFree: 'Free',
+      planPro: 'Pro',
+      renew: 'Manage subscription',
+      cancel: 'Cancel subscription',
+      canceling: 'Canceling…',
+      cancelNote:
+        'You will keep Pro access until the end of the current billing period.',
+      cancelError: 'Could not cancel. Please try again.',
+      upgrade: 'Upgrade to Pro',
+      back: 'Back to site',
+      logout: 'Sign out',
+      loading: 'Loading your account…',
+      signInFirst: 'Please sign in to view and manage your membership.',
+      signInCta: 'Sign in with Google',
+      renewsOn: 'Renews on',
+      logoutNote: 'Sign out of this device.',
+    },
   },
   legal: {
     privacy: {

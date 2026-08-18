@@ -43,6 +43,19 @@ Script: `app/scripts/daily-evaluate.mts` (local: `cd app && npm run evaluate:dai
 
 DSH Weekly is a weekly English digest (drafts in `weekly/`). Wire `subscribe.html` to Buttondown / Substack / Mailchimp to go live.
 
+## Membership (v1.2 — Google sign-in + waffo payments)
+
+`app/` includes a full membership stack (all bilingual `en`/`zh`):
+
+- **Sign-in** — Google OAuth (official code flow, no third-party SDK). Session is a signed JWT (`dsh_session` httpOnly cookie, 30d) via `AUTH_SECRET`. Routes: `/api/v1/auth/google`, `/api/v1/auth/logout`, `/api/v1/me`.
+- **Payments** — [waffo](https://waffo.com) Merchant-of-Record: plans `pro_monthly` ($9/mo) and `pro_yearly` ($98/yr, list $108). Checkout `/api/v1/waffo/checkout`, webhook `/api/v1/waffo/webhook` (RSA signature verified, event-id idempotent), cancel `/api/v1/waffo/cancel`. Billing handled by waffo; card details never touch us.
+- **Content gate** — tier field on `Tutorial`/`Example` (`free`|`pro`). SSG only outputs the first ¼ of pro content; full text is served only to Pro members through `/api/v1/content/*`. Gating is roadmap-driven (Route ①: current content stays `free`, the gate is built and ready).
+- **Pages** — `/pricing` (monthly/yearly toggle + comparison + FAQ), `/login` (Google button), `/account` (subscription status, manage/cancel). Header/footer show sign-in state and Pricing links.
+
+Required env (see `app/.env.example`): `AUTH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `WAFFO_API_KEY`, `WAFFO_PRIVATE_KEY`, `WAFFO_PUBLIC_KEY`, `WAFFO_MERCHANT_ID`, `WAFFO_ENV`, `RESEND_API_KEY` (email, reserved).
+
+Schema: `User`, `Subscription`, `Payment` models + `tier` on content. Migration `20260819010000_add_membership_models` (apply with `npx prisma migrate deploy`).
+
 ## Notes
 
 - Heuristics only — not a substitute for code review, especially for long-tail plugins.

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { ChevronLeft, Clock } from 'lucide-react';
+import { ChevronLeft, Clock, Lock } from 'lucide-react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import {
@@ -9,7 +9,9 @@ import {
   getRelatedExamples,
   getRelatedPlugins,
 } from '@/lib/content-service';
+import { getTutorialBySlugGated } from '@/lib/content-gate';
 import { MarkdownContent } from '@/components/markdown-content';
+import { ProGatedContent } from '@/components/pro-gated-content';
 import { LevelBadge } from '@/components/level-badge';
 import { RelatedExamples } from '@/components/related-examples';
 import { RelatedPlugins } from '@/components/related-plugins';
@@ -85,7 +87,7 @@ export default async function TutorialDetailPage({
   const t = await getTranslations('tutorials');
   const tc = await getTranslations('common');
 
-  const tutorial = await getTutorialBySlug(params.slug);
+  const tutorial = await getTutorialBySlugGated(params.slug);
   if (!tutorial) notFound();
 
   const isZh = locale === 'zh';
@@ -118,6 +120,12 @@ export default async function TutorialDetailPage({
               ? `${tutorial.readingMinutes} 分钟阅读`
               : `${tutorial.readingMinutes} min read`}
           </span>
+          {tutorial.locked ? (
+            <span className="inline-flex items-center gap-1 rounded-full border border-[var(--color-border)] bg-[var(--color-surface-2)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-text-2)]">
+              <Lock className="h-3 w-3 text-[var(--color-primary)]" aria-hidden="true" />
+              Pro
+            </span>
+          ) : null}
         </div>
         <h1 className="mt-4 text-3xl font-bold tracking-tight text-[var(--color-text)]">
           {isZh ? tutorial.titleZh : tutorial.titleEn}
@@ -138,9 +146,16 @@ export default async function TutorialDetailPage({
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[2fr_1fr]">
         <div className="min-w-0">
-          <MarkdownContent
-            content={isZh ? tutorial.contentZh : tutorial.contentEn}
-          />
+          <ProGatedContent
+            type="tutorials"
+            slug={tutorial.slug}
+            locked={tutorial.locked}
+            locale={locale}
+          >
+            <MarkdownContent
+              content={isZh ? tutorial.contentZh : tutorial.contentEn}
+            />
+          </ProGatedContent>
         </div>
         <aside className="space-y-6">
           <RelatedExamples

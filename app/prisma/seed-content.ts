@@ -467,10 +467,11 @@ async function run() {
 
   for (const t of tutorials) {
     const exists = await prisma.tutorial.findUnique({ where: { slug: t.slug } });
+    // 路线①: 现有内容全免费; 后续 pro 内容在对象里加 tier: "pro" 即可
     await prisma.tutorial.upsert({
       where: { slug: t.slug },
-      create: t,
-      update: t,
+      create: { ...t, tier: "free" },
+      update: { ...t, tier: "free" },
     });
     tutorialCount++;
     if (!exists) console.log(`  + tutorial ${t.slug}`);
@@ -481,8 +482,8 @@ async function run() {
     const exists = await prisma.example.findUnique({ where: { slug: e.slug } });
     await prisma.example.upsert({
       where: { slug: e.slug },
-      create: e,
-      update: e,
+      create: { ...e, tier: "free" },
+      update: { ...e, tier: "free" },
     });
     exampleCount++;
     if (!exists) console.log(`  + example ${e.slug}`);

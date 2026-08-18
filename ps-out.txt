@@ -1,0 +1,59 @@
+﻿ M README.md
+ M app/.env.example
+ M app/package-lock.json
+ M app/package.json
+ M app/prisma/schema.prisma
+ M app/prisma/seed-content.ts
+ M app/src/app/[locale]/examples/[slug]/page.tsx
+ M app/src/app/[locale]/tutorials/[slug]/page.tsx
+ M app/src/app/sitemap.ts
+ M app/src/components/footer.tsx
+ M app/src/components/header.tsx
+ M app/src/i18n/locales/en.ts
+ M app/src/i18n/locales/zh.ts
+?? app/prisma/migrations/20260819010000_add_membership_models/
+?? app/scripts/check-db-after-cloud.mts
+?? app/scripts/clean-node-modules.cjs.bak
+?? app/scripts/cleanup-batch2.cjs.bak
+?? app/scripts/db-check-batch2.cjs.bak
+?? app/scripts/db-real.cjs.bak
+?? app/scripts/db-status.cjs.bak
+?? app/scripts/db-unknown.cjs.bak
+?? app/scripts/del-test.cjs.bak
+?? app/scripts/refresh-runner.mts.bak
+?? app/scripts/seed-advisories.mts
+?? app/src/app/[locale]/account/
+?? app/src/app/[locale]/login/
+?? app/src/app/[locale]/pricing/
+?? app/src/app/api/v1/auth/
+?? app/src/app/api/v1/content/
+?? app/src/app/api/v1/me/
+?? app/src/app/api/v1/waffo/
+?? app/src/components/account-client.tsx
+?? app/src/components/account-status.tsx
+?? app/src/components/login-client.tsx
+?? app/src/components/pricing-client.tsx
+?? app/src/components/pro-gated-content.tsx
+?? app/src/lib/auth.ts
+?? app/src/lib/content-gate.ts
+?? app/src/lib/google-oauth.ts
+?? app/src/services/user-service.ts
+?? app/src/services/waffo-service.ts
+?? app/tests/debug-score.ts.bak
+?? build-code.txt
+?? build-out.txt
+?? env-check.txt
+?? git-branch.txt
+?? git-log.txt
+?? git-status.js
+?? git-status.txt
+?? migrate-code.txt
+?? migrate-deploy.js
+?? migrate-out.txt
+?? probe-code.txt
+?? probe-err.txt
+?? probe-stdout.txt
+?? probe.js
+?? ps-out.txt
+?? tsc-code.txt
+?? tsc-out.txt

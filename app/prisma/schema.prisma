@@ -130,6 +130,7 @@ model Tutorial {
   contentEn String // Markdown 子集正文
   contentZh String
   readingMinutes Int @default(5)
+  tier      String @default("free") // free | pro（v1.3：beginner 免费 / 中高级 pro）
 
   // Content Silo 互链: 编辑人工策展的上下文引用
   relatedExampleSlugs String[] @default([]) // -> Example.slug
@@ -168,6 +169,7 @@ model Example {
   codeZh       String
   highlightsEn String // 评分亮点(典型为列表)
   highlightsZh String
+  tier      String @default("free") // free | pro（v1.3：完整拆解 pro）
 
   relatedTutorialSlugs String[] @default([]) // 1-2 个关联教程
 
@@ -179,4 +181,61 @@ model Example {
   @@index([pluginName], name: "idx_example_plugin")
   @@index([status], name: "idx_example_status")
   @@map("examples")
+}
+
+// ============================================================
+// 会员与订阅 (v1.3 新增)
+// 登录: Google OAuth（邮箱登录）, 无密码字段
+// 支付: waffo (Merchant of Record)
+// ============================================================
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  googleSub String?  @unique // Google OAuth subject id
+  avatarUrl String?
+  locale    String   @default("en") // en | zh
+  tier      String   @default("free") // free | pro | team
+  status    String   @default("active") // active | disabled
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  subscriptions Subscription[]
+
+  @@index([tier], name: "idx_user_tier")
+  @@map("users")
+}
+
+// 订阅（waffo provider）
+model Subscription {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan      String   @default("pro") // pro_monthly | pro_yearly | team
+  provider  String   @default("waffo") // waffo
+  providerSubscriptionId String? // waffo subscriptionId
+  merchantSubscriptionId String? // waffo merchantSubscriptionId (our plan id)
+  status    String   @default("active") // active | canceled | past_due | trialing | expired
+  currentPeriodEnd DateTime? // 到期时间（取消后仍可访问到该时间）
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, status], name: "idx_sub_user_status")
+  @@index([providerSubscriptionId], name: "idx_sub_provider")
+  @@map("subscriptions")
+}
+
+// 支付事件（对账 + 幂等 + 退款审计）
+model Payment {
+  id            String   @id @default(cuid())
+  userId        String
+  subscriptionId String?
+  provider      String   @default("waffo")
+  providerEventId String @unique // waffo notification id / order id（幂等去重）
+  amountCents   Int      @default(0)
+  currency      String   @default("usd")
+  status        String   @default("succeeded") // succeeded | failed | refunded
+  createdAt     DateTime @default(now())
+
+  @@index([userId, createdAt], name: "idx_payment_user")
+  @@map("payments")
 }
