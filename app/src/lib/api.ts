@@ -18,9 +18,15 @@ async function request<T>(path: string): Promise<T | null> {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 8000);
-    const res = await fetch(path, {
+    // Server-side rendering needs an absolute URL; fall back to relative
+    // (browser) when no site URL is configured. next: { revalidate } is a
+    // no-op for relative fetches from the client but enables ISR caching
+    // when the absolute URL form is used in Server Components.
+    const base = process.env.NEXT_PUBLIC_SITE_URL || "";
+    const url = base ? `${base.replace(/\/$/, "")}${path}` : path;
+    const res = await fetch(url, {
       signal: controller.signal,
-      headers: { Accept: 'application/json' },
+      headers: { Accept: "application/json" },
       next: { revalidate: 3600 },
     });
     clearTimeout(timeout);
