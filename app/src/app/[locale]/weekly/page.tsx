@@ -65,9 +65,9 @@ export default async function WeeklyPage({ params }: WeeklyPageProps) {
         {/* 内容预览 */}
         <div className="mt-10 grid gap-3 text-left sm:grid-cols-3">
           {[
-            { icon: Mail, key: "content.new" },
-            { icon: Mail, key: "content.security" },
-            { icon: Mail, key: "content.ecosystem" },
+            { icon: Mail, key: "new" },
+            { icon: Mail, key: "security" },
+            { icon: Mail, key: "ecosystem" },
           ].map(({ icon: Icon, key }) => (
             <div
               key={key}

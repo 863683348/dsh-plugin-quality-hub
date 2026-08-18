@@ -19,10 +19,10 @@ const dimensionConfig = [
 ] as const;
 
 const weightTableRows = [
-  { key: 'maintenance', weight: 30 },
-  { key: 'docs', weight: 25 },
-  { key: 'npm', weight: 30 },
-  { key: 'ecosystem', weight: 15 },
+  { key: 'maintenance', weight: 28 },
+  { key: 'docs', weight: 28 },
+  { key: 'npm', weight: 24 },
+  { key: 'ecosystem', weight: 20 },
 ] as const;
 
 const gradeLegendRows: Array<{
