@@ -1,0 +1,2 @@
+﻿origin	ssh://git@ssh.github.com:443/863683348/dsh-plugin-quality-hub.git (fetch)
+origin	ssh://git@ssh.github.com:443/863683348/dsh-plugin-quality-hub.git (push)

@@ -1,0 +1,1 @@
+﻿d067f0e v1.2 Membership: Google OAuth + waffo payments + content gates
