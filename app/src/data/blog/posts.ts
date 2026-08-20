@@ -22,6 +22,8 @@ export interface BlogPost {
   keywords: string[];
   /** 长尾词（SEO），正文首段自然嵌入，详情页 meta keywords */
   longTail: string[];
+  /** 社交媒体分享图片（1200×630，可选） */
+  imageUrl?: string;
   en: {
     title: string;
     excerpt: string;
@@ -603,6 +605,51 @@ export const blogPosts: BlogPost[] = [
       ],
     },
   },
+
+{
+    slug: 'dangerous-install-script-explained',
+    date: '2026-08-21',
+    keywords: ['dangerous install script', 'dsh security', 'postinstall risk'],
+    longTail: ['dsh install script warning', 'postinstall script risk', 'what is dangerous install script'],
+    en: {
+      title: 'What "Dangerous Install Script" Means in DSH Plugin Scanning',
+      excerpt: 'When DSH scans a plugin and flags a dangerous install script, what does it mean? Here is what you need to know about postinstall risks.',
+      metaDescription: 'Learn what dangerous install scripts are in DSH plugin scanning, how the scanner detects them, and what to do when you see a warning.',
+      body: [
+        { h2: 'What Is an Install Script?' },
+        { p: 'When you install a DSH plugin, the package manager may run a script automatically before or after installation. This is called a "postinstall" or "preinstall" script. These scripts can execute arbitrary code on your system.' },
+        { h2: 'Why Install Scripts Are Dangerous' },
+        { p: 'A malicious install script can exfiltrate your environment variables (API keys, tokens), install additional malware, modify system files, send your code to external servers, or mine cryptocurrency using your resources.' },
+        { h2: 'How DSH Quality Scanner Detects Risks' },
+        { p: 'Our scanner analyzes: script content through static analysis, network requests to check for outbound connections, file modifications to detect writes to sensitive directories, and environment access to find reads of sensitive variables.' },
+        { h2: 'Common Red Flags' },
+        { table: { head: ['Pattern', 'Risk Level', 'Example'], rows: [['curl | bash', 'Critical', 'Downloading and executing remote code'], ['Accessing process.env', 'High', 'Reading API keys or tokens'], ['Writing to ~/.ssh/', 'Critical', 'Modifying SSH keys'], ['Base64 encoded payloads', 'High', 'Obfuscated malicious code']] } },
+        { h2: 'What to Do When You See a Warning' },
+        { ul: ['Do not ignore it — warnings exist for a reason', 'Read the script — check what the install script actually does', 'Research the author — is the plugin from a trusted source?', 'Consider alternatives — are there safer alternatives?'] },
+        { h2: 'Best Practices' },
+        { ul: ['Always review install scripts before running them', 'Use sandbox environments for untrusted plugins', 'Keep your DSH Quality scanner updated', 'Report suspicious plugins to the community'] },
+      ],
+    },
+    zh: {
+      title: 'DSH 插件扫描中的"危险安装脚本"是什么意思',
+      excerpt: '当 DSH 扫描插件并标记危险安装脚本时，这意味着什么？以下是关于 postinstall 风险的详细说明。',
+      metaDescription: '了解 DSH 插件扫描中的危险安装脚本，扫描仪如何检测它们，以及看到警告时该怎么做。',
+      body: [
+        { h2: '什么是安装脚本？' },
+        { p: '安装 DSH 插件时，包管理器可能会在安装前或安装后自动运行脚本。这称为"postinstall"或"preinstall"脚本。这些脚本可以在您的系统上执行任意代码。' },
+        { h2: '为什么安装脚本很危险' },
+        { p: '恶意的安装脚本可以窃取您的环境变量（API 密钥、令牌），安装额外的恶意软件，修改系统文件，将您的代码发送到外部服务器，或使用您的资源进行加密货币挖矿。' },
+        { h2: 'DSH Quality 扫描仪如何检测风险' },
+        { p: '我们的扫描仪分析：通过静态分析脚本内容、检查出站连接的网络请求、检测写入敏感目录的文件修改，以及查找读取敏感变量的环境变量访问。' },
+        { h2: '常见危险信号' },
+        { table: { head: ['模式', '风险等级', '示例'], rows: [['curl | bash', '严重', '下载并执行远程代码'], ['访问 process.env', '高', '读取 API 密钥或令牌'], ['写入 ~/.ssh/', '严重', '修改 SSH 密钥'], ['Base64 编码的有效载荷', '高', '混淆的恶意代码']] } },
+        { h2: '看到警告时该怎么做' },
+        { ul: ['不要忽略它——警告的存在是有原因的', '阅读脚本——检查安装脚本实际做什么', '研究作者——插件是否来自可信来源？', '考虑替代方案——是否有更安全的替代方案？'] },
+        { h2: '最佳实践' },
+        { ul: ['运行脚本前始终审查安装脚本', '对不可信的插件使用沙箱环境', '保持 DSH Quality 扫描仪更新', '向社区报告可疑插件'] },
+      ],
+    },
+  }
 ];
 
 /** 按日期倒序（新在前） */
