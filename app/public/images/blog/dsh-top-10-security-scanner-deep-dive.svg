@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#7b2cbf"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="600" y="180" text-anchor="middle" fill="#ffffff" font-size="48" font-weight="bold" font-family="system-ui">DSH Plugin</text>
+  <text x="600" y="240" text-anchor="middle" fill="#ffffff" font-size="48" font-weight="bold" font-family="system-ui">Security Scanner</text>
+  <text x="600" y="320" text-anchor="middle" fill="#00d4ff" font-size="32" font-family="system-ui">Top 10 Plugins Analyzed</text>
+  <rect x="350" y="380" width="500" height="8" rx="4" fill="url(#accent)"/>
+  <text x="200" y="450" fill="#888" font-size="18" font-family="system-ui">7 A-grade • 2 B-grade • 1 D-grade</text>
+  <circle cx="150" cy="520" r="40" fill="#22c55e" opacity="0.8"/>
+  <text x="150" y="528" text-anchor="middle" fill="#fff" font-size="24" font-weight="bold">A</text>
+  <circle cx="250" cy="520" r="40" fill="#eab308" opacity="0.8"/>
+  <text x="250" y="528" text-anchor="middle" fill="#fff" font-size="24" font-weight="bold">B</text>
+  <circle cx="350" cy="520" r="40" fill="#ef4444" opacity="0.8"/>
+  <text x="350" y="528" text-anchor="middle" fill="#fff" font-size="24" font-weight="bold">D</text>
+  <text x="700" y="530" fill="#fff" font-size="20" font-family="system-ui">dsh-quality.com</text>
+</svg>

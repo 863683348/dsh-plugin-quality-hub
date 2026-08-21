@@ -289,6 +289,18 @@ const zh = {
     loading: '正在加载插件…',
     error: '插件加载失败',
     empty: '未找到插件',
+    compatibility: {
+      title: '插件兼容性',
+      description: '检查哪些 DSH 插件可以一起工作。选择插件查看兼容性矩阵，避免冲突。',
+      selectedPlugins: '选择要比较的插件',
+      compatibilityMatrix: '兼容性矩阵',
+      plugin: '插件',
+      compatible: '兼容',
+      partial: '部分兼容',
+      incompatible: '不兼容',
+      legend: '✓ = 完全兼容 | ~ = 部分兼容（查看文档）',
+      topPlugins: '按质量评分排名的 Top 插件',
+    },
   },
   security: {
     title: '安全预警',
@@ -737,6 +749,8 @@ const zh = {
       title: '博客',
       subtitle: 'DSH 插件生态笔记：分析、评分深度解读与安全发现。',
       comingSoon: '更多文章正在路上——订阅 DSH Weekly 第一时间获取。',
+      backToList: '返回博客',
+      relatedPosts: '相关文章',
       posts: [
         {
           title: '欢迎来到 DSH Quality',

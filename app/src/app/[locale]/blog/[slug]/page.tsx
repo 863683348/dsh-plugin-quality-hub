@@ -15,6 +15,25 @@ function formatDateFor(iso: string, locale: string): string {
   return formatBlogDate(iso, locale);
 }
 
+/** 从正文提取 FAQ 结构：h2 作为问题，下一个 p 作为答案 */
+function extractFAQ(post: { en: { body: BlogBlock[] }; zh: { body: BlogBlock[] } }, locale: string): { question: string; answer: string }[] {
+  const body = locale === 'en' ? post.en.body : post.zh.body;
+  const faqs: { question: string; answer: string }[] = [];
+  for (let i = 0; i < body.length - 1; i++) {
+    const block = body[i];
+    if (block.h2 && body[i + 1]?.p) {
+      faqs.push({ question: block.h2, answer: body[i + 1].p });
+    }
+  }
+  return faqs;
+}
+
+/** 获取相关文章（排除当前篇，最多 3 篇） */
+function getRelatedPosts(currentSlug: string, limit = 3): { slug: string; title: string; date: string }[] {
+  const all = getBlogPosts().filter(p => p.slug !== currentSlug);
+  return all.slice(0, limit).map(p => ({ slug: p.slug, title: p.en.title, date: p.date }));
+}
+
 export function generateStaticParams() {
   const posts = getBlogPosts();
   return posts.flatMap((p) => [
@@ -31,7 +50,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const path = locale === 'en' ? `/blog/${slug}` : `/${locale}/blog/${slug}`;
   const l = locale === 'en' ? post.en : post.zh;
   return {
-    title: `${l.title} | DSH Quality`,
+    title: l.title,
     description: l.metaDescription,
     keywords: [...post.keywords, ...post.longTail],
     alternates: {
@@ -49,6 +68,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       publishedTime: post.date,
       locale: locale === 'en' ? 'en_US' : 'zh_CN',
       siteName: 'DSH Quality',
+      images: post.imageUrl ? [{ url: post.imageUrl, width: 1200, height: 630 }] : undefined,
     },
   };
 }
@@ -122,9 +142,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     articleBody: postPlainText(post, locale as 'en' | 'zh'),
   };
 
+  // FAQ JSON-LD（如果提取到 FAQ 条目）
+  const faqs = extractFAQ(post, locale);
+  const faqJsonLd = faqs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  } : null;
+
   return (
     <div className="container-page py-[var(--section-y-sm)] md:py-[var(--section-y)]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      {faqJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <div className="mx-auto max-w-3xl">
         {/* 面包屑 */}
         <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 text-sm text-[var(--color-muted)]">
@@ -175,6 +210,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {t('backToList')}
           </Link>
         </div>
+
+        {/* 相关文章 */}
+        {(() => {
+          const related = getRelatedPosts(slug);
+          if (related.length === 0) return null;
+          return (
+            <div className="mt-12 border-t border-[var(--color-border)] pt-8">
+              <h2 className="mb-4 text-lg font-semibold text-[var(--color-text)]">{t('relatedPosts')}</h2>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {related.map((rp) => (
+                  <Link
+                    key={rp.slug}
+                    href={`/blog/${rp.slug}`}
+                    className="group rounded-[var(--card-radius)] border border-[var(--card-border)] bg-[var(--color-surface)] p-4 transition-colors duration-fast ease-standard hover:border-[var(--color-primary)]"
+                  >
+                    <p className="text-sm font-medium text-[var(--color-text)] group-hover:text-[var(--color-primary)]">
+                      {rp.title}
+                    </p>
+                    <p className="mt-1 text-xs text-[var(--color-muted)]">{rp.date}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
       </div>
     </div>
   );

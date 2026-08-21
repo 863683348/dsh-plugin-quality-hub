@@ -289,6 +289,18 @@ const en = {
     loading: 'Loading plugins...',
     error: 'Failed to load plugins',
     empty: 'No plugins found',
+    compatibility: {
+      title: 'Plugin Compatibility',
+      description: 'Check which DSH plugins work together. Select plugins to see compatibility matrix and avoid conflicts.',
+      selectedPlugins: 'Select Plugins to Compare',
+      compatibilityMatrix: 'Compatibility Matrix',
+      plugin: 'Plugin',
+      compatible: 'Compatible',
+      partial: 'Partial',
+      incompatible: 'Incompatible',
+      legend: '✓ = Fully compatible | ~ = Partially compatible (check docs)',
+      topPlugins: 'Top Plugins by Quality Score',
+    },
   },
   security: {
     title: 'Security Watch',
@@ -743,6 +755,8 @@ const en = {
       title: 'Blog',
       subtitle: 'Notes on the DSH plugin ecosystem: analysis, scoring deep dives, and security findings.',
       comingSoon: 'More articles are on the way — subscribe to DSH Weekly to stay in the loop.',
+      backToList: 'Back to blog',
+      relatedPosts: 'Related articles',
       posts: [
         {
           title: 'Welcome to DSH Quality',

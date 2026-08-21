@@ -1,0 +1,24 @@
+=== START 2026-08-21T14:35:56.355Z ===
+$ status --short
+STDERR: undefined
+FATAL: spawnSync C:\Users\l'x\.workbuddy\binaries\PortableGit\versions\1.2.0\bin\git.exe ENOENT
+
+=== START 2026-08-21T14:36:32.013Z ===
+$ git status --short
+ M app/src/app/[locale]/blog/[slug]/page.tsx
+ M app/src/app/sitemap.ts
+ M app/src/data/blog/posts.ts
+ M app/src/i18n/locales/en.ts
+ M app/src/i18n/locales/zh.ts
+?? _commit.log
+?? _commit.mjs
+?? _findgit.mjs
+?? _getcommand.txt
+?? _wheregit.txt
+?? app/=1000
+?? app/public/images/
+?? app/scripts/lifecycle-tracker.mjs
+?? app/scripts/monitor-new-plugins.mjs
+?? app/src/app/[locale]/plugins/compatibility/
+?? app/src/components/compatibility-matrix.tsx
+
