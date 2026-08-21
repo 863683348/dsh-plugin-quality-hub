@@ -21,8 +21,9 @@ function extractFAQ(post: { en: { body: BlogBlock[] }; zh: { body: BlogBlock[] }
   const faqs: { question: string; answer: string }[] = [];
   for (let i = 0; i < body.length - 1; i++) {
     const block = body[i];
-    if (block.h2 && body[i + 1]?.p) {
-      faqs.push({ question: block.h2, answer: body[i + 1].p });
+    const answer = body[i + 1]?.p;
+    if (block.h2 && answer) {
+      faqs.push({ question: block.h2, answer });
     }
   }
   return faqs;

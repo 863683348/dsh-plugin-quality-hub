@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import type { Plugin } from "@/lib/api";
+import type { Plugin } from "@/types/api";
 
 interface CompatibilityMatrixProps {
   plugins: Plugin[];
@@ -12,9 +12,9 @@ export function CompatibilityMatrix({ plugins }: CompatibilityMatrixProps) {
   const t = useTranslations("compatibility");
   const [selectedPlugins, setSelectedPlugins] = useState<string[]>([]);
 
-  const togglePlugin = (slug: string) => {
+  const togglePlugin = (name: string) => {
     setSelectedPlugins((prev) =>
-      prev.includes(slug) ? prev.filter((p) => p !== slug) : [...prev, slug]
+      prev.includes(name) ? prev.filter((p) => p !== name) : [...prev, name]
     );
   };
 
@@ -34,10 +34,10 @@ export function CompatibilityMatrix({ plugins }: CompatibilityMatrixProps) {
         <div className="flex flex-wrap gap-2">
           {topPlugins.map((plugin) => (
             <button
-              key={plugin.slug}
-              onClick={() => togglePlugin(plugin.slug)}
+              key={plugin.name}
+              onClick={() => togglePlugin(plugin.name)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-fast ease-standard ${
-                selectedPlugins.includes(plugin.slug)
+                selectedPlugins.includes(plugin.name)
                   ? "bg-[var(--color-primary)] text-white"
                   : "bg-[var(--color-surface)] text-[var(--color-text)] hover:bg-[var(--color-surface-hover)]"
               }`}
@@ -56,32 +56,32 @@ export function CompatibilityMatrix({ plugins }: CompatibilityMatrixProps) {
               <thead>
                 <tr className="border-b border-[var(--color-border)]">
                   <th className="text-left py-3 px-4">{t("plugin")}</th>
-                  {selectedPlugins.map((slug) => {
-                    const plugin = plugins.find((p) => p.slug === slug);
+                  {selectedPlugins.map((name) => {
+                    const plugin = plugins.find((p) => p.name === name);
                     return (
-                      <th key={slug} className="text-center py-3 px-4">
-                        {plugin?.name || slug}
+                      <th key={name} className="text-center py-3 px-4">
+                        {plugin?.name || name}
                       </th>
                     );
                   })}
                 </tr>
               </thead>
               <tbody>
-                {selectedPlugins.map((slug1) => {
-                  const plugin1 = plugins.find((p) => p.slug === slug1);
+                {selectedPlugins.map((name1) => {
+                  const plugin1 = plugins.find((p) => p.name === name1);
                   return (
-                    <tr key={slug1} className="border-b border-[var(--color-border)]">
+                    <tr key={name1} className="border-b border-[var(--color-border)]">
                       <td className="py-3 px-4 font-medium">{plugin1?.name}</td>
-                      {selectedPlugins.map((slug2) => {
-                        const plugin2 = plugins.find((p) => p.slug === slug2);
+                      {selectedPlugins.map((name2) => {
+                        const plugin2 = plugins.find((p) => p.name === name2);
                         const isCompatible =
-                          slug1 === slug2 ||
+                          name1 === name2 ||
                           (plugin1?.grade === "A" && plugin2?.grade === "A") ||
                           (plugin1?.grade === "A" && plugin2?.grade === "B") ||
                           (plugin1?.grade === "B" && plugin2?.grade === "A");
                         return (
-                          <td key={slug2} className="text-center py-3 px-4">
-                            {slug1 === slug2 ? (
+                          <td key={name2} className="text-center py-3 px-4">
+                            {name1 === name2 ? (
                               <span className="text-[var(--color-text-muted)]">—</span>
                             ) : isCompatible ? (
                               <span className="text-[var(--color-success)]">✓</span>
@@ -108,7 +108,7 @@ export function CompatibilityMatrix({ plugins }: CompatibilityMatrixProps) {
         <div className="grid gap-3">
           {topPlugins.map((plugin) => (
             <div
-              key={plugin.slug}
+              key={plugin.name}
               className="flex items-center justify-between p-4 rounded-lg bg-[var(--color-surface)] hover:bg-[var(--color-surface-hover)] transition-colors duration-fast"
             >
               <div>
