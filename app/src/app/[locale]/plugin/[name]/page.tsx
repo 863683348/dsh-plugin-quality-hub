@@ -11,6 +11,7 @@ import { GradeBadge } from '@/components/grade-badge';
 import { ScoreBreakdown } from '@/components/score-breakdown';
 import { SecurityFlags } from '@/components/security-flags';
 import { MetaInfo } from '@/components/meta-info';
+import { BadgeEmbed } from '@/components/badge-embed';
 import { formatCompact } from '@/lib/format';
 import type { PluginDetail } from '@/types/api';
 
@@ -188,6 +189,19 @@ export default async function PluginPage({ params }: PluginPageProps) {
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
             </a>
           </Button>
+
+          {/* 质量徽章嵌入 */}
+          <Card>
+            <CardHeader>
+              <CardTitle>{t('badge.title')}</CardTitle>
+              <p className="text-sm text-[var(--color-muted)]">
+                {t('badge.subtitle')}
+              </p>
+            </CardHeader>
+            <CardContent>
+              <BadgeEmbed name={plugin.name} />
+            </CardContent>
+          </Card>
 
           {/* npm 信息卡 */}
           <Card>
