@@ -53,11 +53,12 @@ button{padding:9px 18px;border-radius:8px;border:0;background:var(--accent);colo
 <div class="wrap">
 <h1>Subscribe to DSH Weekly</h1>
 <p class="sub">One email a week: what's new in the DeepSeek Harness plugin ecosystem, which plugins are worth installing, and what to be careful about.</p>
-<div class="note">Setup: this form wires to your newsletter provider (Buttondown/Substack/Mailchimp). Until then, email us at <b>dshweekly@example.com</b> with "subscribe" in the subject.</div>
-<form action="#" method="post" style="margin-top:12px">
+<div class="note">📮 <b>How to subscribe:</b> enter your email below and hit Subscribe — it opens a pre-filled email to the editor (<b>dshweekly@example.com</b>) that confirms your subscription. Once a newsletter provider (Buttondown / Substack / Mailchimp) is wired up, this becomes a one-click signup. You can also grab the <a href="rss.xml">RSS feed</a> for new plugin alerts.</div>
+<form action="mailto:dshweekly@example.com?subject=Subscribe%20to%20DSH%20Weekly&body=Please%20subscribe%20me%20to%20DSH%20Weekly." method="post" style="margin-top:12px">
 <input type="email" name="email" placeholder="you@example.com" required>
 <button type="submit">Subscribe</button>
 </form>
+<p class="muted" style="margin-top:8px">No spam. Unsubscribe anytime. One issue per week.</p>
 </div>
 <footer><div class="wrap">DSH Plugin Quality Hub — independent ratings of the <a href="https://github.com/topics/dsh-plugin" style="color:var(--accent)">dsh-plugin</a> ecosystem. Data refreshes weekly. Not affiliated with DeepSeek. <span class="muted">Made with ♥ for the DSH community.</span></div></footer>
 </body>

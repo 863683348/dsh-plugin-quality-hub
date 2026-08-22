@@ -1,0 +1,8057 @@
+[
+ {
+  "repo": "ysr666/dsh-vision-router",
+  "url": "https://github.com/ysr666/dsh-vision-router",
+  "name": "dsh-vision-router",
+  "description": "Eyes for text-only DeepSeek Harness agents: built-in free vision chain (no key) + pixel-level vision tools (Q&A, grounding, crop, pixel diff, colors, OCR, SVG trace, cutout, screenshots). One-command install, no Python, image turns work like ordinary tool-calling turns.",
+  "stars": 646,
+  "forks": 30,
+  "openIssues": 9,
+  "pushedAt": "2026-08-18T02:19:00Z",
+  "createdAt": "2026-08-13T18:57:47Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin",
+   "multimodal",
+   "vision"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "dsh-vision-router",
+   "version": "1.5.3",
+   "publishedAt": "2026-08-17T15:56:16.601Z",
+   "weeklyDownloads": 2682,
+   "dshBundle": true
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:16.481Z",
+  "score": {
+   "total": 90,
+   "grade": "A",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "646 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "npm package: dsh-vision-router@1.5.3",
+      "published within 90 days",
+      "npm package declares dsh.bundle (installable via dsh plugin add)",
+      "weekly downloads 2682"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": true
+ },
+ {
+  "repo": "bowenliang123/dsh-context",
+  "url": "https://github.com/bowenliang123/dsh-context",
+  "name": "dsh-context",
+  "description": "Best DeepSeek Harness plugin for context insight and management, with context dashboard / browser and context command, for context statistics, composition, breakdown, evolution details, understanding how the context is made of, and how it evolves. 一站式 DeepSeek Harness 上下文可视化插件，Context 面板及浏览器与 Context 命令，透视上下文组成、演进、压缩、剪枝等事件与动作。",
+  "stars": 229,
+  "forks": 4,
+  "openIssues": 1,
+  "pushedAt": "2026-08-18T00:47:02Z",
+  "createdAt": "2026-08-14T08:23:28Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "cordis-plugin",
+   "deepseek-harness",
+   "dsh-external",
+   "dsh-plugin",
+   "dsh-plugins"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "dsh-context",
+   "version": "0.12.0",
+   "publishedAt": "2026-08-17T20:28:22.069Z",
+   "weeklyDownloads": 1022,
+   "dshBundle": true
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:15.753Z",
+  "score": {
+   "total": 88,
+   "grade": "A",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "229 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "npm package: dsh-context@0.12.0",
+      "published within 90 days",
+      "npm package declares dsh.bundle (installable via dsh plugin add)",
+      "weekly downloads 1022"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": true
+ },
+ {
+  "repo": "Lum1104/dsh-browser",
+  "url": "https://github.com/Lum1104/dsh-browser",
+  "name": "dsh-browser",
+  "description": "dsh plugin: Chrome sidebar extension that lets DeepSeek Harness operate your browser directly, no vision capabilities required. 一款 Chrome 侧边栏扩展程序，可让 DeepSeek Harness 直接操控您的浏览器，无需视觉能力。",
+  "stars": 256,
+  "forks": 15,
+  "openIssues": 3,
+  "pushedAt": "2026-08-17T16:08:03Z",
+  "createdAt": "2026-08-06T09:05:10Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "browser-automation",
+   "chrome-extension",
+   "coding-agent",
+   "cordis",
+   "deepseek",
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "dsh-browser",
+   "version": "0.1.0",
+   "publishedAt": "2026-08-13T16:21:58.668Z",
+   "weeklyDownloads": 497,
+   "dshBundle": true
+  },
+  "curated": true,
+  "addedAt": "2026-08-18T01:31:46.917Z",
+  "score": {
+   "total": 86,
+   "grade": "A",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "256 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "npm package: dsh-browser@0.1.0",
+      "published within 90 days",
+      "npm package declares dsh.bundle (installable via dsh plugin add)",
+      "weekly downloads 497"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": true
+ },
+ {
+  "repo": "Nagi-ovo/dsh-ads",
+  "url": "https://github.com/Nagi-ovo/dsh-ads",
+  "name": "dsh-ads",
+  "description": "把 DSH 变成 2005 年门户网站｜Parody ads, fake games, and popups for the DSH Web UI",
+  "stars": 482,
+  "forks": 4,
+  "openIssues": 12,
+  "pushedAt": "2026-08-18T01:28:47Z",
+  "createdAt": "2026-08-09T19:06:36Z",
+  "archived": false,
+  "license": "BSD-3-Clause",
+  "topics": [
+   "deepseek-harness",
+   "dsh-plugin",
+   "trolling",
+   "web-ui"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "dsh-ads",
+   "version": "0.0.1",
+   "publishedAt": "2026-08-14T09:45:13.816Z",
+   "weeklyDownloads": 31,
+   "dshBundle": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:15.480Z",
+  "score": {
+   "total": 82,
+   "grade": "A",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "482 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: BSD-3-Clause"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "npm package: dsh-ads@0.0.1",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 31"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Nagi-ovo/dsh-visualize",
+  "url": "https://github.com/Nagi-ovo/dsh-visualize",
+  "name": "dsh-visualize",
+  "description": "在 DSH 对话中生成交互式可视化｜Render model-generated interactive cards inside DSH conversations",
+  "stars": 170,
+  "forks": 3,
+  "openIssues": 3,
+  "pushedAt": "2026-08-17T16:27:54Z",
+  "createdAt": "2026-08-13T13:11:49Z",
+  "archived": false,
+  "license": "BSD-3-Clause",
+  "topics": [
+   "data-visualization",
+   "deepseek-harness",
+   "dsh-plugin",
+   "interactive-visualization"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "dsh-visualize",
+   "version": "0.2.1",
+   "publishedAt": "2026-08-17T09:13:46.203Z",
+   "weeklyDownloads": null,
+   "dshBundle": true
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:15.481Z",
+  "score": {
+   "total": 80,
+   "grade": "A",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "170 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: BSD-3-Clause"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 24,
+     "notes": [
+      "npm package: dsh-visualize@0.2.1",
+      "published within 90 days",
+      "npm package declares dsh.bundle (installable via dsh plugin add)",
+      "no weekly download data"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.463Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": true
+ },
+ {
+  "repo": "crafter-station/petdex",
+  "url": "https://github.com/crafter-station/petdex",
+  "name": "petdex",
+  "description": "A public gallery of animated pets for Codex, Claude Code, DeepSeek Harness, Hermes, OpenCode, Gemini CLI, and more.",
+  "stars": 3878,
+  "forks": 185,
+  "openIssues": 25,
+  "pushedAt": "2026-08-17T21:02:53Z",
+  "createdAt": "2026-05-02T07:51:35Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "claude-code",
+   "clerk",
+   "cli",
+   "codex",
+   "developer-tools",
+   "drizzle-orm",
+   "dsh-plugin",
+   "mascot",
+   "neon",
+   "nextjs",
+   "pixel-art",
+   "postgres",
+   "react",
+   "sprites",
+   "tailwindcss",
+   "vercel"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "petdex",
+   "version": "1.2.2",
+   "publishedAt": "2026-08-13T21:58:59.872Z",
+   "weeklyDownloads": 2585,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 75,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "3878 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "npm package: petdex@1.2.2",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 2585"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "imsai-sh/zhuzhiliao",
+  "url": "https://github.com/imsai-sh/zhuzhiliao",
+  "name": "zhuzhiliao",
+  "description": "竹知了 —— 一转就哇哇叫的传统玩具，Web 模拟版。零依赖单文件，真实录音采样，移动端优先。",
+  "stars": 2830,
+  "forks": 342,
+  "openIssues": 21,
+  "pushedAt": "2026-08-14T14:31:41Z",
+  "createdAt": "2026-08-01T17:20:54Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "zhuzhiliao",
+   "version": "0.5.0",
+   "publishedAt": "2026-08-09T18:35:25.522Z",
+   "weeklyDownloads": 1555,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 75,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "2830 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "npm package: zhuzhiliao@0.5.0",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 1555"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "vostride/agent-qa",
+  "url": "https://github.com/vostride/agent-qa",
+  "name": "agent-qa",
+  "description": "Open-source self-improving QA agent for software teams. A test harness with memory. Write tests in natural language for web and mobile. agent-qa learns from every run, adapts to UI changes, and catches regressions before you ship.",
+  "stars": 899,
+  "forks": 13,
+  "openIssues": 0,
+  "pushedAt": "2026-08-03T18:44:59Z",
+  "createdAt": "2026-05-07T20:17:57Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "ai-agents",
+   "ai-testing",
+   "anthropic",
+   "autonomous-agents",
+   "browser-automation",
+   "chatgpt",
+   "claude-code",
+   "clawdbot",
+   "codex",
+   "developer-tools",
+   "dsh-plugin",
+   "end-to-end-testing",
+   "frontend",
+   "mcp",
+   "mcp-server",
+   "mcp-tools",
+   "model-context-protocol",
+   "openai",
+   "playwright",
+   "qa-automation"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "agent-qa",
+   "version": "0.1.21",
+   "publishedAt": "2026-06-03T19:43:35.587Z",
+   "weeklyDownloads": 1097,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 75,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "899 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "npm package: agent-qa@0.1.21",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 1097"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "anywhere-labs/deepseek-harness-desktop",
+  "url": "https://github.com/anywhere-labs/deepseek-harness-desktop",
+  "name": "deepseek-harness-desktop",
+  "description": "为 DeepSeek Harness (DSH) 插件生态打造的现代化桌面端解决方案。万物皆「插件」，桌面本身也是「插件」。",
+  "stars": 11921,
+  "forks": 545,
+  "openIssues": 180,
+  "pushedAt": "2026-08-18T02:04:21Z",
+  "createdAt": "2026-08-13T16:30:50Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "cordis",
+   "cordis-plugin",
+   "deepseek",
+   "deepseek-harness",
+   "desktop",
+   "dsh",
+   "dsh-plugin",
+   "dsh-plugin-desktop"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "deepseek-harness-desktop",
+   "version": "0.4.1",
+   "publishedAt": "2026-08-13T17:01:54.440Z",
+   "weeklyDownloads": 183,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 73,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "11921 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "npm package: deepseek-harness-desktop@0.4.1",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 183"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "awesome-dsh-plugin/awesome-dsh-plugin",
+  "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+  "name": "awesome-dsh-plugin",
+  "description": "A curated list of plugins for DeepSeek Harness (dsh) · DeepSeek Harness 插件精选列表",
+  "stars": 7694,
+  "forks": 1104,
+  "openIssues": 193,
+  "pushedAt": "2026-08-18T02:22:00Z",
+  "createdAt": "2026-08-13T13:55:31Z",
+  "archived": false,
+  "license": "CC0-1.0",
+  "topics": [
+   "awesome",
+   "awesome-list",
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "awesome-dsh-plugin",
+   "version": "0.1.0",
+   "publishedAt": "2026-08-13T15:33:04.176Z",
+   "weeklyDownloads": 154,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 73,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "7694 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: CC0-1.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "npm package: awesome-dsh-plugin@0.1.0",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 154"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "AdamPlatin123/awesome-dsh-plugins",
+  "url": "https://github.com/AdamPlatin123/awesome-dsh-plugins",
+  "name": "awesome-dsh-plugins",
+  "description": "DSH 插件雷达与精选榜：多路自动发现 7600+ 候选，容器真实安装路径运行级实测（四档判定，883/1415 可用），精选 Top 50 · 11 类人工策展，全量索引 PLUGINS-ALL.md，自动更新。",
+  "stars": 1152,
+  "forks": 107,
+  "openIssues": 11,
+  "pushedAt": "2026-08-18T01:53:49Z",
+  "createdAt": "2026-08-04T21:46:54Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "awesome-dsh-plugins",
+   "version": "0.0.1",
+   "publishedAt": "2026-08-13T15:38:49.786Z",
+   "weeklyDownloads": 14,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 71,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1152 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "npm package: awesome-dsh-plugins@0.0.1",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 14"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "alvinunreal/openpets",
+  "url": "https://github.com/alvinunreal/openpets",
+  "name": "openpets",
+  "description": "Local first, desktop companion platform with animated pets, plugin SDK and coding-agent integrations.",
+  "stars": 1071,
+  "forks": 92,
+  "openIssues": 15,
+  "pushedAt": "2026-08-17T10:37:26Z",
+  "createdAt": "2026-05-04T19:14:46Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "ai-agents",
+   "claude-code",
+   "coding-agents",
+   "desktop-companion",
+   "desktop-pet",
+   "dsh-plugin",
+   "electron",
+   "mcp",
+   "opencode",
+   "openpets",
+   "plugin-sdk",
+   "plugins",
+   "typescript"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "openpets",
+   "version": "1.0.13",
+   "publishedAt": "2026-06-30T16:01:59.120Z",
+   "weeklyDownloads": 22,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 71,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1071 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "npm package: openpets@1.0.13",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 22"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "hairyf/deepseek-harness-desktop",
+  "url": "https://github.com/hairyf/deepseek-harness-desktop",
+  "name": "deepseek-harness-desktop",
+  "description": "DeepSeek Harness Tauri 桌面版 | Only 5mb installer, zero environment setup. Windows / macOS / Linux.",
+  "stars": 432,
+  "forks": 21,
+  "openIssues": 4,
+  "pushedAt": "2026-08-18T02:19:58Z",
+  "createdAt": "2026-08-14T02:36:29Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "deepseek",
+   "deepseek-harness",
+   "desktop",
+   "dsh",
+   "dsh-plugin",
+   "tauri"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "deepseek-harness-desktop",
+   "version": "0.4.1",
+   "publishedAt": "2026-08-13T17:01:54.440Z",
+   "weeklyDownloads": 183,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 69,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "432 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "npm package: deepseek-harness-desktop@0.4.1",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 183"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "openma-ai/open-managed-agents",
+  "url": "https://github.com/openma-ai/open-managed-agents",
+  "name": "open-managed-agents",
+  "description": "Open-source Claude Managed Agents API implementation and self-hosted Claude Tag-style agent runtime. Drop-in compatible; runs on Cloudflare Workers/Durable Objects or Node.js. Apache 2.0.",
+  "stars": 237,
+  "forks": 32,
+  "openIssues": 18,
+  "pushedAt": "2026-08-16T07:51:46Z",
+  "createdAt": "2026-04-10T03:03:36Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "agent-framework",
+   "agent-infrastructure",
+   "agent-platform",
+   "ai-agents",
+   "anthropic-api",
+   "anthropic-managed-agents",
+   "byok",
+   "claude-api",
+   "claude-code",
+   "claude-managed-agents",
+   "claude-tag",
+   "claude-tag-alternative",
+   "cloudflare",
+   "dsh-plugin",
+   "dsh-plugins",
+   "durable-objects",
+   "managed-agents",
+   "open-managed-agents",
+   "open-source-agents",
+   "self-hosted-agents"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "open-managed-agents",
+   "version": "0.1.2",
+   "publishedAt": "2026-07-22T23:48:17.920Z",
+   "weeklyDownloads": 14,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 69,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "237 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "npm package: open-managed-agents@0.1.2",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 14"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "bruc3van/awesome-dsh-plugin",
+  "url": "https://github.com/bruc3van/awesome-dsh-plugin",
+  "name": "awesome-dsh-plugin",
+  "description": "用 30 秒为你的 DeepSeek Harness找到合适的插件。 仓库由脚本每天自动抓取，再经人工逐个核实——真插件进目录，蹭热度的进黑名单，每条剔除理由公开可查。并告诉你每个插件适合谁、从哪里开始。",
+  "stars": 212,
+  "forks": 41,
+  "openIssues": 0,
+  "pushedAt": "2026-08-17T16:44:46Z",
+  "createdAt": "2026-08-13T13:24:25Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "awesome-list",
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "awesome-dsh-plugin",
+   "version": "0.1.0",
+   "publishedAt": "2026-08-13T15:33:04.176Z",
+   "weeklyDownloads": 154,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 69,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "212 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "npm package: awesome-dsh-plugin@0.1.0",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 154"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "hellowind777/helloagents",
+  "url": "https://github.com/hellowind777/helloagents",
+  "name": "helloagents",
+  "description": "一个自主的高级智能伙伴，不仅分析问题，更持续工作直到完成实现和验证。",
+  "stars": 688,
+  "forks": 96,
+  "openIssues": 18,
+  "pushedAt": "2026-08-14T03:01:12Z",
+  "createdAt": "2025-09-26T14:32:01Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "dsh",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "helloagents",
+   "version": "4.0.3",
+   "publishedAt": "2026-07-28T01:50:35.209Z",
+   "weeklyDownloads": 337,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 68,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "688 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 12,
+     "notes": [
+      "README not probed yet",
+      "short description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "npm package: helloagents@4.0.3",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 337"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "adoresever/graph-memory",
+  "url": "https://github.com/adoresever/graph-memory",
+  "name": "graph-memory",
+  "description": "Deepseek Harness、Openclaw知识图谱记忆插件。2026年4月受邀发布在清华大学讨论会。Knowledge Graph + Memory；Knowledge Graph Context Engine for OpenClaw — extracts structured triples from conversations, compresses context 75%, enables cross-session experience reuse",
+  "stars": 540,
+  "forks": 79,
+  "openIssues": 7,
+  "pushedAt": "2026-08-14T04:10:29Z",
+  "createdAt": "2026-03-10T22:50:21Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "claude-code",
+   "codex",
+   "deepseek",
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin",
+   "dsh-plugins",
+   "knowledge-graph",
+   "memory",
+   "openclaw",
+   "openclaw-plugin",
+   "opencode"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "graph-memory",
+   "version": "1.5.8",
+   "publishedAt": "2026-04-07T08:26:00.589Z",
+   "weeklyDownloads": 41,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 67,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "540 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 22,
+     "notes": [
+      "npm package: graph-memory@1.5.8",
+      "published within a year",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 41"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Anil-matcha/awesome-dsh-plugin",
+  "url": "https://github.com/Anil-matcha/awesome-dsh-plugin",
+  "name": "awesome-dsh-plugin",
+  "description": "A curated list of plugins for DeepSeek Harness (dsh) - DeepSeek Harness plugin ecosystem",
+  "stars": 932,
+  "forks": 196,
+  "openIssues": 1,
+  "pushedAt": "2026-08-17T19:34:57Z",
+  "createdAt": "2023-05-06T17:27:54Z",
+  "archived": false,
+  "license": null,
+  "topics": [
+   "agent-harness",
+   "ai-agent",
+   "ai-agents",
+   "autonomous-agent",
+   "awesome",
+   "awesome-list",
+   "cli",
+   "coding-agent",
+   "cordis",
+   "deepseek",
+   "deepseek-harness",
+   "developer-tools",
+   "dsh",
+   "dsh-plugin",
+   "llm",
+   "llm-agent",
+   "open-source",
+   "plugin-ecosystem",
+   "plugins",
+   "web-ui"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "awesome-dsh-plugin",
+   "version": "0.1.0",
+   "publishedAt": "2026-08-13T15:33:04.176Z",
+   "weeklyDownloads": 154,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 66,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "932 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 10,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "no license detected"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "npm package: awesome-dsh-plugin@0.1.0",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 154"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "xyTom/coding-tools-mcp",
+  "url": "https://github.com/xyTom/coding-tools-mcp",
+  "name": "coding-tools-mcp",
+  "description": "Give any AI agent the ability to code",
+  "stars": 811,
+  "forks": 142,
+  "openIssues": 34,
+  "pushedAt": "2026-08-17T21:22:33Z",
+  "createdAt": "2026-05-21T05:59:42Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "dsh-plugin",
+   "mcp",
+   "mcp-server"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "coding-tools-mcp",
+   "version": "0.1.0",
+   "publishedAt": "2026-07-26T10:16:17.273Z",
+   "weeklyDownloads": 76,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 66,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "811 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 12,
+     "notes": [
+      "README not probed yet",
+      "short description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "npm package: coding-tools-mcp@0.1.0",
+      "published within 90 days",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 76"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Nagi-ovo/voyager",
+  "url": "https://github.com/Nagi-ovo/voyager",
+  "name": "voyager",
+  "description": "Enhancement suite for Gemini, AI Studio, Claude & ChatGPT — plus a prompt manager for any web UI, DeepSeek Harness included. / 面向 Gemini、AI Studio、Claude 与 ChatGPT 的增强套件；提示词管理器可用于任意 Web UI，含 DeepSeek Harness。",
+  "stars": 19598,
+  "forks": 650,
+  "openIssues": 18,
+  "pushedAt": "2026-08-16T00:11:26Z",
+  "createdAt": "2025-10-04T23:42:35Z",
+  "archived": false,
+  "license": "GPL-3.0",
+  "topics": [
+   "ai-studio",
+   "browser-extension",
+   "bun",
+   "chat-management",
+   "chatgpt",
+   "chrome-extension",
+   "claude-ai",
+   "dsh",
+   "dsh-plugin",
+   "edge-addon",
+   "firefox-addons",
+   "gemini",
+   "safari-extension"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "voyager",
+   "version": "0.4.13",
+   "publishedAt": "2015-02-18T23:53:00.539Z",
+   "weeklyDownloads": 709,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 65,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "19598 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: GPL-3.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 18,
+     "notes": [
+      "npm package: voyager@0.4.13",
+      "last publish over a year ago",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 709"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "liustack/modlens",
+  "url": "https://github.com/liustack/modlens",
+  "name": "modlens",
+  "description": "The first vision plugin for DeepSeek Harness, and the vision bridge for every text-only coding agent. Paste an image, get structured JSON evidence (OCR, layout, semantics). | 全网最强 DeepSeek Harness 外挂视觉插件，为 DeepSeek、GLM 等纯文本模型外挂视觉能力，粘贴图片即得结构化 JSON 证据（OCR、版面、语义）。",
+  "stars": 2820,
+  "forks": 78,
+  "openIssues": 8,
+  "pushedAt": "2026-08-17T15:39:40Z",
+  "createdAt": "2026-02-22T07:12:00Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent-skills",
+   "claude-code",
+   "claude-skills",
+   "codex",
+   "cordis",
+   "deepseek",
+   "dsh",
+   "dsh-plugin",
+   "glm",
+   "harness",
+   "harness-engineering",
+   "hermes-agent",
+   "image-to-text",
+   "multimodal",
+   "ocr",
+   "openclaw",
+   "pi-agent",
+   "text-only-llm",
+   "vision",
+   "vision-transformer"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:16.054Z",
+  "score": {
+   "total": 65,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "2820 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "ccch1mneyyy/dsh-TUI",
+  "url": "https://github.com/ccch1mneyyy/dsh-TUI",
+  "name": "dsh-TUI",
+  "description": "DSH 官方公众号收录的 TUI 补位插件：Claude Code 风，鲸鱼顶栏/实时状态/流式思考/双击 Esc 回滚/上下文进度+TPS。npm 一键装。  DSH official WeChat featured TUI plugin — Claude Code style: whale bar, live status, streaming thoughts, double-Esc rollback, context bar + TPS. npm one-click.",
+  "stars": 1827,
+  "forks": 80,
+  "openIssues": 58,
+  "pushedAt": "2026-08-18T01:59:25Z",
+  "createdAt": "2026-08-13T12:49:31Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "claude-code",
+   "coding-agent",
+   "deepseek",
+   "deepseek-harness",
+   "dsh-plugin",
+   "ink",
+   "react",
+   "terminal",
+   "tui"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:15.772Z",
+  "score": {
+   "total": 65,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1827 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "mnemon-dev/mnemon",
+  "url": "https://github.com/mnemon-dev/mnemon",
+  "name": "mnemon",
+  "description": "LLM-supervised persistent memory for AI agents — graph-based recall, cross-session knowledge, single binary. Works with DeepSeek Harness, Claude Code, OpenClaw, and any agent runtime.",
+  "stars": 472,
+  "forks": 62,
+  "openIssues": 13,
+  "pushedAt": "2026-08-16T05:42:45Z",
+  "createdAt": "2026-02-20T02:26:17Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "agent-framework",
+   "agent-memory",
+   "ai-agent",
+   "ai-tools",
+   "claude",
+   "claude-code",
+   "cli",
+   "context-window",
+   "dsh",
+   "dsh-plugin",
+   "knowledge-graph",
+   "llm-agent",
+   "llm-memory",
+   "llm-supervised",
+   "memory",
+   "openclaw",
+   "persistent-memory"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "mnemon",
+   "version": "1.3.0",
+   "publishedAt": "2026-04-29T09:35:54.551Z",
+   "weeklyDownloads": 12,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 65,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "472 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 22,
+     "notes": [
+      "npm package: mnemon@1.3.0",
+      "published within a year",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 12"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "amruthpillai/reactive-resume",
+  "url": "https://github.com/amruthpillai/reactive-resume",
+  "name": "reactive-resume",
+  "description": "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever. Try it out today!",
+  "stars": 40852,
+  "forks": 4611,
+  "openIssues": 103,
+  "pushedAt": "2026-08-18T02:04:24Z",
+  "createdAt": "2020-03-25T14:08:22Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "ai",
+   "better-auth",
+   "dsh-plugin",
+   "hacktoberfest",
+   "javascript",
+   "react",
+   "resume-builder",
+   "self-hosted",
+   "tailwindcss",
+   "tanstack-start",
+   "typescript"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "reactive-resume",
+   "version": "2.6.3",
+   "publishedAt": "2024-07-08T10:41:02.311Z",
+   "weeklyDownloads": 3,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 63,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "40852 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 16,
+     "notes": [
+      "npm package: reactive-resume@2.6.3",
+      "last publish over a year ago",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 3"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "tt-a1i/archify",
+  "url": "https://github.com/tt-a1i/archify",
+  "name": "archify",
+  "description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
+  "stars": 13904,
+  "forks": 1015,
+  "openIssues": 19,
+  "pushedAt": "2026-08-17T15:47:26Z",
+  "createdAt": "2026-04-15T05:27:37Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent-skills",
+   "architecture-as-code",
+   "architecture-diagram",
+   "claude-skill",
+   "code-visualization",
+   "codex",
+   "coding-agents",
+   "data-flow-diagram",
+   "deepseek-harness",
+   "developer-tools",
+   "diagram-as-code",
+   "diagrams",
+   "diagrams-as-code",
+   "dsh-plugin",
+   "mermaid-alternative",
+   "opencode",
+   "sequence-diagram",
+   "software-architecture",
+   "system-design",
+   "text-to-diagram"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "archify",
+   "version": "0.0.4",
+   "publishedAt": "2016-06-19T20:21:44.716Z",
+   "weeklyDownloads": 26,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 63,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "13904 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 16,
+     "notes": [
+      "npm package: archify@0.0.4",
+      "last publish over a year ago",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 26"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "YaoApp/yao",
+  "url": "https://github.com/YaoApp/yao",
+  "name": "yao",
+  "description": "✨ All your agents and workspaces in one place, on every device you own. Track tasks on a board, accessible from desktop, mobile, browser, or API. Self-hosted.",
+  "stars": 7667,
+  "forks": 689,
+  "openIssues": 6,
+  "pushedAt": "2026-08-18T01:49:53Z",
+  "createdAt": "2021-09-06T09:20:27Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "agent",
+   "agents",
+   "ai",
+   "ai-native",
+   "claude-code",
+   "deepseek-harness",
+   "developer-tools",
+   "dsh-plugin",
+   "golang"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "yao",
+   "version": "0.0.1",
+   "publishedAt": "2014-02-17T13:49:50.334Z",
+   "weeklyDownloads": 3,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 63,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "7667 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 16,
+     "notes": [
+      "npm package: yao@0.0.1",
+      "last publish over a year ago",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 3"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Q00/ouroboros",
+  "url": "https://github.com/Q00/ouroboros",
+  "name": "ouroboros",
+  "description": "Agent OS: the agent gets smarter on its own. We just hold the line: the grading command and expected result never make it into the success contract we hand it. Interview-gated, staged evaluation, budgeted evolution loop. MCP server, 13 runtimes: Claude Code, Codex CLI, Gemini CLI, OpenCode, Copilot, Kiro and more.",
+  "stars": 5513,
+  "forks": 555,
+  "openIssues": 66,
+  "pushedAt": "2026-08-18T01:44:51Z",
+  "createdAt": "2026-01-14T01:14:04Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent-os",
+   "agentic-ai",
+   "ai-agent",
+   "ai-coding-agent",
+   "claude-code",
+   "cli",
+   "codex",
+   "coding-agent",
+   "deepseek",
+   "deepseek-harness",
+   "developer-tools",
+   "dsh",
+   "dsh-plugin",
+   "github-copilot",
+   "llm-evaluation",
+   "llm-orchestration",
+   "loop-engineering",
+   "mcp",
+   "opencode"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "ouroboros",
+   "version": "3.4.0",
+   "publishedAt": "2016-11-05T13:54:24.029Z",
+   "weeklyDownloads": 7,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 63,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "5513 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 16,
+     "notes": [
+      "npm package: ouroboros@3.4.0",
+      "last publish over a year ago",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 7"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "strukto-ai/mirage",
+  "url": "https://github.com/strukto-ai/mirage",
+  "name": "mirage",
+  "description": "The World's First Unified Virtual Filesystem For AI Agents",
+  "stars": 3501,
+  "forks": 259,
+  "openIssues": 102,
+  "pushedAt": "2026-08-18T01:08:38Z",
+  "createdAt": "2026-05-06T17:00:48Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "agent-sandbox",
+   "agent-tools",
+   "ai-agents",
+   "bash",
+   "claude-code",
+   "dsh",
+   "dsh-plugin",
+   "fuse",
+   "llm-agents",
+   "openai-agents",
+   "python",
+   "typescript",
+   "vfs",
+   "virtual-filesystem"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "mirage",
+   "version": "0.0.7",
+   "publishedAt": "2017-10-05T08:35:37.183Z",
+   "weeklyDownloads": 330,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 63,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "3501 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 18,
+     "notes": [
+      "npm package: mirage@0.0.7",
+      "last publish over a year ago",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 330"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "omdsh-dev/DSH-better-sidebar",
+  "url": "https://github.com/omdsh-dev/DSH-better-sidebar",
+  "name": "DSH-better-sidebar",
+  "description": "开放的侧边栏底座，支持三方拓展注册新侧边栏页面。内置文件渲染编辑/终端/Git/子代理页面",
+  "stars": 1980,
+  "forks": 129,
+  "openIssues": 91,
+  "pushedAt": "2026-08-17T17:22:30Z",
+  "createdAt": "2026-08-07T16:04:00Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "deepseek",
+   "deepseek-harness",
+   "dsh",
+   "dsh-better-sidebar",
+   "dsh-plugin",
+   "sidebar"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:16.161Z",
+  "score": {
+   "total": 63,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1980 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "GanyuanRan/Aegis",
+  "url": "https://github.com/GanyuanRan/Aegis",
+  "name": "Aegis",
+  "description": "Make AI coding agents architecture-aware: baseline-first, evidence-verified, drift-checked, and safe across long tasks.",
+  "stars": 1044,
+  "forks": 47,
+  "openIssues": 0,
+  "pushedAt": "2026-08-18T01:16:08Z",
+  "createdAt": "2026-04-30T17:40:49Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent-skills",
+   "ai-agents",
+   "ai-coding",
+   "architecture-driven-development",
+   "awsome-coding-plugin",
+   "baseline-first",
+   "claude-code",
+   "codex",
+   "coding-agents",
+   "dive",
+   "dsh-plugin",
+   "evidence-driven",
+   "first-principles",
+   "opencode",
+   "software-architecture",
+   "spec-driven-development",
+   "spec-kit"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:15.327Z",
+  "score": {
+   "total": 63,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1044 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Anionex/dsh-vision-toolkit",
+  "url": "https://github.com/Anionex/dsh-vision-toolkit",
+  "name": "dsh-vision-toolkit",
+  "description": "[dsh]为纯文本模型设计更强大的视觉工具箱：安装免费使用、粘贴图片直接识别、多张图片问答、截图到前端UI 还原等｜DeepSeek Harness-native integration for agent-vision-toolkit: image Q&A, long-screenshot OCR, UI restoration, grounding, pixel diff, Artifacts, and Web UI.",
+  "stars": 628,
+  "forks": 31,
+  "openIssues": 5,
+  "pushedAt": "2026-08-17T19:57:06Z",
+  "createdAt": "2026-08-13T12:36:34Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent-skills",
+   "agent-vision-toolkit",
+   "computer-vision",
+   "deepseek",
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin",
+   "gui-automation",
+   "ocr",
+   "plugin",
+   "python",
+   "screenshot-testing",
+   "text-only-llm",
+   "typescript",
+   "ui-restoration",
+   "vision-language-model",
+   "vision-tools"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:15.191Z",
+  "score": {
+   "total": 63,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "628 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "paean-ai/deeptide",
+  "url": "https://github.com/paean-ai/deeptide",
+  "name": "deeptide",
+  "description": "Built by DeepSeek, for DeepSeek — a Swift-native macOS coding agent",
+  "stars": 1077,
+  "forks": 134,
+  "openIssues": 1,
+  "pushedAt": "2026-07-08T09:37:30Z",
+  "createdAt": "2026-05-05T16:40:06Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "coding-agent",
+   "deepseek",
+   "deepseek-harness",
+   "dsh-plugin",
+   "macos",
+   "swift"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "deeptide",
+   "version": "0.11.8",
+   "publishedAt": "2026-05-05T17:26:41.620Z",
+   "weeklyDownloads": 74,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 62,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 25,
+     "notes": [
+      "pushed within 90 days",
+      "1077 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 22,
+     "notes": [
+      "npm package: deeptide@0.11.8",
+      "published within a year",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 74"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "nexu-io/open-design",
+  "url": "https://github.com/nexu-io/open-design",
+  "name": "open-design",
+  "description": "🎨 Best DeepSeek Harness Design Plugin. The open-source Claude Design alternative. 🖥️ Local-first desktop app. 🖼️ Your coding agent becomes the design engine: prototypes, landing pages, dashboards, slides, images & video — real files, HTML/PDF/PPTX/MP4 export. 🤖 Claude Code / Codex / Cursor / DeepSeek Harness / OpenCode & 20+ CLIs via BYOK.",
+  "stars": 88371,
+  "forks": 10207,
+  "openIssues": 818,
+  "pushedAt": "2026-08-18T02:19:10Z",
+  "createdAt": "2026-04-28T04:25:20Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "agent-skills",
+   "ai-design",
+   "byok",
+   "claude-code-for-design",
+   "claude-design",
+   "codex-design",
+   "coding-agents",
+   "cursor-design",
+   "deepseek",
+   "deepseek-harness",
+   "design-systems",
+   "desktop-app",
+   "dsh",
+   "dsh-plugin",
+   "figma-alternative",
+   "hermes-agent",
+   "local-first",
+   "prototyping",
+   "ui-generator",
+   "vibe-coding"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "open-design",
+   "version": null,
+   "publishedAt": null,
+   "weeklyDownloads": 0,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 61,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "88371 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 14,
+     "notes": [
+      "npm package: open-design@?",
+      "publish date unknown",
+      "npm package lacks dsh.bundle declaration",
+      "no weekly download data"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "dsh-market/dsh-market",
+  "url": "https://github.com/dsh-market/dsh-market",
+  "name": "dsh-market",
+  "description": "The plugin market inside DeepSeek Harness — browse, search, one-click install · DSH 可视化插件市场",
+  "stars": 850,
+  "forks": 58,
+  "openIssues": 30,
+  "pushedAt": "2026-08-18T01:20:13Z",
+  "createdAt": "2026-08-14T04:58:15Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "deepseek-harness",
+   "dsh-plugin",
+   "marketplace"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:15.824Z",
+  "score": {
+   "total": 61,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "850 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "superdesigndev/superdesign-skill",
+  "url": "https://github.com/superdesigndev/superdesign-skill",
+  "name": "superdesign-skill",
+  "description": "The design skill for Claude Code, Cursor and any coding agent. Stop shipping AI-slop UI: turn it into shippable, tasteful frontend. Install: npx skills add superdesigndev/superdesign-skill. Powered by superdesign.dev",
+  "stars": 429,
+  "forks": 28,
+  "openIssues": 4,
+  "pushedAt": "2026-08-17T08:08:05Z",
+  "createdAt": "2026-01-21T20:26:04Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent-skills",
+   "ai-design",
+   "claude-code",
+   "claude-skill",
+   "claude-skills",
+   "coding-agent",
+   "cursor",
+   "design-agent",
+   "dsh-plugin",
+   "frontend",
+   "superdesign",
+   "ui-design",
+   "ux-design"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:16.310Z",
+  "score": {
+   "total": 61,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "429 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Ikalus1988/MisakaNet",
+  "url": "https://github.com/Ikalus1988/MisakaNet",
+  "name": "MisakaNet",
+  "description": "📚 A zero-dependency, git-backed micro-lesson library for AI Agents to asynchronously share and search verified debugging experience. Python stdlib only. | https://misakanet.org",
+  "stars": 403,
+  "forks": 156,
+  "openIssues": 39,
+  "pushedAt": "2026-08-18T01:54:13Z",
+  "createdAt": "2026-04-29T15:16:22Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "ai-agent",
+   "ai-infra",
+   "claude",
+   "deepseek-harness",
+   "devops",
+   "dsh-plugin",
+   "failure-analysis",
+   "failure-memory",
+   "git-based",
+   "knowledge-sharing",
+   "lesson-database",
+   "mcp",
+   "mcp-server",
+   "multi-agent",
+   "open-source",
+   "python"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-18T01:31:46.894Z",
+  "score": {
+   "total": 61,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "403 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "omdsh-dev/dsh-at-file",
+  "url": "https://github.com/omdsh-dev/dsh-at-file",
+  "name": "dsh-at-file",
+  "description": "Codex-style @file mentions for DeepSeek Harness: search workspace files in the composer and attach their path to prompts.",
+  "stars": 334,
+  "forks": 10,
+  "openIssues": 1,
+  "pushedAt": "2026-08-17T12:04:07Z",
+  "createdAt": "2026-08-13T12:00:09Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "dsh",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:16.165Z",
+  "score": {
+   "total": 61,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "334 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "huiliyi37/dsh-tianshu-tui",
+  "url": "https://github.com/huiliyi37/dsh-tianshu-tui",
+  "name": "dsh-tianshu-tui",
+  "description": "官方 DeepSeek Harness 的交互式终端 UI 插件：自研 ANSI 极简渲染核心（由作者自己的开源项目天枢 Tui 演进）、流式 Markdown/工具卡、多会话 tab、16+ 主题、slash 命令与选择器、输入历史与本地偏好持久化、LSP 诊断、成本统计、启动自更新。纯展示层。",
+  "stars": 206,
+  "forks": 8,
+  "openIssues": 7,
+  "pushedAt": "2026-08-17T13:28:11Z",
+  "createdAt": "2026-08-13T04:20:37Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "coding",
+   "dsh",
+   "dsh-plugin",
+   "harness",
+   "harness-engineering",
+   "tui"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:15.916Z",
+  "score": {
+   "total": 61,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "206 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "omdsh-dev/dsh-genui",
+  "url": "https://github.com/omdsh-dev/dsh-genui",
+  "name": "dsh-genui",
+  "description": "GenUI for DeepSeek Harness: interactive UI components rendered inline in assistant replies via the dsh-ui fence — layout, charts, plots, forms, quizzes, mermaid, 3D scenes, and an action event loop back to the model. Ships the fence-teaching host plugin, the browser renderer (client half), and the genui skill.",
+  "stars": 190,
+  "forks": 16,
+  "openIssues": 2,
+  "pushedAt": "2026-08-17T23:07:58Z",
+  "createdAt": "2026-08-13T13:07:52Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "dsh",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:16.171Z",
+  "score": {
+   "total": 61,
+   "grade": "B",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "190 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "superdesigndev/treg",
+  "url": "https://github.com/superdesigndev/treg",
+  "name": "treg",
+  "description": "OpenRouter for agent tools. Join community here: https://discord.gg/6mQYYfFMAn",
+  "stars": 452,
+  "forks": 37,
+  "openIssues": 13,
+  "pushedAt": "2026-08-18T02:19:10Z",
+  "createdAt": "2026-07-15T13:38:07Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "agents",
+   "api-keys",
+   "cli",
+   "credentials",
+   "developer-tools",
+   "dsh-plugin",
+   "mcp",
+   "proxy",
+   "python",
+   "registry",
+   "secrets"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:16.312Z",
+  "score": {
+   "total": 59,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "452 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "hust-open-atom-club/oh-dsh",
+  "url": "https://github.com/hust-open-atom-club/oh-dsh",
+  "name": "oh-dsh",
+  "description": " 一套 DSH runtime，Desktop、Web 与 TUI 三种开发体验。",
+  "stars": 241,
+  "forks": 22,
+  "openIssues": 21,
+  "pushedAt": "2026-08-17T23:19:38Z",
+  "createdAt": "2026-08-11T05:31:05Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "ai-agent",
+   "cordis",
+   "dsh",
+   "dsh-plugin",
+   "dsh-plugins"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:15.917Z",
+  "score": {
+   "total": 59,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "241 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "vlln/whale-girl",
+  "url": "https://github.com/vlln/whale-girl",
+  "name": "whale-girl",
+  "description": "DSH Web GUI 桌面宠物插件（QQ 宠物形态）：右下角悬浮、可拖拽/投喂/玩耍的积累型伙伴。",
+  "stars": 224,
+  "forks": 11,
+  "openIssues": 2,
+  "pushedAt": "2026-08-17T09:23:59Z",
+  "createdAt": "2026-08-10T15:03:03Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin",
+   "dsh-repository-plugin",
+   "pet"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:16.381Z",
+  "score": {
+   "total": 59,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "224 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "morluto/rea",
+  "url": "https://github.com/morluto/rea",
+  "name": "rea",
+  "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+  "stars": 347,
+  "forks": 26,
+  "openIssues": 41,
+  "pushedAt": "2026-08-14T06:38:37Z",
+  "createdAt": "2026-04-14T00:51:32Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent-skills",
+   "ai-agent-tools",
+   "ai-agents",
+   "binary-analysis",
+   "cli",
+   "coding-agent",
+   "coding-agents",
+   "cordis",
+   "decompiler",
+   "disassembler",
+   "dsh",
+   "dsh-plugin",
+   "hopper-disassembler",
+   "mcp",
+   "mcp-server",
+   "model-context-protocol",
+   "reverse-engineering",
+   "reverse-engineering-tools",
+   "static-analysis"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "rea",
+   "version": "0.0.1",
+   "publishedAt": "2011-05-24T15:48:19.036Z",
+   "weeklyDownloads": 17,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 57,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "347 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 16,
+     "notes": [
+      "npm package: rea@0.0.1",
+      "last publish over a year ago",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 17"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "nutshellai-tech/mobius",
+  "url": "https://github.com/nutshellai-tech/mobius",
+  "name": "mobius",
+  "description": "The first self-evolving open-source Agent OS, connecting your team, AI agents, devices, and compute",
+  "stars": 284,
+  "forks": 7,
+  "openIssues": 3,
+  "pushedAt": "2026-08-17T20:00:21Z",
+  "createdAt": "2026-06-18T12:13:28Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "dsh-plugin",
+   "dsh-plugins"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "mobius",
+   "version": "0.1.0",
+   "publishedAt": "2013-04-17T03:05:46.913Z",
+   "weeklyDownloads": 2,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 57,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "284 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 16,
+     "notes": [
+      "npm package: mobius@0.1.0",
+      "last publish over a year ago",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 2"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "NanmiCoder/dsh-agent-teams",
+  "url": "https://github.com/NanmiCoder/dsh-agent-teams",
+  "name": "dsh-agent-teams",
+  "description": "AgentTeams plugin for DeepSeek Harness",
+  "stars": 499,
+  "forks": 45,
+  "openIssues": 15,
+  "pushedAt": "2026-08-17T12:58:33Z",
+  "createdAt": "2026-08-12T13:41:50Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agentteams",
+   "deepseekharness",
+   "dsh",
+   "dsh-agent-teams",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-17T05:05:15.483Z",
+  "score": {
+   "total": 56,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "499 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 12,
+     "notes": [
+      "README not probed yet",
+      "short description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "linhay/harmony-next.skills",
+  "url": "https://github.com/linhay/harmony-next.skills",
+  "name": "harmony-next.skills",
+  "description": "🚀 Expert guidance for HarmonyOS NEXT (API 12+) development. Covers IDE operations, performance tuning, architecture (HAP/HAR/HSP), and automation testing.",
+  "stars": 328,
+  "forks": 24,
+  "openIssues": 2,
+  "pushedAt": "2026-08-15T17:13:20Z",
+  "createdAt": "2026-03-12T15:24:50Z",
+  "archived": false,
+  "license": null,
+  "topics": [
+   "arkts",
+   "automation-testing",
+   "deveco-studio",
+   "dsh-plugin",
+   "harmonyos",
+   "harmonyos-next",
+   "openharmony",
+   "performance-tuning"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": true,
+  "addedAt": "2026-08-18T01:31:32.812Z",
+  "score": {
+   "total": 56,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "328 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 12,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "no license detected"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 15,
+     "notes": [
+      "in the curated awesome list",
+      "listed recently"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "shanliuling/skills-link",
+  "url": "https://github.com/shanliuling/skills-link",
+  "name": "skills-link",
+  "description": "Sync your local skills across 41+ AI coding agents with a single command.",
+  "stars": 187,
+  "forks": 7,
+  "openIssues": 1,
+  "pushedAt": "2026-05-14T06:44:10Z",
+  "createdAt": "2026-04-12T17:04:24Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "ai",
+   "ai-coding",
+   "ai-tools",
+   "automation",
+   "claude",
+   "developer-tools",
+   "dsh-plugin",
+   "skills",
+   "skills-sync"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": true,
+   "name": "skills-link",
+   "version": "1.3.0",
+   "publishedAt": "2026-04-26T04:14:19.904Z",
+   "weeklyDownloads": 7,
+   "dshBundle": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 53,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 16,
+     "notes": [
+      "pushed within 180 days",
+      "187 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 22,
+     "notes": [
+      "npm package: skills-link@1.3.0",
+      "published within a year",
+      "npm package lacks dsh.bundle declaration",
+      "weekly downloads 7"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.463Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "titanwings/colleague-skill",
+  "url": "https://github.com/titanwings/colleague-skill",
+  "name": "colleague-skill",
+  "description": "将冰冷的离别化为温暖的 Skill，欢迎加入数字生命1.0！Transforming cold farewells into warm skills? It's giving rebirth era. Welcome to Digital Life 1.0. 🫶",
+  "stars": 23162,
+  "forks": 2072,
+  "openIssues": 35,
+  "pushedAt": "2026-08-13T15:00:28Z",
+  "createdAt": "2026-03-30T05:22:23Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent-skills",
+   "agentic-ai",
+   "ai-agent",
+   "ai-persona",
+   "claude-code",
+   "claude-code-skills",
+   "codex",
+   "codex-skills",
+   "deepseek-harness",
+   "digital-human",
+   "dsh-plugin",
+   "hermes-agent",
+   "knowledge-distillation",
+   "llm-agent",
+   "meta-skill",
+   "openclaw",
+   "prompt-engineering",
+   "skill-generator"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "23162 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "EverMind-AI/EverOS",
+  "url": "https://github.com/EverMind-AI/EverOS",
+  "name": "EverOS",
+  "description": "One portable memory layer for every AI agent: local-first, Markdown-native, user-owned, and self-evolving across apps, tools, and workflows.",
+  "stars": 12088,
+  "forks": 893,
+  "openIssues": 72,
+  "pushedAt": "2026-08-17T11:51:02Z",
+  "createdAt": "2025-10-28T15:09:32Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "agent-memory",
+   "agentic-ai",
+   "ai",
+   "chats",
+   "clawdbot",
+   "clawdbot-skill",
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin",
+   "llm",
+   "long-term-memory",
+   "mcp",
+   "memory",
+   "memory-management",
+   "python3",
+   "rag",
+   "skills"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "12088 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "ZSeven-W/openpencil",
+  "url": "https://github.com/ZSeven-W/openpencil",
+  "name": "openpencil",
+  "description": "The world's first open-source AI-native vector design tool and the first to feature concurrent Agent Teams. Design-as-Code. Turn prompts into UI directly on the live canvas. A modern alternative to Pencil.",
+  "stars": 5256,
+  "forks": 469,
+  "openIssues": 12,
+  "pushedAt": "2026-08-17T01:28:36Z",
+  "createdAt": "2026-02-17T10:51:46Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent",
+   "agent-team",
+   "ai",
+   "claude",
+   "claude-code",
+   "codex",
+   "dsh-plugin",
+   "fimga",
+   "flutter",
+   "mcp",
+   "opencode",
+   "openpencil",
+   "pencil",
+   "react",
+   "react-native",
+   "rust",
+   "skill",
+   "ui",
+   "vibecoding",
+   "vibedesign"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "5256 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "zhu1090093659/dsh-web-ui",
+  "url": "https://github.com/zhu1090093659/dsh-web-ui",
+  "name": "dsh-web-ui",
+  "description": "Plugin and skin collection for DeepSeek Harness (DSH) Web UI - task board, git graph, right-side panel, remote mobile UI, pet, live token stats, and skin center.",
+  "stars": 4157,
+  "forks": 255,
+  "openIssues": 34,
+  "pushedAt": "2026-08-18T00:58:12Z",
+  "createdAt": "2026-08-12T05:15:20Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin",
+   "web-ui"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "4157 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Devin-AXIS/iPolloWork",
+  "url": "https://github.com/Devin-AXIS/iPolloWork",
+  "name": "iPolloWork",
+  "description": "A next-generation, source-available AI workspace with a self-evolving agent runtime for editable code, design, presentations, websites, and video—a Codex alternative that integrates DeepSeek Harness for subagent delegation, combining iPolloWork’s complete AI workbench with DSH’s specialized agents and both plugin ecosystems in one workflow.",
+  "stars": 4125,
+  "forks": 788,
+  "openIssues": 72,
+  "pushedAt": "2026-08-17T10:27:16Z",
+  "createdAt": "2025-08-25T03:57:40Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "agent-collaboration",
+   "agent-skills",
+   "ai-agents",
+   "ai-work",
+   "claude-code",
+   "codex",
+   "deepseek-harness",
+   "dsh-plugin",
+   "enterprise-agent-workspace",
+   "hermes-agent",
+   "openclaw",
+   "opencode",
+   "opencode-plugin",
+   "self-evolving-ai",
+   "visual-editor"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "4125 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "edison7009/EchoBird",
+  "url": "https://github.com/edison7009/EchoBird",
+  "name": "EchoBird",
+  "description": "One-click install + model switch:Claude Code,Codex CLI (OpenAI), Grok Build (xAI), DeepSeek Harness, Kimi Code (Moonshot) ,Qwen Code,Aider,OpenCode,MiMo Code (Xiaomi),ZCode (Z.AI),OpenClaw,Pi,OpenScience,Vibe-Trading,Claude Desktop (3P profile),ChatGPT desktop,OpenCode Desktop,",
+  "stars": 3066,
+  "forks": 343,
+  "openIssues": 348,
+  "pushedAt": "2026-08-18T01:50:28Z",
+  "createdAt": "2026-02-15T12:36:33Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "claude-code",
+   "deepseek",
+   "deepseek-harness",
+   "dsh-plugin",
+   "dsh-plugins",
+   "kimi-code",
+   "openclaw",
+   "opencode",
+   "zcode"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "3066 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "foryourhealth111-pixel/Vibe-Skills",
+  "url": "https://github.com/foryourhealth111-pixel/Vibe-Skills",
+  "name": "Vibe-Skills",
+  "description": "VibeSkills is a general-purpose Skill that automatically routes local Skills and intelligently orchestrates harness workflows.",
+  "stars": 2874,
+  "forks": 228,
+  "openIssues": 34,
+  "pushedAt": "2026-08-11T15:42:32Z",
+  "createdAt": "2026-02-22T13:51:44Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "agent-framework",
+   "agent-skills",
+   "agentic-coding",
+   "ai-agents",
+   "ai-scientist",
+   "ai-skills",
+   "ai-workflow",
+   "automation",
+   "claude-code",
+   "codex",
+   "context-engineering",
+   "developer-tools",
+   "dsh-plugin",
+   "llm",
+   "multi-agent",
+   "prompt-engineering",
+   "skills",
+   "vibe-coding",
+   "vibecoding",
+   "workflow-automation"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "2874 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "whiteguo233/OpenBiliClaw",
+  "url": "https://github.com/whiteguo233/OpenBiliClaw",
+  "name": "OpenBiliClaw",
+  "description": "本地私有、开源的自进化跨平台 AI 内容发现 Agent：先理解你，再主动从 B站、小红书、抖音、YouTube、X、知乎、Reddit、微博等平台与开放 Web 寻找内容。（支持 deepseek harness 插件） | Local-first open-source cross-platform AI content discovery agent: understands you, then proactively finds content across Bilibili, Xiaohongshu, Douyin, YouTube, X, Zhihu, Reddit, Weibo and the open web.（support deepseek harness plugin）",
+  "stars": 2843,
+  "forks": 132,
+  "openIssues": 29,
+  "pushedAt": "2026-08-17T19:25:22Z",
+  "createdAt": "2026-03-07T13:46:10Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "ai-agent",
+   "bilibili",
+   "chrome-extension",
+   "content-discovery",
+   "cross-platform",
+   "deepseek-harness",
+   "douyin",
+   "dsh",
+   "dsh-plugin",
+   "llm",
+   "local-first",
+   "personal-ai",
+   "privacy-first",
+   "python",
+   "recommendation-system",
+   "self-hosted",
+   "typescript",
+   "xiaohongshu",
+   "youtube",
+   "zhihu"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "2843 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "GCWing/BitFun",
+  "url": "https://github.com/GCWing/BitFun",
+  "name": "BitFun",
+  "description": "BitFun combines a high-performance agent runtime written in Rust with a polished desktop application. It pairs the depth of a Code Agent with open, general-purpose capabilities for work beyond software development.",
+  "stars": 1771,
+  "forks": 192,
+  "openIssues": 99,
+  "pushedAt": "2026-08-18T01:55:09Z",
+  "createdAt": "2026-02-02T09:52:10Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent-teams",
+   "agentic",
+   "agentic-os",
+   "agentic-runtime",
+   "ai-coding",
+   "ai-ide",
+   "ai-sdk",
+   "bitfun",
+   "computer-use-agent",
+   "cowork",
+   "dsh-plugin",
+   "openclaw",
+   "vibe-coding"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1771 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "hyhmrright/brooks-lint",
+  "url": "https://github.com/hyhmrright/brooks-lint",
+  "name": "brooks-lint",
+  "description": "AI code reviews grounded in 12 classic engineering books — decay risk diagnostics with book citations, severity labels, and 6 analysis modes including full-sweep auto-fix",
+  "stars": 1374,
+  "forks": 61,
+  "openIssues": 2,
+  "pushedAt": "2026-08-14T14:46:25Z",
+  "createdAt": "2026-03-26T11:40:33Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent-skills",
+   "ai-code-review",
+   "architecture-review",
+   "auto-fix",
+   "claude-code",
+   "claude-code-plugin",
+   "clean-architecture",
+   "code-health",
+   "code-quality",
+   "code-review",
+   "code-smells",
+   "codex-cli-plugin",
+   "deepseek-harness",
+   "developer-tools",
+   "dsh-plugin",
+   "gemini-cli-extension",
+   "refactoring",
+   "static-analysis",
+   "tech-debt",
+   "test-quality"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1374 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Alisa0808/vox-director",
+  "url": "https://github.com/Alisa0808/vox-director",
+  "name": "vox-director",
+  "description": "Turn one topic into a finished Vox-style paper-collage explainer/ad video — automated end to end on Atlas Cloud + ffmpeg. An agent skill.",
+  "stars": 1346,
+  "forks": 192,
+  "openIssues": 1,
+  "pushedAt": "2026-08-11T15:39:41Z",
+  "createdAt": "2026-07-10T15:32:05Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "ai",
+   "ai-video",
+   "claude-code",
+   "claude-skill",
+   "collage-video",
+   "dsh-plugin",
+   "explainer-video",
+   "ffmpeg",
+   "generative-ai",
+   "llm",
+   "motion-graphics",
+   "python",
+   "text-to-video",
+   "tts",
+   "video",
+   "video-generation",
+   "vox"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1346 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Tiger3807861189/J-Space-Cognition-Suite-V3.6",
+  "url": "https://github.com/Tiger3807861189/J-Space-Cognition-Suite-V3.6",
+  "name": "J-Space-Cognition-Suite-V3.6",
+  "description": "J-Space Cognition Suite V3.6 - AI cognitive-enhancement Skills based on Anthropic's J-space global workspace research. | 哔哩哔哩：Tiger380 (UID 3494375382321675) — https://space.bilibili.com/3494375382321675",
+  "stars": 1187,
+  "forks": 62,
+  "openIssues": 13,
+  "pushedAt": "2026-08-17T09:21:48Z",
+  "createdAt": "2026-07-22T00:34:24Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "agent-skills",
+   "ai",
+   "ai-agent",
+   "ai-agents",
+   "claude-code",
+   "codex",
+   "cognitive-enhancement",
+   "deepseek",
+   "deepseek-harness",
+   "developer-tools",
+   "dsh",
+   "dsh-plugin",
+   "global-workspace",
+   "hermes-agent",
+   "inference-time-control",
+   "j-space",
+   "opencode",
+   "react",
+   "tailwindcss"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1187 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Tencent/BrowserSkill",
+  "url": "https://github.com/Tencent/BrowserSkill",
+  "name": "BrowserSkill",
+  "description": "Let AI agents use your real, logged-in browser without interrupting your work. CLI + extension for browser automation across any shell-capable AI agent.",
+  "stars": 1113,
+  "forks": 91,
+  "openIssues": 22,
+  "pushedAt": "2026-08-17T13:35:01Z",
+  "createdAt": "2026-06-22T07:24:40Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent",
+   "browser-use",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1113 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "agentrq/agentrq",
+  "url": "https://github.com/agentrq/agentrq",
+  "name": "agentrq",
+  "description": "AgentRQ: Human-in-loop realtime conversational task manager for AI Agents. Self-hosted! Control your own agents from wherever you want Mobile, Web, Desktop. Designed to work well with your own Claude subscriptions and any harness.",
+  "stars": 1076,
+  "forks": 80,
+  "openIssues": 16,
+  "pushedAt": "2026-08-17T08:00:03Z",
+  "createdAt": "2026-03-24T08:35:45Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "acp-client",
+   "acp-gateway",
+   "agentic-ai",
+   "agentic-workflow",
+   "agents",
+   "claude-code",
+   "deepseek-harness",
+   "deepseek-harness-plugin",
+   "dsh-plugin",
+   "hermes-agent",
+   "mcp",
+   "mcp-server",
+   "openclaw",
+   "opencode",
+   "supervisor",
+   "task",
+   "task-manager",
+   "task-scheduler",
+   "todo"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1076 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Anionex/agent-vision-toolkit",
+  "url": "https://github.com/Anionex/agent-vision-toolkit",
+  "name": "agent-vision-toolkit",
+  "description": "为纯文本模型\"看图“设计更好的视觉工具箱和技能，支持多图理解，图片问答，前端UI还原、GUI 自动化等，并可选无缝接入多个主流agent，直接识别粘贴图片｜ A vision toolkit and skill designed for text-only llms — image Q&A, long-screenshot OCR, frontend UI restoration, and GUI automation, with optional seamless integration for Codex, Claude Code, Pi, Oh My Pi, and OpenCode",
+  "stars": 1003,
+  "forks": 36,
+  "openIssues": 8,
+  "pushedAt": "2026-08-17T16:11:26Z",
+  "createdAt": "2026-08-01T10:00:13Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent",
+   "agent-skills",
+   "claude-code",
+   "codex",
+   "computer-use",
+   "deepseek",
+   "dsh-plugin",
+   "glm",
+   "harness-engineering",
+   "multimodal",
+   "opencode",
+   "text-only-llm",
+   "vision",
+   "vision-language-model"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 50,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1003 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "deepseek-ai/deepseek-harness",
+  "url": "https://github.com/deepseek-ai/deepseek-harness",
+  "name": "deepseek-harness",
+  "description": "DeepSeek Harness: Everything is a Plugin.",
+  "stars": 151387,
+  "forks": 15577,
+  "openIssues": 0,
+  "pushedAt": "2026-08-17T12:01:58Z",
+  "createdAt": "2026-08-13T11:56:32Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "ai-agents",
+   "cordis",
+   "dsh",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 48,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "151387 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "esengine/DeepSeek-Reasonix",
+  "url": "https://github.com/esengine/DeepSeek-Reasonix",
+  "name": "DeepSeek-Reasonix",
+  "description": "DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.",
+  "stars": 34691,
+  "forks": 2303,
+  "openIssues": 1473,
+  "pushedAt": "2026-08-18T02:13:43Z",
+  "createdAt": "2026-04-21T08:27:02Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent",
+   "agent-framework",
+   "ai-agent",
+   "ai-coding",
+   "cli",
+   "coding-agent",
+   "deepseek",
+   "developer-tools",
+   "dsh",
+   "dsh-plugin",
+   "ink",
+   "llm",
+   "prompt-caching",
+   "r1",
+   "terminal",
+   "tool-use",
+   "tui",
+   "typescript"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 48,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "34691 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "volcengine/OpenViking",
+  "url": "https://github.com/volcengine/OpenViking",
+  "name": "OpenViking",
+  "description": "Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.",
+  "stars": 28913,
+  "forks": 2279,
+  "openIssues": 454,
+  "pushedAt": "2026-08-17T14:58:29Z",
+  "createdAt": "2026-01-05T07:11:17Z",
+  "archived": false,
+  "license": "AGPL-3.0",
+  "topics": [
+   "agent-memory",
+   "agent-plugins",
+   "agentic-rag",
+   "context-database",
+   "dsh-plugin",
+   "self-evolving"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 48,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "28913 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: AGPL-3.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "walkinglabs/learn-harness-engineering",
+  "url": "https://github.com/walkinglabs/learn-harness-engineering",
+  "name": "learn-harness-engineering",
+  "description": "Harness engineering beginner tutorial, from 0 to 1",
+  "stars": 11865,
+  "forks": 1263,
+  "openIssues": 6,
+  "pushedAt": "2026-08-06T16:37:16Z",
+  "createdAt": "2026-03-29T12:28:19Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent",
+   "agentic",
+   "agentic-ai",
+   "ai",
+   "ai-agent",
+   "dsh",
+   "dsh-plugin",
+   "harness",
+   "harness-engineering",
+   "harness-framework",
+   "llm"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 48,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "11865 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "freestylefly/awesome-gpt-image-2",
+  "url": "https://github.com/freestylefly/awesome-gpt-image-2",
+  "name": "awesome-gpt-image-2",
+  "description": "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，470+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
+  "stars": 11112,
+  "forks": 1280,
+  "openIssues": 9,
+  "pushedAt": "2026-07-22T16:57:36Z",
+  "createdAt": "2026-04-25T09:19:13Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agents",
+   "ai-image-generation",
+   "chatgpt",
+   "dsh-plugin",
+   "gpt-image-2",
+   "image-prompts",
+   "prompt-as-code",
+   "prompt-engineering",
+   "skills",
+   "workflow-automation"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 48,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "11112 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "xiaobright/dsh-anchored-standard",
+  "url": "https://github.com/xiaobright/dsh-anchored-standard",
+  "name": "dsh-anchored-standard",
+  "description": "Two-phase DeepSeek Harness preset: Minimal-aligned bootstrap, then full Standard tools (Project2 98/99)",
+  "stars": 3438,
+  "forks": 103,
+  "openIssues": 25,
+  "pushedAt": "2026-08-17T06:19:58Z",
+  "createdAt": "2026-08-14T14:06:39Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "deepseek",
+   "deepseek-harness",
+   "dsh-plugin",
+   "llm-agent"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 48,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "3438 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Jesseovo/last30days-skill-cn",
+  "url": "https://github.com/Jesseovo/last30days-skill-cn",
+  "name": "last30days-skill-cn",
+  "description": "last30days-cn 是一个 AI Agent 技能（Skill），能够自动搜索中国互联网 8 大主流平台最近 30 天的内容，综合分析后生成有据可查的研究报告。",
+  "stars": 1413,
+  "forks": 163,
+  "openIssues": 6,
+  "pushedAt": "2026-07-20T08:55:57Z",
+  "createdAt": "2026-03-31T08:13:20Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "claude-code",
+   "dsh-plugin",
+   "openclaw",
+   "openclaw-skills",
+   "rednotebook",
+   "research",
+   "tiktok",
+   "web-search"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 48,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1413 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "freestylefly/wesight",
+  "url": "https://github.com/freestylefly/wesight",
+  "name": "wesight",
+  "description": "Open-source desktop AI agent workspace with one-click Claude Code, Codex, OpenClaw, Hermes Agent setup and custom LLM model routing.",
+  "stars": 882,
+  "forks": 205,
+  "openIssues": 16,
+  "pushedAt": "2026-08-06T08:32:46Z",
+  "createdAt": "2026-05-07T14:18:06Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent-skills",
+   "agent-workspace",
+   "ai-agent",
+   "ai-agents",
+   "claude-code",
+   "codex",
+   "deepseek-harness",
+   "desktop-app",
+   "dsh",
+   "dsh-plugin",
+   "electron",
+   "hermes-agent",
+   "llm",
+   "local-first",
+   "macos",
+   "model-router",
+   "openclaw",
+   "react",
+   "typescript",
+   "vibe-coding"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 48,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "882 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "0xsline/awesome-deepseek-harness",
+  "url": "https://github.com/0xsline/awesome-deepseek-harness",
+  "name": "awesome-deepseek-harness",
+  "description": "DeepSeek Harness (DSH) ecosystem: curated plugins, tools, and infrastructure from dsh-external/hub and the public dsh-plugin topic.",
+  "stars": 694,
+  "forks": 250,
+  "openIssues": 13,
+  "pushedAt": "2026-08-17T13:22:02Z",
+  "createdAt": "2026-08-11T13:14:49Z",
+  "archived": false,
+  "license": "CC0-1.0",
+  "topics": [
+   "agent",
+   "ai",
+   "ai-agents",
+   "ai-tools",
+   "awesome",
+   "awesome-list",
+   "coding-assistant",
+   "curated-list",
+   "deepseek",
+   "deepseek-harness",
+   "developer-tools",
+   "dsh",
+   "dsh-plugin",
+   "dsh-plugins",
+   "harness",
+   "llm",
+   "mcp",
+   "plugins"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 48,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "694 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: CC0-1.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "MemTensor/memmy-agent",
+  "url": "https://github.com/MemTensor/memmy-agent",
+  "name": "memmy-agent",
+  "description": "🍙  A personal AI agent & local memory hub for all AI agents, gives every AI one shared, fully controlled memory and persistent context — all AI remember the same you. Now supports Claude Code, Codex, OpenClaw and Hermes Agent etc.",
+  "stars": 670,
+  "forks": 76,
+  "openIssues": 4,
+  "pushedAt": "2026-08-18T02:02:09Z",
+  "createdAt": "2026-07-16T07:57:45Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent",
+   "agentic-ai",
+   "ai-agents",
+   "chatgpt",
+   "claude-code",
+   "cli",
+   "codex",
+   "cursor",
+   "desktop-app",
+   "desktop-pet",
+   "dsh-plugin",
+   "hermes-agent",
+   "llm",
+   "long-term-memory",
+   "mcp",
+   "memory",
+   "openai-api",
+   "openclaw",
+   "personal-ai",
+   "tui"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 48,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "670 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "sandbaseai/sandbase-harness",
+  "url": "https://github.com/sandbaseai/sandbase-harness",
+  "name": "sandbase-harness",
+  "description": "Open-source CMA-compatible agent runtime for any model, with MCP tools, sandboxed sessions, audit, replay, and a local console. Includes a native DeepSeek Harness bundle over stdio MCP.",
+  "stars": 617,
+  "forks": 58,
+  "openIssues": 0,
+  "pushedAt": "2026-08-17T05:39:59Z",
+  "createdAt": "2026-07-11T08:48:07Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "agent-framework",
+   "agent-observability",
+   "agent-runtime",
+   "agent-sandbox",
+   "ai-agents",
+   "ai-infrastructure",
+   "deepseek",
+   "deepseek-harness",
+   "deepseek-v4",
+   "docker",
+   "dsh",
+   "dsh-plugin",
+   "local-first",
+   "mcp-server",
+   "model-context-protocol",
+   "openai-compatible",
+   "sandbox",
+   "self-hosted",
+   "typescript",
+   "workflow-automation"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 48,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "617 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Tiger3807861189/DeepSeek-V4-J-Space-Capability-Realization-Report",
+  "url": "https://github.com/Tiger3807861189/DeepSeek-V4-J-Space-Capability-Realization-Report",
+  "name": "DeepSeek-V4-J-Space-Capability-Realization-Report",
+  "description": "DeepSeek V4 × J-Space capability realization report — benchmark evidence that J-Space reduces capability-realization loss on DeepSeek V4 (Flash/Pro).",
+  "stars": 546,
+  "forks": 31,
+  "openIssues": 4,
+  "pushedAt": "2026-08-17T09:25:39Z",
+  "createdAt": "2026-08-16T11:38:42Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "agent-skills",
+   "ai-agent",
+   "benchmark",
+   "deepseek",
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 48,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "546 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "PicGo/PicGo-Core",
+  "url": "https://github.com/PicGo/PicGo-Core",
+  "name": "PicGo-Core",
+  "description": ":zap:The ultimate image uploading engine. Both CLI & API supports.",
+  "stars": 976,
+  "forks": 100,
+  "openIssues": 12,
+  "pushedAt": "2026-08-17T07:40:00Z",
+  "createdAt": "2018-09-17T07:26:44Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "dsh-plugin",
+   "picgo",
+   "picture-upload",
+   "upload-pictures"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 46,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "976 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "ccch1mneyyy/working-activity",
+  "url": "https://github.com/ccch1mneyyy/working-activity",
+  "name": "working-activity",
+  "description": "Lively Working-line extension for pi CLI and DSH",
+  "stars": 650,
+  "forks": 231,
+  "openIssues": 2,
+  "pushedAt": "2026-08-18T00:21:56Z",
+  "createdAt": "2026-07-23T09:35:08Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "deepseek-harness",
+   "dsh-plugin",
+   "pi-coding-agent",
+   "pi-plugin",
+   "statusline",
+   "working-line"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 46,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "650 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "syncable-dev/memtrace-public",
+  "url": "https://github.com/syncable-dev/memtrace-public",
+  "name": "memtrace-public",
+  "description": "Structural memory for AI coding agents. Bi-temporal graph, MCP-native, zero LLM calls. Cursor · Claude Code · Codex · DeepSeek Harness · Hermes · VS Code · Windsurf.",
+  "stars": 454,
+  "forks": 41,
+  "openIssues": 12,
+  "pushedAt": "2026-08-17T07:08:49Z",
+  "createdAt": "2026-04-11T11:49:55Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "agent-memory",
+   "ai-agents",
+   "bi-temporal-graph",
+   "claude-code",
+   "code-intelligence",
+   "code-search",
+   "coding-agents",
+   "cursor",
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin",
+   "knowledge-graph",
+   "local-first",
+   "mcp",
+   "mcp-server",
+   "rust",
+   "semantic-search",
+   "structural-memory",
+   "temporal-analysis",
+   "tree-sitter"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 46,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "454 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "hashgraph-online/hol-guard",
+  "url": "https://github.com/hashgraph-online/hol-guard",
+  "name": "hol-guard",
+  "description": "Open-source antivirus for AI agents: block risky tools, secret access, prompt injection, malicious packages, MCP servers, plugins, and skills at runtime.",
+  "stars": 443,
+  "forks": 13,
+  "openIssues": 31,
+  "pushedAt": "2026-08-18T02:21:20Z",
+  "createdAt": "2026-03-28T19:02:15Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "agent-security",
+   "ai-agent-security",
+   "ai-agents",
+   "ai-antivirus",
+   "ai-security",
+   "claude-code",
+   "codex",
+   "cursor",
+   "devsecops",
+   "dsh-plugin",
+   "gemini-cli",
+   "mcp",
+   "mcp-security",
+   "openclaw",
+   "opencode",
+   "prompt-injection",
+   "runtime-security",
+   "secrets-detection",
+   "security",
+   "supply-chain-security"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 46,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "443 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "yogsoth-ai/de-anthropocentric-research-engine",
+  "url": "https://github.com/yogsoth-ai/de-anthropocentric-research-engine",
+  "name": "de-anthropocentric-research-engine",
+  "description": "900+ pure-markdown skills for autonomous AI research, organized as 9 freely-composable packages over a 4-layer hierarchy (Campaign → Strategy → Tactic → SOP). Non-linear orchestration with backtracking, 6 MCP integrations. The AI is the researcher — you set the direction.",
+  "stars": 373,
+  "forks": 32,
+  "openIssues": 3,
+  "pushedAt": "2026-08-15T07:14:32Z",
+  "createdAt": "2026-02-10T05:47:00Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "academic-research",
+   "agent-native-research-artifact",
+   "ai-scientist",
+   "auto-research",
+   "autonomous-research",
+   "autoresearch",
+   "claude-code",
+   "codex",
+   "deep-research",
+   "dsh-plugin",
+   "literature-review",
+   "mcp",
+   "research-agent",
+   "research-orchestration",
+   "scientific-discovery",
+   "semantic-scholar",
+   "skill"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 46,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "373 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "alibaba/anolisa",
+  "url": "https://github.com/alibaba/anolisa",
+  "name": "anolisa",
+  "description": "ANOLISA (Agentic Nexus Operating Layer & Interface System Architecture) | Agentic OS with runtime, security, observability, and Tokenless response compression for lower token usage and cost.",
+  "stars": 352,
+  "forks": 90,
+  "openIssues": 198,
+  "pushedAt": "2026-08-18T01:54:08Z",
+  "createdAt": "2026-03-30T06:33:06Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "agent-infrastructure",
+   "agent-memory",
+   "agent-runtime",
+   "agent-security",
+   "agentic-ai",
+   "agentic-os",
+   "ai-agents",
+   "context-engineering",
+   "developer-tools",
+   "dsh-plugin",
+   "linux",
+   "observability",
+   "runtime-security",
+   "rust",
+   "sandbox",
+   "skill",
+   "token-optimization"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 46,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "352 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "PM-Shawn/Abu-Cowork",
+  "url": "https://github.com/PM-Shawn/Abu-Cowork",
+  "name": "Abu-Cowork",
+  "description": "Open-source alternative to Claude Cowork — a local-first AI agent desktop app · multi-model · self-evolving skills · privacy-first · multi-Harness roadmap · DeepSeek Harness integration in progress",
+  "stars": 333,
+  "forks": 78,
+  "openIssues": 21,
+  "pushedAt": "2026-08-18T02:04:30Z",
+  "createdAt": "2026-03-09T16:43:59Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "ai-agent",
+   "ai-assistant",
+   "automation",
+   "desktop-app",
+   "dsh-plugin",
+   "dsh-plugins",
+   "llm",
+   "local-first",
+   "mcp",
+   "privacy",
+   "productivity",
+   "react",
+   "tauri",
+   "typescript"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 46,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "333 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "alaliqing/claude-paper",
+  "url": "https://github.com/alaliqing/claude-paper",
+  "name": "claude-paper",
+  "description": "📖 Cross-agent research paper toolkit for Claude Code, Codex, OpenCode, and DeepSeek Harness—quick summaries, deep study materials, code demos, and a local web viewer.",
+  "stars": 317,
+  "forks": 25,
+  "openIssues": 0,
+  "pushedAt": "2026-08-14T09:09:33Z",
+  "createdAt": "2026-02-10T09:15:25Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "academic-tools",
+   "agent-skills",
+   "claude-code",
+   "code-generation",
+   "codex",
+   "deepseek-harness",
+   "dsh-plugin",
+   "learning-management",
+   "npm-package",
+   "opencode",
+   "pdf-parser",
+   "research-papers",
+   "vue",
+   "web-viewer"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 46,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "317 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "vibeinging/deepseek-harness-desktop-app",
+  "url": "https://github.com/vibeinging/deepseek-harness-desktop-app",
+  "name": "deepseek-harness-desktop-app",
+  "description": "DeepSeek Harness Desktop App: a local AI desktop workspace for DSH Sessions, projects, files, web research, plugins, and Office artifacts.",
+  "stars": 311,
+  "forks": 4,
+  "openIssues": 6,
+  "pushedAt": "2026-08-15T08:56:28Z",
+  "createdAt": "2026-08-13T10:41:33Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agentic-workflows",
+   "ai-agent",
+   "ai-workbench",
+   "data-analysis",
+   "deepseek-harness",
+   "desktop-app",
+   "dsh",
+   "dsh-plugin",
+   "electron",
+   "local-first",
+   "mcp",
+   "model-context-protocol",
+   "office-automation",
+   "react",
+   "typescript"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 46,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "311 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "WYH66666666/DSH-Transparent-UI-Plugin",
+  "url": "https://github.com/WYH66666666/DSH-Transparent-UI-Plugin",
+  "name": "DSH-Transparent-UI-Plugin",
+  "description": "是一层高自由度的玻璃质感主题，套在 DeepSeek Harness 网页端。顶栏、侧边栏、输入框、统计行、轨迹视图都成了磨砂玻璃片。玻璃模糊度、磨砂度、背景（流体或自定义壁纸，壁纸还能单独调模糊和磨砂）全都能在设置卡片里自由调节。关掉开关就回到原生界面，不改 DSH 任何一行源码。",
+  "stars": 253,
+  "forks": 13,
+  "openIssues": 9,
+  "pushedAt": "2026-08-17T10:23:45Z",
+  "createdAt": "2026-08-14T14:10:42Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "deepseek-harness",
+   "deepseek-harness-plugin",
+   "dsh",
+   "dsh-plugin",
+   "theme"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 46,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "253 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Awesome-AI-Pedia/Awesome-AI-Pedia",
+  "url": "https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia",
+  "name": "Awesome-AI-Pedia",
+  "description": "AI skills大全 mcp ai知识库 Agent 全维度 AI 资源百科，DSH插件 收录大模型、智能 Agent、RAG 检索增强、多模态、MLOps、AI 应用工具、AI面试集、Vibe coding 大全、零基础学习路线，持续更新前沿 AI 开源项目，开发者一站式 AI 导航库",
+  "stars": 173,
+  "forks": 21,
+  "openIssues": 4,
+  "pushedAt": "2026-08-17T03:38:28Z",
+  "createdAt": "2026-08-03T05:43:30Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "dsh",
+   "dsh-bundle",
+   "dsh-plugin",
+   "dsh-plugin-market",
+   "dsh-plugin-verify",
+   "dsh-plugins",
+   "dsh-skill"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 46,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "173 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.463Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "csyangwen/dsh-memory-evolve",
+  "url": "https://github.com/csyangwen/dsh-memory-evolve",
+  "name": "dsh-memory-evolve",
+  "description": "为 DeepSeek Harness 带来「跨会话长期记忆 + 后台自我进化」能力的纯插件实现：五轨记忆 · git 分支感知 · 回合内自我审查 · 技能自我进化与技能管理器 · 四轨待办 · COI 调度 · 会话广播 · 会话搜索 · 提示词管理器 · 临时信息便签——零核心修改、零运行时依赖，随装随用、卸载即净。",
+  "stars": 157,
+  "forks": 11,
+  "openIssues": 2,
+  "pushedAt": "2026-08-17T07:07:52Z",
+  "createdAt": "2026-08-05T06:53:09Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 46,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "157 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 17,
+     "notes": [
+      "README not probed yet",
+      "detailed description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.463Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "xiaods/k8e",
+  "url": "https://github.com/xiaods/k8e",
+  "name": "k8e",
+  "description": "k8e.sh - OpenSource Agentic AI Sandbox Matrix ",
+  "stars": 474,
+  "forks": 33,
+  "openIssues": 1,
+  "pushedAt": "2026-08-17T13:05:56Z",
+  "createdAt": "2020-09-03T09:47:24Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "agentic-ai",
+   "dsh-plugin",
+   "k8s",
+   "kubernetes",
+   "sandbox-playground"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 44,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "474 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "EthanYoQ/AI-Novel-Writer",
+  "url": "https://github.com/EthanYoQ/AI-Novel-Writer",
+  "name": "AI-Novel-Writer",
+  "description": "本地优先 AI 小说创作工作台，提供 Windows/macOS 桌面版与 DeepSeek Harness 插件开发预览，支持角色、大纲、章节蓝图、审稿修稿和本地模型。",
+  "stars": 377,
+  "forks": 54,
+  "openIssues": 5,
+  "pushedAt": "2026-08-17T06:44:24Z",
+  "createdAt": "2026-06-20T17:27:16Z",
+  "archived": false,
+  "license": "GPL-3.0",
+  "topics": [
+   "ai-writing",
+   "deepseek-harness",
+   "dsh",
+   "dsh-plugin",
+   "dsh-plugins",
+   "electron",
+   "fiction-writing",
+   "gemini",
+   "local-first",
+   "novel-writing",
+   "ollama",
+   "react",
+   "typescript",
+   "web-novel"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 44,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "377 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: GPL-3.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "ZJU-LLMs/OpenStory",
+  "url": "https://github.com/ZJU-LLMs/OpenStory",
+  "name": "OpenStory",
+  "description": "An LLM-powered multi-agent framework for simulating interactive, evolving story worlds.",
+  "stars": 377,
+  "forks": 40,
+  "openIssues": 1,
+  "pushedAt": "2026-08-17T11:05:24Z",
+  "createdAt": "2026-04-01T02:43:27Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "artificial-intelligence",
+   "dsh-plugin",
+   "large-language-models",
+   "multi-agent-systems",
+   "social-simulation"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 44,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "377 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "text2future/flowix",
+  "url": "https://github.com/text2future/flowix",
+  "name": "flowix",
+  "description": "Notes for you, Memory for your agents. / 内置 Deepseek harness Agent / 适用 办公 & 写作 & Coding",
+  "stars": 315,
+  "forks": 40,
+  "openIssues": 23,
+  "pushedAt": "2026-08-17T17:47:52Z",
+  "createdAt": "2026-05-25T03:24:24Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "agent-memory",
+   "claude-code",
+   "codex-cli",
+   "desktop",
+   "dsh",
+   "dsh-plugin",
+   "dsh-plugin-desktop",
+   "hermes-agent",
+   "markdown-editor",
+   "memory-system",
+   "note-taking",
+   "open-code"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 44,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "315 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "SepineTam/mcp-for-stata",
+  "url": "https://github.com/SepineTam/mcp-for-stata",
+  "name": "mcp-for-stata",
+  "description": "A MCP server for Stata to integrate Stata into your agent. ",
+  "stars": 245,
+  "forks": 33,
+  "openIssues": 2,
+  "pushedAt": "2026-08-14T07:13:54Z",
+  "createdAt": "2025-03-28T04:27:09Z",
+  "archived": false,
+  "license": "AGPL-3.0",
+  "topics": [
+   "claude-code",
+   "claude-code-plugin",
+   "claude-code-skill",
+   "codex",
+   "codex-plugin",
+   "dsh-plugin",
+   "dsh-plugins",
+   "econometrics",
+   "empirical",
+   "empirical-research",
+   "llm",
+   "mcp",
+   "social-science",
+   "social-science-research",
+   "stata",
+   "stata-mcp",
+   "statistical-analysis"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 44,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "245 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: AGPL-3.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "fufankeji/deepseek-harness-studio",
+  "url": "https://github.com/fufankeji/deepseek-harness-studio",
+  "name": "deepseek-harness-studio",
+  "description": "DeepSeek Harness 零代码桌面端｜一键启动，支持 Windows 与 macOS；内置插件发现、热点插件推送、一键安装与管理、AI 智能推荐和视觉增强。",
+  "stars": 241,
+  "forks": 28,
+  "openIssues": 2,
+  "pushedAt": "2026-08-17T23:52:15Z",
+  "createdAt": "2026-08-15T03:00:06Z",
+  "archived": false,
+  "license": "MIT",
+  "topics": [
+   "ai-agent",
+   "deepseek",
+   "deepseek-harness",
+   "deepseek-harness-studio",
+   "desktop-app",
+   "developer-tools",
+   "dsh",
+   "dsh-plugin",
+   "electron",
+   "macos",
+   "plugin-manager",
+   "windows"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 44,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "241 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: MIT"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "TencentCloud/tencentmeeting-cli",
+  "url": "https://github.com/TencentCloud/tencentmeeting-cli",
+  "name": "tencentmeeting-cli",
+  "description": "腾讯会议命令行工具（CLI），基于腾讯会议开放平台 OAuth2 授权，支持会议管理、录制管理、参会报告等功能。",
+  "stars": 220,
+  "forks": 10,
+  "openIssues": 3,
+  "pushedAt": "2026-08-07T13:47:15Z",
+  "createdAt": "2026-04-07T10:08:59Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "codebuddy",
+   "codebuddy-skill",
+   "dsh-plugin",
+   "workbuddy",
+   "workbuddy-skill"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 44,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "220 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 15,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Small-tailqwq/dsh-deep-whale",
+  "url": "https://github.com/Small-tailqwq/dsh-deep-whale",
+  "name": "dsh-deep-whale",
+  "description": "DSH Web 鲸鱼娘皮肤系列(深海女仆工坊 maid-atelier)——CC BY-NC-SA 4.0",
+  "stars": 1260,
+  "forks": 43,
+  "openIssues": 27,
+  "pushedAt": "2026-08-17T11:10:30Z",
+  "createdAt": "2026-08-13T13:02:14Z",
+  "archived": false,
+  "license": null,
+  "topics": [
+   "dsh",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 43,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "1260 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 10,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "no license detected"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "chuspeeism/dashi-taskboard",
+  "url": "https://github.com/chuspeeism/dashi-taskboard",
+  "name": "dashi-taskboard",
+  "description": "",
+  "stars": 2291,
+  "forks": 297,
+  "openIssues": 24,
+  "pushedAt": "2026-08-18T01:17:22Z",
+  "createdAt": "2026-07-24T14:14:07Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "claude-code",
+   "cli",
+   "codex",
+   "codex-app",
+   "codex-desktop",
+   "codex-plugin",
+   "dsh",
+   "dsh-plugin",
+   "skills"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 42,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 30,
+     "notes": [
+      "pushed within 30 days",
+      "2291 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 9,
+     "notes": [
+      "README not probed yet",
+      "no description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "yejiming/MuseAI",
+  "url": "https://github.com/yejiming/MuseAI",
+  "name": "MuseAI",
+  "description": "创建你的 AI 角色，进入你的故事世界。和角色聊天、冒险、穿书，让每一次互动都留下羁绊（支持 DeepSeek Harness 插件，欢迎使用）",
+  "stars": 579,
+  "forks": 47,
+  "openIssues": 7,
+  "pushedAt": "2026-08-14T07:59:06Z",
+  "createdAt": "2026-04-03T14:09:27Z",
+  "archived": false,
+  "license": null,
+  "topics": [
+   "agent",
+   "ai",
+   "companion-ai",
+   "dsh",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 41,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 28,
+     "notes": [
+      "pushed within 30 days",
+      "579 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 10,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "no license detected"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.461Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "ZJU-REAL/Polaris",
+  "url": "https://github.com/ZJU-REAL/Polaris",
+  "name": "Polaris",
+  "description": "Toward Autonomous Scientific Discovery",
+  "stars": 165,
+  "forks": 20,
+  "openIssues": 8,
+  "pushedAt": "2026-08-17T01:01:23Z",
+  "createdAt": "2026-07-22T18:28:44Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "topics": [
+   "ai-agents",
+   "ai-scientist",
+   "auto-research",
+   "dsh-plugin",
+   "polaris-agent"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 41,
+   "grade": "C",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "165 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 12,
+     "notes": [
+      "README not probed yet",
+      "short description",
+      "license: Apache-2.0"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.463Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Electricitysheep/dsh-handbook",
+  "url": "https://github.com/Electricitysheep/dsh-handbook",
+  "name": "dsh-handbook",
+  "description": "DeepSeek Harness (dsh) 从 0 到 1 深度手册：安装/插件开发/性能调优/实测案例/同模型多 Agent 实测对比（中文 + 英文 PDF）",
+  "stars": 455,
+  "forks": 21,
+  "openIssues": 0,
+  "pushedAt": "2026-08-18T01:39:45Z",
+  "createdAt": "2026-08-13T15:22:29Z",
+  "archived": false,
+  "license": null,
+  "topics": [
+   "agent",
+   "agent-framework",
+   "ai-agents",
+   "beginners",
+   "deepseek",
+   "deepseek-ai",
+   "dsh-plugin",
+   "getting-started",
+   "guide",
+   "harness",
+   "llm",
+   "tutorial"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 39,
+   "grade": "D",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "455 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 10,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "no license detected"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "Minara-AI/minara-skills",
+  "url": "https://github.com/Minara-AI/minara-skills",
+  "name": "minara-skills",
+  "description": "The skills for trading, to make your agent earn for you.",
+  "stars": 328,
+  "forks": 35,
+  "openIssues": 1,
+  "pushedAt": "2026-08-04T06:34:49Z",
+  "createdAt": "2026-02-02T18:10:31Z",
+  "archived": false,
+  "license": null,
+  "topics": [
+   "agent-skills",
+   "codex",
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 39,
+   "grade": "D",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "328 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 10,
+     "notes": [
+      "README not probed yet",
+      "decent description",
+      "no license detected"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ },
+ {
+  "repo": "zhoushoujianwork/easyeda-agent",
+  "url": "https://github.com/zhoushoujianwork/easyeda-agent",
+  "name": "easyeda-agent",
+  "description": "",
+  "stars": 231,
+  "forks": 35,
+  "openIssues": 18,
+  "pushedAt": "2026-08-17T19:01:40Z",
+  "createdAt": "2026-06-25T09:29:20Z",
+  "archived": false,
+  "license": "NOASSERTION",
+  "topics": [
+   "dsh-plugin"
+  ],
+  "hasReadme": null,
+  "npm": {
+   "exists": false
+  },
+  "curated": false,
+  "addedAt": null,
+  "score": {
+   "total": 38,
+   "grade": "D",
+   "breakdown": {
+    "maintenance": {
+     "weight": 30,
+     "points": 26,
+     "notes": [
+      "pushed within 30 days",
+      "231 stars"
+     ]
+    },
+    "docs": {
+     "weight": 25,
+     "points": 9,
+     "notes": [
+      "README not probed yet",
+      "no description",
+      "license: NOASSERTION"
+     ]
+    },
+    "npm": {
+     "weight": 30,
+     "points": 3,
+     "notes": [
+      "no npm package found (GitHub-only install still works)"
+     ]
+    },
+    "ecosystem": {
+     "weight": 15,
+     "points": 0,
+     "notes": [
+      "not in the curated list"
+     ]
+    }
+   },
+   "flags": [],
+   "scoredAt": "2026-08-18T02:22:28.462Z",
+   "version": 1
+  },
+  "security": {
+   "findings": [],
+   "highRisk": false,
+   "beacons": 0
+  },
+  "plausible": false
+ }
+]

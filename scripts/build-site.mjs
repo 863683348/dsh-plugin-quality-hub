@@ -127,9 +127,13 @@ ${byStars.map((p, i) => `<tr><td class="num">${i + 1}</td><td><a class="pl" href
 
 // ---- security watch ----
 const watch = catalog.filter((p) => p.security.highRisk || p.npm.exists && !p.plausible || p.archived);
+const highRisk = catalog.filter((p) => p.security.highRisk);
 const securityBody = `<h1>Security watch</h1>
-<p class="sub">Plugins that deserve a closer look before you install: dangerous install scripts, missing dsh.bundle declarations, or archived repos. <b>${watch.length}</b> of ${catalog.length} flagged.</p>
-${watch.length ? `<table><tr><th>Plugin</th><th>Grade</th><th>Issue</th><th>Details</th></tr>
+<p class="sub">Security signals and advisories for the dsh-plugin ecosystem: dangerous install scripts, missing dsh.bundle declarations, and archived repos. <b>${watch.length}</b> of ${catalog.length} flagged. Data refreshes weekly. <a href="rss.xml">RSS alerts</a>.</p>
+${highRisk.length ? `<h2>⚠ High-risk advisories</h2>
+${highRisk.map((p) => `<div class="note"><b><span class="flag">dangerous install script</span> ${esc(p.repo)}</b> — ${esc(p.security.findings.map((f) => f.script + " → " + (f.pattern || f.beacon)).join("; "))}<br><span class="muted">${esc(p.description).slice(0, 160)}</span> · <a href="plugin/${encodeURIComponent(p.repo)}.html">details</a></div>`).join("")}
+</h2>` : ""}
+${watch.length ? `<h2>Flagged plugins</h2><table><tr><th>Plugin</th><th>Grade</th><th>Issue</th><th>Details</th></tr>
 ${watch.map((p) => {
   const issues = [];
   if (p.security.highRisk) issues.push("dangerous install script (" + esc(p.security.findings.map((f) => f.script + " → " + (f.pattern || f.beacon)).join("; ")) + ")");
@@ -139,6 +143,7 @@ ${watch.map((p) => {
 }).join("")}
 </table>` : `<div class="note">Nothing flagged in the top ${catalog.length} by stars. The long tail is where the risk lives — <a href="https://github.com/863683348/dsh-plugin-audit">dsh-audit</a> scans the full topic, not just the top 100.</div>`}
 <div class="note">Heuristic only: pattern matching on npm install scripts and manifest declarations. It is not a substitute for a real code review — especially for long-tail plugins. For full-topic scanning with a deep static security scan, see the open-source <a href="https://github.com/863683348/dsh-plugin-audit">dsh-audit</a>.</div>`;
+
 
 // ---- detail pages ----
 for (const p of catalog) {
@@ -165,11 +170,12 @@ const weeklyBody = `<h1>DSH Weekly</h1>
 <p><a class="btn" href="subscribe.html">Get Issue #001 in your inbox</a></p>`;
 const subscribeBody = `<h1>Subscribe to DSH Weekly</h1>
 <p class="sub">One email a week: what's new in the DeepSeek Harness plugin ecosystem, which plugins are worth installing, and what to be careful about.</p>
-<div class="note">Setup: this form wires to your newsletter provider (Buttondown/Substack/Mailchimp). Until then, email us at <b>dshweekly@example.com</b> with "subscribe" in the subject.</div>
-<form action="#" method="post" style="margin-top:12px">
+<div class="note">📮 <b>How to subscribe:</b> enter your email below and hit Subscribe — it opens a pre-filled email to the editor (<b>dshweekly@example.com</b>) that confirms your subscription. Once a newsletter provider (Buttondown / Substack / Mailchimp) is wired up, this becomes a one-click signup. You can also grab the <a href="rss.xml">RSS feed</a> for new plugin alerts.</div>
+<form action="mailto:dshweekly@example.com?subject=Subscribe%20to%20DSH%20Weekly&body=Please%20subscribe%20me%20to%20DSH%20Weekly." method="post" style="margin-top:12px">
 <input type="email" name="email" placeholder="you@example.com" required>
 <button type="submit">Subscribe</button>
-</form>`;
+</form>
+<p class="muted" style="margin-top:8px">No spam. Unsubscribe anytime. One issue per week.</p>`;
 
 writeFileSync(join(DIST, "index.html"), layout("Top Rated", indexBody, "index"));
 writeFileSync(join(DIST, "trending.html"), layout("Trending", trendingBody, "trending"));
@@ -178,3 +184,68 @@ writeFileSync(join(DIST, "weekly.html"), layout("DSH Weekly", weeklyBody, "weekl
 writeFileSync(join(DIST, "subscribe.html"), layout("Subscribe", subscribeBody, "subscribe"));
 writeFileSync(join(DIST, "meta.txt"), JSON.stringify(meta, null, 1));
 console.log("built " + (catalog.length + 5) + " pages (index/trending/security/weekly/subscribe + " + catalog.length + " details)");
+
+// ---- RSS feed (new plugins, high scores, security signals) ----
+function rssDate(iso) {
+  if (!iso) return new Date().toUTCString();
+  const d = new Date(iso);
+  return isNaN(d) ? new Date().toUTCString() : d.toUTCString();
+}
+function generateRss() {
+  const site = "https://863683348.github.io/dsh-plugin-quality-hub/";
+  const items = [];
+  // 1. Recently created plugins
+  for (const p of [...catalog].sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0)).slice(0, 8)) {
+    items.push({
+      title: "New plugin: " + p.repo + (p.score ? " (" + p.score.grade + " " + p.score.total + ")" : ""),
+      link: site + "plugin/" + encodeURIComponent(p.repo) + ".html",
+      guid: "new-" + p.repo + "-" + (p.createdAt || ""),
+      date: p.createdAt,
+      desc: (p.description || "").slice(0, 300) + (p.npm && p.npm.exists ? " — npm: " + p.npm.name + "@" + p.npm.version : "") + (p.stars != null ? " · " + p.stars + " stars" : "")
+    });
+  }
+  // 2. High-risk security signals
+  for (const p of catalog.filter((x) => x.security && x.security.highRisk)) {
+    items.push({
+      title: "⚠ Security alert: " + p.repo,
+      link: site + "plugin/" + encodeURIComponent(p.repo) + ".html",
+      guid: "sec-" + p.repo,
+      date: p.pushedAt,
+      desc: "Dangerous install script detected: " + (p.security.findings || []).map((f) => (f.script || "") + " -> " + (f.pattern || f.beacon || "")).join("; ") + " — " + (p.description || "").slice(0, 200)
+    });
+  }
+  // 3. Top A-grade plugins
+  for (const p of catalog.filter((x) => x.score && x.score.grade === "A").slice(0, 5)) {
+    items.push({
+      title: "Top rated: " + p.repo + " (A " + p.score.total + "/100)",
+      link: site + "plugin/" + encodeURIComponent(p.repo) + ".html",
+      guid: "top-" + p.repo,
+      date: p.pushedAt,
+      desc: (p.description || "").slice(0, 300) + (p.npm && p.npm.exists ? " — npm: " + p.npm.name + "@" + p.npm.version : "")
+    });
+  }
+  items.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>DSH Plugin Quality Hub — Alerts & New Plugins</title>
+<link>${site}</link>
+<description>Ratings, security signals and new-plugin alerts for the DeepSeek Harness (DSH) plugin ecosystem.</description>
+<language>en</language>
+<atom:link href="${site}rss.xml" rel="self" type="application/rss+xml"/>
+<lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+${items.map((it) => `<item>
+<title>${esc(it.title)}</title>
+<link>${it.link}</link>
+<guid isPermaLink="false">${esc(it.guid)}</guid>
+<pubDate>${rssDate(it.date)}</pubDate>
+<description>${esc(it.desc)}</description>
+</item>`).join("\n")}
+</channel>
+</rss>
+`;
+  writeFileSync(join(DIST, "rss.xml"), xml);
+  console.log("rss.xml written with " + items.length + " items");
+}
+generateRss();
+

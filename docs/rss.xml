@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>DSH Plugin Quality Hub — Alerts & New Plugins</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/</link>
+<description>Ratings, security signals and new-plugin alerts for the DeepSeek Harness (DSH) plugin ecosystem.</description>
+<language>en</language>
+<atom:link href="https://863683348.github.io/dsh-plugin-quality-hub/rss.xml" rel="self" type="application/rss+xml"/>
+<lastBuildDate>Sat, 22 Aug 2026 07:44:07 GMT</lastBuildDate>
+<item>
+<title>Top rated: ysr666/dsh-vision-router (A 90/100)</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/plugin/ysr666%2Fdsh-vision-router.html</link>
+<guid isPermaLink="false">top-ysr666/dsh-vision-router</guid>
+<pubDate>Tue, 18 Aug 2026 02:19:00 GMT</pubDate>
+<description>Eyes for text-only DeepSeek Harness agents: built-in free vision chain (no key) + pixel-level vision tools (Q&amp;A, grounding, crop, pixel diff, colors, OCR, SVG trace, cutout, screenshots). One-command install, no Python, image turns work like ordinary tool-calling turns. — npm: dsh-vision-router@1.5.3</description>
+</item>
+<item>
+<title>Top rated: Nagi-ovo/dsh-ads (A 82/100)</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/plugin/Nagi-ovo%2Fdsh-ads.html</link>
+<guid isPermaLink="false">top-Nagi-ovo/dsh-ads</guid>
+<pubDate>Tue, 18 Aug 2026 01:28:47 GMT</pubDate>
+<description>把 DSH 变成 2005 年门户网站｜Parody ads, fake games, and popups for the DSH Web UI — npm: dsh-ads@0.0.1</description>
+</item>
+<item>
+<title>Top rated: bowenliang123/dsh-context (A 88/100)</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/plugin/bowenliang123%2Fdsh-context.html</link>
+<guid isPermaLink="false">top-bowenliang123/dsh-context</guid>
+<pubDate>Tue, 18 Aug 2026 00:47:02 GMT</pubDate>
+<description>Best DeepSeek Harness plugin for context insight and management, with context dashboard / browser and context command, for context statistics, composition, breakdown, evolution details, understanding how the context is made of, and how it evolves. 一站式 DeepSeek Harness 上下文可视化插件，Context 面板及浏览器与 Contex — npm: dsh-context@0.12.0</description>
+</item>
+<item>
+<title>Top rated: Nagi-ovo/dsh-visualize (A 80/100)</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/plugin/Nagi-ovo%2Fdsh-visualize.html</link>
+<guid isPermaLink="false">top-Nagi-ovo/dsh-visualize</guid>
+<pubDate>Mon, 17 Aug 2026 16:27:54 GMT</pubDate>
+<description>在 DSH 对话中生成交互式可视化｜Render model-generated interactive cards inside DSH conversations — npm: dsh-visualize@0.2.1</description>
+</item>
+<item>
+<title>Top rated: Lum1104/dsh-browser (A 86/100)</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/plugin/Lum1104%2Fdsh-browser.html</link>
+<guid isPermaLink="false">top-Lum1104/dsh-browser</guid>
+<pubDate>Mon, 17 Aug 2026 16:08:03 GMT</pubDate>
+<description>dsh plugin: Chrome sidebar extension that lets DeepSeek Harness operate your browser directly, no vision capabilities required. 一款 Chrome 侧边栏扩展程序，可让 DeepSeek Harness 直接操控您的浏览器，无需视觉能力。 — npm: dsh-browser@0.1.0</description>
+</item>
+<item>
+<title>New plugin: Tiger3807861189/DeepSeek-V4-J-Space-Capability-Realization-Report (C 48)</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/plugin/Tiger3807861189%2FDeepSeek-V4-J-Space-Capability-Realization-Report.html</link>
+<guid isPermaLink="false">new-Tiger3807861189/DeepSeek-V4-J-Space-Capability-Realization-Report-2026-08-16T11:38:42Z</guid>
+<pubDate>Sun, 16 Aug 2026 11:38:42 GMT</pubDate>
+<description>DeepSeek V4 × J-Space capability realization report — benchmark evidence that J-Space reduces capability-realization loss on DeepSeek V4 (Flash/Pro). · 546 stars</description>
+</item>
+<item>
+<title>New plugin: fufankeji/deepseek-harness-studio (C 44)</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/plugin/fufankeji%2Fdeepseek-harness-studio.html</link>
+<guid isPermaLink="false">new-fufankeji/deepseek-harness-studio-2026-08-15T03:00:06Z</guid>
+<pubDate>Sat, 15 Aug 2026 03:00:06 GMT</pubDate>
+<description>DeepSeek Harness 零代码桌面端｜一键启动，支持 Windows 与 macOS；内置插件发现、热点插件推送、一键安装与管理、AI 智能推荐和视觉增强。 · 241 stars</description>
+</item>
+<item>
+<title>New plugin: WYH66666666/DSH-Transparent-UI-Plugin (C 46)</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/plugin/WYH66666666%2FDSH-Transparent-UI-Plugin.html</link>
+<guid isPermaLink="false">new-WYH66666666/DSH-Transparent-UI-Plugin-2026-08-14T14:10:42Z</guid>
+<pubDate>Fri, 14 Aug 2026 14:10:42 GMT</pubDate>
+<description>是一层高自由度的玻璃质感主题，套在 DeepSeek Harness 网页端。顶栏、侧边栏、输入框、统计行、轨迹视图都成了磨砂玻璃片。玻璃模糊度、磨砂度、背景（流体或自定义壁纸，壁纸还能单独调模糊和磨砂）全都能在设置卡片里自由调节。关掉开关就回到原生界面，不改 DSH 任何一行源码。 · 253 stars</description>
+</item>
+<item>
+<title>New plugin: xiaobright/dsh-anchored-standard (C 48)</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/plugin/xiaobright%2Fdsh-anchored-standard.html</link>
+<guid isPermaLink="false">new-xiaobright/dsh-anchored-standard-2026-08-14T14:06:39Z</guid>
+<pubDate>Fri, 14 Aug 2026 14:06:39 GMT</pubDate>
+<description>Two-phase DeepSeek Harness preset: Minimal-aligned bootstrap, then full Standard tools (Project2 98/99) · 3438 stars</description>
+</item>
+<item>
+<title>New plugin: bowenliang123/dsh-context (A 88)</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/plugin/bowenliang123%2Fdsh-context.html</link>
+<guid isPermaLink="false">new-bowenliang123/dsh-context-2026-08-14T08:23:28Z</guid>
+<pubDate>Fri, 14 Aug 2026 08:23:28 GMT</pubDate>
+<description>Best DeepSeek Harness plugin for context insight and management, with context dashboard / browser and context command, for context statistics, composition, breakdown, evolution details, understanding how the context is made of, and how it evolves. 一站式 DeepSeek Harness 上下文可视化插件，Context 面板及浏览器与 Contex — npm: dsh-context@0.12.0 · 229 stars</description>
+</item>
+<item>
+<title>New plugin: dsh-market/dsh-market (B 61)</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/plugin/dsh-market%2Fdsh-market.html</link>
+<guid isPermaLink="false">new-dsh-market/dsh-market-2026-08-14T04:58:15Z</guid>
+<pubDate>Fri, 14 Aug 2026 04:58:15 GMT</pubDate>
+<description>The plugin market inside DeepSeek Harness — browse, search, one-click install · DSH 可视化插件市场 · 850 stars</description>
+</item>
+<item>
+<title>New plugin: hairyf/deepseek-harness-desktop (B 69)</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/plugin/hairyf%2Fdeepseek-harness-desktop.html</link>
+<guid isPermaLink="false">new-hairyf/deepseek-harness-desktop-2026-08-14T02:36:29Z</guid>
+<pubDate>Fri, 14 Aug 2026 02:36:29 GMT</pubDate>
+<description>DeepSeek Harness Tauri 桌面版 | Only 5mb installer, zero environment setup. Windows / macOS / Linux. — npm: deepseek-harness-desktop@0.4.1 · 432 stars</description>
+</item>
+<item>
+<title>New plugin: ysr666/dsh-vision-router (A 90)</title>
+<link>https://863683348.github.io/dsh-plugin-quality-hub/plugin/ysr666%2Fdsh-vision-router.html</link>
+<guid isPermaLink="false">new-ysr666/dsh-vision-router-2026-08-13T18:57:47Z</guid>
+<pubDate>Thu, 13 Aug 2026 18:57:47 GMT</pubDate>
+<description>Eyes for text-only DeepSeek Harness agents: built-in free vision chain (no key) + pixel-level vision tools (Q&amp;A, grounding, crop, pixel diff, colors, OCR, SVG trace, cutout, screenshots). One-command install, no Python, image turns work like ordinary tool-calling turns. — npm: dsh-vision-router@1.5.3 · 646 stars</description>
+</item>
+</channel>
+</rss>
