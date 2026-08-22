@@ -4,6 +4,12 @@ on:
   schedule:
     # Every day 02:00 UTC (Beijing 10:00)
     - cron: '0 2 * * *'
+  push:
+    # v1.3: 管道代码改动即自动触发一次评估（便于一次大扩库），不再需要手动点 Run workflow
+    branches: [main]
+    paths:
+      - '.github/workflows/daily-evaluate.yml'
+      - 'app/scripts/daily-evaluate.mts'
   workflow_dispatch: # manual trigger — supports bulk scale-up (e.g. TARGET_NEW=700)
     inputs:
       target_new:
@@ -16,6 +22,11 @@ on:
         required: false
         default: '100'
         type: string
+      enable_synthetic:
+        description: 'Allow synthetic fallback (default false — only real GitHub plugins)'
+        required: false
+        default: 'false'
+        type: boolean
 
 concurrency:
   group: daily-evaluate
@@ -24,7 +35,7 @@ concurrency:
 jobs:
   evaluate:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 120
     defaults:
       run:
         working-directory: app
@@ -58,8 +69,10 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           DIRECT_URL: ${{ secrets.DIRECT_URL }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          TARGET_NEW: ${{ inputs.target_new || '100' }}
-          MAX_GITHUB: ${{ inputs.max_github || '100' }}
+          # push 触发=管道升级后一次大扩库；cron/manual 用输入参数
+          TARGET_NEW: ${{ github.event_name == 'push' && '1000' || inputs.target_new || '100' }}
+          MAX_GITHUB: ${{ github.event_name == 'push' && '1000' || inputs.max_github || '100' }}
+          ENABLE_SYNTHETIC: ${{ inputs.enable_synthetic || 'false' }}
           REPORT_PATH: evaluate-report.json
 
       - name: Upload evaluation report

@@ -47,6 +47,9 @@ const prisma = new PrismaClient();
 // ===== Config =====
 const TARGET_NEW = Number(process.env.TARGET_NEW ?? "100"); // new plugins per run (v1.2: 60 -> 100)
 const MAX_GITHUB = Number(process.env.MAX_GITHUB ?? "100"); // cap on real GitHub fetches (v1.2: 30 -> 100)
+// v1.3: 默认关闭合成池——只收真实 GitHub 插件（用户拍板：不要假名，只要有 star 就评测）
+const ENABLE_SYNTHETIC =
+  process.env.ENABLE_SYNTHETIC === "1" || process.env.ENABLE_SYNTHETIC === "true";
 const GITHUB_TOKEN = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
 const TODAY = new Date().toISOString().slice(0, 10); // YYYY-MM-DD (UTC)
 const DATE_SEED = Number(TODAY.replace(/-/g, "")); // deterministic per-day seed
@@ -126,20 +129,43 @@ interface SearchItem {
   open_issues_count: number;
 }
 
-async function githubSearch(query: string, perPage = 100): Promise<SearchItem[]> {
+async function githubSearch(query: string, maxPages = 10): Promise<SearchItem[]> {
   const headers: Record<string, string> = {
     Accept: "application/vnd.github+json",
     "User-Agent": "dsh-plugin-quality-hub",
   };
   if (GITHUB_TOKEN) headers.Authorization = `Bearer ${GITHUB_TOKEN}`;
-  const url = `${GITHUB_API}/search/repositories?q=${encodeURIComponent(query)}&sort=stars&order=desc&per_page=${perPage}&page=1`;
-  const res = await fetch(url, { headers });
-  if (!res.ok) {
-    console.warn(`[github] search "${query}" failed: ${res.status}`);
-    return [];
+  const out: SearchItem[] = [];
+  for (let page = 1; page <= maxPages; page++) {
+    const url = `${GITHUB_API}/search/repositories?q=${encodeURIComponent(query)}&sort=stars&order=desc&per_page=100&page=${page}`;
+    const res = await fetch(url, { headers });
+    if (!res.ok) {
+      // 限流(403/429)：等待 retry-after 后重试一次，仍失败则放弃本页
+      if (res.status === 403 || res.status === 429) {
+        const retryAfter = Number(res.headers.get("retry-after") ?? "60");
+        const wait = Math.min(retryAfter * 1000, 60_000);
+        console.warn(`[github] rate-limited (${res.status}) on "${query}" p${page}, waiting ${wait}ms`);
+        await new Promise((r) => setTimeout(r, wait));
+        const retry = await fetch(url, { headers });
+        if (!retry.ok) {
+          console.warn(`[github] retry failed (${retry.status}) on "${query}" p${page}`);
+          break;
+        }
+        const data = (await retry.json()) as { items?: SearchItem[] };
+        if (!data.items || data.items.length === 0) break;
+        out.push(...data.items);
+        continue;
+      }
+      console.warn(`[github] search "${query}" p${page} failed: ${res.status}`);
+      break;
+    }
+    const data = (await res.json()) as { items?: SearchItem[] };
+    if (!data.items || data.items.length === 0) break;
+    out.push(...data.items);
+    // 翻到不足一整页说明已到末尾
+    if (data.items.length < 100) break;
   }
-  const data = (await res.json()) as { items?: SearchItem[] };
-  return data.items ?? [];
+  return out;
 }
 
 // Enrich a real GitHub repo with heuristics needed by the scoring engine
@@ -429,7 +455,8 @@ async function main() {
   console.log(`GitHub new candidates: ${githubNew.length}`);
 
   // 3. Synthetic fill to reach TARGET_NEW
-  const synthNeeded = Math.max(0, TARGET_NEW - githubNew.length);
+  // v1.3: 默认关闭合成池（ENABLE_SYNTHETIC 才启用）——用户拍板只要真实 GitHub 插件
+  const synthNeeded = ENABLE_SYNTHETIC ? Math.max(0, TARGET_NEW - githubNew.length) : 0;
   let synthIdx = 0;
   const syntheticNew: { repo: GithubRepoInput; npm: NpmInput | null; synthIndex: number }[] = [];
   while (syntheticNew.length < synthNeeded) {
