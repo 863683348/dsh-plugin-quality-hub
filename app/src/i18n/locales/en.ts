@@ -627,6 +627,12 @@ const en = {
           excerpt:
             'A look inside our dangerous-pattern scanner: what it checks, what it misses, and how to read the results responsibly.',
         },
+        {
+          title: 'Why Independent Plugin Scoring Beats Self-Reported Ratings',
+          date: 'August 22, 2026',
+          excerpt:
+            'Stars and self-reported ratings can be manipulated. Our independent scoring uses real data — maintenance activity, documentation quality, npm health — to give you an unbiased view of plugin quality.',
+        },
       ],
     },
     contact: {
