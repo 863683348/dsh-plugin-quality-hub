@@ -6,6 +6,12 @@ on:
     - cron: '0 2 * * *'
     # 02:15 UTC - low-quality watchlist generation (after main eval)
     - cron: '15 2 * * *'
+    # 19:10 UTC = Beijing 03:10 - daily tutorial generation (3 levels)
+    - cron: '10 19 * * *'
+    # 19:20 UTC = Beijing 03:20 - daily example generation
+    - cron: '20 19 * * *'
+    # 19:30 UTC = Beijing 03:30 - daily blog generation
+    - cron: '30 19 * * *'
   push:
     # v1.3: 管道代码改动即自动触发一次评估（便于一次大扩库），不再需要手动点 Run workflow
     # v1.4: 内容文件（教程/实例 markdown）变更时自动 seed，发布即上线
@@ -98,6 +104,130 @@ jobs:
       - name: Notify on failure
         if: failure()
         run: echo "Daily evaluation failed - check logs above" >> $GITHUB_STEP_SUMMARY
+
+  # ================= Job 4: 教程内容生成（3级各1篇/天） =================
+  gen-tutorials:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: ${{ github.event_name == 'schedule' && github.event.schedule == '10 19 * * *' }}
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma client
+        run: npx prisma generate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+      - name: Apply migrations
+        run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+      - name: Generate daily tutorials
+        run: npm run gen:tutorials
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+  # ================= Job 5: 实例内容生成（每天1篇） =================
+  gen-examples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: ${{ github.event_name == 'schedule' && github.event.schedule == '20 19 * * *' }}
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma client
+        run: npx prisma generate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+      - name: Apply migrations
+        run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+      - name: Generate daily example
+        run: npm run gen:examples
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+  # ================= Job 6: 博客内容生成（每天1篇双语） =================
+  gen-blog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: ${{ github.event_name == 'schedule' && github.event.schedule == '30 19 * * *' }}
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma client
+        run: npx prisma generate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+      - name: Apply migrations
+        run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+      - name: Generate daily blog post
+        run: npm run gen:blog
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+      - name: Commit and push blog update
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add app/src/data/blog/posts.ts
+          git diff --cached --quiet || git commit -m "chore: add blog post for day ${{ github.run_number }}"
+          git push
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   # ================= Job 2: 低质量插件观察区（合成示例 + 真实 D 级） =================
   low-quality:

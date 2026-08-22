@@ -17,6 +17,9 @@
     "seed:content": "tsx prisma/seed-content.ts",
     "evaluate:daily": "tsx scripts/daily-evaluate.mts",
     "gen:lowquality": "tsx scripts/gen-lowquality.mts",
+    "gen:tutorials": "tsx scripts/gen-tutorials.mts",
+    "gen:examples": "tsx scripts/gen-examples.mts",
+    "gen:blog": "tsx scripts/gen-blog.mts",
     "test:scoring": "tsx --test tests/scoring.test.ts"
   },
   "prisma": {
