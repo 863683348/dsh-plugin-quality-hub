@@ -1,0 +1,68 @@
+{
+  "month": "2026-08",
+  "generatedAt": "2026-08-22T01:18:56.741Z",
+  "total": 382,
+  "newThisMonth": 382,
+  "subscribers": 1,
+  "distribution": {
+    "A": 109,
+    "B": 181,
+    "C": 44,
+    "D": 48
+  },
+  "top50": [
+    {
+      "rank": 1,
+      "name": "deepseek-harness/backup-tool",
+      "url": "https://github.com/deepseek-harness/backup-tool",
+      "score": 97,
+      "grade": "A",
+      "stars": 138,
+      "created": "2026-08-17",
+      "archived": false
+    },
+    {
+      "rank": 2,
+      "name": "dsh-synth/pipeline-compressor-29",
+      "url": "https://github.com/dsh-synth/pipeline-compressor-29",
+      "score": 96,
+      "grade": "A",
+      "stars": 2289,
+      "created": "2026-08-19",
+      "archived": false
+    },
+    {
+      "rank": 3,
+      "name": "harness-community/prompt-converter-23",
+      "url": "https://github.com/harness-community/prompt-converter-23",
+      "score": 96,
+      "grade": "A",
+      "stars": 1643,
+      "created": "2026-08-19",
+      "archived": false
+    },
+    {
+      "rank": 4,
+      "name": "harness-community/redis-adapter-26",
+      "url": "https://github.com/harness-community/redis-adapter-26",
+      "score": 96,
+      "grade": "A",
+      "stars": 883,
+      "created": "2026-08-21",
+      "archived": false
+    },
+    {
+      "rank": 5,
+      "name": "plugin-stack/context-compressor",
+      "url": "https://github.com/plugin-stack/context-compressor",
+      "score": 95,
+      "grade": "A",
+      "stars": 2588,
+      "created": "2026-08-18",
+      "archived": false
+    }
+  ],
+  "risingCount": 10,
+  "abandonCount": 12,
+  "churnCount": 10
+}
