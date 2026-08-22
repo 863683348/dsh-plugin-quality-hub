@@ -4,7 +4,18 @@ on:
   schedule:
     # Every day 02:00 UTC (Beijing 10:00)
     - cron: '0 2 * * *'
-  workflow_dispatch: # manual trigger
+  workflow_dispatch: # manual trigger — supports bulk scale-up (e.g. TARGET_NEW=700)
+    inputs:
+      target_new:
+        description: 'Target new plugins this run'
+        required: false
+        default: '100'
+        type: string
+      max_github:
+        description: 'Max real GitHub repos to fetch'
+        required: false
+        default: '100'
+        type: string
 
 concurrency:
   group: daily-evaluate
@@ -47,8 +58,8 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           DIRECT_URL: ${{ secrets.DIRECT_URL }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          TARGET_NEW: '60'
-          MAX_GITHUB: '30'
+          TARGET_NEW: ${{ inputs.target_new || '100' }}
+          MAX_GITHUB: ${{ inputs.max_github || '100' }}
           REPORT_PATH: evaluate-report.json
 
       - name: Upload evaluation report

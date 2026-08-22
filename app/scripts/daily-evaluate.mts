@@ -45,8 +45,8 @@ if (!IS_CI) {
 const prisma = new PrismaClient();
 
 // ===== Config =====
-const TARGET_NEW = Number(process.env.TARGET_NEW ?? "60"); // new plugins per run
-const MAX_GITHUB = Number(process.env.MAX_GITHUB ?? "30"); // cap on real GitHub fetches
+const TARGET_NEW = Number(process.env.TARGET_NEW ?? "100"); // new plugins per run (v1.2: 60 -> 100)
+const MAX_GITHUB = Number(process.env.MAX_GITHUB ?? "100"); // cap on real GitHub fetches (v1.2: 30 -> 100)
 const GITHUB_TOKEN = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
 const TODAY = new Date().toISOString().slice(0, 10); // YYYY-MM-DD (UTC)
 const DATE_SEED = Number(TODAY.replace(/-/g, "")); // deterministic per-day seed
@@ -98,12 +98,20 @@ const SYNTH_PREFIXES = [
 
 // ===== Real GitHub search (multi-query) =====
 const GITHUB_API = "https://api.github.com";
+// v1.2: widened query set — "any repo with stars counts". Kept DSH-related
+// keywords so results stay relevant; stars:>0 expresses "has a star".
 const SEARCH_QUERIES = [
-  "topic:dsh-plugin",
-  'topic:deepseek-harness',
-  '"dsh.bundle" in:file',
-  '"dsh.bundle" in:readme',
-  'deepseek harness plugin',
+  "topic:dsh-plugin stars:>0",
+  "topic:deepseek-harness stars:>0",
+  '"dsh.bundle" in:file stars:>0',
+  '"dsh.bundle" in:readme stars:>0',
+  'deepseek harness plugin stars:>0',
+  '"dsh-plugin" stars:>0',
+  'dsh plugin stars:>0',
+  'deepseek "plugin" stars:>20',
+  'harness plugin stars:>20',
+  'dsh harness stars:>10',
+  'cordis deepseek stars:>10',
 ];
 
 interface SearchItem {
@@ -118,7 +126,7 @@ interface SearchItem {
   open_issues_count: number;
 }
 
-async function githubSearch(query: string, perPage = 50): Promise<SearchItem[]> {
+async function githubSearch(query: string, perPage = 100): Promise<SearchItem[]> {
   const headers: Record<string, string> = {
     Accept: "application/vnd.github+json",
     "User-Agent": "dsh-plugin-quality-hub",
