@@ -50,6 +50,7 @@ const en = {
       examples: 'Examples',
       trending: 'Trending',
       security: 'Security Watch',
+      lowQuality: 'Low Quality',
       weekly: 'Weekly',
       method: 'Methodology',
       about: 'About',
@@ -354,6 +355,35 @@ const en = {
       notice:
         'Advisories are published when a dangerous pattern is confirmed. Always inspect the code you run.',
     },
+  },
+  lowQuality: {
+    title: 'Low-Quality Plugin Watchlist',
+    subtitle:
+      'Plugins that scored very low across maintenance, documentation, npm integration, and ecosystem health. Use with caution — or avoid them entirely.',
+    warningBanner:
+      'Some entries below are synthetic examples, not real GitHub repositories. They exist purely to teach you what a low-quality plugin looks like. Do not install them in a real environment.',
+    syntheticBadge: 'Synthetic example',
+    realBadge: 'Real plugin — low grade',
+    table: {
+      plugin: 'Plugin',
+      grade: 'Grade',
+      score: 'Score',
+      stars: 'Stars',
+      flags: 'Warning flags',
+      empty: 'No low-quality plugins recorded yet.',
+    },
+    why: {
+      title: 'Why a plugin ends up here',
+      points: [
+        'Dangerous install scripts (curl | sh, base64 payloads)',
+        'Missing dsh.bundle declaration or docs',
+        'Stale repositories with months of inactivity',
+        'Missing license or README',
+        'Very low stars with no real community signal',
+      ],
+    },
+    notice:
+      'Synthetic examples are generated deterministically for education. Real entries are D-grade plugins flagged from the live database.',
   },
   method: {
     title: 'How We Score Plugins',

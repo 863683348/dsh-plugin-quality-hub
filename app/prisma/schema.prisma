@@ -97,6 +97,28 @@ model SecurityAdvisory {
   @@map("security_advisories")
 }
 
+// Low-Quality Watchlist (v1.4): synthetic/placeholder examples + real low-grade plugins.
+// Purpose: a dedicated zone that openly flags "these plugins scored very low — use with caution".
+// Never pollutes the main Plugin table; this table is a warning surface only.
+model LowQualityPlugin {
+  id          String   @id @default(cuid())
+  name        String   @unique // "owner/repo" — may be a synthetic example or a real low-grade plugin
+  owner       String
+  repoName    String
+  githubUrl   String? // null for synthetic examples (no real repo)
+  synthetic   Boolean  @default(true) // true = generated example (NOT a real repo); false = real plugin flagged low
+  score       Int      @default(0)
+  grade       String   @default("D") // typically C/D
+  description String?
+  flags       Json     @default("[]") // warning flags, e.g. ["dangerous install script","no license"]
+  stars       Int      @default(0)
+  addedAt     DateTime @default(now())
+
+  @@index([synthetic], name: "idx_lowq_synthetic")
+  @@index([grade], name: "idx_lowq_grade")
+  @@map("low_quality_plugins")
+}
+
 // Refresh pipeline execution log (Spec §6.1 / refresh-service.ts)
 model RefreshLog {
   id              String    @id @default(cuid())

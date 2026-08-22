@@ -15,6 +15,7 @@ const navItems = [
   { href: '/examples', key: 'examples' },
   { href: '/trending', key: 'trending' },
   { href: '/security', key: 'security' },
+  { href: '/low-quality', key: 'lowQuality' },
   { href: '/weekly', key: 'weekly' },
   { href: '/pricing', key: 'pricing' },
   { href: '/method', key: 'method' },

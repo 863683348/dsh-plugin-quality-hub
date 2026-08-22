@@ -2,14 +2,21 @@ name: Daily Plugin Evaluation
 
 on:
   schedule:
-    # Every day 02:00 UTC (Beijing 10:00)
+    # Every day 02:00 UTC (Beijing 10:00) - main evaluation
     - cron: '0 2 * * *'
+    # 02:15 UTC - low-quality watchlist generation (after main eval)
+    - cron: '15 2 * * *'
   push:
     # v1.3: 管道代码改动即自动触发一次评估（便于一次大扩库），不再需要手动点 Run workflow
+    # v1.4: 内容文件（教程/实例 markdown）变更时自动 seed，发布即上线
     branches: [main]
     paths:
       - '.github/workflows/daily-evaluate.yml'
       - 'app/scripts/daily-evaluate.mts'
+      - 'app/scripts/gen-lowquality.mts'
+      - 'app/prisma/schema.prisma'
+      - 'app/prisma/content/**'
+      - 'app/prisma/seed-content.ts'
   workflow_dispatch: # manual trigger — supports bulk scale-up (e.g. TARGET_NEW=700)
     inputs:
       target_new:
@@ -27,12 +34,18 @@ on:
         required: false
         default: 'false'
         type: boolean
+      run_low_quality:
+        description: 'Also run low-quality watchlist generation'
+        required: false
+        default: 'false'
+        type: boolean
 
 concurrency:
   group: daily-evaluate
   cancel-in-progress: false
 
 jobs:
+  # ================= Job 1: 每日评测（真实 GitHub 插件） =================
   evaluate:
     runs-on: ubuntu-latest
     timeout-minutes: 120
@@ -85,3 +98,91 @@ jobs:
       - name: Notify on failure
         if: failure()
         run: echo "Daily evaluation failed - check logs above" >> $GITHUB_STEP_SUMMARY
+
+  # ================= Job 2: 低质量插件观察区（合成示例 + 真实 D 级） =================
+  low-quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # 定时(02:15) 或 手动勾选 或 管道脚本变更 时运行
+    if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.run_low_quality == 'true') || github.event_name == 'push' }}
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma client
+        run: npx prisma generate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+      - name: Apply migrations
+        run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+      - name: Generate low-quality watchlist
+        run: npm run gen:lowquality
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+          TARGET_LOWQ: '60'
+          INCLUDE_REAL_D: '1'
+          REPORT_PATH: low-quality-report.json
+
+      - name: Upload low-quality report
+        uses: actions/upload-artifact@v4
+        with:
+          name: low-quality-report
+          path: app/low-quality-report.json
+          retention-days: 14
+
+  # ================= Job 3: 内容 seed（教程/实例 markdown -> Neon） =================
+  # 内容文件 push 时自动 seed：写一篇文章提交即上线
+  seed-content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: ${{ github.event_name == 'push' }}
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma client
+        run: npx prisma generate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+      - name: Apply migrations
+        run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+
+      - name: Seed tutorials & examples content
+        run: npm run seed:content
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}

@@ -50,6 +50,7 @@ const zh = {
       examples: '实例',
       trending: '趋势',
       security: '安全预警',
+      lowQuality: '低质量区',
       weekly: '周刊',
       method: '评分方法',
       about: '关于',
@@ -354,6 +355,35 @@ const zh = {
       notice:
         '公告在确认危险模式后发布。运行前请务必检查代码。',
     },
+  },
+  lowQuality: {
+    title: '低质量插件观察区',
+    subtitle:
+      '在维护、文档、npm 集成和生态健康四个维度得分极低的插件。请谨慎使用——或干脆避免。',
+    warningBanner:
+      '以下部分条目是合成示例，不是真实 GitHub 仓库。它们的存在纯粹是为了教你识别低质量插件长什么样。请勿在真实环境中安装。',
+    syntheticBadge: '合成示例',
+    realBadge: '真实插件 · 低分',
+    table: {
+      plugin: '插件',
+      grade: '等级',
+      score: '分数',
+      stars: '星标',
+      flags: '警告标记',
+      empty: '暂未收录低质量插件。',
+    },
+    why: {
+      title: '插件为何会进入这里',
+      points: [
+        '危险安装脚本（curl | sh、base64 载荷等）',
+        '缺失 dsh.bundle 声明或文档',
+        '数月无活动的过时仓库',
+        '缺少许可证或 README',
+        '星标极少、缺乏真实社区信号',
+      ],
+    },
+    notice:
+      '合成示例按确定性规则生成，仅供教学。真实条目为从实时数据库标记出的 D 级插件。',
   },
   method: {
     title: '评分方法',

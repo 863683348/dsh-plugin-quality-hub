@@ -12,6 +12,7 @@ const STATIC_PATHS = [
   "/examples",
   "/faq",
   "/login",
+  "/low-quality",
   "/method",
   "/plugins",
   "/pricing",
