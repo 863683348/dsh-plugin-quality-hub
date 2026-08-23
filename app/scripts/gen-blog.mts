@@ -30,11 +30,14 @@ if (!IS_CI) {
 }
 
 // 博客内容模板库（每个slug对应完整双语文本）
+// body 内容块，结构与站点 BlogPost.body: BlogBlock[] 一致
+type BodyBlock = { h2?: string; h3?: string; p?: string; ul?: string[]; table?: { head: string[]; rows: string[][] } };
+
 const BLOG_CONTENT: Record<string, {
   titleEn: string; titleZh: string;
   excerptEn: string; excerptZh: string;
   metaDescriptionEn: string; metaDescriptionZh: string;
-  bodyEn: string[]; bodyZh: string[];
+  bodyEn: BodyBlock[]; bodyZh: BodyBlock[];
 }> = {
   'dsh-plugin-security-scanner-guide': {
     titleEn: 'DSH Plugin Security Scanner: How to Spot Risky Plugins Before You Install Them',
@@ -161,14 +164,22 @@ async function main() {
   const postsFile = 'C:/worktmp/dsh-plugin-quality-hub/app/src/data/blog/posts.ts';
   let postsContent = readFileSync(postsFile, 'utf8');
   
-  // Find the end of the blogPosts array
-  const lastBracket = postsContent.lastIndexOf(']');
-  const secondLastBracket = postsContent.lastIndexOf(']', lastBracket - 1);
-  
-  // Insert before the closing bracket
-  const postStr = `\n  ${JSON.stringify(newPost, null, 2).replace(/"/g, "'").replace(/'/g, '"')}`;
-  
-  postsContent = postsContent.slice(0, lastBracket) + postStr + postsContent.slice(lastBracket);
+  // Find the end of the blogPosts array — the last `];` (its closing bracket).
+  // NOTE: must match `];` (bracket+semicolon), NOT the last `]` — the file's final `]`
+  // lives inside `[...blogPosts].sort(...)` in getBlogPosts(), which would be the wrong insert point.
+  const arrayClose = postsContent.lastIndexOf('];');
+  if (arrayClose === -1) {
+    console.error('[gen-blog] Cannot find blogPosts array close `];`');
+    process.exit(1);
+  }
+
+  // Append as a new element right before `];`.
+  // IMPORTANT: keep the double-quoted JSON.stringify output as-is. Do NOT convert quotes to single
+  // (a botched replace chain `"`→`'`→`"` used to turn content apostrophes like "Don't" into `Don"t`,
+  // which silently broke posts.ts syntax).
+  const postStr = '\n  ' + JSON.stringify(newPost, null, 2) + ',';
+
+  postsContent = postsContent.slice(0, arrayClose) + postStr + '\n' + postsContent.slice(arrayClose);
   
   writeFileSync(postsFile, postsContent);
   console.log(`[gen-blog] Appended ${topic.slug} to posts.ts`);
