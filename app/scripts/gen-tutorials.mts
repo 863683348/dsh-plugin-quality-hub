@@ -7,7 +7,7 @@
 import { PrismaClient } from "@prisma/client";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
-import { getDailyTutorials, TUTORIAL_TOPIC_PLAN } from "./content-calendars";
+import { getDailyTutorials, TUTORIAL_TOPIC_PLAN } from "./content-calendars.mts";
 
 const prisma = new PrismaClient();
 

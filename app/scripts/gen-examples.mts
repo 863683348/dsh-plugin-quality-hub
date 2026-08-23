@@ -5,7 +5,7 @@
 
 import { PrismaClient } from "@prisma/client";
 import { readFileSync } from "fs";
-import { getDailyExample } from "./content-calendars";
+import { getDailyExample } from "./content-calendars.mts";
 
 const prisma = new PrismaClient();
 

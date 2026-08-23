@@ -94,7 +94,7 @@ export const BLOG_TOPIC_PLAN = [
   { day: 26, slug: 'dsh-quality-badge-api', keywords: ['dsh badge api', 'quality badges'], longTail: ['dsh quality badge embed', 'dsh badge svg'] },
   { day: 27, slug: 'dsh-ecosystem-insights', keywords: ['dsh ecosystem', 'plugin statistics'], longTail: ['dsh plugin ecosystem report', 'dsh weekly stats'] },
   { day: 28, slug: 'dsh-plugin-lint', keywords: ['dsh lint', 'code quality'], longTail: ['dsh plugin linter', 'dsh code quality tool'] },
-  { day: 29, slug: 'dsh-security-watch-guide', keywords: ['dsh security watch', 'realtime alerts'], longTrail: ['dsh security advisory', 'dsh vulnerability alerts'] },
+  { day: 29, slug: 'dsh-security-watch-guide', keywords: ['dsh security watch', 'realtime alerts'], longTail: ['dsh security advisory', 'dsh vulnerability alerts'] },
   { day: 30, slug: 'dsh-plugin-development-roadmap', keywords: ['dsh roadmap', 'plugin development'], longTail: ['dsh plugin future', 'dsh ecosystem roadmap 2026'] },
 ] as const;
 
@@ -108,12 +108,12 @@ export function getDailyTutorials(day: number) {
   };
 }
 
-export function getDailyExample(day: number) {
+export function getDailyExample(day: number): typeof EXAMPLE_TOPIC_PLAN[0] {
   const dayInCycle = ((day - 1) % 30) + 1;
-  return EXAMPLE_TOPIC_PLAN.find(e => e.day === dayInCycle)!: typeof EXAMPLE_TOPIC_PLAN[0];
+  return EXAMPLE_TOPIC_PLAN.find(e => e.day === dayInCycle)!;
 }
 
-export function getDailyBlog(day: number) {
+export function getDailyBlog(day: number): typeof BLOG_TOPIC_PLAN[0] {
   const dayInCycle = ((day - 1) % 30) + 1;
-  return BLOG_TOPIC_PLAN.find(b => b.day === dayInCycle)!: typeof BLOG_TOPIC_PLAN[0];
+  return BLOG_TOPIC_PLAN.find(b => b.day === dayInCycle)!;
 }

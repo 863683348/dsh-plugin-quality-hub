@@ -4,7 +4,7 @@
 // ============================================================
 
 import { readFileSync, writeFileSync } from "fs";
-import { getDailyBlog } from "./content-calendars";
+import { getDailyBlog } from "./content-calendars.mts";
 
 // Env bootstrap
 const IS_CI = !!process.env.CI;
@@ -112,7 +112,7 @@ function generateGenericBlog(topic: ReturnType<typeof getDailyBlog>) {
       { h2: 'Key Concepts' },
       { ul: ['Understanding the basic pattern', 'Common implementation approaches', 'Best practices from the community'] },
       { h2: 'Getting Started' },
-      { p: 'To implement ${topic.slug.replace(/-/g, ' ')}, start with the official documentation and explore existing examples in the ecosystem.' },
+      { p: `To implement ${topic.slug.replace(/-/g, ' ')}, start with the official documentation and explore existing examples in the ecosystem.` },
     ],
     bodyZh: [
       { h2: '介绍' },
@@ -120,7 +120,7 @@ function generateGenericBlog(topic: ReturnType<typeof getDailyBlog>) {
       { h2: '核心概念' },
       { ul: ['理解基本模式', '常见实现方法', '社区的实践最佳'] },
       { h2: '入门指南' },
-      { p: '要实现 ${topic.slug.replace(/-/g, ' ')}，从官方文档开始并探索生态中的现有示例。' },
+      { p: `要实现 ${topic.slug.replace(/-/g, ' ')}，从官方文档开始并探索生态中的现有示例。` },
     ],
   };
 }
