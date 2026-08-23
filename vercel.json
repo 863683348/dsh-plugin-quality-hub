@@ -1,4 +1,3 @@
 {
-  "$comment": "This repo hosts TWO apps: GitHub Pages static site (repo root) + Next.js app (app/). For Vercel deployments, Root Directory MUST be set to 'app'. This file exists only to document that; Vercel's actual Root Directory is configured in the dashboard (Settings -> General -> Root Directory) or via `vercel --cwd app`.",
   "framework": "nextjs"
 }
