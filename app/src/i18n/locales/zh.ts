@@ -315,6 +315,8 @@ const zh = {
     noConflictsFound: '所选插件未发现冲突',
     warning: '警告',
     note: '这是基于插件元数据的启发式检查。在生产环境使用前，请在安全环境中测试。',
+    legend: '图例',
+    topPlugins: '热门插件',
   },
   security: {
     title: '安全预警',

@@ -315,6 +315,8 @@ const en = {
     noConflictsFound: 'No conflicts found between selected plugins',
     warning: 'Warning',
     note: 'This is a heuristic check based on plugin metadata. Always test in a safe environment before using in production.',
+    legend: 'Legend',
+    topPlugins: 'Top plugins',
   },
   security: {
     title: 'Security Watch',
