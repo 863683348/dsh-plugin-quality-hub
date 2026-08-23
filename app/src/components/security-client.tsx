@@ -47,7 +47,7 @@ const legendConfig: Array<{
   { type: 'info', Icon: Archive, color: 'var(--color-info)', labelKey: 'info' },
 ];
 
-interface SecurityClientProps {
+export interface SecurityClientProps {
   items: SecurityItem[];
   total: number;
   advisories?: SecurityAdvisory[];

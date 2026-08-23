@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { fetchPlugins } from "@/lib/api";
+import { listPlugins } from "@/services/plugin-service";
 import { mockData } from "@/lib/mock-data";
 import { PluginsBrowser } from "@/components/plugins-browser";
 
@@ -28,16 +28,36 @@ export async function generateMetadata({
   };
 }
 
+export const dynamic = "force-dynamic";
+
 export default async function PluginsPage({ params }: PluginsPageProps) {
   setRequestLocale(params.locale);
 
-  // 首屏数据（SSR）：后端就绪时真实数据，否则 mock 兜底
-  const data = (await fetchPlugins(1, 50, "", "all", "score", "desc")) ?? {
-    items: mockData.rankings.items.slice(0, 50),
-    total: mockData.rankings.items.length,
-    page: 1,
-    totalPages: 1,
+  // SSR 直接走 service 层（同一进程内查库，绕过 HTTP 自我请求的 8s 超时，
+  // 避免 Vercel 上自我 fetch 公共域名失败导致回退 mock 21 个的 bug）
+  let data: {
+    items: Array<import("@/types/api").Plugin>;
+    total: number;
+    page: number;
+    totalPages: number;
   };
+  try {
+    data = await listPlugins({
+      page: 1,
+      limit: 50,
+      q: "",
+      grade: undefined,
+      sort: "score",
+      order: "desc",
+    });
+  } catch {
+    data = {
+      items: mockData.rankings.items.slice(0, 50),
+      total: mockData.rankings.items.length,
+      page: 1,
+      totalPages: 1,
+    };
+  }
 
   return (
     <PluginsBrowser

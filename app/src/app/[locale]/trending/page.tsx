@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { fetchTrending } from '@/lib/api';
+import { getTrending } from '@/services/plugin-service';
+import type { Plugin } from '@/types/api';
 import { mockData } from '@/lib/mock-data';
 import { TrendingClient } from '@/components/trending-client';
 
@@ -28,10 +29,22 @@ export async function generateMetadata({
   };
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function TrendingPage({ params }: TrendingPageProps) {
   setRequestLocale(params.locale);
 
-  const data = (await fetchTrending(10)) ?? mockData.trending;
+  // SSR 直接走 service 层（绕过 HTTP 自我请求超时回退 mock 的问题）
+  let data: { recentlyActive: Plugin[]; mostStarred: Plugin[] };
+  try {
+    const t = await getTrending(10);
+    data = { recentlyActive: t.recentlyActive, mostStarred: t.mostStarred };
+  } catch {
+    data = {
+      recentlyActive: mockData.trending.recentlyActive ?? [],
+      mostStarred: mockData.trending.mostStarred ?? [],
+    };
+  }
 
   return (
     <TrendingClient

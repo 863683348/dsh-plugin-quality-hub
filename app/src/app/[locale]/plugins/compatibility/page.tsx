@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { fetchPlugins } from "@/lib/api";
+import { listPlugins } from "@/services/plugin-service";
 import { mockData } from "@/lib/mock-data";
 import { CompatibilityMatrix } from "@/components/compatibility-matrix";
 
@@ -28,19 +28,30 @@ export async function generateMetadata({
   };
 }
 
+export const dynamic = "force-dynamic";
+
 export default async function CompatibilityPage({ params }: CompatibilityPageProps) {
   setRequestLocale(params.locale);
 
-  const topPlugins = (await fetchPlugins(1, 30, "", "all", "score", "desc")) ?? {
-    items: mockData.rankings.items.slice(0, 30),
-    total: mockData.rankings.items.length,
-    page: 1,
-    totalPages: 1,
-  };
+  // SSR 直接走 service 层（绕过 HTTP 自我请求超时回退 mock 的问题）
+  let topPlugins: Array<import("@/types/api").Plugin>;
+  try {
+    const data = await listPlugins({
+      page: 1,
+      limit: 30,
+      q: "",
+      grade: undefined,
+      sort: "score",
+      order: "desc",
+    });
+    topPlugins = data.items;
+  } catch {
+    topPlugins = mockData.rankings.items.slice(0, 30);
+  }
 
   return (
     <div className="container-page py-[var(--section-y-sm)] md:py-[var(--section-y)]">
-      <CompatibilityMatrix plugins={topPlugins.items} />
+      <CompatibilityMatrix plugins={topPlugins} />
     </div>
   );
 }

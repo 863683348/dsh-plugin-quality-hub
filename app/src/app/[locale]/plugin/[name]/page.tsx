@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { ChevronRight, ExternalLink, Package, SearchX } from 'lucide-react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
-import { fetchPluginDetail } from '@/lib/api';
+import { getPluginDetail } from '@/services/plugin-service';
 import { mockData } from '@/lib/mock-data';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -25,10 +25,17 @@ interface PluginPageProps {
   params: { locale: string; name: string };
 }
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({
   params,
 }: PluginPageProps): Promise<Metadata> {
-  const plugin = (await fetchPluginDetail(params.name)) ?? null;
+  let plugin: DetailWithNpm | null = null;
+  try {
+    plugin = (await getPluginDetail(params.name)) as DetailWithNpm | null;
+  } catch {
+    plugin = null;
+  }
   const fallback = await getTranslations({
     locale: params.locale,
     namespace: 'meta',
@@ -53,9 +60,13 @@ export default async function PluginPage({ params }: PluginPageProps) {
   const t = await getTranslations('plugin');
   const tc = await getTranslations('common');
 
-  const fetched = (await fetchPluginDetail(params.name)) as
-    | DetailWithNpm
-    | null;
+  // SSR 直接走 service 层（绕过 HTTP 自我请求超时回退 mock 的问题）
+  let fetched: DetailWithNpm | null = null;
+  try {
+    fetched = (await getPluginDetail(params.name)) as DetailWithNpm | null;
+  } catch {
+    fetched = null;
+  }
   const plugin = fetched ?? mockData.pluginDetail(params.name);
 
   if (!plugin) {

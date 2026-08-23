@@ -17,7 +17,8 @@ import type {
 async function request<T>(path: string): Promise<T | null> {
   try {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 8000);
+    // 冷启动 + Neon 连接可能 5-6s，放宽到 20s 避免偶发超时
+    const timeout = setTimeout(() => controller.abort(), 20000);
     // Server-side rendering needs an absolute URL; fall back to relative
     // (browser) when no site URL is configured. next: { revalidate } is a
     // no-op for relative fetches from the client but enables ISR caching

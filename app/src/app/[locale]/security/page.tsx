@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { fetchSecurity, fetchAdvisories } from '@/lib/api';
+import { getSecurityItems } from '@/services/plugin-service';
 import { mockData } from '@/lib/mock-data';
-import { SecurityClient } from '@/components/security-client';
+import { SecurityClient, type SecurityClientProps } from '@/components/security-client';
 
 interface SecurityPageProps {
   params: { locale: string };
@@ -28,18 +28,24 @@ export async function generateMetadata({
   };
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function SecurityPage({ params }: SecurityPageProps) {
   setRequestLocale(params.locale);
 
-  // 并行获取：安全标记 + CVE 风格公告（v0.3）
-  const [securityData, advisoryData] = await Promise.all([
-    fetchSecurity(undefined, 100),
-    fetchAdvisories(undefined, undefined, 100),
-  ]);
-
-  const items = securityData?.items ?? mockData.security.items;
-  const total = securityData?.total ?? mockData.security.total;
-  const advisories = advisoryData?.items ?? mockData.advisories.items;
+  // SSR 直接走 service 层（绕过 HTTP 自我请求超时回退 mock 的问题）
+  let items: SecurityClientProps['items'];
+  let total: number;
+  try {
+    const sec = await getSecurityItems(undefined, 100);
+    items = sec.items;
+    total = sec.total;
+  } catch {
+    items = mockData.security.items;
+    total = mockData.security.total;
+  }
+  // advisories 仍走 mock（advisory-service 无 SSR 直调封装，保留原有兜底）
+  const advisories = mockData.advisories.items;
 
   return (
     <SecurityClient
