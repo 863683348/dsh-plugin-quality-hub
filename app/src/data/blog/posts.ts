@@ -818,15 +818,64 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "dsh-quality-score-decoded",
-    title: { zh: "DSH Quality Score 解码", en: "DSH Quality Score Decoded: How We Compute 0-100" },
     date: "2026-08-23",
-    categoryKey: "howto",
-    excerpt: { zh: "DSH 质量评分 0-100 分如何计算？", en: "How is the DSH quality score from 0-100 calculated?" },
-    tags: ["quality score", "plugin rating"],
-    body: {
-      en: "<h2>The Score Components</h2><p>DSH Quality Score is computed from 4 pillars: maintenance activity (last push, issue response), documentation quality, npm ecosystem health (downloads, dependents), and security scan results.</p><h2>Scale Interpretation</h2><ul><li>90-100: Excellent — production ready</li><li>70-89: Good — minor concerns</li><li>50-69: Fair — needs review</li><li>Below 50: Warning — potential risks</li></ul><h2>FAQ</h2><ul><li>Why do stars not matter? Stars reflect popularity, not quality or safety.</li><li>How often is the score updated? Daily.</li><li>Can a low-score plugin be safe? Yes — the score flags risks, doesn't declare guilt.</li></ul>",
-      zh: "<h2>评分构成</h2><p>DSH 质量评分由 4 个支柱组成：维护活跃度（最后推送、问题响应）、文档质量、npm 生态健康（下载量、依赖数）、安全扫描结果。</p><h2>分数解读</h2><ul><li>90-100：优秀——可直接生产使用</li><li>70-89：良好——有小顾虑</li><li>50-69：一般——需要审查</li><li>低于 50：警告——潜在风险</li></ul>"
-    }
+    keywords: ["dsh quality score", "quality score 0-100", "plugin rating", "dsh plugin evaluation"],
+    longTail: [
+      "how is dsh quality score calculated",
+      "dsh quality score 0-100 meaning",
+      "what does dsh quality score measure",
+      "dsh plugin score pillars",
+    ],
+    en: {
+      title: "DSH Quality Score Decoded: How We Compute 0-100",
+      excerpt: "How is the DSH quality score from 0-100 calculated?",
+      metaDescription:
+        "DSH Quality Score is a 0-100 rating built from 4 pillars: maintenance activity, documentation quality, npm ecosystem health, and security scan results. Learn how each pillar is scored and what the scale means.",
+      body: [
+        { h2: "The Score Components" },
+        {
+          p: "DSH Quality Score is computed from 4 pillars: maintenance activity (last push, issue response), documentation quality, npm ecosystem health (downloads, dependents), and security scan results.",
+        },
+        { h2: "Scale Interpretation" },
+        {
+          ul: [
+            "90-100: Excellent — production ready",
+            "70-89: Good — minor concerns",
+            "50-69: Fair — needs review",
+            "Below 50: Warning — potential risks",
+          ],
+        },
+        { h2: "FAQ" },
+        {
+          ul: [
+            "Why do stars not matter? Stars reflect popularity, not quality or safety.",
+            "How often is the score updated? Daily.",
+            "Can a low-score plugin be safe? Yes — the score flags risks, doesn't declare guilt.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      title: "DSH Quality Score 解码",
+      excerpt: "DSH 质量评分 0-100 分如何计算？",
+      metaDescription:
+        "DSH 质量评分是 0-100 的综合评分，由维护活跃度、文档质量、npm 生态健康与安全扫描四个支柱构成。了解评分构成与分数解读。",
+      body: [
+        { h2: "评分构成" },
+        {
+          p: "DSH 质量评分由 4 个支柱组成：维护活跃度（最后推送、问题响应）、文档质量、npm 生态健康（下载量、依赖数）、安全扫描结果。",
+        },
+        { h2: "分数解读" },
+        {
+          ul: [
+            "90-100：优秀——可直接生产使用",
+            "70-89：良好——有小顾虑",
+            "50-69：一般——需要审查",
+            "低于 50：警告——潜在风险",
+          ],
+        },
+      ],
+    },
   },
 
 ];
