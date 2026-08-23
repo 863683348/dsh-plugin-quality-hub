@@ -302,6 +302,20 @@ const zh = {
     error: '插件加载失败',
     empty: '未找到插件',
   },
+  compatibility: {
+    title: '插件兼容性矩阵',
+    description: '检查 DSH 插件是否兼容。选择两个或更多插件以查看潜在冲突。',
+    selectedPlugins: '已选插件',
+    compatibilityMatrix: '兼容性矩阵',
+    plugin: '插件',
+    conflicts: '冲突',
+    compatible: '兼容',
+    unknown: '未知',
+    selectAtLeastTwo: '至少选择 2 个插件以检查兼容性',
+    noConflictsFound: '所选插件未发现冲突',
+    warning: '警告',
+    note: '这是基于插件元数据的启发式检查。在生产环境使用前，请在安全环境中测试。',
+  },
   security: {
     title: '安全预警',
     subtitle:

@@ -302,6 +302,20 @@ const en = {
     error: 'Failed to load plugins',
     empty: 'No plugins found',
   },
+  compatibility: {
+    title: 'Plugin Compatibility Matrix',
+    description: 'Check whether DSH plugins work together. Select two or more plugins to see potential conflicts.',
+    selectedPlugins: 'Selected plugins',
+    compatibilityMatrix: 'Compatibility matrix',
+    plugin: 'Plugin',
+    conflicts: 'Conflicts',
+    compatible: 'Compatible',
+    unknown: 'Unknown',
+    selectAtLeastTwo: 'Select at least 2 plugins to check compatibility',
+    noConflictsFound: 'No conflicts found between selected plugins',
+    warning: 'Warning',
+    note: 'This is a heuristic check based on plugin metadata. Always test in a safe environment before using in production.',
+  },
   security: {
     title: 'Security Watch',
     subtitle:
