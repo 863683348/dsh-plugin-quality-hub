@@ -7,7 +7,11 @@
 import { PrismaClient } from "@prisma/client";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 import { getDailyTutorials, TUTORIAL_TOPIC_PLAN } from "./content-calendars.mts";
+
+// .mts 以 ESM 运行，无 __dirname 全局变量，用 import.meta.url 推导
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const prisma = new PrismaClient();
 

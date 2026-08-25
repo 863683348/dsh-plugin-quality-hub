@@ -937,6 +937,114 @@ export const blogPosts: BlogPost[] = [
     },
   },
 
+
+  {
+    slug: 'plugin-supply-chain-security-team-enforcement',
+    date: '2026-08-25',
+    keywords: ['dsh plugin supply chain security', 'plugin trust decision', 'supply chain enforcement'],
+    longTail: [
+      'dsh plugin supply chain security team enforcement',
+      'what every team should enforce for dsh plugins',
+      'dsh plugin trust decision controls',
+    ],
+    en: {
+      title: 'Plugin Supply Chain Security: What Every Team Should Enforce',
+      excerpt: 'Every DSH plugin you install is a trust decision.',
+      metaDescription:
+        'Every DSH plugin you install is a trust decision. Learn what your team should enforce to keep that trust informed rather than reckless.',
+      body: [
+        {
+          p: "The question isn't whether you'll trust someone else's code — it's whether your team has the controls in place to make that trust informed rather than reckless.",
+        },
+        { h2: 'What Score Should Your Team Require?' },
+        { p: 'We recommend B or higher for production environments.' },
+      ],
+    },
+    zh: {
+      title: '插件供应链安全：每个团队都应该强制执行什么',
+      excerpt: '你安装的每个 DSH 插件都是一个信任决策。',
+      metaDescription:
+        '你安装的每个 DSH 插件都是一个信任决策。了解你的团队应该强制执行什么，让这种信任是知情的，而不是鲁莽的。',
+      body: [
+        {
+          p: '问题不在于你是否会信任别人的代码——而在于你的团队是否已建立控制措施，让这种信任是知情的，而不是鲁莽的。',
+        },
+        { h2: '你的团队应该要求什么评分？' },
+        { p: '对于生产环境，我们建议 B 或更高。' },
+      ],
+    },
+  },
+
+  {
+  "slug": "dsh-plugin-lint",
+  "date": "2026-08-25",
+  "keywords": [
+    "dsh lint",
+    "code quality"
+  ],
+  "longTail": [
+    "dsh plugin linter",
+    "dsh code quality tool"
+  ],
+  "en": {
+    "title": "Dsh Plugin Lint: A Deep Dive",
+    "excerpt": "Understanding dsh plugin lint in the DSH ecosystem.",
+    "metaDescription": "Learn about dsh plugin lint patterns and best practices in DeepSeek Harness.",
+    "body": [
+      {
+        "h2": "Introduction"
+      },
+      {
+        "p": "The dsh plugin lint is an important pattern in the DSH ecosystem. This article explores how it works and why it matters for plugin developers."
+      },
+      {
+        "h2": "Key Concepts"
+      },
+      {
+        "ul": [
+          "Understanding the basic pattern",
+          "Common implementation approaches",
+          "Best practices from the community"
+        ]
+      },
+      {
+        "h2": "Getting Started"
+      },
+      {
+        "p": "To implement dsh plugin lint, start with the official documentation and explore existing examples in the ecosystem."
+      }
+    ]
+  },
+  "zh": {
+    "title": "dsh plugin lint：深度解析",
+    "excerpt": "理解 DSH 生态中的 dsh plugin lint。",
+    "metaDescription": "学习 DeepSeek Harness 中 dsh plugin lint 的模式和最佳实践。",
+    "body": [
+      {
+        "h2": "介绍"
+      },
+      {
+        "p": "dsh plugin lint 是 DSH 生态中的重要模式。本文探讨其工作原理及对插件开发者的意义。"
+      },
+      {
+        "h2": "核心概念"
+      },
+      {
+        "ul": [
+          "理解基本模式",
+          "常见实现方法",
+          "社区的实践最佳"
+        ]
+      },
+      {
+        "h2": "入门指南"
+      },
+      {
+        "p": "要实现 dsh plugin lint，从官方文档开始并探索生态中的现有示例。"
+      }
+    ]
+  }
+},
 ];
 
 /** 按日期倒序（新在前） */

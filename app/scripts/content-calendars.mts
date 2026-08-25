@@ -100,11 +100,15 @@ export const BLOG_TOPIC_PLAN = [
 
 // ---- 获取当天应发布的条目 ----
 export function getDailyTutorials(day: number) {
-  const dayInCycle = ((day - 1) % 5) + 1;
+  // 教程计划表每级 5 个主题（day 1/6/11/16/21），按 index 5 天一轮循环：
+  // day 1-5 -> 主题 0-4, day 6-10 -> 主题 0-4, ...（30 天共 6 轮）
+  // 不能用 find(t.day === dayInCycle)，因为计划表 day 不连续（1/6/11/16/21），
+  // 除 day 1 外其它值都 find 不到，会返回 undefined 导致运行时崩溃。
+  const idx = (day - 1) % 5;
   return {
-    beginner: TUTORIAL_TOPIC_PLAN.beginner.find(t => t.day === dayInCycle)!,
-    intermediate: TUTORIAL_TOPIC_PLAN.intermediate.find(t => t.day === dayInCycle)!,
-    advanced: TUTORIAL_TOPIC_PLAN.advanced.find(t => t.day === dayInCycle)!,
+    beginner: TUTORIAL_TOPIC_PLAN.beginner[idx],
+    intermediate: TUTORIAL_TOPIC_PLAN.intermediate[idx],
+    advanced: TUTORIAL_TOPIC_PLAN.advanced[idx],
   };
 }
 
