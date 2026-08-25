@@ -29,10 +29,18 @@ function extractFAQ(post: { en: { body: BlogBlock[] }; zh: { body: BlogBlock[] }
   return faqs;
 }
 
-/** 获取相关文章（排除当前篇，最多 3 篇） */
-function getRelatedPosts(currentSlug: string, limit = 3): { slug: string; title: string; date: string }[] {
+/** 获取相关文章（排除当前篇，默认 5 篇；始终优先把已排第 1 的冠军页链入，强化内链权重） */
+const CHAMPION_SLUG = 'deepseek-harness-everything-is-a-plugin';
+function getRelatedPosts(currentSlug: string, limit = 5): { slug: string; title: string; date: string }[] {
   const all = getBlogPosts().filter(p => p.slug !== currentSlug);
-  return all.slice(0, limit).map(p => ({ slug: p.slug, title: p.en.title, date: p.date }));
+  let picks = all.slice(0, limit);
+  if (currentSlug !== CHAMPION_SLUG) {
+    const champion = all.find(p => p.slug === CHAMPION_SLUG);
+    if (champion && !picks.some(p => p.slug === CHAMPION_SLUG)) {
+      picks = [champion, ...picks].slice(0, limit);
+    }
+  }
+  return picks.map(p => ({ slug: p.slug, title: p.en.title, date: p.date }));
 }
 
 export function generateStaticParams() {

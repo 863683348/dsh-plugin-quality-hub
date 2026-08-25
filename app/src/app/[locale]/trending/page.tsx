@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import { getTrending } from '@/services/plugin-service';
 import type { Plugin } from '@/types/api';
 import { mockData } from '@/lib/mock-data';
@@ -13,18 +13,33 @@ export async function generateMetadata({
   params,
 }: TrendingPageProps): Promise<Metadata> {
   const { locale } = params;
-  const t = await getTranslations({ locale, namespace: 'meta' });
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dshquality.com';
   const path = locale === 'en' ? '/trending' : `/${locale}/trending`;
+  const title =
+    locale === 'zh'
+      ? 'DSH 插件趋势榜——最近活跃与最多 Star | DSH Quality'
+      : 'Trending DSH Plugins — Most Active & Most Starred | DSH Quality';
+  const description =
+    locale === 'zh'
+      ? '查看生态中最近活跃、最多 Star 的 DeepSeek Harness 插件，均由 DSH Quality 评分排序。'
+      : 'See the most recently active and most-starred DeepSeek Harness plugins in the ecosystem, ranked and scored by DSH Quality.';
   return {
-    title: t('title'),
-    description: t('description'),
+    title,
+    description,
     alternates: {
       canonical: `${siteUrl}${path}`,
       languages: {
         en: `${siteUrl}/trending`,
         zh: `${siteUrl}/zh/trending`,
       },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${siteUrl}${path}`,
+      siteName: 'DSH Quality',
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      type: 'website',
     },
   };
 }

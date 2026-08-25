@@ -1045,6 +1045,73 @@ export const blogPosts: BlogPost[] = [
     ]
   }
 },
+  {
+    slug: 'how-to-avoid-risky-dsh-plugins',
+    date: '2026-08-25',
+    keywords: ['risky dsh plugins', 'dangerous deepseek harness plugins', 'how to spot unsafe plugins'],
+    longTail: ['how to avoid risky deepseek harness plugins', 'signs a dsh plugin is unsafe', 'risky plugin checker for dsh'],
+    imageUrl: '/images/blog/dsh-top-10-security-scanner-deep-dive.svg',
+    en: {
+      title: 'How to Avoid Risky DSH Plugins (and What "Risky" Really Means)',
+      excerpt:
+        'A practical checklist for spotting high-risk DeepSeek Harness plugins before you install — dangerous install scripts, missing dsh.bundle declarations, and archived repos.',
+      metaDescription:
+        'How to avoid risky DSH plugins: a checklist for dangerous install scripts, missing dsh.bundle declarations, archived repositories, and unmaintained code before you install.',
+      body: [
+        { p: 'Every week a new "risky plugin checker" query spikes whenever a supply-chain scare hits the DeepSeek Harness ecosystem. If you have been searching for a way to tell whether a DSH plugin is safe, the good news is that most risk is visible in public metadata — you just need to know where to look.' },
+        { h2: 'Start With the Install Script' },
+        { p: 'The single highest-signal check is the install script. Patterns like curl|sh, base64 -d, or powershell -enc piping remote content into a shell are red flags regardless of how many stars a plugin has. A clear, auditable install path is the baseline for trust.' },
+        { h2: 'Look for the dsh.bundle Declaration' },
+        { p: 'The dsh.bundle declaration is the one contract the runtime enforces. Its absence is a legitimate warning, not a style nitpick — it means the runtime cannot validate what the plugin actually loads. Treat a missing bundle as a "proceed with caution" signal.' },
+        { h2: 'Check Maintenance and Archival State' },
+        { ul: [
+          'An archived or read-only repository means no future security fixes — a plugin frozen in time is a liability the moment a new exploit appears.',
+          'Recent commit activity and issue responses are better proxies for safety than star counts.',
+          'Unmaintained code that still works today can break on the next runtime update.',
+        ] },
+        { h2: "Don't Rely on Stars or Self-Reported Ratings" },
+        { p: 'Stars and self-reported ratings can be inflated. Independent, heuristic scoring that uses real data — maintenance activity, documentation quality, and npm health — gives a far more honest view of plugin quality.' },
+        { h2: 'A 30-Second Pre-Install Checklist' },
+        { ul: [
+          'Read the install script; reject curl|sh / base64 / encoded-payload patterns.',
+          'Confirm a dsh.bundle declaration exists.',
+          'Verify the repo is not archived and had a commit in the last 90 days.',
+          'Cross-check the score against an independent rating, not just the README.',
+        ] },
+        { p: 'None of these checks require deep expertise — just a habit. Build it, and the "risky plugin" problem stops being a mystery and becomes a routine, 30-second decision.' },
+      ],
+    },
+    zh: {
+      title: '如何避开高风险 DSH 插件（以及"风险"到底指什么）',
+      excerpt:
+        '一份在安装前识别高风险 DeepSeek Harness 插件的实用清单——危险安装脚本、缺失的 dsh.bundle 声明，以及已归档仓库。',
+      metaDescription:
+        '如何避开高风险 DSH 插件：一份针对危险安装脚本、缺失 dsh.bundle 声明、已归档仓库与无人维护代码的安装前检查清单。',
+      body: [
+        { p: '每当 DeepSeek Harness 生态出现一次供应链恐慌，"风险插件检测"的搜索量就会飙升。如果你一直在寻找判断某个 DSH 插件是否安全的方法，好消息是：大部分风险都写在公开元数据里——你只需要知道去哪看。' },
+        { h2: '先看安装脚本' },
+        { p: '单一最强的信号就是安装脚本。像 curl|sh、base64 -d、或 powershell -enc 把远程内容管道进 shell 这类模式，无论插件有多少 Star 都是红旗。清晰、可审计的安装路径，才是信任的底线。' },
+        { h2: '找 dsh.bundle 声明' },
+        { p: 'dsh.bundle 声明是运行时强制执行的唯一契约。它的缺失是一条合理的警告，而非风格吹毛求疵——意味着运行时无法验证插件到底加载了什么。把缺失 bundle 视为"谨慎安装"的信号。' },
+        { h2: '检查维护状态与是否归档' },
+        { ul: [
+          '已归档或只读的仓库意味着不再有安全修复——一旦新漏洞出现，被冻结的代码就是负担。',
+          '近期的提交活动与 issue 响应，比 Star 数更能代表安全性。',
+          '今天还能用的无人维护代码，下一次运行时升级就可能崩。',
+        ] },
+        { h2: '别迷信 Star 或自报评分' },
+        { p: 'Star 与自报评分都可能被刷高。使用真实数据的独立启发式评分——维护活跃度、文档质量与 npm 健康度——才能给出更诚实的插件质量视图。' },
+        { h2: '30 秒安装前清单' },
+        { ul: [
+          '读安装脚本；拒绝 curl|sh / base64 / 编码载荷这类模式。',
+          '确认存在 dsh.bundle 声明。',
+          '确认仓库未归档，且 90 天内有过提交。',
+          '对照独立评分而非只看 README 来交叉验证。',
+        ] },
+        { p: '这些检查都不需要很深的专业知识——只是一种习惯。养成它，"风险插件"问题就不再神秘，而是一个例行的 30 秒决策。' },
+      ],
+    },
+  },
 ];
 
 /** 按日期倒序（新在前） */

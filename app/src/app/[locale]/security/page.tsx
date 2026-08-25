@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import { getSecurityItems } from '@/services/plugin-service';
 import { mockData } from '@/lib/mock-data';
 import { SecurityClient, type SecurityClientProps } from '@/components/security-client';
@@ -12,18 +12,33 @@ export async function generateMetadata({
   params,
 }: SecurityPageProps): Promise<Metadata> {
   const { locale } = params;
-  const t = await getTranslations({ locale, namespace: 'meta' });
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dshquality.com';
   const path = locale === 'en' ? '/security' : `/${locale}/security`;
+  const title =
+    locale === 'zh'
+      ? 'DSH 插件安全预警——安装前识别风险插件 | DSH Quality'
+      : 'DSH Plugin Security Watch — Spot Risky Plugins Before You Install | DSH Quality';
+  const description =
+    locale === 'zh'
+      ? '对危险安装脚本、缺失 dsh.bundle 声明与归档仓库的启发式安全标记，覆盖整个 DSH 插件生态。'
+      : 'Heuristic security flags for dangerous install scripts, missing dsh.bundle declarations, and archived repositories across the DSH plugin ecosystem.';
   return {
-    title: t('title'),
-    description: t('description'),
+    title,
+    description,
     alternates: {
       canonical: `${siteUrl}${path}`,
       languages: {
         en: `${siteUrl}/security`,
         zh: `${siteUrl}/zh/security`,
       },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${siteUrl}${path}`,
+      siteName: 'DSH Quality',
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      type: 'website',
     },
   };
 }
