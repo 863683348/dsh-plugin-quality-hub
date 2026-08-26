@@ -52,7 +52,25 @@ export function BlogContent() {
           })}
         </div>
 
-        <p className="mt-8 rounded-[var(--card-radius)] border border-[var(--color-border)] bg-[var(--color-surface-2)] p-4 text-sm text-[var(--color-muted)]">
+        <div className="mt-8 space-y-4 rounded-[var(--card-radius)] border border-[var(--color-border)] bg-[var(--color-surface-2)] p-5">
+          <p className="text-sm font-semibold text-[var(--color-text)]">Explore more</p>
+          <div className="flex flex-wrap gap-2">
+            <Link href="/plugins" className="rounded-full bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-medium text-[var(--color-primary)] hover:bg-[var(--color-primary)]/20 transition-colors">
+              Browse Plugins
+            </Link>
+            <Link href="/security" className="rounded-full bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-medium text-[var(--color-primary)] hover:bg-[var(--color-primary)]/20 transition-colors">
+              Security Watch
+            </Link>
+            <Link href="/method" className="rounded-full bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-medium text-[var(--color-primary)] hover:bg-[var(--color-primary)]/20 transition-colors">
+              Scoring Method
+            </Link>
+            <Link href="/trending" className="rounded-full bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-medium text-[var(--color-primary)] hover:bg-[var(--color-primary)]/20 transition-colors">
+              Trending
+            </Link>
+          </div>
+        </div>
+
+        <p className="mt-4 rounded-[var(--card-radius)] border border-[var(--color-border)] bg-[var(--color-surface-2)] p-4 text-sm text-[var(--color-muted)]">
           {t('comingSoon')}
         </p>
       </div>

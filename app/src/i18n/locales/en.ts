@@ -254,9 +254,9 @@ const en = {
       downloads: 'Downloads',
       notAvailable: 'Not published on npm',
     },
-    related: {
-      title: 'Related plugins',
-      subtitle: 'Similar plugins worth a look',
+    similarPlugins: {
+      title: 'Similar plugins',
+      subtitle: 'Other plugins with the same grade',
     },
     buildYourOwn: {
       title: 'Build your own plugin',

@@ -271,12 +271,12 @@ export function detectSecurityFlags(repo: GithubRepoInput): SecurityFlag[] {
 }
 
 // ===== Grade assignment =====
-// A>=80 / B>=60 / C>=40 / D<40 或有 danger 标记时等级不高于 D (Spec AC-06)
+// A>=90 / B>=75 / C>=60 / D<60 (与 method 页展示图例一致)
 export function assignGrade(score: number, hasDanger: boolean): Grade {
   let grade: Grade;
-  if (score >= 80) grade = "A";
-  else if (score >= 60) grade = "B";
-  else if (score >= 40) grade = "C";
+  if (score >= 90) grade = "A";
+  else if (score >= 75) grade = "B";
+  else if (score >= 60) grade = "C";
   else grade = "D";
 
   if (hasDanger) {

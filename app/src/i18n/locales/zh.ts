@@ -254,9 +254,9 @@ const zh = {
       downloads: '下载量',
       notAvailable: '未发布到 npm',
     },
-    related: {
-      title: '相关插件',
-      subtitle: '值得一看的相似插件',
+    similarPlugins: {
+      title: '同类插件',
+      subtitle: '相同等级的其他插件',
     },
     buildYourOwn: {
       title: '自己动手做插件',

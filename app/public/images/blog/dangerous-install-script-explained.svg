@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="100" r="200" fill="#f97316" opacity="0.1"/>
+  <circle cx="150" cy="550" r="150" fill="#f97316" opacity="0.08"/>
+  <text x="80" y="240" font-family="system-ui,sans-serif" font-size="48" font-weight="700" fill="#f8fafc">Dangerous Install Script Explained</text>
+  <text x="80" y="300" font-family="system-ui,sans-serif" font-size="24" fill="#94a3b8">DSH Quality Blog</text>
+  <rect x="80" y="340" width="60" height="4" rx="2" fill="#f97316"/>
+  <text x="80" y="580" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">dshquality.com</text>
+</svg>

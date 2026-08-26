@@ -62,7 +62,7 @@ export function formatDate(iso: string | null | undefined): string {
   return d.toISOString().slice(0, 10);
 }
 
-/** 分数 → 等级（与评分算法一致的阈值） */
+/** 分数 → 等级（与评分算法一致的阈值：A>=90 / B>=75 / C>=60 / D<60） */
 export function gradeFromScore(score: number): 'A' | 'B' | 'C' | 'D' {
   if (score >= 90) return 'A';
   if (score >= 75) return 'B';

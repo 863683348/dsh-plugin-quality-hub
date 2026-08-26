@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { ChevronRight, ExternalLink, Package, SearchX } from 'lucide-react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
-import { getPluginDetail } from '@/services/plugin-service';
+import { getPluginDetail, listPlugins } from '@/services/plugin-service';
 import { mockData } from '@/lib/mock-data';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -71,6 +71,24 @@ export default async function PluginPage({ params }: PluginPageProps) {
 
   if (!plugin) {
     notFound();
+  }
+
+  // Fetch similar plugins (same grade, high score, exclude current)
+  let similarPlugins: { name: string; grade: 'A' | 'B' | 'C' | 'D'; score: number; description: string | null }[] = [];
+  try {
+    const result = await listPlugins({
+      page: 1,
+      limit: 5,
+      grade: plugin.grade,
+      sort: 'score',
+      order: 'desc',
+    });
+    similarPlugins = result.items
+      .filter(p => p.name !== plugin.name)
+      .slice(0, 5)
+      .map(p => ({ name: p.name, grade: p.grade, score: p.score, description: p.description }));
+  } catch {
+    // Ignore if similar plugins fetch fails
   }
 
   const [, repo] = plugin.name.split('/');
@@ -266,6 +284,36 @@ export default async function PluginPage({ params }: PluginPageProps) {
           </Button>
         </div>
       ) : null}
+
+      {/* 同类插件推荐（同 Grade） */}
+      {similarPlugins.length > 0 && (
+        <div className="mt-12">
+          <h2 className="mb-6 text-xl font-bold tracking-tight text-[var(--color-text)]">
+            {t('similarPlugins.title')}
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {similarPlugins.map((sp) => (
+              <Card key={sp.name} className="overflow-hidden">
+                <CardContent className="p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <Link
+                      href={`/${params.locale === 'en' ? '' : `${params.locale}/`}plugin/${sp.name}`}
+                      className="flex-1 font-medium text-[var(--color-text)] hover:text-[var(--color-primary)] transition-colors"
+                    >
+                      {sp.name}
+                    </Link>
+                    <GradeBadge grade={sp.grade} size="sm" />
+                  </div>
+                  <p className="mt-2 text-sm text-[var(--color-muted)]">{sp.description}</p>
+                  <p className="mt-2 text-xs font-semibold text-[var(--color-meta)]">
+                    Score: {sp.score}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

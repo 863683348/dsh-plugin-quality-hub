@@ -64,6 +64,7 @@ export const blogPosts: BlogPost[] = [
       'risky dsh plugins to avoid',
       'dsh.bundle declaration missing',
     ],
+    imageUrl: '/images/blog/dsh-plugin-security-scanner-guide.svg',
     en: {
       title: 'DSH Plugin Security Scanner: How to Spot Risky Plugins Before You Install Them',
       excerpt:
@@ -204,6 +205,7 @@ export const blogPosts: BlogPost[] = [
       'dsh plugin tag baiting problem',
       'how many dsh plugins exist',
     ],
+    imageUrl: '/images/blog/dsh-plugin-ecosystem-explosion-analysis.svg',
     en: {
       title: 'The DSH Plugin Explosion: 4,300 Plugins in Days, and What It Means for You',
       excerpt:
@@ -296,6 +298,7 @@ export const blogPosts: BlogPost[] = [
       'dangerous npm install scripts detection',
       'what install script scanner checks',
     ],
+    imageUrl: '/images/blog/how-install-script-scanning-works.svg',
     en: {
       title: 'How Install Script Scanning Works Inside the DSH Quality Scanner',
       excerpt:
@@ -386,6 +389,7 @@ export const blogPosts: BlogPost[] = [
       'dsh runtime cordis core python sdk',
       'how deepseek harness plugins work',
     ],
+    imageUrl: '/images/blog/deepseek-harness-everything-is-a-plugin.svg',
     en: {
       title: 'DeepSeek Harness 101: Everything Is a Plugin',
       excerpt:
@@ -466,6 +470,7 @@ export const blogPosts: BlogPost[] = [
       'deepseek harness cli web ui onboarding',
       'dsh cli plugin install command',
     ],
+    imageUrl: '/images/blog/dsh-cli-journey-rc7-road-to-1.0.svg',
     en: {
       title: 'The dsh CLI Journey: v0.1.0-rc.7 and the Road to 1.0',
       excerpt:
@@ -540,6 +545,7 @@ export const blogPosts: BlogPost[] = [
       'how deepseek harness sandboxes plugins',
       'landlock-run native sandbox explained',
     ],
+    imageUrl: '/images/blog/landlock-sandboxing-plugin-isolation.svg',
     en: {
       title: 'Landlock Sandboxing: How deepseek-harness Isolates Plugins',
       excerpt:
@@ -611,6 +617,7 @@ export const blogPosts: BlogPost[] = [
     date: '2026-08-21',
     keywords: ['dangerous install script', 'dsh security', 'postinstall risk'],
     longTail: ['dsh install script warning', 'postinstall script risk', 'what is dangerous install script'],
+    imageUrl: '/images/blog/dangerous-install-script-explained.svg',
     en: {
       title: 'What "Dangerous Install Script" Means in DSH Plugin Scanning',
       excerpt: 'When DSH scans a plugin and flags a dangerous install script, what does it mean? Here is what you need to know about postinstall risks.',
@@ -772,6 +779,7 @@ export const blogPosts: BlogPost[] = [
       'manipulated plugin ratings how to avoid',
       'unbiased plugin quality ranking 2026',
     ],
+    imageUrl: '/images/blog/why-independent-plugin-scoring-beats-self-reported-ratings.svg',
     en: {
       title: 'Why Independent Plugin Scoring Beats Self-Reported Ratings',
       excerpt: 'Stars and self-reported ratings can be manipulated. Our independent scoring uses real data — maintenance activity, documentation quality, npm health — to give you an unbiased view of plugin quality.',
@@ -826,6 +834,7 @@ export const blogPosts: BlogPost[] = [
       "what does dsh quality score measure",
       "dsh plugin score pillars",
     ],
+    imageUrl: "/images/blog/dsh-quality-score-decoded.svg",
     en: {
       title: "DSH Quality Score Decoded: How We Compute 0-100",
       excerpt: "How is the DSH quality score from 0-100 calculated?",
@@ -888,6 +897,7 @@ export const blogPosts: BlogPost[] = [
       'deepseek harness windows tutorial',
       'dsh plugin scanner guide',
     ],
+    imageUrl: '/images/blog/install-dsh-plugins-safely-windows.svg',
     en: {
       title: 'How to Install DSH Plugins Safely on Windows',
       excerpt: 'A step-by-step guide to installing DeepSeek Harness plugins on Windows with security scanning enabled.',
@@ -947,6 +957,7 @@ export const blogPosts: BlogPost[] = [
       'what every team should enforce for dsh plugins',
       'dsh plugin trust decision controls',
     ],
+    imageUrl: '/images/blog/plugin-supply-chain-security-team-enforcement.svg',
     en: {
       title: 'Plugin Supply Chain Security: What Every Team Should Enforce',
       excerpt: 'Every DSH plugin you install is a trust decision.',
