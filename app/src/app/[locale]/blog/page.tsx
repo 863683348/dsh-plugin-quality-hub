@@ -80,8 +80,6 @@ export async function generateMetadata({
     },
   };
 }
-  };
-}
 
 export default async function BlogPage({ params }: BlogPageProps) {
   setRequestLocale(params.locale);
