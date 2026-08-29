@@ -110,9 +110,8 @@
         { p: '<strong>这些排名多久更新一次？</strong>每月。我们在每月第一个工作日重新运行扫描。<br><strong>插件的评分会变化吗？</strong>会。新提交会让评分上升，安全发现会让评分下降。<br><strong>这些是值得安装的唯一定插件吗？</strong>不。前十只是起点，不是天花板。查看完整目录，找到匹配你特定需求的插件。' },
       ],
     },
-  }];/** 按日期倒序（新在前） */export function getBlogPosts(): BlogPost[] {
+  }]
+
+export function getBlogPosts(): BlogPost[] {
     return [...blogPosts].sort((a, b) => (a.date < b.date ? 1 : -1));
 }
-export function getBlogPost(slug: string): BlogPost | undefined {
-    return blogPosts.find((p) => p.slug === slug);
-}（新在前） */export function getBlogPosts(): BlogPost[] {  return [...blogPosts].sort((a, b) => (a.date < b.date ? 1 : -1));}export function getBlogPost(slug: string): BlogPost | undefined {  return blogPosts.find((p) => p.slug === slug);}
