@@ -1,0 +1,25 @@
+name: blog-verify
+
+# 构建守门 CI（由 seo-100day-publish/setup-ci.mjs 自动生成）
+# 防止并发会话/pipeline 破坏博客数据（posts.ts 结构损坏、重复 slug、404、语法错）
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+concurrency:
+  group: blog-verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Blog data guard (结构/slug/404/tsc)
+        run: node scripts/verify-blog-data.mjs --site 15 --cwd "$GITHUB_WORKSPACE"
