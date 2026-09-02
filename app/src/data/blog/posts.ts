@@ -808,6 +808,62 @@ export const blogPosts: BlogPost[] = [
       ],
     },
   },
+  {
+    slug: 'setting-up-a-plugin-allowlist-for-your-dev-team',
+    date: '2026-09-02',
+    keywords: ["plugin allowlist", "team plugin policy", "dsh plugin allowlist"],
+    longTail: ["plugin allowlist for dev team", "team plugin policy", "allowlist dsh plugins", "approved plugin list"],
+    en: {
+      title: "Setting Up a Plugin Allowlist for Your Dev Team",
+      excerpt: "A plugin allowlist turns plugin choice from a personal guess into a team decision. Learn how to build and enforce an approved plugin list without slowing developers down.",
+      metaDescription: "How to set up a plugin allowlist for your dev team: approval tiers, CI enforcement, and a team plugin policy that keeps DSH plugins safe by default.",
+      body: [
+        { p: "A plugin allowlist is the shortest path from 'we got compromised' to 'we never allowed that.' If your dev team installs DSH plugins from a shared registry, an allowlist turns plugin choice from a personal guess into a team decision. This guide walks through setting up a plugin allowlist for your dev team, the policy behind it, and how to enforce approved plugin lists without slowing people down." },
+        { h2: "What a plugin allowlist is" },
+        { p: "An allowlist is a named set of plugins your team has reviewed and approved. Anything not on the list is blocked at install. Unlike a blocklist, which reacts to known-bad plugins, an allowlist assumes everything is untrusted until it earns a spot. For supply-chain safety, that default-deny posture is what you want." },
+        { h2: "Why a team plugin policy beats heroics" },
+        { ul: ["Incidents drop because the risky long tail never gets installed", "New hires get a safe default instead of a blank search box", "Audits become a one-line check: is the plugin on the list?", "Review load spreads across the team instead of landing on one person"] },
+        { h2: "Tiers that actually work" },
+        { table: { head: ["Tier", "Rule", "Example"], rows: [["Approved", "Reviewed, scored A/B, install allowed", "dsh-core, context-compressor"], ["Conditional", "Allowed in dev only, blocked in prod", "experimental research plugins"], ["Denied", "Never install", "anything flagged dangerous"]] } },
+        { p: "Three tiers beat a single yes/no because real work has gray areas. A conditional tier lets engineers experiment without opening production to risk." },
+        { h2: "Enforcing the allowlist" },
+        { p: "A list nobody checks is just a document. Wire it into your pipeline so installs fail closed. Pair the allowlist with the security scanner write-up at /blog/plugin-supply-chain-security so every approved entry has a score behind it." },
+        { ul: ["Add a pre-install gate in CI that rejects plugins outside the allowlist", "Keep the list in version control so changes are reviewed like code", "Subscribe to DSH Weekly (/subscribe) so new high-score plugins surface for review"] },
+        { h2: "Mistakes that sink allowlists" },
+        { ul: ["Writing it once and never reviewing, scores move and plugins age", "Approving by star count alone instead of score and warnings", "Forgetting to block everything else, which quietly reopens the door"] },
+        { h2: "FAQ" },
+        { p: "Q: Do we need an allowlist if we only have three developers? A: Yes. Three people is enough to install three different bad plugins. The list scales with risk, not headcount." },
+        { p: "Q: How often should we review it? A: Monthly is a good rhythm. Tie reviews to your DSH Weekly digest so new safe plugins get in and stale ones get out." },
+        { h2: "About DSH Quality" },
+        { p: "DSH Quality scores every plugin on maintenance, docs, npm health, and security so your allowlist is built on evidence, not vibes. Start evaluating plugins at dshquality.com, read the supply-chain guide, or subscribe to DSH Weekly for new safe picks." }
+      ]
+    },
+    zh: {
+      title: "为开发团队配置插件白名单",
+      excerpt: "插件白名单把插件选择从个人猜测变成团队决策。了解如何建立并强制执行已批准插件清单，又不拖慢开发者。",
+      metaDescription: "如何为开发团队配置插件白名单：审批分级、CI 强制执行，以及一套默认安全的团队插件策略。",
+      body: [
+        { p: "插件白名单是把「我们被入侵了」变成「我们根本没批准过」的最短路径。如果你的开发团队从共享注册表安装 DSH 插件，白名单就把插件选择从个人猜测变成团队决策。本指南讲解如何为开发团队配置插件白名单、背后的策略，以及如何在不拖慢人的前提下强制执行已批准清单。" },
+        { h2: "插件白名单是什么" },
+        { p: "白名单是一组团队已审查并批准的插件。不在清单上的，安装即被拦截。黑名单是对已知坏插件做反应，白名单则默认一切不可信，直到它赢得一席之地。对供应链安全而言，这种默认拒绝的姿态正是你想要的。" },
+        { h2: "为什么团队插件策略胜过临时救火" },
+        { ul: ["事故减少，因为高风险长尾根本装不进来", "新人拿到的是安全默认，而不是空白搜索框", "审计变成一行检查：插件在清单上吗？", "审查压力分散到全队，而不是压在一个人身上"] },
+        { h2: "真正好用的分级" },
+        { table: { head: ["级别", "规则", "示例"], rows: [["已批准", "已审查、评分 A/B，允许安装", "dsh-core、context-compressor"], ["有条件", "仅开发环境允许，生产环境拦截", "实验性研究插件"], ["禁止", "绝不安装", "任何被标记的危险插件"]] } },
+        { p: "三级比单一的是/否更好，因为真实工作有灰色地带。有条件级别让工程师能试验，又不向生产开放风险。" },
+        { h2: "强制执行白名单" },
+        { p: "没人检查清单，它只是一份文档。把它接进流水线，让安装在封闭策略下失败。把白名单与 /blog/plugin-supply-chain-security 的安全扫描说明搭配，让每个已批准项背后都有评分支撑。" },
+        { ul: ["在 CI 加一道安装前关卡，拒绝清单外的插件", "把清单放进版本控制，变更像代码一样被审查", "订阅 DSH Weekly（/subscribe），让新的高分插件进入审查视野"] },
+        { h2: "拖垮白名单的错误" },
+        { ul: ["写一次就再不审查，评分会变、插件会老化", "只凭 star 数批准，而不是看评分和警告", "忘记拦截其他一切，悄悄重新打开门"] },
+        { h2: "常见问题" },
+        { p: "问：只有三个开发者也需要白名单吗？答：需要。三个人足够装三个不同的坏插件。白名单随风险扩展，不随人头数。" },
+        { p: "问：多久审查一次？答：每月一次是好节奏。把审查绑到你的 DSH Weekly 摘要，让新的安全插件进来、过期的出去。" },
+        { h2: "关于 DSH Quality" },
+        { p: "DSH Quality 从维护、文档、npm 健康和安全四个维度为每款插件评分，让你的白名单建立在证据而非感觉上。来 dshquality.com 开始评估插件，阅读供应链指南，或订阅 DSH Weekly 获取新的安全推荐。" }
+      ]
+    }
+  },
 ];
 
 /** 按日期倒序（新在前） */
