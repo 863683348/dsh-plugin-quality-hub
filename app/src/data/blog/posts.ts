@@ -864,6 +864,77 @@ export const blogPosts: BlogPost[] = [
       ]
     }
   },
+  {
+    slug: 'how-to-update-dsh-plugins-without-breaking-your-setup',
+    date: '2026-09-03',
+    keywords: ['update dsh plugins', 'dsh plugin update', 'safe plugin upgrade', 'upgrade dsh plugins'],
+    longTail: ['how to update dsh plugins safely', 'safe dsh plugin upgrade', 'dsh plugin update checklist', 'update deepseek harness plugins'],
+    imageUrl: '/images/blog/how-to-update-dsh-plugins-without-breaking-your-setup.svg',
+    en: {
+      title: 'How to Update DSH Plugins Without Breaking Your Setup',
+      excerpt: 'Updating a DSH plugin can break your setup. Follow a 5-minute pre-update check, a snapshot step, a one-at-a-time update, and a concrete rollback so upgrades never become outages.',
+      metaDescription: 'How to update DSH plugins without breaking your setup: a pre-update checklist, backup snapshot, one-at-a-time update, verification, and a step-by-step rollback with deepseek-harness tools.',
+      body: [
+        { p: 'Updating a DSH plugin feels safe until it isn\'t. A new version can change a config key, drop a dependency, or shift a score from B to D overnight. This guide walks through a pre-update check, a snapshot step, a one-at-a-time update, and a concrete rollback — so an upgrade never turns into an outage.' },
+        { h2: 'Step 1 — Pre-update check (5 minutes)' },
+        { p: 'Before you touch anything, confirm the plugin is worth updating and that the new version is safe:' },
+        { ul: ['Read the changelog. Look for breaking changes, removed flags, or renamed config keys.', 'Compare the score delta. A drop of more than 5 points (for example B 82 to C 76) is a warning, not a cosmetic change.', 'Check the last-commit date. A version pushed within the last 24 hours has had less real-world testing than one a week old.', 'Note your current version and config. You need both to roll back.'] },
+        { h2: 'Step 2 — Snapshot before you move' },
+        { p: 'A snapshot turns a bad upgrade from a fire into a footnote. Do this even for a one-line version bump:' },
+        { ul: ['Export your plugin config: dsh config export > backup-$(date +%F).json', 'Snapshot the plugin itself if your registry supports it (deepseek-harness/backup-tool does this in one command).', 'Record the exact installed version: dsh plugin list | grep <name>.'] },
+        { h2: 'Step 3 — Update one plugin at a time' },
+        { p: 'Batch updates hide the cause of a break. Update a single plugin, then verify, before the next one. For a Codex-adjacent setup, deepseek-harness/hot-reload lets you apply a config change and see the effect without a full restart, which shortens the verify loop from minutes to seconds.' },
+        { p: 'Run the update, then immediately exercise the one feature you actually use. A plugin that passes its own tests can still break your specific workflow.' },
+        { h2: 'Step 4 — Verify after the update' },
+        { ul: ['Reload config (or restart) and confirm the service comes up clean.', 'Run the command you use daily; watch for changed output or new errors.', 'Re-check the score. If it fell, decide now whether to keep or roll back.'] },
+        { h2: 'Step 5 — Rollback if something breaks' },
+        { p: 'If the plugin misbehaves, revert in this order:' },
+        { ul: ['Restore the config snapshot: dsh config import backup-<date>.json', 'Reinstall the previous version: dsh plugin install <name>@<prev-version>', 'If the registry has no version pin, restore from deepseek-harness/backup-tool.', 'Confirm the feature works, then report the break upstream so the next person is warned.'] },
+        { table: { head: ['Symptom', 'First move'], rows: [['Service won\'t start', 'Restore config snapshot, then downgrade'], ['Config key renamed', 'Map old key to new name, re-import'], ['Score dropped sharply', 'Hold the update, keep previous version']] } },
+        { h2: 'Why a score moves after an update' },
+        { p: 'A score is not a fixed grade. It recomputes from maintenance, docs, npm health, and security signals. A version that drops a README, adds an unmaintained dependency, or triggers a new security flag can fall a full band. That is why you compare the delta in Step 1 and re-check in Step 4 — the same plugin at a new version is, for scoring purposes, a different plugin.' },
+        { h2: 'When to skip the update' },
+        { p: 'Not every new version needs you. If the changelog is documentation-only and the score held, you can wait for the next quiet afternoon. If the new version renames a config key you depend on and you have no time to remap, pin the old version and schedule the change. An upgrade you rush at 5 p.m. on a Friday is the one that breaks at 9 p.m.' },
+        { h2: 'Similar plugins worth checking' },
+        { p: 'Two plugins make safe upgrades easier. deepseek-harness/hot-reload applies config changes without a full restart so you can confirm a new version behaves before committing. deepseek-harness/backup-tool snapshots your config so a bad upgrade is one restore away. devflow streamlines the edit-verify loop if you maintain several plugins at once.' },
+        { ul: ['deepseek-harness/hot-reload — reload config without restarting', 'deepseek-harness/backup-tool — one-command snapshot and restore', 'devflow — faster edit-verify loop across plugins'] },
+        { h2: 'About DSH Quality' },
+        { p: 'DSH Quality scores every plugin on maintenance, docs, npm health, and security, so your upgrade decisions rest on evidence instead of guesswork. Check a plugin\'s score before you update at dshquality.com, read the supply-chain guide, or browse the full plugin index at /.' }
+      ]
+    },
+    zh: {
+      title: '如何升级 DSH 插件而不搞崩你的环境',
+      excerpt: '升级 DSH 插件可能搞崩环境。用 5 分钟升级前检查、快照备份、逐个升级和明确回滚，让升级不再是事故。',
+      metaDescription: '如何升级 DSH 插件而不搞崩环境：升级前清单、配置快照、逐个升级、验证，以及用 deepseek-harness 工具逐步回滚。',
+      body: [
+        { p: '升级 DSH 插件平时感觉很安全，直到它不安全。一个新版本可能改掉某个配置键、丢掉一个依赖，或者一夜之间把评分从 B 掉到 D。本指南带你走一遍升级前检查、快照、逐个升级和明确回滚，让升级永远不成事故。' },
+        { h2: '第一步 — 升级前检查（5 分钟）' },
+        { p: '在动任何东西之前，先确认这个插件值得升、且新版本安全：' },
+        { ul: ['读 changelog。找破坏性变更、被移除的 flag、被改名的配置键。', '对比评分差值。掉超过 5 分（比如 B 82 变 C 76）是警告，不是表面变化。', '看最后提交日期。24 小时内刚推的版本，真实测试比一周前的少。', '记下了当前版本和配置。回滚时两者都要。'] },
+        { h2: '第二步 — 动之前先快照' },
+        { p: '快照能把一次糟糕的升级从火灾变成脚注。哪怕只升一行版本号也做：' },
+        { ul: ['导出插件配置：dsh config export > backup-$(date +%F).json', '如果注册表支持，给插件本身做快照（deepseek-harness/backup-tool 一条命令搞定）。', '记确切安装版本：dsh plugin list | grep <name>。'] },
+        { h2: '第三步 — 一次只升一个' },
+        { p: '批量升级会掩盖事故的真正原因。先升一个，验证过了再升下一个。在 Codex 相邻的 setup 里，deepseek-harness/hot-reload 让你改完配置立刻看到效果、不用整体重启，把验证循环从几分钟压到几秒。' },
+        { p: '升完立刻跑你真正在用的那个功能。一个自己测试全过的插件，照样可能搞崩你的特定工作流。' },
+        { h2: '第四步 — 升级后验证' },
+        { ul: ['重载配置（或重启），确认服务干净启动。', '跑你每天用的命令；盯住输出变化或新报错。', '再查一次评分。掉了就现在决定留还是回滚。'] },
+        { h2: '第五步 — 出事就回滚' },
+        { p: '如果插件开始耍脾气，按这个顺序退：' },
+        { ul: ['恢复配置快照：dsh config import backup-<date>.json', '装回旧版本：dsh plugin install <name>@<prev-version>', '如果注册表不支持版本钉，从 deepseek-harness/backup-tool 恢复。', '确认功能正常，再把事故上报上游，让下一个人有预警。'] },
+        { table: { head: ['现象', '先做什么'], rows: [['服务起不来', '先恢复配置快照，再降级'], ['配置键被改名', '旧键映射到新键，重新导入'], ['评分骤降', '暂缓升级，保留旧版本']] } },
+        { h2: '为什么升级后评分会变' },
+        { p: '评分不是固定等级。它从维护、文档、npm 健康和安全信号重新算。一个丢掉 README、加了无人维护的依赖、或触发新安全标记的版本，可能整档下滑。这就是为什么第一步要比对差值、第四步要复查——同一款插件的新版本，在评分意义上是一款不同的插件。' },
+        { h2: '什么时候可以不升' },
+        { p: '不是每个新版本都需要你。如果 changelog 只有文档更新且评分没动，可以等到下一个安静的下午。如果新版本改了你依赖的配置键、而你没空重映射，就钉住旧版本、把改动排期。周五下午 5 点赶着的升级，就是晚上 9 点搞崩的那次。' },
+        { h2: '值得顺手看的插件' },
+        { p: '有两款插件让安全升级更容易。deepseek-harness/hot-reload 不改整体重启就能应用配置变更，让你在提交前确认新版本表现。deepseek-harness/backup-tool 给配置做快照，坏升级一次恢复就好。devflow 在你同时维护多个插件时理顺编辑-验证循环。' },
+        { ul: ['deepseek-harness/hot-reload — 不重启也能重载配置', 'deepseek-harness/backup-tool — 一条命令快照与恢复', 'devflow — 跨插件更快的编辑-验证循环'] },
+        { h2: '关于 DSH Quality' },
+        { p: 'DSH Quality 从维护、文档、npm 健康和安全四个维度给每款插件评分，让你的升级决策建立在证据上，而不是猜。升级前到 dshquality.com 查一下插件评分，读供应链指南，或到 / 浏览完整插件索引。' }
+      ]
+    }
+  }
 ];
 
 /** 按日期倒序（新在前） */
