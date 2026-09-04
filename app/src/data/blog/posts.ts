@@ -934,6 +934,78 @@ export const blogPosts: BlogPost[] = [
         { p: 'DSH Quality 从维护、文档、npm 健康和安全四个维度给每款插件评分，让你的升级决策建立在证据上，而不是猜。升级前到 dshquality.com 查一下插件评分，读供应链指南，或到 / 浏览完整插件索引。' }
       ]
     }
+  },
+  {
+    slug: 'dsh-plugin-score-trends-what-a-dropping-score-means',
+    date: '2026-09-04',
+    keywords: ['dsh score trend', 'plugin score decline', 'watchlist plugins', 'dsh quality score drop'],
+    longTail: ['dsh score trend analysis', 'plugin score decline reason', 'watchlist plugins to monitor', 'why did my dsh plugin score drop'],
+    en: {
+      title: 'DSH Plugin Score Trends: What a Dropping Score Means',
+      excerpt: 'A dsh score trend is your earliest warning. Learn how to read a plugin score decline, build a watchlist plugins habit, and act before a dropping score becomes a broken setup.',
+      metaDescription: 'What a dropping DSH plugin score means: read dsh score trends, spot a plugin score decline early, keep a watchlist plugins routine, and decide when to switch or hold.',
+      body: [
+        { p: 'Watching a dsh score trend is the cheapest early warning you get. When a plugin you depend on shows a plugin score decline, that number usually moves before the bug reports do. I keep a short watchlist plugins list for the tools my team relies on, and I check it whenever a score shifts by more than a few points. This post shows what a dropping score means, how to read the trend, and when to act.' },
+        { h2: 'What a dsh score trend actually shows' },
+        { p: 'A score is not a grade you earn once. It recomputes from four signals: maintenance, docs, npm health, and security. A dsh score trend that points down is telling you one of those signals changed, not that the plugin author became a worse person overnight.' },
+        { p: 'The useful part is the slope. A single-point dip after a big release is noise. A steady slide across three score updates is a signal.' },
+        { h2: 'Reading a plugin score decline without panic' },
+        { p: 'Before you rip a plugin out, ask what changed. A plugin score decline of two or three points after a README rewrite is normal. The same drop after a new dependency appears in the tree deserves a look.' },
+        { ul: ['Check the maintenance field. A stale last-push date is the most common cause.', 'Check npm health. An unmaintained or renamed dependency drags the score.', 'Check security. A new install-script flag can drop a band on its own.', 'Check docs. A deleted README removes the documentation signal entirely.'] },
+        { h2: 'Build a watchlist plugins routine that takes five minutes' },
+        { p: 'You do not need a dashboard to start. A watchlist plugins routine is a plain list you glance at each week. I keep mine in a note next to the build server, and I add any plugin my team would miss if it broke.' },
+        { p: 'The DSH Weekly digest (/subscribe) does part of this for you by surfacing score moves across the ecosystem. Pair it with a manual scan of your own short list and you will catch most problems early.' },
+        { h2: 'What a dropping score usually points to' },
+        { p: 'Most drops trace back to one of four things. None of them are mysterious once you know the inputs.' },
+        { table: { head: ['Signal', 'What a drop here means'], rows: [['Maintenance', 'Last push is stale; the plugin is cooling off'], ['Docs', 'README shrank or vanished; new users get no onboarding'], ['npm health', 'A dependency went unmaintained or got renamed'], ['Security', 'A new install-script or supply-chain flag fired']] } },
+        { p: 'Two of these four are quiet. Docs and npm health slide without anyone noticing until the score moves.' },
+        { h2: 'A short comparison of score moves' },
+        { p: 'Not every move means the same thing. Here is how I sort them.' },
+        { table: { head: ['Move', 'Likely cause', 'Action'], rows: [['-2 to -4', 'Cosmetic doc or metadata change', 'Watch, no change'], ['-5 to -9', 'New dependency or stale push', 'Review before next update'], ['-10 or more', 'Security flag or broken bundle', 'Switch or pin now']] } },
+        { h2: 'When to act on a falling score' },
+        { p: 'A dsh score trend only matters if it changes what you do. I act when a plugin I ship to users crosses a band (say B to C) or picks up a security flag. Below that, I note it and move on.' },
+        { p: 'If you need to compare options before switching, the score breakdown at /blog/dsh-quality-score-decoded shows exactly how each band is built. And before you install a replacement, the scanner write-up at /blog/how-install-script-scanning-works explains what gets flagged.' },
+        { h2: 'FAQ' },
+        { p: 'Q: How often should I check my watchlist plugins? A: Once a week is enough for most teams. Tie it to your DSH Weekly read so the habit sticks.' },
+        { p: 'Q: Is a dropping score always bad? A: No. A small dip after a docs change is normal. A band change or a security flag is the part to respect.' },
+        { p: 'Q: Can a score go back up? A: Yes. Fix the stale push, restore the README, or drop the bad dependency and the next recompute can recover the points.' },
+        { h2: 'About DSH Quality' },
+        { p: 'DSH Quality scores every plugin on maintenance, docs, npm health, and security, so a dsh score trend in your watchlist is built on evidence, not opinion. See the current rankings at dshquality.com, read how the score is computed, or browse the full plugin index at /.' }
+      ]
+    },
+    zh: {
+      title: 'DSH 插件评分趋势：分数下滑意味着什么',
+      excerpt: 'dsh score trend 是你最早的预警。学会读懂 plugin score decline、养成 watchlist plugins 习惯，在分数下滑变成环境崩坏前行动。',
+      metaDescription: 'DSH 插件评分下滑意味着什么：读懂 dsh score trend、及早发现 plugin score decline、保持 watchlist plugins 习惯，并决定何时切换或观望。',
+      body: [
+        { p: '盯着 dsh score trend（评分趋势）是你能拿到的最便宜的早期预警。当你依赖的插件出现 plugin score decline（评分下滑），这个数字通常比 bug 报告跑得还快。我给自己依赖的工具留了一份简短的 watchlist plugins（监控清单），只要分数波动超过几分就扫一眼。这篇文章讲清楚评分下滑意味着什么、怎么读趋势，以及什么时候该动手。' },
+        { h2: 'dsh score trend 到底在显示什么' },
+        { p: '评分不是一次拿到的等级。它从四个信号重算：维护、文档、npm 健康、安全。一条向下的 dsh score trend 是在告诉你其中某个信号变了，而不是作者一夜之间变烂。' },
+        { p: '有用的是斜率。大版本发布后单点小跌是噪声。连续三次评分更新都在滑，那才是信号。' },
+        { h2: '读 plugin score decline 时不要慌' },
+        { p: '在把插件拔掉之前，先问改了什么。README 重写后掉两三分很正常。同样的跌幅若出现在一个新依赖进树里，就值得看一眼。' },
+        { ul: ['看维护字段。last-push 变陈旧是最常见的原因。', '看 npm 健康。一个无人维护或被改名的依赖会拖分。', '看安全。一个新的安装脚本标记能单独掉一档。', '看文档。被删的 README 直接去掉文档信号。'] },
+        { h2: '养成只要五分钟的 watchlist plugins 习惯' },
+        { p: '你不需要 dashboard 就能开始。watchlist plugins 习惯就是一份你每周扫一眼的清单。我把自己的那份放在构建服务器旁的笔记里，任何团队离了会出事的插件都加进去。' },
+        { p: 'DSH Weekly 摘要（/subscribe）已经替你做了一部分：它把生态里的评分变动浮上来。把它和你自己短清单的人工扫描搭配，多数问题都能早抓到。' },
+        { h2: '评分下滑通常指向什么' },
+        { p: '多数下滑都能追到四件事之一。一旦你知道输入，没有哪件是神秘的。' },
+        { table: { head: ['信号', '这里掉分意味着'], rows: [['维护', 'last-push 陈旧，插件在降温'], ['文档', 'README 缩水或消失，新用户没有上手材料'], ['npm 健康', '某个依赖无人维护或被改名'], ['安全', '触发了新的安装脚本或供应链标记']] } },
+        { p: '这四件里有两件很安静。文档和 npm 健康会悄悄下滑，直到分数动了才有人察觉。' },
+        { h2: '评分变动的简短对比' },
+        { p: '不是每次变动都一个意思。我是这么分的。' },
+        { table: { head: ['变动', '可能原因', '动作'], rows: [['-2 到 -4', '文档或元数据的表面改动', '观望，不改'], ['-5 到 -9', '新依赖或 push 变陈旧', '下次升级前复查'], ['-10 及以上', '安全标记或 bundle 损坏', '立刻切换或钉版本']] } },
+        { h2: '分数下滑时什么时候该动手' },
+        { p: 'dsh score trend 只有在改变你的行为时才有意义。当一款我交付给用户的插件跨了一档（比如 B 到 C），或吃到一个安全标记，我就动手。在这之下，记一笔就过了。' },
+        { p: '如果你切换前想比对选项，/blog/dsh-quality-score-decoded 的评分拆解讲清每档怎么算出来的。装替代品之前，/blog/how-install-script-scanning-works 的扫描说明讲清会被标记什么。' },
+        { h2: '常见问题' },
+        { p: '问：我的 watchlist plugins 多久查一次？答：多数团队一周一次够了。绑到你的 DSH Weekly 阅读上，习惯才留得住。' },
+        { p: '问：分数下滑一定坏吗？答：不一定。文档改动后的小跌很正常。跨档或安全标记才是该尊重的部分。' },
+        { p: '问：分数能涨回来吗？答：能。修掉陈旧的 push、恢复 README、或扔掉坏依赖，下一次重算就能把分捡回来。' },
+        { h2: '关于 DSH Quality' },
+        { p: 'DSH Quality 从维护、文档、npm 健康和安全四个维度给每款插件评分，所以你在 watchlist 里看到的 dsh score trend 建立在证据上，不是看法上。到 dshquality.com 看当前排名，读评分怎么算，或到 / 浏览完整插件索引。' }
+      ]
+    }
   }
 ];
 
