@@ -1006,6 +1006,61 @@ export const blogPosts: BlogPost[] = [
         { p: 'DSH Quality 从维护、文档、npm 健康和安全四个维度给每款插件评分，所以你在 watchlist 里看到的 dsh score trend 建立在证据上，不是看法上。到 dshquality.com 看当前排名，读评分怎么算，或到 / 浏览完整插件索引。' }
       ]
     }
+  },
+
+  {
+    slug: 'tag-baiting-problem',
+    date: '2026-09-06',
+    keywords: ['tag baiting plugins', 'plugin registry spam', 'plugin metadata quality'],
+    longTail: ['plugin tag manipulation', 'registry spam', 'misleading plugin tags', 'fake plugin keywords'],
+    en: {
+      title: 'The Tag-Baiting Problem in Plugin Registries',
+      excerpt: 'Tag baiting plugins stuff their metadata with popular keywords they don\'t deliver. Here\'s how tag manipulation and registry spam distort discovery, and how DSH Quality scores around it.',
+      metaDescription: 'Tag baiting plugins and plugin tag manipulation clutter registries with registry spam — misleading keywords that hide real quality. See how DSH Quality scores cut through the noise.',
+      body: [
+        { p: 'Tag baiting plugins are quietly breaking plugin discovery. A author stuffs a listing with popular keywords — "ai", "agent", "rag", "vision" — that the plugin never actually implements, hoping to ride someone else\'s search traffic. This plugin tag manipulation isn\'t a bug; it\'s registry spam dressed up as metadata, and it makes "what should I install" harder than it needs to be.' },
+        { h2: 'What tag baiting actually looks like' },
+        { p: 'It\'s rarely an empty package. The plugin works, sometimes well — but its tags describe a different, more fashionable product. You search for a vision router and get a text formatter that tagged itself "vision" anyway.' },
+        { ul: ['Tags that don\'t match the README or the code.', 'Borrowed buzzwords ("gpt", "llm", "agent") with no corresponding feature.', 'Descriptions rewritten to hit trending queries instead of describing the tool.'] },
+        { h2: 'Why registries make it easy' },
+        { p: 'Most plugin registries trust authors to self-describe. There\'s no second pass that checks whether a "rag" tag means the plugin retrieves anything. That gap is exactly where registry spam lives: cheap to produce, slow to correct, and easy to bury a honest plugin under.' },
+        { h2: 'The real cost of registry spam' },
+        { p: 'Discovery gets noisier, trust drops, and good plugins drown. When every listing claims to be everything, the tags stop meaning anything — and developers stop reading them.' },
+        { table: { head: ['Signal', 'Honest plugin', 'Tag-baited plugin'], rows: [['Tags match code', 'Yes', 'Often no'], ['README claims', 'Specific', 'Buzzword soup'], ['Score impact', 'Reflects reality', 'Hides weak spots']] } },
+        { h2: 'How DSH Quality scores around it' },
+        { p: 'DSH Quality doesn\'t take tags at face value. The score pulls maintenance, docs, npm health, and a security scan — signals a baited tag can\'t fake. A plugin that tags itself "agent" but hasn\'t been pushed in months and ships no docs lands in C or D regardless of its keyword salad. The ranking on / reflects evidence, not self-description.' },
+        { h2: 'What you can do' },
+        { ul: ['Read the README before trusting a trending tag.', 'Check the score and last-push, not the keyword list.', 'Treat a mismatch between tags and docs as a red flag.'] },
+        { h2: 'FAQ' },
+        { p: 'Q: Can a baited tag hurt the plugin\'s score? A: Not directly — but the weak maintenance and docs that usually sit behind baiting do. The tag is the tell; the score is the verdict.' },
+        { p: 'Q: Where can I see the real ranking? A: The ecosystem breakdown on /blog/understanding-the-dsh-plugin-explosion walks through grade distribution, and / lists every plugin by evidence-based score.' },
+        { p: 'Tag baiting won\'t disappear on its own. The fix is scoring that ignores the label and reads the plugin — which is the whole point of dshquality.com.' }
+      ],
+    },
+    zh: {
+      title: '插件注册表里的"标签诱饵"问题',
+      excerpt: '标签诱饵插件往元数据里塞满自己根本没实现的热词。本文讲清标签操纵与注册表垃圾信息如何扰乱发现，以及 DSH Quality 如何绕开它打分。',
+      metaDescription: '标签诱饵插件与插件标签操纵用注册表垃圾信息——名不副实的误导性关键词——掩盖真实质量。看 DSH Quality 评分如何拨开噪声。',
+      body: [
+        { p: '标签诱饵插件正在悄悄破坏插件的发现体验。作者给词条塞满热门关键词——"ai"、"agent"、"rag"、"vision"——而插件根本没实现这些功能，只想着蹭别人的搜索流量。这种插件标签操纵不是 bug，而是披着元数据外衣的注册表垃圾信息，让"该装哪个"变得比本该的更难。' },
+        { h2: '标签诱饵长什么样' },
+        { p: '它很少是个空包。插件能用，有时还挺好用——但它的标签描述的是另一个、更时髦的产品。你搜 vision router，却得到一个把自己也标成"vision"的纯文本格式化工具。' },
+        { ul: ['标签和 README 或代码对不上。', '借来的 buzzword（"gpt"、"llm"、"agent"）却没对应功能。', '描述被改写成追热点查询，而不是介绍工具本身。'] },
+        { h2: '为什么注册表放任它' },
+        { p: '多数插件注册表信任作者自述，没有二次校验"rag"标签是否真意味着插件会检索。这个缺口正是注册表垃圾信息栖身之处：生产成本低、纠正慢、还容易把老实的插件埋下去。' },
+        { h2: '注册表垃圾信息的真实代价' },
+        { p: '发现变噪、信任下降、好插件被淹没。当每个词条都宣称自己是万能的，标签就失去了意义——开发者也就不再看了。' },
+        { table: { head: ['信号', '老实插件', '诱饵插件'], rows: [['标签对得上代码', '对', '常常不对'], ['README 宣称', '具体', 'buzzword 大杂烩'], ['评分影响', '反映现实', '掩盖短板']] } },
+        { h2: 'DSH Quality 如何绕开它打分' },
+        { p: 'DSH Quality 不照单全收标签。评分抓取维护、文档、npm 健康和安全扫描——这些是诱饵标签伪造不了的。一个把自己标成"agent"却数月没 push、也没文档的插件，无论关键词怎么堆，都会落在 C 或 D。/ 上的排名看证据，不看自述。' },
+        { h2: '你能做什么' },
+        { ul: ['信热门标签前先读 README。', '看评分和 last-push，而不是关键词清单。', '标签与文档对不上，就当红旗。'] },
+        { h2: '常见问题' },
+        { p: '问：诱饵标签会拉低评分吗？答：不直接——但诱饵背后常见的薄弱维护与文档会。标签是破绽，评分是判决。' },
+        { p: '问：在哪看真实排名？答：/blog/understanding-the-dsh-plugin-explosion 讲了等级分布，/ 按证据评分列全了每个插件。' },
+        { p: '标签诱饵不会自己消失。解法是打分无视标签、读懂插件——这正是 dshquality.com 的全部意义。' }
+      ]
+    }
   }
 ];
 
