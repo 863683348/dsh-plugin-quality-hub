@@ -1404,6 +1404,594 @@ export const blogPosts: BlogPost[] = [
       ]
     },
   },
+  {
+    slug: 'dsh-vs-vscode-extensions',
+    date: '2026-09-09',
+    keywords: ['dsh vs vscode extensions', 'vscode extension risk', 'plugin security model', 'dsh plugin safety'],
+    longTail: [
+      'vscode extension risk',
+      'plugin security model',
+      'dsh plugin safety',
+    ],
+    en: {
+      title: 'DSH Plugins vs VS Code Extensions: Security Model Compared',
+      excerpt: 'VS Code extensions and DSH plugins do similar jobs with very different levels of protection. This is how each security model works, where the risk sits, and how to choose safely.',
+      metaDescription: 'How DSH plugins and VS Code extensions compare on security: the vscode extension risk of unsandboxed code, why the DSH plugin security model isolates each plugin, and what dsh plugin safety still cannot promise.',
+      body: [
+        {
+            "p": "Comparing DSH plugins and VS Code extensions starts with one uncomfortable fact: they look alike and protect you very differently. A VS Code extension usually runs with the same trust you give the editor itself, and that is the core of vscode extension risk. The DSH plugin security model takes the opposite route, treating every plugin as untrusted until a scan says otherwise. This piece walks through both plugin security models side by side, so you can see where dsh plugin safety genuinely differs and where the two systems are closer than the marketing suggests."
+        },
+        {
+            "h2": "The VS Code extension security model"
+        },
+        {
+            "p": "How it works:"
+        },
+        {
+            "ul": [
+                "Extensions run in the same process as VS Code",
+                "Full access to your filesystem",
+                "Can execute arbitrary commands",
+                "Installed from the Microsoft Marketplace or directly from a file"
+            ]
+        },
+        {
+            "p": "Where the risk sits:"
+        },
+        {
+            "ul": [
+                "One malicious extension can compromise the whole environment",
+                "No sandboxing between extensions",
+                "Privilege escalation is possible",
+                "Supply chain attacks arrive through a compromised dependency"
+            ]
+        },
+        {
+            "p": "None of this makes extensions unsafe by default. It means the model leaves the checking to you, and most people do not have the time for it."
+        },
+        {
+            "h2": "The DSH plugin security model"
+        },
+        {
+            "p": "How it works:"
+        },
+        {
+            "ul": [
+                "Plugins run in isolated sandboxes",
+                "Filesystem access is limited by default",
+                "Security scanning is mandatory",
+                "Quality scoring is independent of install counts"
+            ]
+        },
+        {
+            "p": "What that buys you:"
+        },
+        {
+            "ul": [
+                "Each plugin runs in isolation from the others",
+                "Pre-install security warnings",
+                "Real-time threat detection",
+                "A scoring method you can read and audit"
+            ]
+        },
+        {
+            "h2": "Side-by-side comparison"
+        },
+        {
+            "table": {
+                "head": ["Security aspect", "VS Code extensions", "DSH plugins"],
+                "rows": [
+                    ["Sandbox", "No", "Yes"],
+                    ["Filesystem access", "Full", "Limited"],
+                    ["Scanning", "Optional", "Mandatory"],
+                    ["Quality scoring", "Community ratings", "Independent analysis"],
+                    ["Install warning", "Rare", "Always"]
+                ]
+            }
+        },
+        {
+            "h2": "What this means in practice"
+        },
+        {
+            "p": "If you install VS Code extensions, be selective. Check download counts and ratings, look at recent commits and who maintains the project, and stay with publishers you have reason to trust."
+        },
+        {
+            "p": "For DSH plugins, the platform does more of the security work before you decide. Scanning runs at install time, quality grades from A to D are shown up front, and suspicious patterns raise a warning instead of waiting for you to find them."
+        },
+        {
+            "h2": "Best practices that apply to both"
+        },
+        {
+            "ul": [
+                "Limit what you install. Only add what you actually use",
+                "Review before installing. Check reputation and purpose",
+                "Keep things updated. Security fixes ship with updates",
+                "Monitor permissions. Know what each tool can reach"
+            ]
+        },
+        {
+            "h2": "FAQ"
+        },
+        {
+            "h3": "Are DSH plugins completely safe?"
+        },
+        {
+            "p": "No system is. The DSH model adds layers that VS Code extensions do not have, but a layer is not a guarantee."
+        },
+        {
+            "h3": "Can I use both DSH and VS Code extensions?"
+        },
+        {
+            "p": "Yes. They usually do different jobs. DSH fits a CLI workflow, VS Code fits IDE work."
+        },
+        {
+            "h3": "How does DSH scan for threats?"
+        },
+        {
+            "p": "Static analysis of install scripts, dependency checks, and pattern matching against known attack vectors."
+        },
+        {
+            "p": "A security model is less a matter of taste than a matter of who does the first pass. If you would rather the platform did it, the DSH model is built that way. Our scoring method, including how security and maintenance are weighted, is published on dshquality.com. Two follow-ups worth your time: /blog/plugin-supply-chain-security-team-enforcement on where attacks actually come from, and /blog/setting-up-a-plugin-allowlist-for-your-dev-team on turning this into a team rule."
+        }
+      ]
+    },
+    zh: {
+      title: 'DSH 插件 vs VS Code 扩展：安全模型对比',
+      excerpt: 'VS Code 扩展和 DSH 插件干着相似的活，保护你的方式却很不一样。这篇讲清两套安全模型各自怎么运作、风险在哪里，以及怎么选更稳。',
+      metaDescription: 'DSH 插件和 VS Code 扩展的安全模型对比：VS Code 扩展在沙箱之外运行带来的风险、DSH 插件为什么默认隔离每个插件，以及插件安全能做到和做不到的边界。',
+      body: [
+        {
+            "p": "把 DSH 插件和 VS Code 扩展放在一起比较，先要接受一个不太舒服的事实：两者长得像，保护你的方式却差很远。VS Code 扩展通常带着和编辑器同等的信任在运行，这正是 VS Code 扩展风险的核心。DSH 插件的安全模型走的是相反的路，默认把每个插件都当成不可信，直到扫描给出结论。这篇把两套插件安全模型并排放，让你看清 DSH 插件安全到底强在哪，也看清两者哪里比宣传中更接近。"
+        },
+        {
+            "h2": "VS Code 扩展的安全模型"
+        },
+        {
+            "p": "它是怎么运作的："
+        },
+        {
+            "ul": [
+                "扩展与 VS Code 跑在同一个进程里",
+                "完全访问你的文件系统",
+                "可以执行任意命令",
+                "从 Microsoft Marketplace 安装，或直接从文件安装"
+            ]
+        },
+        {
+            "p": "风险在哪里："
+        },
+        {
+            "ul": [
+                "一个恶意扩展就能危及整个环境",
+                "扩展之间没有沙箱隔离",
+                "存在提权可能",
+                "供应链攻击通过被入侵的依赖进入"
+            ]
+        },
+        {
+            "p": "这些并不代表扩展默认就不安全。它说明这套模型把检查的活留给了你，而大多数人是没这个时间的。"
+        },
+        {
+            "h2": "DSH 插件的安全模型"
+        },
+        {
+            "p": "它是怎么运作的："
+        },
+        {
+            "ul": [
+                "插件在隔离的沙箱里运行",
+                "默认限制文件系统访问",
+                "强制进行安全扫描",
+                "质量评分与安装量无关"
+            ]
+        },
+        {
+            "p": "这些带来了什么："
+        },
+        {
+            "ul": [
+                "每个插件与其他插件相互隔离",
+                "安装前的安全提示",
+                "实时威胁检测",
+                "一套你能读懂、能复核的评分方法"
+            ]
+        },
+        {
+            "h2": "并排对比"
+        },
+        {
+            "table": {
+                "head": ["安全方面", "VS Code 扩展", "DSH 插件"],
+                "rows": [
+                    ["沙箱", "无", "有"],
+                    ["文件系统访问", "完全", "受限"],
+                    ["扫描", "可选", "强制"],
+                    ["质量评分", "社区评分", "独立分析"],
+                    ["安装提示", "少见", "总是"]
+                ]
+            }
+        },
+        {
+            "h2": "这在实践中意味着什么"
+        },
+        {
+            "p": "如果你要装 VS Code 扩展，就挑着装。看下载量和评分，看最近的提交和维护者是谁，并且只留在你有理由信任的发布者那里。"
+        },
+        {
+            "p": "对 DSH 插件，平台在你做决定之前把安全的工作做了更多。安装时就会扫描，A 到 D 的质量等级直接摆出来，可疑模式会主动报警，而不是等你自己去发现。"
+        },
+        {
+            "h2": "两者通用的最佳实践"
+        },
+        {
+            "ul": [
+                "限制安装数量。只加你真的会用的",
+                "安装前先看。查一查声誉和用途",
+                "保持更新。安全修复跟着更新走",
+                "盯住权限。弄清每个工具能碰到什么"
+            ]
+        },
+        {
+            "h2": "常见问题"
+        },
+        {
+            "h3": "DSH 插件就完全安全吗？"
+        },
+        {
+            "p": "没有哪个系统是。DSH 的模型多加了 VS Code 扩展没有的几层，但多一层不等于有保证。"
+        },
+        {
+            "h3": "DSH 和 VS Code 扩展能一起用吗？"
+        },
+        {
+            "p": "可以。它们通常各干各的：DSH 适合命令行流程，VS Code 适合在 IDE 里干活。"
+        },
+        {
+            "h3": "DSH 是怎么扫描威胁的？"
+        },
+        {
+            "p": "对安装脚本做静态分析、检查依赖，并拿已知攻击手法做模式匹配。"
+        },
+        {
+            "p": "安全模型与其说是口味问题，不如说是「谁来做第一遍检查」的问题。如果你更希望平台来做，DSH 的模型就是这么设计的。完整的评分方法，包括安全和维护各占多少权重，都写在 dshquality.com 上。想接着读，推荐 /blog/plugin-supply-chain-security-team-enforcement，讲攻击真正从哪里来；以及 /blog/setting-up-a-plugin-allowlist-for-your-dev-team，讲怎么把它变成团队规则。"
+        }
+      ]
+    },
+  },
+  {
+    slug: 'compare-two-dsh-plugins-side-by-side',
+    date: '2026-09-10',
+    keywords: ['compare dsh plugins', 'plugin comparison', 'choose between plugins', 'dsh plugin vs plugin'],
+    longTail: [
+      'plugin comparison',
+      'choose between plugins',
+      'dsh plugin vs plugin',
+    ],
+    en: {
+      title: 'How to Compare Two DSH Plugins Side by Side',
+      excerpt: 'Choosing between two DSH plugins usually comes down to gut feeling. Here is a five-factor comparison framework, with weights, that turns the guess into a decision.',
+      metaDescription: 'How to compare DSH plugins side by side: a plugin comparison framework covering maintenance, docs, security, community and performance, plus how to choose between plugins when it is a dsh plugin vs plugin call.',
+      body: [
+        {
+            "p": "Comparing two DSH plugins should be boring. Choosing between plugins usually is not, because most picks come down to gut feeling. A plugin comparison that holds up has to score the things that predict whether a plugin still works in six months, and a dsh plugin vs plugin decision should end with a number you can defend to your team. This framework covers five factors, weights them, and does exactly that."
+        },
+        {
+            "h2": "The problem"
+        },
+        {
+            "p": "DSH (DeepSkinHub) has hundreds of plugins. When two of them look equally good, most users guess. A little structure turns that guess into a decision you can explain later."
+        },
+        {
+            "h2": "The comparison framework"
+        },
+        {
+            "h3": "1. Maintenance status"
+        },
+        {
+            "table": {
+                "head": ["Factor", "What to check", "Red flag"],
+                "rows": [
+                    ["Last commit", "When was the latest update?", "Over 6 months ago"],
+                    ["Open issues", "How many are unresolved?", "Over 20 open"],
+                    ["PR activity", "Are pull requests being merged?", "No merges in 3 months"],
+                    ["Contributors", "How many are active?", "One person only"]
+                ]
+            }
+        },
+        {
+            "h3": "2. Documentation quality"
+        },
+        {
+            "table": {
+                "head": ["Factor", "What to check", "Good sign"],
+                "rows": [
+                    ["README", "Is it complete?", "Covers install, config and usage"],
+                    ["Examples", "Are there working examples?", "At least 3 code samples"],
+                    ["API docs", "Is the API documented?", "Full reference available"],
+                    ["Changelog", "Are changes recorded?", "Regular entries"]
+                ]
+            }
+        },
+        {
+            "h3": "3. Security score"
+        },
+        {
+            "table": {
+                "head": ["Factor", "What to check", "Critical"],
+                "rows": [
+                    ["Network access", "Does it make outbound calls?", "Yes means review carefully"],
+                    ["Filesystem access", "Which paths can it read or write?", "Any path is high risk"],
+                    ["Permissions", "What OS permissions does it need?", "Admin or root is a red flag"],
+                    ["Code audit", "Has it been audited?", "No audit means assume risk"]
+                ]
+            }
+        },
+        {
+            "h3": "4. Community and adoption"
+        },
+        {
+            "table": {
+                "head": ["Factor", "What to check", "Good sign"],
+                "rows": [
+                    ["Downloads", "How many installs?", "Over 1,000 is established"],
+                    ["Ratings", "What is the average?", "Over 4.0 is well liked"],
+                    ["Reviews", "Are they recent and detailed?", "Recent and detailed means real use"],
+                    ["GitHub stars", "How many stars?", "Over 100 shows interest"]
+                ]
+            }
+        },
+        {
+            "h3": "5. Performance impact"
+        },
+        {
+            "table": {
+                "head": ["Factor", "What to check", "Acceptable"],
+                "rows": [
+                    ["Memory usage", "How much RAM does it use?", "Under 100 MB"],
+                    ["CPU usage", "Impact on system performance?", "Under 5% idle, under 20% active"],
+                    ["Startup time", "How long to initialize?", "Under 5 seconds"],
+                    ["Conflict potential", "Does it touch shared resources?", "Low is safe"]
+                ]
+            }
+        },
+        {
+            "h2": "The decision matrix"
+        },
+        {
+            "p": "Score each plugin from 1 to 5 on every factor, then multiply by the weight."
+        },
+        {
+            "table": {
+                "head": ["Factor", "Weight", "Plugin A", "Plugin B"],
+                "rows": [
+                    ["Maintenance", "25%", "", ""],
+                    ["Documentation", "15%", "", ""],
+                    ["Security", "30%", "", ""],
+                    ["Community", "15%", "", ""],
+                    ["Performance", "15%", "", ""],
+                    ["Total", "100%", "", ""]
+                ]
+            }
+        },
+        {
+            "p": "The plugin with the higher total wins. If the two land within a few points of each other, the matrix has still done its job, because it told you the choice is close enough that either will work."
+        },
+        {
+            "h2": "A quick example: AI Toolkit vs Model Router"
+        },
+        {
+            "table": {
+                "head": ["Factor", "AI Toolkit", "Model Router"],
+                "rows": [
+                    ["Maintenance", "Active, weekly commits", "Active, monthly commits"],
+                    ["Documentation", "Comprehensive", "Good"],
+                    ["Security", "No network access", "Limited network access"],
+                    ["Community", "500+ downloads", "200+ downloads"],
+                    ["Performance", "Lightweight", "Lightweight"],
+                    ["Winner", "AI Toolkit, for most users", "Model Router, for routing needs"]
+                ]
+            }
+        },
+        {
+            "h2": "When to choose which"
+        },
+        {
+            "ul": [
+                "Choose plugin A when you need the most maintained option",
+                "Choose plugin A when documentation is critical to your workflow",
+                "Choose plugin B when it has a feature plugin A lacks",
+                "Choose plugin B when its community adoption is much higher"
+            ]
+        },
+        {
+            "h2": "FAQ"
+        },
+        {
+            "h3": "What if the two plugins tie?"
+        },
+        {
+            "p": "Break the tie on security first, then on maintenance. Those two fail the loudest and cost the most to undo."
+        },
+        {
+            "h3": "Should I score the plugins I already use?"
+        },
+        {
+            "p": "Yes, once. It is the fastest way to find out which plugin in your setup is quietly holding the rest back."
+        },
+        {
+            "h3": "How often should I re-score?"
+        },
+        {
+            "p": "After any release that changes what the plugin does, and otherwise every few months. A plugin can change hands without changing its name."
+        },
+        {
+            "p": "A side-by-side comparison is not about crowning a winner forever. It is about writing down why you picked one, so that six months later you can tell whether the reason still holds. Every score on this site comes from the same weighted model. Read /blog/dsh-quality-score-decoded for how each band is built, or /blog/plugin-supply-chain-security-team-enforcement if the security column is the one you care about."
+        }
+      ]
+    },
+    zh: {
+      title: '怎么并排比较两个 DSH 插件',
+      excerpt: '在两个 DSH 插件之间做选择，多数时候靠的是直觉。这里给一套带权重的五因子比较框架，把猜测变成一个能说清的决定。',
+      metaDescription: '怎么并排比较两个 DSH 插件：一套覆盖维护、文档、安全、社区和性能的插件比较框架，以及在「插件 vs 插件」时怎么客观地做出选择。',
+      body: [
+        {
+            "p": "比较两个 DSH 插件本该是件无聊的事。但在插件之间做选择通常并不无聊，因为多数决定靠的是直觉。一套站得住的插件比较，必须去评那些能预测插件半年后还能不能用的东西；而「插件 vs 插件」的选择，最后应该落在一个你能向同事解释的数字上。下面这套框架有五个因子，各自带权重，做的就是这件事。"
+        },
+        {
+            "h2": "问题"
+        },
+        {
+            "p": "DSH（DeepSkinHub）有数百个插件。当两个看起来一样好时，多数人只能靠猜。加上一点结构，猜测就变成一个事后能解释的决定。"
+        },
+        {
+            "h2": "比较框架"
+        },
+        {
+            "h3": "1. 维护状态"
+        },
+        {
+            "table": {
+                "head": ["因素", "看什么", "危险信号"],
+                "rows": [
+                    ["最近提交", "上次更新是什么时候？", "超过 6 个月"],
+                    ["开放 issue", "有多少没解决？", "超过 20 个"],
+                    ["PR 活动", "合并还在进行吗？", "3 个月没有合并"],
+                    ["贡献者", "有多少人在活跃？", "只有一个人"]
+                ]
+            }
+        },
+        {
+            "h3": "2. 文档质量"
+        },
+        {
+            "table": {
+                "head": ["因素", "看什么", "好迹象"],
+                "rows": [
+                    ["README", "是否完整？", "涵盖安装、配置和使用"],
+                    ["示例", "有能跑的示例吗？", "至少 3 段代码"],
+                    ["API 文档", "API 有文档吗？", "有完整参考"],
+                    ["变更日志", "变更是否记录？", "条目定期更新"]
+                ]
+            }
+        },
+        {
+            "h3": "3. 安全评分"
+        },
+        {
+            "table": {
+                "head": ["因素", "看什么", "关键点"],
+                "rows": [
+                    ["网络访问", "是否发起外部请求？", "有就要仔细看"],
+                    ["文件系统访问", "能读写哪些路径？", "任何路径都是高风险"],
+                    ["权限", "需要哪些系统权限？", "管理员或 root 是危险信号"],
+                    ["代码审计", "是否经过审计？", "没有审计就按有风险处理"]
+                ]
+            }
+        },
+        {
+            "h3": "4. 社区与采用度"
+        },
+        {
+            "table": {
+                "head": ["因素", "看什么", "好迹象"],
+                "rows": [
+                    ["下载量", "多少安装？", "超过 1,000 算站稳了"],
+                    ["评分", "平均是多少？", "超过 4.0 说明口碑好"],
+                    ["评论", "是否近期且具体？", "近期加具体说明真有人在用"],
+                    ["GitHub stars", "多少 star？", "超过 100 说明有关注"]
+                ]
+            }
+        },
+        {
+            "h3": "5. 性能影响"
+        },
+        {
+            "table": {
+                "head": ["因素", "看什么", "可接受"],
+                "rows": [
+                    ["内存占用", "吃掉多少内存？", "低于 100 MB"],
+                    ["CPU 占用", "对系统性能的影响？", "空闲低于 5%，活跃低于 20%"],
+                    ["启动时间", "初始化要多久？", "低于 5 秒"],
+                    ["冲突可能", "是否动到共享资源？", "低就安全"]
+                ]
+            }
+        },
+        {
+            "h2": "决策矩阵"
+        },
+        {
+            "p": "每个因子给 1 到 5 分，再乘以权重。"
+        },
+        {
+            "table": {
+                "head": ["因素", "权重", "插件 A", "插件 B"],
+                "rows": [
+                    ["维护", "25%", "", ""],
+                    ["文档", "15%", "", ""],
+                    ["安全", "30%", "", ""],
+                    ["社区", "15%", "", ""],
+                    ["性能", "15%", "", ""],
+                    ["总计", "100%", "", ""]
+                ]
+            }
+        },
+        {
+            "p": "总分更高的那个胜出。如果两者只差几分，矩阵其实也完成了任务，因为它告诉你这个选择足够接近，选哪个都能用。"
+        },
+        {
+            "h2": "一个例子：AI Toolkit vs Model Router"
+        },
+        {
+            "table": {
+                "head": ["因素", "AI Toolkit", "Model Router"],
+                "rows": [
+                    ["维护", "活跃，每周提交", "活跃，每月提交"],
+                    ["文档", "全面", "良好"],
+                    ["安全", "无网络访问", "有限网络访问"],
+                    ["社区", "500+ 下载", "200+ 下载"],
+                    ["性能", "轻量", "轻量"],
+                    ["胜出", "AI Toolkit，对多数人", "Model Router，有路由需求时"]
+                ]
+            }
+        },
+        {
+            "h2": "什么时候选哪个"
+        },
+        {
+            "ul": [
+                "需要维护最勤的选项时，选插件 A",
+                "文档对你的流程很关键时，选插件 A",
+                "插件 B 有插件 A 缺的功能时，选插件 B",
+                "插件 B 的社区采用度明显更高时，选插件 B"
+            ]
+        },
+        {
+            "h2": "常见问题"
+        },
+        {
+            "h3": "两个插件打平了怎么办？"
+        },
+        {
+            "p": "先比安全，再比维护。这两项出问题最响，补救的代价也最大。"
+        },
+        {
+            "h3": "已经装了的插件也要打分吗？"
+        },
+        {
+            "p": "要，打一次就够。这是最快找出配置里哪个插件在悄悄拖后腿的办法。"
+        },
+        {
+            "h3": "多久重新评一次？"
+        },
+        {
+            "p": "任何一次改变插件功能边界的发版之后，以及平时每隔几个月。插件可以在不改名字的情况下换人维护。"
+        },
+        {
+            "p": "并排比较不是为了永远选出一个赢家，而是把「当初为什么选它」写下来，好让半年后还能判断这个理由是否仍然成立。本站每个评分都出自同一套加权模型。想看每个分数段怎么来的，读 /blog/dsh-quality-score-decoded；如果最关心安全那一列，读 /blog/plugin-supply-chain-security-team-enforcement。"
+        }
+      ]
+    },
+  },
 ];
 
 /** 按日期倒序（新在前） */
