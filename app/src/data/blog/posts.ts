@@ -1211,6 +1211,199 @@ export const blogPosts: BlogPost[] = [
     ]
     },
   },
+  {
+    slug: 'hidden-gem-dsh-plugins',
+    date: '2026-09-12',
+    keywords: ['hidden gem dsh plugins', 'underrated dsh plugins', 'discover dsh plugins', 'overlooked plugin quality'],
+    longTail: [
+      'underrated dsh plugins',
+      'discover dsh plugins',
+      'overlooked plugin quality',
+    ],
+    en: {
+      title: 'How to Find Hidden Gem DSH Plugins',
+      excerpt: 'The best plugins in your setup are probably not in the top ten. Here is how to judge quality yourself, spot underrated DSH plugins, and skip the ones that only look safe.',
+      metaDescription: 'How to find hidden gem DSH plugins: where underrated DSH plugins hide, how to discover DSH plugins beyond the leaderboard, and why overlooked plugin quality beats install counts.',
+      body: [
+        {
+            "p": "Finding hidden gem DSH plugins is mostly a matter of knowing where the leaderboard stops. If you want to discover DSH plugins that actually earn their place in your setup, download counts are the wrong signal, because the loudest plugins are loud for reasons that rarely involve quality. The underrated DSH plugins sit in small repositories with careful release notes. Overlooked plugin quality shows up in the changelog, not in the install number. This is the method we use at dshquality.com, and it takes about five minutes per plugin."
+        },
+        {
+            "h2": "Why rankings hide the good ones"
+        },
+        {
+            "p": "A ranking is a popularity measure wearing a quality costume. High installs usually mean good marketing, an early start, or one viral post. None of that predicts whether the plugin still works in six months, whether the maintainer answers issues, or whether it does one thing properly instead of six things badly. Popularity also compounds, because plugins that rank well get linked more, which pushes them higher, which makes them look safer than they are."
+        },
+        {
+            "ul": [
+                "Install counts measure distribution, not maintenance",
+                "Leaderboards reward being early, not being good",
+                "A plugin with 400 installs and weekly commits can beat one with 40,000 and a two-year silence"
+            ]
+        },
+        {
+            "p": "This is not a claim that popular plugins are bad. Many of them are excellent, and a large user base means other people have already hit the edge cases you are about to hit. The point is narrower. Popularity is one signal among several, and it should not be able to outvote the rest. When a plugin with 30,000 installs has not shipped anything in 18 months, the install count is telling you about the past, not the present."
+        },
+        {
+            "h2": "Signals of overlooked plugin quality"
+        },
+        {
+            "p": "We grade plugins on the signals below. A hidden gem usually shows at least four of the six."
+        },
+        {
+            "table": {
+                "head": ["Signal", "A strong plugin", "A warning sign"],
+                "rows": [
+                    ["Maintenance recency", "A commit or release in the last 90 days", "Latest release over a year old"],
+                    ["Issue response", "The maintainer replies in the thread", "Issues closed with no comment"],
+                    ["Scope", "Does one job and says so", "Tries to replace three plugins at once"],
+                    ["Install scripts", "None, or a script you can read in a minute", "An obfuscated postinstall step"],
+                    ["Docs", "Setup in three steps, with examples", "A README that only links elsewhere"],
+                    ["Dependencies", "Few, and each one is maintained", "A deep tree of abandoned packages"]
+                ]
+            }
+        },
+        {
+            "h2": "Where to discover DSH plugins that rankings miss"
+        },
+        {
+            "ul": [
+                "Recently updated repositories with a short, active issue list",
+                "The author's other projects, because good maintainers rarely ship only one thing",
+                "Comment threads under popular plugins, where people name the alternative they switched to",
+                "Changelogs, where a quiet fix for a real bug beats a feature announcement",
+                "The score breakdowns on dshquality.com, which grade maintenance and security separately from popularity"
+            ]
+        },
+        {
+            "h2": "A five-minute check before you install"
+        },
+        {
+            "ul": [
+                "Read the last five commits. If they are all dependency bumps, the plugin is on autopilot",
+                "Read the open issues. One unanswered question is normal; ten is a pattern",
+                "Search the manifest for install scripts. Anything you cannot read, do not run",
+                "Count the dependencies. Every one you inherit is one more you have to trust",
+                "Ask whether the plugin removes work or adds a new thing to maintain"
+            ]
+        },
+        {
+            "h2": "FAQ"
+        },
+        {
+            "h3": "Are hidden gems always small plugins?"
+        },
+        {
+            "p": "Not always, but they are usually narrow. A plugin that does one thing can be maintained by one person for years. A plugin that tries to do everything needs a team, and most do not have one."
+        },
+        {
+            "h3": "Should I replace a popular plugin with an underrated one?"
+        },
+        {
+            "p": "Only when the underrated plugin wins on maintenance and scope, not merely on being less common. Download count is a weak signal, but it is still a signal, since a plugin nobody uses has fewer eyes on its bugs."
+        },
+        {
+            "h3": "How long should I watch a plugin before trusting it?"
+        },
+        {
+            "p": "Long enough to see one release response cycle, meaning one issue raised and answered after a release. That single data point tells you more than a year of install growth."
+        },
+        {
+            "p": "The plugins that survive a long-running setup are rarely the ones at the top of a list. They are the ones whose maintainers still show up. Read a changelog before you install, and the hidden gems find you. Our full scoring method, including the maintenance and security weights, is published on dshquality.com. Two follow-ups worth your time: /blog/dsh-quality-score-decoded breaks down how each score band is built, and /blog/how-to-update-dsh-plugins-without-breaking-your-setup covers what to do after you swap one plugin for another. If supply chain risk is your concern, /blog/plugin-supply-chain-security is the next read."
+        }
+      ]
+    },
+    zh: {
+      title: '怎么找到冷门但优质的 DSH 插件',
+      excerpt: '你装的最好用的插件，大概率不在排行榜前十。这篇讲清怎么自己判断插件质量、怎么发现被低估的那批，以及怎么避开只是看起来安全的那些。',
+      metaDescription: '怎么找冷门但优质的 DSH 插件：被低估的 DSH 插件藏在哪里、如何在排行榜之外发现它们，以及为什么被忽视的插件质量比安装量更值得看。',
+      body: [
+        {
+            "p": "找冷门但好用的 DSH 插件，关键在于知道排行榜在哪里失效。想在排行榜之外发现值得用的 DSH 插件，安装量就是错的信号，因为最吵的插件之所以吵，原因往往和质量无关。被低估的插件通常待在小仓库里，更新日志写得很认真。被忽视的插件质量体现在 changelog 里，不在安装数字上。下面是我们用的方法，每个插件约五分钟。"
+        },
+        {
+            "h2": "排行榜为什么会埋掉好东西"
+        },
+        {
+            "p": "排行榜量的是人气，却常被当成质量。安装量高通常只说明营销好、起步早，或者有篇文章火了。这些都不能预测插件半年后还能不能用、维护者会不会回 issue、它是把一件事做好还是六件事都做砸。人气还会自我强化：排名高的插件被链得更多，于是排名更高，看起来更安全。"
+        },
+        {
+            "ul": [
+                "安装量量的是分发量，不是维护状态",
+                "排行榜奖励的是入场早，不是做得好",
+                "400 次安装、每周提交的插件，可能强过 4 万次安装、两年没动静的那个"
+            ]
+        },
+        {
+            "h2": "被忽视的优质插件有哪些信号"
+        },
+        {
+            "p": "我们按下面几项打分。值得挖的插件通常至少满足六项里的四项。"
+        },
+        {
+            "table": {
+                "head": ["信号", "好插件的样子", "该警惕的样子"],
+                "rows": [
+                    ["最近维护", "90 天内有提交或发版", "上个版本已超过一年"],
+                    ["issue 响应", "维护者在帖子里回复", "issue 无人回应就被关掉"],
+                    ["功能范围", "只做一件事，并且说清楚", "一次想替代三个插件"],
+                    ["安装脚本", "没有脚本，或有能一分钟读完的脚本", "有看不懂的 postinstall 步骤"],
+                    ["文档", "三步配置，附带示例", "README 只往外链"],
+                    ["依赖", "少，且每个都还在维护", "依赖树深，里面全是没人管的包"]
+                ]
+            }
+        },
+        {
+            "h2": "去哪里发现排行榜漏掉的 DSH 插件"
+        },
+        {
+            "ul": [
+                "近期有更新、issue 列表短而活跃的仓库",
+                "作者的其他项目，好的维护者很少只有一个作品",
+                "热门插件评论区，那里常有人说出自己换去了哪个替代品",
+                "changelog，安静修掉一个真 bug，比发一个新功能更说明问题",
+                "dshquality.com 的评分拆解，它把维护和安全性单独拿出来评，不掺人气"
+            ]
+        },
+        {
+            "h2": "装之前先花五分钟做这几件事"
+        },
+        {
+            "ul": [
+                "看最近五次提交。全是依赖升级，说明插件已在自动驾驶",
+                "看未关闭的 issue。一个问题没人回很正常，十个没人回就是规律",
+                "在清单里搜安装脚本。读不懂的，就别让它在你机器上跑",
+                "数依赖数量。继承一个依赖，就多一个要信任的对象",
+                "问一句：它是减少你的活，还是多出一件要维护的事"
+            ]
+        },
+        {
+            "h2": "常见问题"
+        },
+        {
+            "h3": "冷门好插件一定都很小吗？"
+        },
+        {
+            "p": "不一定，但通常很窄。只做一件事的插件，一个人能维护很多年。什么都想做的需要团队，而多数并没有。"
+        },
+        {
+            "h3": "要拿冷门插件替换掉热门插件吗？"
+        },
+        {
+            "p": "只有当它在维护和范围上确实更强时才换，而不是因为更少见。安装量是弱信号，但仍是信号：没人用的插件，盯它 bug 的眼睛也少。"
+        },
+        {
+            "h3": "一个插件要观察多久才敢用？"
+        },
+        {
+            "p": "至少看到一轮完整循环：发版、有人提问题、维护者回复。这一个数据点，比一年的安装量增长更能说明问题。"
+        },
+        {
+            "p": "能长期留在配置里的插件，很少是榜单最前面的，而是维护者还在的那批。装之前先读一眼 changelog，好东西自己会浮出来。完整的评分方法，包括维护和安全两项权重，都写在 dshquality.com 上。想接着读，推荐 /blog/dsh-quality-score-decoded，它拆解每个分数段是怎么算的；以及 /blog/how-to-update-dsh-plugins-without-breaking-your-setup，讲换插件之后要做什么。更关心供应链风险的，下一篇看 /blog/plugin-supply-chain-security。"
+        }
+      ]
+    },
+  },
 ];
 
 /** 按日期倒序（新在前） */
