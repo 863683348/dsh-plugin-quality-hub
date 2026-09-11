@@ -1061,7 +1061,156 @@ export const blogPosts: BlogPost[] = [
         { p: '标签诱饵不会自己消失。解法是打分无视标签、读懂插件——这正是 dshquality.com 的全部意义。' }
       ]
     }
-  }
+  },
+  {
+    slug: 'ci-cd-plugin-scanning',
+    date: '2026-09-11',
+    keywords: ['ci cd plugin scanning', 'plugin scanning ci', 'security gate plugins', 'dsh plugin supply chain'],
+    longTail: [
+      'how to scan dsh plugins in ci cd',
+      'plugin security gate pipeline',
+      'automate plugin quality checks',
+      'dsh plugin supply chain security',
+    ],
+    en: {
+      title: 'CI/CD Plugin Scanning: Adding DSH Checks to Your Pipeline',
+      excerpt: 'A plugin that passes review today can rot by next month. Here is how to wire DSH plugin checks into your pipeline so the gate runs on every commit, not on vibes.',
+      metaDescription: 'How to add DSH plugin scanning to a CI/CD pipeline: what to check, where the gate belongs, and how to keep it from crying wolf.',
+      body: [
+        {
+            "h2": "Why a one-time review is not enough"
+        },
+        {
+            "p": "A plugin review is a snapshot. The npm package behind it publishes new versions, the maintainer goes quiet, a dependency gets a CVE. None of that shows up in the review you did three months ago. If your only gate is a human reading a README once, you are trusting a decision that expires."
+        },
+        {
+            "h2": "What to scan, in order of signal"
+        },
+        {
+            "ul": [
+                "Maintenance recency — when was the last publish, and is the repo still alive",
+                "Dependency surface — how many transitive packages you are inheriting",
+                "Install scripts — anything running postinstall deserves a read before it runs on your machine",
+                "Permission scope — what the plugin asks for versus what it actually needs",
+                "Docs quality — a plugin that cannot explain itself is a plugin you will misconfigure"
+            ]
+        },
+        {
+            "h2": "Where the gate belongs"
+        },
+        {
+            "p": "Put the scan at the point where the plugin list changes, not at deploy time. A plugin addition is a dependency change, so it belongs in the same pull request as the manifest edit. That way the diff shows both the code change and the quality delta."
+        },
+        {
+            "h2": "A minimal pipeline shape"
+        },
+        {
+            "ul": [
+                "On pull request, resolve the plugin manifest and emit the current plugin set",
+                "Fetch quality signals for each plugin (publish date, dependency count, install scripts)",
+                "Compare against the previous set and fail only on regressions",
+                "Post the delta as a PR comment so a human sees what changed"
+            ]
+        },
+        {
+            "h2": "Keeping the gate from crying wolf"
+        },
+        {
+            "p": "The fastest way to kill a security gate is false positives. If the check fails on every commit, people start ignoring it, and then it protects nothing. Fail on regressions rather than absolute thresholds, because a plugin that was always mediocre is not the problem to solve today."
+        },
+        {
+            "h2": "FAQ"
+        },
+        {
+            "h3": "Should the scan block merges?"
+        },
+        {
+            "p": "Only for regressions in the risky categories — install scripts and permission scope. Everything else should warn."
+        },
+        {
+            "h3": "How often should signals refresh?"
+        },
+        {
+            "p": "On every plugin-list change, and on a weekly schedule so slow rot still surfaces."
+        },
+        {
+            "h3": "Does this replace manual review?"
+        },
+        {
+            "p": "No. It replaces the part of review that a machine does better, and frees the human to read the code that matters."
+        }
+    ]
+    },
+    zh: {
+      title: 'CI/CD 插件扫描：把 DSH 质量检查接进流水线',
+      excerpt: '今天过审的插件，下个月可能已经烂掉。这篇讲怎么把 DSH 插件检查接进流水线，让闸门跑在每次提交上，而不是靠感觉。',
+      metaDescription: '如何把 DSH 插件扫描接进 CI/CD 流水线：检查什么、闸门放在哪、怎么避免误报把自己变成噪音。',
+      body: [
+        {
+            "h2": "为什么一次性评审不够"
+        },
+        {
+            "p": "插件评审是一张快照。背后的 npm 包会发新版本，维护者会失联，依赖会爆出漏洞。这些都不会出现在你三个月前做的那次评审里。如果唯一的闸门是人读一遍 README，那你信的其实是一个会过期的决定。"
+        },
+        {
+            "h2": "按信号强度排序，该扫什么"
+        },
+        {
+            "ul": [
+                "维护活跃度——上次发布时间，仓库是否还活着",
+                "依赖面——你顺带继承了多少个传递依赖",
+                "安装脚本——任何 postinstall 都想清楚再让它在你机器上跑",
+                "权限范围——插件要的权限和它实际需要的对不对得上",
+                "文档质量——连自己都讲不清的插件，你一定会配错"
+            ]
+        },
+        {
+            "h2": "闸门放在哪"
+        },
+        {
+            "p": "放在插件清单发生变化的那一点，而不是部署时。加插件本质是改依赖，所以它应该和清单修改在同一个 PR 里。这样 diff 同时展示代码改动和质量变化。"
+        },
+        {
+            "h2": "最小流水线形态"
+        },
+        {
+            "ul": [
+                "PR 触发时解析插件清单，输出当前插件集合",
+                "拉取每个插件的质量信号（发布时间、依赖数、安装脚本）",
+                "和上一次集合对比，只在出现退化时失败",
+                "把差异作为 PR 评论贴出来，让人看到变了什么"
+            ]
+        },
+        {
+            "h2": "怎么让闸门不变成噪音"
+        },
+        {
+            "p": "杀死一个安全闸门最快的方法就是误报。如果每次提交都失败，人就会开始无视它，然后它什么都保护不了。所以按退化失败，而不是按绝对阈值：一个一直很平庸的插件，不是今天的问题。"
+        },
+        {
+            "h2": "常见问题"
+        },
+        {
+            "h3": "扫描该阻塞合并吗？"
+        },
+        {
+            "p": "只对高风险类别的退化阻塞——安装脚本和权限范围。其余只警告。"
+        },
+        {
+            "h3": "信号多久刷新一次？"
+        },
+        {
+            "p": "每次插件清单变化时，加一个每周定时任务，让缓慢腐坏也能浮出来。"
+        },
+        {
+            "h3": "它能替代人工评审吗？"
+        },
+        {
+            "p": "不能。它替代的是机器做得更好的那部分，把人的时间腾出来读真正要紧的代码。"
+        }
+    ]
+    },
+  },
 ];
 
 /** 按日期倒序（新在前） */
