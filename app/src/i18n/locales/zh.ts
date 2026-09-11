@@ -98,9 +98,9 @@ const zh = {
   },
   tutorials: {
     meta: {
-      title: 'DSH 插件教程 — 动手学会构建',
+      title: 'DSH 插件教程：从构建到发布',
       description:
-        '手把手教你构建 DeepSeek Harness 插件：从第一个 apply(ctx, config) 到发布到 dsh-plugin topic 并拿到评分。',
+        '3 篇手把手 DSH 插件教程：写出你的第一个 apply(ctx, config)、连接 MCP 工具，并发布到 dsh-plugin 主题——零基础也能跟做。',
     },
     section: {
       eyebrow: '教程',
@@ -134,9 +134,9 @@ const zh = {
   },
   examples: {
     meta: {
-      title: 'DSH 插件实例 — 真实插件拆解',
+      title: 'DSH 插件实例：4 个真实拆解带代码',
       description:
-        '真实 DeepSeek Harness 插件的拆解：配置片段、核心代码逻辑与评分亮点，全部由 DSH Quality 评分数据背书。',
+        '4 个真实 DeepSeek Harness 插件拆解：配置片段、核心代码逻辑，以及 DSH Quality 评分亮点，可直接复用。',
     },
     section: {
       eyebrow: '实例',

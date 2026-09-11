@@ -98,9 +98,9 @@ const en = {
   },
   tutorials: {
     meta: {
-      title: 'DSH Plugin Tutorials — Learn by building',
+      title: 'DSH Plugin Tutorials: Build, Install & Publish a Plugin',
       description:
-        'Hands-on tutorials for building DeepSeek Harness plugins: from your first apply(ctx, config) to publishing on the dsh-plugin topic.',
+        '3 hands-on DSH plugin tutorials: write your first apply(ctx, config), connect MCP tools, and publish to the dsh-plugin topic — all beginner-friendly.',
     },
     section: {
       eyebrow: 'Tutorials',
@@ -134,9 +134,9 @@ const en = {
   },
   examples: {
     meta: {
-      title: 'DSH Plugin Examples — Real plugin teardowns',
+      title: 'DSH Plugin Examples: 4 Real Teardowns with Code',
       description:
-        'Teardowns of real DeepSeek Harness plugins: config fragments, core code logic and scoring highlights backed by DSH Quality rating data.',
+        '4 real DeepSeek Harness plugin teardowns: config fragments, core code logic, and DSH Quality scoring highlights you can copy.',
     },
     section: {
       eyebrow: 'Examples',
