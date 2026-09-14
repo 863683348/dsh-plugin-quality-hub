@@ -1992,6 +1992,253 @@ export const blogPosts: BlogPost[] = [
       ]
     },
   },
+{
+    "slug": "the-case-for-quality-gates-in-plugin-installation",
+    "date": "2026-09-14",
+    "keywords": [
+      "plugin quality gate",
+      "install quality gate",
+      "plugin admission"
+    ],
+    "longTail": [
+      "install quality gate",
+      "plugin admission",
+      "plugin install policy",
+      "third party plugin risk"
+    ],
+    "en": {
+      "title": "The Case for Quality Gates in Plugin Installation",
+      "excerpt": "An install-time quality gate is the cheapest place to stop a bad dependency. This post covers what to check and how to roll one out without slowing your team.",
+      "metaDescription": "A plugin quality gate at install time stops bad dependencies for the price of minutes. Learn what to check, how to avoid false positives, and where to begin.",
+      "body": [
+        {
+          "p": "A plugin quality gate is a check that runs at install time, before a third-party package reaches your runtime. An install quality gate costs minutes; removing a bad dependency from production costs days."
+        },
+        {
+          "h2": "Install time is the cheapest place to stop a bad dependency"
+        },
+        {
+          "p": "A bad plugin in production makes you pay twice. You diagnose across code you did not write, then remove it by rewriting every call site and retesting under pressure. One dependency can take a team three days to evict. Ten minutes of review at install is a 200x cheaper fix. The gate exists because install is the only moment where saying no is free. The review is not deep; it is a glance at signals you already have."
+        },
+        {
+          "h2": "What a quality gate should actually check"
+        },
+        {
+          "ul": [
+            "Maintenance recency: when was the last commit, and is the gap widening?",
+            "Maintainer reachability: is there a working security contact, or a void?",
+            "Requested permissions and network access: does it ask for more than its function needs?",
+            "Build step: does it bundle a compiler or a postinstall script that runs on your machine?",
+            "Tests: does the repo ship a test suite, and does CI actually run it?",
+            "Licence: is it compatible with how you distribute your product?",
+            "Download provenance: was the artifact signed, and does it match the source?",
+            "Version pinning: is the version you pin the exact version that was scored?"
+          ]
+        },
+        {
+          "p": "Most of these are seconds of metadata work. The trap is the last item: a plugin can score well at 1.4.0 and change hands at 1.4.1 without renaming. Bind the score to the pinned version, not the package name. Automate it and the cost drops to near zero."
+        },
+        {
+          "table": {
+            "head": [
+              "Gate type",
+              "What it checks",
+              "False-positive cost",
+              "Team friction",
+              "Who it fits"
+            ],
+            "rows": [
+              [
+                "No gate",
+                "Nothing",
+                "Zero at install, high in prod",
+                "None",
+                "Hobby projects, throwaway code"
+              ],
+              [
+                "Advisory gate",
+                "Flags score below threshold",
+                "Low; can be ignored",
+                "Minor",
+                "Most teams, first adoption"
+              ],
+              [
+                "Blocking gate",
+                "Fails install on security issues",
+                "High if misconfigured",
+                "Moderate",
+                "Regulated or large orgs"
+              ]
+            ]
+          }
+        },
+        {
+          "h2": "The false-positive problem"
+        },
+        {
+          "p": "A gate that blocks every low score gets disabled by the next engineer hit with a false alarm at midnight. Grade by risk. Stay advisory for low-risk plugins: show the score, log the decision, let it through. Block only on security signals, an unknown maintainer plus network access, an unsigned artifact, a missing licence. Earn trust instead of fighting it, and promote rules to blocking as your data grows. False positives are cheap to absorb when the gate is advisory."
+        },
+        {
+          "h2": "First install versus every version bump"
+        },
+        {
+          "p": "Gating only the first install, then auto-approving updates, is a mistake. Updates are where risk returns: a plugin is sold, the new owner ships a version that phones home, and your pipeline accepts it because the name is allowlisted. Run the gate on every version bump. Cache the score per version and re-check when the pin changes. Nothing installs without a current score for the exact version. A renamed fork is still a new risk surface."
+        },
+        {
+          "h2": "Write the policy so it survives staff turnover"
+        },
+        {
+          "p": "Policies rot when they keep only the verdict. Blocked: plugin X tells the next engineer nothing once X has a new owner. Write the reason: the scored commit hash, the failing signal, and what would change your mind. A rule like fail when maintainer is unreachable AND network access is requested is reviewable and transferable. A banned-name list is a liability the day its author leaves. Six months later, only the written reason explains the call."
+        },
+        {
+          "h2": "Why we trust the author is not a policy"
+        },
+        {
+          "p": "Trust is a feeling, not a control. A careful author can be compromised this week, sell the package, or lose interest. The gate asks you to verify state at a point in time and repeat it. Never use the vendor's own score as your gate; they are incentivised to look good. That is why the score must be independent of the plugin vendor. Read why on /blog/why-independent-plugin-scoring, and see the score itself at /. Independence is the whole point of the score."
+        },
+        {
+          "h2": "A transparent weighted score makes the gate defensible"
+        },
+        {
+          "p": "A gate nobody can interrogate becomes an argument. A transparent weighted score, maintenance, security, documentation, community, performance, each visible, turns a no into a readable sentence. When challenged, point at the failed dimension and its weight. That is the gap between arbitrary and defensible. The score on / shows exactly why a plugin landed where it did, which is how a gate survives a skeptical team. Anyone on the team can reproduce the decision."
+        },
+        {
+          "h2": "Start here"
+        },
+        {
+          "p": "Adopt an advisory gate first. Log every install and every override with its reason. After two weeks, review what got waved through and why. Only then promote the rules that proved reliable from advisory to blocking. You get a working gate in days, not a committee in months, and it stays honest because the evidence is already on record. This keeps the gate honest from day one."
+        },
+        {
+          "h3": "FAQ"
+        },
+        {
+          "p": "Does a quality gate slow down development? Only at install, and only by minutes. The cost it prevents is days of production cleanup. Teams that log overrides usually find that 90 percent of installs pass the gate untouched. The gate is a filter, not a wall."
+        },
+        {
+          "p": "What if the plugin I need fails the gate? Do not bypass it silently. Record the specific signal, note your compensating control, and let the advisory gate log the override. A blocked plugin with a documented reason is acceptable; a silent bypass is not."
+        },
+        {
+          "p": "Can a small team afford this? Yes. Most checks are metadata lookups that run inside your existing install command. You need a script, a threshold, and a log file, not a platform. The / score gives you the weighted input for free."
+        }
+      ]
+    },
+    "zh": {
+      "title": "给插件安装加一道质量闸门",
+      "excerpt": "安装时的质量闸门是拦住坏依赖最便宜的时机。本文讲清该检查什么，以及如何在不拖慢团队的情况下落地。",
+      "metaDescription": "插件质量闸门（plugin quality gate）在安装时以几分钟的代价拦住坏依赖。本文讲清该检查什么、如何避免误报，以及从哪里开始。",
+      "body": [
+        {
+          "p": "插件质量闸门（plugin quality gate）在安装时运行，于包进入运行时前拦下它。安装质量闸门（install quality gate）只花几分钟，而生产环境移除坏依赖要几天。"
+        },
+        {
+          "h2": "安装时是拦住坏依赖最便宜的时机"
+        },
+        {
+          "p": "生产里的坏插件让你付两次钱：先排查没写过的代码，再改写调用点、重测、发布。一个依赖可能花团队三天清除。安装时审查十分钟，是便宜 200 倍的修法。"
+        },
+        {
+          "h2": "质量闸门到底该检查什么"
+        },
+        {
+          "ul": [
+            "维护新鲜度：上次提交何时？",
+            "维护者可联系吗：有联系人吗？",
+            "权限与网络：是否超出所需？",
+            "构建：是否捆绑脚本？",
+            "测试：是否自带套件，CI 在跑？",
+            "许可证：是否兼容分发？",
+            "下载来源：构件签名且一致？",
+            "版本固定：锁的版本即被评分版？"
+          ]
+        },
+        {
+          "p": "这些几秒就能从元数据拿到。陷阱是最后一条：插件在 1.4.0 评分好，却可能在 1.4.1 换主人而名字不变。把评分绑定到固定版本，而非包名。"
+        },
+        {
+          "table": {
+            "head": [
+              "闸门类型",
+              "检查项",
+              "误报代价",
+              "团队摩擦",
+              "适合谁"
+            ],
+            "rows": [
+              [
+                "无闸门",
+                "不查",
+                "安装时零，生产极高",
+                "无",
+                "个人项目"
+              ],
+              [
+                "提示型",
+                "低于阈值标记",
+                "低",
+                "轻微",
+                "多数团队"
+              ],
+              [
+                "拦截型",
+                "安全问题安装失败",
+                "配置错时高",
+                "中等",
+                "大团队"
+              ]
+            ]
+          }
+        },
+        {
+          "h2": "误报问题"
+        },
+        {
+          "p": "每次低分都拦的闸门，会被误报的工程师关掉。按风险分级：低风险插件保持提示型，展示评分、放行。只在安全信号上拦截。"
+        },
+        {
+          "h2": "首次安装与每次版本升级"
+        },
+        {
+          "p": "只给首次安装设闸、自动放行更新，是常见错误。更新正是风险回流入处：插件被卖，发回传数据的版本，流水线因名字在白名单就接受。闸门应在每次版本升级运行。"
+        },
+        {
+          "h2": "写下策略，让它扛过人员流动"
+        },
+        {
+          "p": "只记结论的策略会腐烂。“已拦截：插件 X” 换新主人后毫无意义。写下理由：评分哈希、失败信号、什么会改变判断。一条“维护者不可联系且申请网络时失败”的规则可审查、可交接。"
+        },
+        {
+          "h2": "为什么“我们相信作者”不是策略"
+        },
+        {
+          "p": "信任是感觉，不是控制。一个作者这周可能被盗号或卖掉包。闸门要求你验证状态并重做。绝不用厂商自己的评分当闸门，评分必须独立于插件厂商。原因见 /blog/why-independent-plugin-scoring，评分在 /。"
+        },
+        {
+          "h2": "透明加权评分让闸门经得起质疑"
+        },
+        {
+          "p": "没人能审的闸门会变成争吵。透明加权评分——维护、安全、文档、社区、性能，各自可见——把一个“不”变成可读句。被质疑时，你指向失败的那一维及其权重。这正是武断与可辩护的差别。"
+        },
+        {
+          "h2": "从这里开始"
+        },
+        {
+          "p": "先上提示型闸门。记录每次安装与放行。两周后回顾哪些被放行、为什么。只有那时，才把可靠的规则升为拦截。"
+        },
+        {
+          "h3": "常见问题"
+        },
+        {
+          "p": "质量闸门拖慢开发吗？只在安装时，慢几分钟。它避免几天 production 清理。记录放行的团队常发现 90% 安装未经触动就通过。"
+        },
+        {
+          "p": "需要的插件没过闸怎么办？别悄悄绕过。记录信号，说明补偿控制，让提示型闸门记下放行。带理由的拦截可接受；静默绕过不行。"
+        },
+        {
+          "p": "小团队负担得起吗？可以。多数检查是安装命令里的元数据查询。你要一个脚本、一个阈值、一个日志，而非平台。/ 上的评分免费提供加权输入。"
+        }
+      ]
+    }
+  },
 ];
 
 /** 按日期倒序（新在前） */
