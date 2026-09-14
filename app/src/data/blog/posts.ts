@@ -2239,6 +2239,304 @@ export const blogPosts: BlogPost[] = [
       ]
     }
   },
+{
+    "slug": "plugin-readme-red-flags",
+    "date": "2026-09-13",
+    "keywords": [
+      "plugin readme red flags",
+      "readme risk signals",
+      "plugin docs warning",
+      "plugin security review"
+    ],
+    "longTail": [
+      "readme risk signals",
+      "plugin docs warning",
+      "plugin readme checklist",
+      "plugin maintainer signals"
+    ],
+    "en": {
+      "title": "Reading a Plugin's README for Red Flags",
+      "excerpt": "A README is the cheapest security document you will read. Learn to read it as evidence and spot the signals that separate a careless project from a dishonest one.",
+      "metaDescription": "Plugin readme red flags: read the docs as evidence, spot curl|sh installs, hidden telemetry, and unpinned versions, then separate sloppiness from real risk.",
+      "body": [
+        {
+          "p": "Reading a plugin readme for red flags is the cheapest security review you will ever do, and readme risk signals are worth checking before you install anything. Treat the document as evidence about the code, not as a promise from the author."
+        },
+        {
+          "h2": "A README is evidence, not a brochure"
+        },
+        {
+          "p": "A README is written before you run a single line of code, and it is free to read. That makes it the cheapest security document you will touch. The trick is to stop reading it as marketing. Every sentence about what the plugin does, what it needs, and how it updates is a small piece of evidence about the people behind it. A careful README usually means a careful project. A careless one does not prove danger, but it does lower the bar for trusting the code."
+        },
+        {
+          "h2": "Permissions and network access"
+        },
+        {
+          "p": "Start with what the plugin asks for. If the README lists the permissions or the network endpoints it touches, and explains why each one is needed, that is a good sign. If it asks for broad access and says nothing about it, that is a gap. The question is not only what it requests, but whether the author bothered to justify it. A plugin that reads your files should say which files and for what."
+        },
+        {
+          "h2": "Install, secrets, and what the docs leave out"
+        },
+        {
+          "p": "The install section is where the riskiest habits show up. Watch for a few patterns that turn a normal setup into a blind trust."
+        },
+        {
+          "ul": [
+            "Piping a remote script straight into a shell, the curl | sh pattern, which runs code you have not read.",
+            "Downloading an unsigned binary with no way to check what it is.",
+            "No mention of a pinned version, so you get whatever the server sends today.",
+            "An update mechanism that can pull new code later without your review."
+          ]
+        },
+        {
+          "p": "Then read how the plugin handles your data and its own code. Several omissions are worth noting before you install."
+        },
+        {
+          "ul": [
+            "Examples that encourage pasting tokens or env secrets into config files in plain text.",
+            "A build step that runs arbitrary code at install time, not just at development.",
+            "Telemetry or analytics that is never disclosed in the docs.",
+            "No stated licence, so you do not know your rights to the code."
+          ]
+        },
+        {
+          "h2": "A table of signals and how much to worry"
+        },
+        {
+          "table": {
+            "head": [
+              "Signal",
+              "What it usually means",
+              "How much to worry"
+            ],
+            "rows": [
+              [
+                "curl | sh in install",
+                "Code runs before you read it",
+                "High"
+              ],
+              [
+                "No pinned version",
+                "You get unreviewed updates",
+                "Medium"
+              ],
+              [
+                "Undisclosed telemetry",
+                "Your usage is tracked silently",
+                "Medium"
+              ],
+              [
+                "Dead links, years stale",
+                "Project likely abandoned",
+                "High for maintenance"
+              ],
+              [
+                "Clear scopes and changelog",
+                "Maintainer thinks about risk",
+                "Low"
+              ]
+            ]
+          }
+        },
+        {
+          "h2": "Sloppiness versus malice"
+        },
+        {
+          "p": "The most useful judgement is separating the two. Most bad READMEs are simply careless. A missing changelog is not proof of malice. A dead link is annoying, not evil. Malice shows up as patterns that hide what the code does: suppressed details about network access, install steps that dodge review, updates that arrive without a look. Learn to tell a thin README from a dishonest one, because reacting to every gap the same way wastes your attention."
+        },
+        {
+          "blockquote": "A careless README is a maintenance risk. A README that hides how the code runs is a trust risk. The second one is the one to walk away from."
+        },
+        {
+          "h2": "What a good README looks like"
+        },
+        {
+          "p": "After the warnings, it helps to know the shape of a healthy document. A good one states exactly what the plugin can and cannot do."
+        },
+        {
+          "ul": [
+            "Explicit permission scopes, with a reason for each.",
+            "A changelog that shows what changed and when.",
+            "A documented threat model, even a short one.",
+            "Signed releases so you can verify what you downloaded."
+          ]
+        },
+        {
+          "h2": "A workflow you can actually run"
+        },
+        {
+          "p": "None of this needs to take long. The score on our homepage / gives you a first read, and the dimensions behind it are explained in /blog/dsh-quality-score-decoded, but the README is where you confirm it. Keep the vendor out of the scoring: an independent number, like the one in /blog/why-independent-plugin-scoring, is the only kind worth trusting."
+        },
+        {
+          "ul": [
+            "Read the README and note anything unexplained.",
+            "Check the independent score before you trust it.",
+            "Pin the exact version you reviewed.",
+            "Install in a sandbox or a throwaway environment first."
+          ]
+        },
+        {
+          "h3": "Should I refuse any plugin that uses curl | sh?"
+        },
+        {
+          "p": "Not always, but you should read the script first. If you cannot read it, do not pipe it. Download it, inspect it, then run it yourself. The pattern is a risk because it skips that step by default."
+        },
+        {
+          "h3": "Does an old README mean the plugin is unsafe?"
+        },
+        {
+          "p": "Not by itself. An abandoned README means the project may be unmaintained, which is a different problem from malicious code. Check the last release date and whether the links still work before you decide."
+        },
+        {
+          "h3": "Where does the score fit into this?"
+        },
+        {
+          "p": "The README is your confirmation step. The score is the fast filter. Use the score to rank what you review, then let the README tell you whether the vendor's own words match the code they ship. The two together beat either alone."
+        }
+      ]
+    },
+    "zh": {
+      "title": "从插件 README 里识别危险信号",
+      "excerpt": "README 是你将读到的最便宜的安全文档。学会把它当证据来读，并识别那些能把粗心项目与不实项目区分开来的信号。",
+      "metaDescription": "从插件 README 里识别危险信号的检查清单：把文档当证据，识破 curl|sh 安装、隐藏遥测与未固定版本，再区分粗心与真实风险。",
+      "body": [
+        {
+          "p": "从插件 README 里识别危险信号，是你做的最便宜的安全审查。把文档当作关于代码的证据，而不是作者的承诺。"
+        },
+        {
+          "h2": "README 是证据，不是广告"
+        },
+        {
+          "p": "README 在运行代码前就能读，是最便宜的安全文档。别当营销读。每句关于插件做什么、需要什么、怎么更新，都是背后团队的证据。用心的 README 意味着用心的项目。"
+        },
+        {
+          "h2": "权限与网络访问"
+        },
+        {
+          "p": "从它索要的看起。README 列权限或网络端点并解释每项必要，是好信号；只要宽泛权限却只字不提，是缺口。读你文件的插件该说清读哪些、为何。"
+        },
+        {
+          "h2": "安装、密钥，与文档漏掉的事"
+        },
+        {
+          "p": "安装段最易露风险习惯。留意几种把正常安装变盲目信任的模式。"
+        },
+        {
+          "ul": [
+            "把远程脚本直接管道进 shell，即 curl | sh，读之前就跑了代码。",
+            "下载没签名、无法核实内容的二进制文件。",
+            "完全没提固定版本，你拿到的是服务器今天发来的任何东西。",
+            "更新机制以后能在你未审查时拉取新代码。"
+          ]
+        },
+        {
+          "p": "再读插件如何处理数据与自身代码。几种省略值得注意。"
+        },
+        {
+          "ul": [
+            "示例鼓励把令牌或环境变量明文塞进配置。",
+            "构建步骤在安装时跑任意代码，不只开发时。",
+            "文档从不披露遥测或分析。",
+            "没写许可证，你不清楚自己对代码的权利。"
+          ]
+        },
+        {
+          "h2": "信号与担忧程度对照表"
+        },
+        {
+          "table": {
+            "head": [
+              "信号",
+              "通常意味着什么",
+              "值得担心的程度"
+            ],
+            "rows": [
+              [
+                "安装用 curl | sh",
+                "代码读前就运行",
+                "高"
+              ],
+              [
+                "没有固定版本",
+                "收到未审查的更新",
+                "中"
+              ],
+              [
+                "未披露遥测",
+                "使用被悄悄追踪",
+                "中"
+              ],
+              [
+                "链接失效、多年未动",
+                "项目可能废弃",
+                "维护高危"
+              ],
+              [
+                "权限清楚、有变更日志",
+                "维护者考虑了风险",
+                "低"
+              ]
+            ]
+          }
+        },
+        {
+          "h2": "粗心与恶意的区别"
+        },
+        {
+          "p": "最有用的判断是区分这两者。多数糟糕 README 只是粗心，缺变更日志不等于恶意，死链烦人但不邪恶。恶意表现为隐藏行为：网络访问遮遮掩掩、安装绕过审查、更新不看就到。学会分辨单薄与不诚实。"
+        },
+        {
+          "blockquote": "粗心的 README 是维护风险。隐藏代码运行的 README 是信任风险。后者才该转身离开。"
+        },
+        {
+          "h2": "一份好的 README 长什么样"
+        },
+        {
+          "p": "好的一份明确说明插件能做什么、不能做什么。"
+        },
+        {
+          "ul": [
+            "明确的权限范围，并各给一个理由。",
+            "变更日志，写明改了什么、何时改的。",
+            "哪怕简短的威胁模型说明。",
+            "签名发布，便于核实你下载的东西。"
+          ]
+        },
+        {
+          "h2": "你真的能用上的流程"
+        },
+        {
+          "p": "这些不必花很久。首页 / 的评分给第一眼判断，维度在 /blog/dsh-quality-score-decoded 解释，但 README 才是确认处。把厂商挡在评分外：像 /blog/why-independent-plugin-scoring 说的独立数字才值得信任。"
+        },
+        {
+          "ul": [
+            "读 README，记下任何没说清的地方。",
+            "信任之前，先查那个独立评分。",
+            "固定你审查过的确切版本。",
+            "先在沙箱或一次性环境里安装。"
+          ]
+        },
+        {
+          "h3": "只要用了 curl | sh 就该拒绝吗？"
+        },
+        {
+          "p": "不总是，但应先读那个脚本。读不了就别管道它。先下载检查，再自己运行。这模式有风险，因它默认跳过那一步。"
+        },
+        {
+          "h3": "README 很旧就说明插件不安全吗？"
+        },
+        {
+          "p": "单看不说明。废弃 README 意味着项目可能无人维护，这和无恶意代码不是一回事。决定前先查发布日期，以及链接是否还通。"
+        },
+        {
+          "h3": "评分在这其中是什么位置？"
+        },
+        {
+          "p": "README 是你的确认步骤，评分是快速过滤。用评分给要审的排个序，再让 README 告诉你厂商的话是否和代码对得上。两者合起来胜过单独任一个。"
+        }
+      ]
+    }
+  },
 ];
 
 /** 按日期倒序（新在前） */
