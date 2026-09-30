@@ -1,8 +1,8 @@
 const zh = {
   meta: {
-    title: 'DSH Quality — 找到值得安装的插件',
+    title: 'DSH Quality — 找到安全、值得安装的 DSH 插件',
     description:
-      'DeepSeek Harness 插件独立评分与实时安全预警。启发式检测，不能替代代码审查。',
+      '用独立评分对比 DeepSeek Harness（DSH）插件质量：维护、文档、npm 与生态健康，外加实时安全预警，帮你跳过危险安装。',
   },
   weekly: {
     section: {
@@ -98,9 +98,9 @@ const zh = {
   },
   tutorials: {
     meta: {
-      title: 'DSH 插件教程：从构建到发布',
+      title: 'DSH 插件教程 — 从零构建、安装与发布',
       description:
-        '3 篇手把手 DSH 插件教程：写出你的第一个 apply(ctx, config)、连接 MCP 工具，并发布到 dsh-plugin 主题——零基础也能跟做。',
+        '面向新手的 DSH 插件实操教程：写出第一个 apply(ctx, config)、接入 MCP 工具、安全发布到 dsh-plugin 主题。今天就动手做出你的插件。',
     },
     section: {
       eyebrow: '教程',

@@ -52,6 +52,53 @@ export default async function TutorialsPage({ params }: TutorialsPageProps) {
     }))
     .filter((g) => g.items.length > 0);
 
+  const faqsEn = [
+    {
+      q: 'What is a DSH plugin?',
+      a: 'A DSH (DeepSeek Harness) plugin extends the harness with new tools, commands, or MCP integrations. It is declared through a dsh.bundle field in the plugin’s package.json.',
+    },
+    {
+      q: 'How do I install a DSH plugin safely?',
+      a: 'Install only A- and B-grade plugins listed on the Hub, review the install script for any remote-code execution, and run in a sandboxed or local environment first.',
+    },
+    {
+      q: 'Do I need coding experience to build a DSH plugin?',
+      a: 'No. The beginner tutorial walks you through writing your first apply(ctx, config) without requiring deep prior experience.',
+    },
+    {
+      q: 'How do I publish a DSH plugin?',
+      a: 'Package your plugin, add a dsh.bundle declaration, push it to the dsh-plugin topic, and submit it for independent quality scoring.',
+    },
+  ];
+  const faqsZh = [
+    {
+      q: '什么是 DSH 插件？',
+      a: 'DSH（DeepSeek Harness）插件通过新工具、命令或 MCP 集成来扩展 harness，在插件的 package.json 中以 dsh.bundle 字段声明。',
+    },
+    {
+      q: '如何安全地安装 DSH 插件？',
+      a: '只安装 Hub 上 A、B 级的插件，检查安装脚本是否存在远程代码执行，并先在沙箱或本地环境试运行。',
+    },
+    {
+      q: '做 DSH 插件需要编程经验吗？',
+      a: '不需要。新手教程会带你写出第一个 apply(ctx, config)，无需深厚基础。',
+    },
+    {
+      q: '如何发布 DSH 插件？',
+      a: '打包插件、添加 dsh.bundle 声明、推送到 dsh-plugin topic，再提交做独立质量评分。',
+    },
+  ];
+  const faqs = locale === 'zh' ? faqsZh : faqsEn;
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
     <div className="container-page py-[var(--section-y-sm)] md:py-[var(--section-y)]">
       <header className="mb-10 max-w-2xl">
@@ -89,6 +136,28 @@ export default async function TutorialsPage({ params }: TutorialsPageProps) {
           ))}
         </div>
       )}
+
+      <section className="mt-14 max-w-2xl">
+        <h2 className="mb-4 text-lg font-semibold tracking-tight text-[var(--color-text)]">
+          {locale === 'zh' ? '常见问题' : 'Frequently Asked Questions'}
+        </h2>
+        <div className="space-y-3">
+          {faqs.map((f) => (
+            <details
+              key={f.q}
+              className="rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-panel)] p-4"
+            >
+              <summary className="cursor-pointer font-semibold text-[var(--color-text)]">{f.q}</summary>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     </div>
   );
 }

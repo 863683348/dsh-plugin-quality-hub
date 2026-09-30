@@ -1,8 +1,8 @@
 const en = {
   meta: {
-    title: 'DSH Quality — Find plugins worth installing',
+    title: 'DSH Quality — Find safe DSH plugins worth installing',
     description:
-      'Independent scoring and real-time security watch for DeepSeek Harness plugins. Heuristic detection, not a substitute for code review.',
+      'Compare DeepSeek Harness (DSH) plugin quality with independent scoring across maintenance, docs, npm and ecosystem health — plus real-time security warnings so you skip risky installs.',
   },
   weekly: {
     section: {
@@ -98,9 +98,9 @@ const en = {
   },
   tutorials: {
     meta: {
-      title: 'DSH Plugin Tutorials: Build, Install & Publish a Plugin',
+      title: 'DSH Plugin Tutorials — Build, Install & Publish Step by Step',
       description:
-        '3 hands-on DSH plugin tutorials: write your first apply(ctx, config), connect MCP tools, and publish to the dsh-plugin topic — all beginner-friendly.',
+        'Hands-on DSH plugin tutorials for beginners: write your first apply(ctx, config), connect MCP tools, and publish to the dsh-plugin topic safely. Start building a plugin today.',
     },
     section: {
       eyebrow: 'Tutorials',
