@@ -2989,6 +2989,118 @@ export const blogPosts: BlogPost[] = [
       ],
     },
   },
+  {
+    slug: 'dependency-confusion',
+    date: '2026-10-04',
+    keywords: ['dependency confusion', 'plugin supply chain attack', 'plugin name impersonation', 'registry security'],
+    longTail: ['dependency confusion attack', 'typosquatting plugin names', 'private registry hijack', 'plugin name impersonation'],
+    en: {
+      title: 'Dependency Confusion: The Threat Hiding in Plugin Names',
+      excerpt:
+        'No phishing, no compromised maintainer, no malicious commit. Someone registers a name you already use and waits for your resolver to pick theirs.',
+      metaDescription:
+        'A dependency confusion attack explained for plugin users: how typosquatting plugin names and private registry hijack work, the plugin name impersonation signals you can check in three minutes, and the registry settings that stop all three.',
+      body: [
+        { p: "Dependency confusion hides inside a name. A manifest asks for something called internal-utils, the resolver takes the highest version it can find, and the copy it finds is not yours: a public package carrying the same name wins because its version number is bigger. No one phished you and no maintainer was compromised. Someone read a name out of your repository and registered it. Below: how a dependency confusion attack is carried out, what separates it from typosquatting plugin names, where private registry hijack fits in the same family, and the plugin name impersonation signals you can actually verify before installing." },
+        { h2: 'How a dependency confusion attack runs' },
+        { p: 'The steps are dull, which is part of why nobody catches them. Someone reads a public repository, finds a private dependency named in a manifest, and registers that exact name on the public registry with a version number high enough to win any comparison. The next time a build resolves dependencies without a scope or a registry pin, it pulls the public copy instead of the internal one. Nothing in the diff looks wrong, because the manifest line never changed.' },
+        { ul: [
+          'Internal names are guessable. They follow naming conventions that leak through documentation, stack traces and example configs.',
+          'Version resolution usually prefers the highest number available, so an attacker controls the outcome by publishing something absurd like 99.0.0.',
+          'Code review does not help here. The change you would be reviewing is not in your repository.',
+        ] },
+        { h2: 'Typosquatting plugin names is the cheaper cousin' },
+        { p: 'Typosquatting plugin names needs none of that reconnaissance. The attacker takes a popular name and registers near-misses: transposed letters, a hyphen where you expect an underscore, a plausible-looking prefix. The economics favour them, since one mistyped install command is enough and the person mistyping is usually in a hurry.' },
+        { table: { head: ['Aspect', 'Dependency confusion', 'Typosquatting'], rows: [
+          ['What gets abused', 'A real private name that already exists', 'A misspelling of a public name'],
+          ['Who gets hit', 'Teams running a private registry', 'Anyone typing quickly'],
+          ['Where it is caught', 'Registry config and scope rules', 'A name check before install'],
+          ['Cleanup afterwards', 'Purge caches, re-pin, rotate secrets', 'Remove the package, check what it did'],
+        ] } },
+        { p: 'Both end the same way: software you did not choose runs on machines you are responsible for. Only the entry point differs, so the two are worth defending against together rather than separately.' },
+        { h2: 'Private registry hijack sits between them' },
+        { p: 'A private registry hijack is the variant people forget, because nothing about the plugin looks wrong. The namespace existed legitimately for years, then ownership lapsed: expired payment, an abandoned maintenance account, a domain transfer nobody watched. A new party takes control of a name other people already depend on, and the package keeps working exactly as before, which is what makes it hard to notice.' },
+        { h2: 'Plugin name impersonation signals worth checking' },
+        { p: 'Three minutes with a name rules out most of this. What you are looking for is a mismatch between how established a plugin appears and how thin its actual history is.' },
+        { table: { head: ['Signal', 'Healthy', 'Suspicious'], rows: [
+          ['Publisher vs repo owner', 'Same org on the index and the source', 'Index name appears nowhere in the repo'],
+          ['First publish date', 'Years of releases', 'Recent publish, widely referenced anyway'],
+          ['Namespace', 'Scoped, such as @acme/tool', 'Unscoped generic noun'],
+          ['Install behaviour', 'Reads bundled files', 'Fetches from a host registered recently'],
+        ] } },
+        { blockquote: 'On a public registry a name is a claim, not an identity. Verify the thing behind the name rather than the name itself.' },
+        { h2: 'Where the fixes belong' },
+        { p: 'This is one of the few supply chain problems with cheap mitigations, and they live in four different places. You want all four, because each one covers a case the others miss.' },
+        { ul: [
+          'Registry side: claim your prefixes and enable namespace protection, so nobody can register anything matching them.',
+          'Resolver side: disable the behaviour that lets a public source satisfy a name you normally pull privately.',
+          'CI side: fail the build when a manifest adds a name whose owner does not match a known publisher, instead of printing a warning.',
+          'Index side: check the entry against the source repository before installing, using the same checks described in /blog/how-to-avoid-risky-dsh-plugins.',
+        ] },
+        { h2: 'FAQ' },
+        { ul: [
+          'Is dependency confusion still common? Less than at its peak, because large registries now offer namespace protection and most package managers default to scoped installs. It survives in smaller ecosystems and internal mirrors.',
+          'Does version pinning solve it? Partly. Pinning stops the surprise upgrade but not the first wrong install. Pinning the source registry is the part that closes it.',
+          'How is this different from a compromised maintainer? A compromised maintainer is a person problem; this is a naming problem. The code was never trustworthy from the first publish.',
+          'What should I do today? Claim your prefixes on the public registry you use, then check whether any manifest entry resolves from somewhere you did not intend.',
+        ] },
+        { p: 'All three variants start in the name field, so that is where to spend your attention first. The related naming games are covered in /blog/tag-baiting-problem, per-plugin red flags are listed in /blog/how-to-avoid-risky-dsh-plugins, team-wide enforcement with an allowlist is described in /blog/plugin-supply-chain-security-team-enforcement and /blog/setting-up-a-plugin-allowlist-for-your-dev-team, registry-side scanning in CI is at /blog/ci-cd-plugin-scanning, and the full plugin index is at /.' },
+      ],
+    },
+    zh: {
+      title: '依赖混淆：藏在插件名字里的威胁',
+      excerpt:
+        '不用钓鱼、不用拿下维护者账号、也不用提交恶意代码。有人把你已经在用的名字注册走，然后等你的解析器选他那份。',
+      metaDescription:
+        '讲清依赖混淆攻击对插件用户意味着什么：抢注相似插件名和私有仓库劫持分别怎么发生，三分钟内能查完的插件冒名信号有哪些，以及能一次挡住这三类的仓库端设置。',
+      body: [
+        { p: '依赖混淆就藏在一个名字里。清单向解析器要一个叫 internal-utils 的东西，解析器取它能找到的最高版本，结果拿到的那一份不是你的：一个同名公开包因为版本号更大而胜出。没有人被钓鱼，也没有维护者账号失守。有人从你的仓库里读到一个名字，把它注册走了。下面讲依赖混淆攻击是怎么跑通的、抢注相似插件名和它有什么区别、私有仓库劫持在这个家族里占什么位置，以及安装前三分钟就能验完的插件冒名信号。' },
+        { h2: '依赖混淆攻击是怎么跑通的' },
+        { p: '步骤很枯燥，这也正是没人发现它的原因之一。有人翻完公开仓库，在清单里找到一个私有依赖名，然后把这个名字原样注册到公开仓库，版本号抬到足以在任何比较里胜出。下一次构建在解析依赖时既没有 scope 也没有锁定来源，抓到的就是那份公开副本而不是你的内部包。diff 里看不出问题，因为清单那一行从头到尾没改过。' },
+        { ul: [
+          '内部包名是可以猜的。它们遵循内部命名习惯，而这套习惯会从文档、报错堆栈和示例配置里漏出去。',
+          '版本解析通常取可用范围内的最高版本号，所以攻击者发一个 99.0.0 这种荒唐版本号就能控制结果。',
+          '代码审查看不出这种问题。你本该 review 的那次改动，压根不在你的仓库里。',
+        ] },
+        { h2: '抢注相似插件名是它的廉价版' },
+        { p: '抢注相似插件名连前期侦察都不需要。攻击者挑一个热门名字，然后把各种近似写法注册下来：字母换个顺序、你以为下划线的地方写成连字符、加个看起来像那么回事的前缀。这件事的经济学对他们有利，因为只要有一条安装命令打错就够了，而打错的人通常在赶时间。' },
+        { table: { head: ['维度', '依赖混淆', '抢注相似名'], rows: [
+          ['被利用的是什么', '一个真实存在的私有名字', '一个公开名字的错拼写法'],
+          ['谁会被打中', '跑私有仓库的团队', '任何手快的人'],
+          ['在哪一步被拦下', '仓库端配置与 scope 规则', '安装前对名字做一次核对'],
+          ['事后怎么清理', '清缓存、重新锁定来源、轮换密钥', '删掉这个包，查清它做过什么'],
+        ] } },
+        { p: '两者的结局是一样的：你没选过的软件跑在了你负责的机器上。区别只在入口处，所以这两件事应该一起防，而不是分开防。' },
+        { h2: '夹在中间的私有仓库劫持' },
+        { p: '私有仓库劫持是最容易被人忘掉的那种，因为插件本身看不出任何不对。这个命名空间合法存在了好些年，然后所有权断了：付费到期、维护账号被弃用、域名过户时没人盯着。新的控制方接手一个别人已经在依赖的名字，而这个包照旧能正常工作——这恰恰是它难以被发现的原因。' },
+        { h2: '值得查的插件冒名信号' },
+        { p: '花三分钟核一遍名字，就能排除掉大部分情况。你要找的是一种错位：某个插件看起来很成熟，实际历史却薄得不合比例。' },
+        { table: { head: ['信号', '正常情况', '可疑情况'], rows: [
+          ['发布者与仓库归属', '索引与源码同属一个组织', '索引上的名字在仓库里根本不出现'],
+          ['首次发布时间', '有连续数年的版本', '刚发布不久却已被到处引用'],
+          ['命名空间', '带 scope，如 @acme/tool', '无 scope 的通用名词'],
+          ['安装行为', '只读包内文件', '从注册不久的主机拉取内容'],
+        ] } },
+        { blockquote: '在公开仓库上，名字只是声明，不是身份。要验的是名字背后那个东西，而不是名字本身。' },
+        { h2: '修复该落在哪里' },
+        { p: '这是供应链问题里少数几个缓解成本低的一种，而且这些措施分散在四个地方。四处都要做，因为每一处覆盖的是另外几处漏掉的场景。' },
+        { ul: [
+          '仓库端：把你的前缀认领下来、开启命名空间保护，让别人没法注册任何匹配的变体。',
+          '解析器端：关掉「允许公开源来满足一个你平时私下拉取的名字」这种行为。',
+          'CI 端：清单里新增名字、而发布者与已知发布方不匹配时，让构建直接失败，而不是只打一条警告。',
+          '索引端：安装前把索引条目和源码仓库对一遍，具体核对项写在 /blog/how-to-avoid-risky-dsh-plugins 里。',
+        ] },
+        { h2: '常见问题' },
+        { ul: [
+          '依赖混淆现在还常见吗？比高峰期少多了，因为大型仓库都提供了命名空间保护，多数包管理器也默认按 scope 安装。它在更小的生态和内部镜像里还活着。',
+          '锁定版本能解决吗？只能解决一半。锁版本挡得住意外升级，挡不住第一次装错；真正收口的是锁定来源仓库。',
+          '这和维护者账号被攻破有什么不同？后者是人的问题，前者是命名的问题。这种包从第一次发布起就不值得信任。',
+          '今天该做什么？先在你使用的公开仓库上认领自己的前缀，然后检查清单里有没有哪个条目是从你没打算用的地方解析来的。',
+        ] },
+        { p: '这三种变体都从名字字段开始，所以注意力应该先放在那里。相关的命名把戏写在 /blog/tag-baiting-problem，单个插件的危险信号列在 /blog/how-to-avoid-risky-dsh-plugins，团队层面的强制手段与白名单见 /blog/plugin-supply-chain-security-team-enforcement 和 /blog/setting-up-a-plugin-allowlist-for-your-dev-team，CI 里的仓库端扫描见 /blog/ci-cd-plugin-scanning，完整插件索引在 /。' },
+      ],
+    },
+  },
 ];
 
 /** 按日期倒序（新在前） */
