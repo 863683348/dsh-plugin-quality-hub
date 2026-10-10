@@ -3635,7 +3635,7 @@ export const blogPosts: BlogPost[] = [
       metaDescription:
         'The plugin inventory value shows up the day an advisory lands: if you cannot answer which machines run the affected plugin, you cannot scope the incident. Why your plugin list is a security asset, how to run a plugin list security audit, and how to know what plugins you have installed.',
       body: [
-        { p: "Most teams cannot answer the question that decides whether a security advisory costs an afternoon or a week: which projects actually run the affected plugin. That gap is where the plugin inventory value lives, and it is also why your plugin list is a security asset rather than housekeeping. Once the record exists, a plugin list security audit stops being paperwork and becomes the tool that scopes an incident in minutes. Below is how to know what plugins you have installed without asking anyone to remember, what that record is worth on the three days you actually need it, and the shortest way to keep it current." },
+        { p: "Most teams cannot answer the question that decides whether a security advisory costs an afternoon or a week: which projects actually run the affected plugin. That gap is where the plugin inventory value lives, and it is also why your plugin list is a security asset rather than housekeeping. Once you know how to run a plugin list security audit, it stops being paperwork and becomes the step that scopes an incident in minutes. Below is how to know what plugins you have installed without asking anyone to remember, what that record is worth on the three days you actually need it, and the shortest way to keep it current." },
         { h2: 'What a plugin inventory is worth' },
         { p: 'The list itself carries almost no value on a quiet Tuesday. Its worth shows up under pressure, in four specific situations.' },
         { ul: [
@@ -3691,12 +3691,12 @@ export const blogPosts: BlogPost[] = [
     zh: {
       title: '你的插件清单为什么是一项安全资产',
       excerpt:
-        '多数团队说不清自己装了哪些插件、装在什么地方。这个缺口会把每一条安全公告变成一整天的考古。这份清单到底值多少、它在哪三天真正派上用场、以及一个下午怎么把它搭起来。',
+        '多数团队说不清自己装了哪些插件、装在什么地方。plugin inventory value 会在公告落地的那天显现，这也是 why your plugin list is a security asset。怎么 know what plugins you have installed，以及一个下午怎么把清单搭起来。',
       metaDescription:
-        '插件清单的价值会在安全公告落地的那一天显现：如果答不上来受影响的插件跑在哪些机器上，你就没法界定事件范围。本文讲为什么你的插件清单是一项安全资产、如何做一次插件清单安全审计，以及怎样在需要答案之前就知道自己装了什么。',
+        '插件清单的价值会在安全公告落地的那一天显现：如果答不上来受影响的插件跑在哪些机器上，你就没法界定事件范围。讲清楚 why your plugin list is a security asset、how to run a plugin list security audit、如何 know what plugins you have installed，并给出 plugin inventory value 的具体场景。',
       body: [
-        { p: "多数团队答不上来一个决定性问题：受影响的插件到底跑在哪些项目里。而正是这个问题，决定一条安全公告的代价是一个下午还是一周。插件清单的价值就藏在这个缺口里，这也是为什么你的插件清单是一项安全资产，而不是一份杂物台账。一旦记录存在，插件清单安全审计就不再是为了留痕的文书工作，而变成了几分钟就能界定事件范围的工具。下面讲的是如何在不靠谁回忆的前提下知道自己装了哪些插件、这份记录在你真正用得上的三天里值多少，以及保持它不过期的最短路径。" },
-        { h2: '插件清单到底值多少' },
+        { p: "多数团队答不上来一个决定性问题：受影响的插件到底跑在哪些项目里。而正是这个问题，决定一条安全公告的代价是一个下午还是一周。plugin inventory value 就藏在这个缺口里，这也是 why your plugin list is a security asset 的原因，而不是一份杂物台账。一旦知道 how to run a plugin list security audit，它就不再是留痕用的文书工作，而是几分钟界定事件范围的那一步。下面讲的是如何在不靠谁回忆的前提下 know what plugins you have installed、这份记录在你真正用得上的三天里值多少，以及保持它不过期的最短路径。" },
+        { h2: 'plugin inventory value 到底体现在哪' },
         { p: '风平浪静的工作日里，这份清单几乎没什么价值。它的价值在压力下显现，具体是下面四种情况。' },
         { ul: [
           '响应安全公告。某个插件被公开点名时，范围靠查清单界定，而不是全仓库 grep 之后再猜。',
@@ -3719,7 +3719,7 @@ export const blogPosts: BlogPost[] = [
           '事故那天。某个东西行为异常，缩小嫌疑范围的第一步就是知道装了什么。问题安装脚本背后的权限套路写在 /blog/how-install-script-scanning-works。',
         ] },
         { blockquote: '清单不是白捡的安全工作。它是你一次性做掉的部分，好让另外三天不用花在找清单这件事上。' },
-        { h2: '一个下午把它搭起来' },
+        { h2: '给自己留一份 know what plugins you have installed 的记录' },
         { p: '这是个表格就能干的活。别等什么平台选型。' },
         { ul: [
           '从一台机器上导出已装插件列表，放进共享文件，写上当天日期。',
