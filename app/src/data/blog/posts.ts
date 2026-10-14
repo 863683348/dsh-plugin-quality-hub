@@ -4123,6 +4123,362 @@ export const blogPosts: BlogPost[] = [
       ],
     },
   },
+  {
+    "slug": "plugin-compliance-reporting",
+    "date": "2026-10-15",
+    "keywords": [
+      "plugin compliance reporting",
+      "plugin risk",
+      "compliance audit",
+      "DSH plugin governance"
+    ],
+    "longTail": [
+      "plugin risk report",
+      "compliance plugin audit",
+      "plugin compliance reporting template",
+      "evidence for plugin approval"
+    ],
+    "en": {
+      "title": "Compliance Teams and Plugin Risk: What to Report",
+      "excerpt": "A practical plugin compliance reporting workflow: what evidence to capture, how to record risk, and when an approved plugin needs another review.",
+      "metaDescription": "Plugin risk report and compliance plugin audit guide with a plugin compliance reporting template and evidence for plugin approval.",
+      "body": [
+        {
+          "p": "Plugin compliance reporting becomes useful when another reviewer can reproduce the decision. A plugin risk report should show what was checked, a compliance plugin audit should record who checked it and when, a plugin compliance reporting template should keep evidence consistent, and evidence for plugin approval should point to source data rather than a confident sentence. This guide turns those requirements into a report that security, engineering, procurement, and audit teams can all read."
+        },
+        {
+          "h2": "What a plugin risk report must answer"
+        },
+        {
+          "p": "A report does not need to copy every repository field. It needs to answer the questions that change an install decision and preserve enough context for the next review."
+        },
+        {
+          "ul": [
+            "Identity: exact package name, publisher or owner, repository, registry source, and the version reviewed.",
+            "Purpose: the business or engineering task the plugin performs, plus the system where it will run.",
+            "Access: files, secrets, network destinations, child processes, and runtime privileges the plugin can reach.",
+            "Health: current DSH Quality score, grade, maintenance recency, documentation coverage, and dependency condition.",
+            "Findings: install-script warnings, missing bundle declarations, unresolved advisories, or unexplained ownership changes.",
+            "Decision: approve, approve with conditions, defer, or reject, with an owner and a review date."
+          ]
+        },
+        {
+          "blockquote": "A score supports a decision. It does not replace the reviewer, the operating context, or the evidence file."
+        },
+        {
+          "h2": "Evidence for plugin approval"
+        },
+        {
+          "p": "Evidence should be a small packet that another person can inspect without recreating the entire audit. Capture stable identifiers and dated observations; avoid relying on a screenshot alone when a text value or commit reference exists."
+        },
+        {
+          "table": {
+            "head": [
+              "Evidence",
+              "Record",
+              "Reason"
+            ],
+            "rows": [
+              [
+                "Plugin identity",
+                "Package, owner, repository URL, reviewed version",
+                "Prevents approval from drifting to a similarly named package"
+              ],
+              [
+                "Source state",
+                "Commit SHA, release tag, package integrity or lockfile entry",
+                "Ties findings to the code that was actually assessed"
+              ],
+              [
+                "Quality signals",
+                "DSH score, grade, last push, docs and npm health",
+                "Shows the measurable basis for the initial filter"
+              ],
+              [
+                "Security findings",
+                "Install scripts, permissions, network behavior, advisories",
+                "Records the risks that need acceptance or remediation"
+              ],
+              [
+                "Decision record",
+                "Reviewer, approver, conditions, expiry date",
+                "Makes ownership and the next review explicit"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "For score definitions, link the packet to /blog/dsh-quality-score-decoded. For identity checks, use the process in /blog/how-to-verify-dsh-plugin-authenticity. Both pages already exist, so the report can stay short while its method remains reviewable."
+        },
+        {
+          "h2": "A plugin compliance reporting template"
+        },
+        {
+          "p": "Use the same headings for every plugin. Consistency lets an auditor compare decisions without learning a new document structure each time."
+        },
+        {
+          "ul": [
+            "Request: requester, intended use, environment, data classification, and requested install date.",
+            "Plugin: name, owner, source, version, commit, license, and supported runtime.",
+            "Assessment: DSH score and grade, maintenance status, documentation status, dependency status, and scanner findings.",
+            "Access review: filesystem scope, environment variables, network access, subprocesses, and update mechanism.",
+            "Decision: status, conditions, compensating controls, approver, expiry, and the event that triggers re-review.",
+            "Attachments: lockfile excerpt, scanner output, relevant changelog, issue references, and test notes."
+          ]
+        },
+        {
+          "p": "A conditional approval should be specific. Write 'approved only in the isolated build runner with outbound network blocked' rather than 'approved with caution.' The first instruction can be enforced and tested; the second cannot."
+        },
+        {
+          "h2": "Run the compliance plugin audit"
+        },
+        {
+          "p": "The audit works best as a short sequence with a stop point at each stage. A failed identity check should stop the process before anyone spends time reviewing documentation or license text."
+        },
+        {
+          "table": {
+            "head": [
+              "Stage",
+              "Action",
+              "Stop condition"
+            ],
+            "rows": [
+              [
+                "1. Verify",
+                "Match owner, package, repository, version, and release source",
+                "Identity or ownership cannot be confirmed"
+              ],
+              [
+                "2. Score",
+                "Read the current quality grade and each component",
+                "A hard security warning is present"
+              ],
+              [
+                "3. Inspect",
+                "Review install scripts, permissions, dependencies, and update behavior",
+                "Requested access exceeds the stated purpose"
+              ],
+              [
+                "4. Test",
+                "Install the pinned version in an isolated environment",
+                "Observed behavior differs from documentation"
+              ],
+              [
+                "5. Decide",
+                "Record conditions, owner, expiry, and review trigger",
+                "No team accepts the residual risk"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "Teams that want this check in pull requests can follow /blog/ci-cd-plugin-scanning. The human review around the automated gate is covered in /blog/dsh-plugin-review-process, while /blog/setting-up-a-plugin-allowlist-for-your-dev-team turns approved entries into an enforceable list."
+        },
+        {
+          "h2": "Review dates and change triggers"
+        },
+        {
+          "p": "Calendar reviews catch slow drift, but event-based reviews catch the changes most likely to alter risk. Put both in the decision record."
+        },
+        {
+          "ul": [
+            "Review on a fixed cadence for plugins with stable ownership and routine updates.",
+            "Review immediately after an ownership transfer, registry move, package rename, or signing change.",
+            "Review after a new install script, broader permissions, a major dependency change, or a score drop across a grade boundary.",
+            "Review before moving the plugin from a developer workstation into CI, production, or an environment with secrets.",
+            "Close the approval when the plugin is removed; do not leave unused entries permanently active on the allowlist."
+          ]
+        },
+        {
+          "p": "The team policy behind these triggers is explained in /blog/plugin-supply-chain-security-team-enforcement. Link that policy from the report so a reviewer can tell whether a condition is local to one plugin or required across the organization."
+        },
+        {
+          "h2": "FAQ"
+        },
+        {
+          "ul": [
+            "Is an A grade enough for approval? No. It is a strong first filter, but access, environment, data sensitivity, and the exact reviewed version still belong in the decision.",
+            "How long should evidence be retained? Follow the retention period that applies to the system where the plugin runs, and keep it at least until the approval expires or is replaced.",
+            "Do development-only plugins need a report? Yes when they can read source code, credentials, build output, or the network. Development status does not remove access.",
+            "What if a plugin has no registry package? Record the repository and commit SHA, document the install method, and treat future commits as unapproved until reviewed."
+          ]
+        },
+        {
+          "p": "Start the report from the live plugin index at dshquality.com /. Then use /blog/dsh-quality-score-decoded for score evidence, /blog/how-to-verify-dsh-plugin-authenticity for identity, and /blog for the rest of the review library. A short report with verifiable references is more useful than a long report built on memory."
+        }
+      ]
+    },
+    "zh": {
+      "title": "合规团队与插件风险：报告里该写什么",
+      "excerpt": "一套可执行的插件合规报告流程：收集哪些证据、如何记录风险，以及已批准插件在什么情况下需要复审。",
+      "metaDescription": "插件风险报告（plugin risk report）与合规插件审计（compliance plugin audit）指南，含插件合规报告模板（plugin compliance reporting template）和插件批准证据（evidence for plugin approval）。",
+      "body": [
+        {
+          "p": "插件合规报告要让另一位审查者能够复现当时的决定，才真正有用。插件风险报告（plugin risk report）要写清检查了什么，合规插件审计（compliance plugin audit）要记录谁在何时做了检查，插件合规报告模板（plugin compliance reporting template）要让证据口径一致，插件批准证据（evidence for plugin approval）则应指向源数据，而不是一句听起来很有把握的话。下面这套方法能让安全、工程、采购和审计团队读同一份报告。"
+        },
+        {
+          "h2": "一份插件风险报告必须回答什么"
+        },
+        {
+          "p": "报告不需要复制仓库里的每个字段，只要回答那些会改变安装决定的问题，并为下次复审保留足够背景。"
+        },
+        {
+          "ul": [
+            "身份：准确的包名、发布者或所有者、仓库、注册表来源以及本次审查的版本。",
+            "用途：插件要完成的业务或工程任务，以及它会运行在哪个系统。",
+            "访问范围：插件能接触的文件、密钥、网络目标、子进程与运行时权限。",
+            "健康度：当前 DSH Quality 分数、等级、最近维护时间、文档覆盖与依赖状态。",
+            "发现项：安装脚本警告、缺失的 bundle 声明、未解决的安全通告或无法解释的所有权变化。",
+            "决定：批准、附条件批准、暂缓或拒绝，并写明负责人和复审日期。"
+          ]
+        },
+        {
+          "blockquote": "评分为决定提供证据，但不能代替审查者、运行环境和证据档案。"
+        },
+        {
+          "h2": "插件批准需要哪些证据"
+        },
+        {
+          "p": "证据包应当精简，让另一位同事无需重做整次审计就能检查。记录稳定标识和带日期的观察结果；只要能保存文本值或提交引用，就不要只留一张截图。"
+        },
+        {
+          "table": {
+            "head": [
+              "证据",
+              "记录内容",
+              "作用"
+            ],
+            "rows": [
+              [
+                "插件身份",
+                "包名、所有者、仓库地址、审查版本",
+                "防止批准对象漂移到相似名称的包"
+              ],
+              [
+                "源代码状态",
+                "提交 SHA、发布标签、包完整性或锁文件条目",
+                "把发现项绑定到真正接受审查的代码"
+              ],
+              [
+                "质量信号",
+                "DSH 分数、等级、最后推送、文档和 npm 健康度",
+                "展示初筛所依据的可测量信号"
+              ],
+              [
+                "安全发现",
+                "安装脚本、权限、网络行为、安全通告",
+                "记录需要接受或整改的风险"
+              ],
+              [
+                "决定记录",
+                "审查人、批准人、附加条件、到期日",
+                "明确责任与下次复审时间"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "评分定义可链接 /blog/dsh-quality-score-decoded，身份核验则使用 /blog/how-to-verify-dsh-plugin-authenticity。两个页面都是真实存在的站内文章，因此报告可以保持简短，同时保留可复核的方法。"
+        },
+        {
+          "h2": "插件合规报告模板"
+        },
+        {
+          "p": "每个插件使用相同标题。统一结构能让审计人员直接比较多个决定，不必每次重新适应一套文档。"
+        },
+        {
+          "ul": [
+            "申请：申请人、预期用途、环境、数据分类和计划安装日期。",
+            "插件：名称、所有者、来源、版本、提交、许可证和支持的运行时。",
+            "评估：DSH 分数与等级、维护状态、文档状态、依赖状态和扫描发现。",
+            "访问审查：文件系统范围、环境变量、网络访问、子进程和更新机制。",
+            "决定：状态、附加条件、补偿控制、批准人、到期日和触发复审的事件。",
+            "附件：锁文件片段、扫描输出、相关变更记录、问题单引用和测试记录。"
+          ]
+        },
+        {
+          "p": "附条件批准要写得具体。写「仅允许在隔离构建运行器内使用，并阻断出站网络」，不要写「谨慎批准」。前者能执行和测试，后者做不到。"
+        },
+        {
+          "h2": "执行合规插件审计"
+        },
+        {
+          "p": "按短流程执行，并在每一阶段设置停止条件。身份核验失败时就该停下，不必继续花时间审查文档或许可证。"
+        },
+        {
+          "table": {
+            "head": [
+              "阶段",
+              "动作",
+              "停止条件"
+            ],
+            "rows": [
+              [
+                "1. 核验",
+                "匹配所有者、包、仓库、版本和发布来源",
+                "无法确认身份或所有权"
+              ],
+              [
+                "2. 评分",
+                "读取当前质量等级及每个评分组成",
+                "存在硬性安全警告"
+              ],
+              [
+                "3. 检查",
+                "审查安装脚本、权限、依赖和更新行为",
+                "申请的访问范围超过用途"
+              ],
+              [
+                "4. 测试",
+                "在隔离环境安装固定版本",
+                "实际行为与文档不一致"
+              ],
+              [
+                "5. 决定",
+                "记录条件、负责人、到期日和复审触发器",
+                "没有团队愿意接受剩余风险"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "需要把检查接入拉取请求的团队可看 /blog/ci-cd-plugin-scanning。自动闸门外的人工作业见 /blog/dsh-plugin-review-process，/blog/setting-up-a-plugin-allowlist-for-your-dev-team 则说明怎样把已批准条目变成可执行的白名单。"
+        },
+        {
+          "h2": "复审日期与变更触发器"
+        },
+        {
+          "p": "定期复审能发现缓慢漂移，事件触发复审则能抓住最可能改变风险的变化。两种都要写入决定记录。"
+        },
+        {
+          "ul": [
+            "所有权稳定、更新规律的插件按固定周期复审。",
+            "所有权转移、注册表迁移、包改名或签名变化后立即复审。",
+            "新增安装脚本、权限扩大、重大依赖变化，或分数跨等级下降时复审。",
+            "插件从开发者电脑移入 CI、生产环境或能接触密钥的环境前复审。",
+            "插件移除后关闭批准项，不要让已经不用的条目永久留在白名单里。"
+          ]
+        },
+        {
+          "p": "这些触发器背后的团队策略写在 /blog/plugin-supply-chain-security-team-enforcement。报告中链接该策略，审查者才能分清某个条件是单个插件的特殊要求，还是整个组织都要执行的规则。"
+        },
+        {
+          "h2": "常见问题"
+        },
+        {
+          "ul": [
+            "A 级评分足够直接批准吗？不够。它是很好的第一道筛选，但访问范围、运行环境、数据敏感度和准确版本仍要写进决定。",
+            "证据要保留多久？遵循插件所在系统适用的保留期，并至少保留到批准到期或被新决定替代。",
+            "只在开发环境使用的插件也要报告吗？只要它能读源代码、凭据、构建产物或访问网络，就要报告。开发用途不会消除访问权限。",
+            "插件没有注册表包怎么办？记录仓库和提交 SHA，写明安装方法，并把后续提交视为未批准版本，直到完成复审。"
+          ]
+        },
+        {
+          "p": "从 dshquality.com 的实时插件索引 / 开始写报告，再用 /blog/dsh-quality-score-decoded 提供评分证据，用 /blog/how-to-verify-dsh-plugin-authenticity 核验身份，其余审查资料都在 /blog。带可核验证据的短报告，比依赖记忆写成的长报告更有用。"
+        }
+      ]
+    }
+  },
 ];
 
 /** 按日期倒序（新在前） */
