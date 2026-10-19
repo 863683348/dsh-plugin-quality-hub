@@ -4479,6 +4479,136 @@ export const blogPosts: BlogPost[] = [
       ]
     }
   },
+  {
+    slug: 'the-cost-of-a-bad-plugin-install',
+    date: '2026-10-20',
+    keywords: ['cost of bad plugin', 'plugin failure cost', 'bad install impact', 'plugin incident response'],
+    longTail: ['plugin failure cost', 'bad install impact', 'plugin incident response', 'plugin rollback plan'],
+    en: {
+      title: 'The Cost of a Bad Plugin Install',
+      excerpt:
+        'Removing a plugin takes five minutes. The rest of the bill is where it hurts: detection, containment, the report nobody budgeted for, and the slower approvals that follow for months.',
+      metaDescription:
+        'What a bad install actually costs: plugin failure cost broken down by stage, the bad install impact most teams never write down, a plugin incident response order that survives the first ten minutes, and a plugin rollback plan you can write in twenty minutes.',
+      body: [
+        { p: 'The cost of a bad plugin install is not the five minutes it takes to remove it. It is the afternoon the team cannot build, the release that slips a day, and the hour spent explaining to someone outside engineering what happened. This post breaks plugin failure cost down by where the time actually goes, covers the bad install impact most teams never put on paper, lays out a plugin incident response order that survives the first ten minutes, and finishes with a plugin rollback plan you can write in twenty minutes rather than improvising mid-outage.' },
+        { h2: 'Where the time actually goes' },
+        { p: 'Teams budget for the removal and forget everything around it. The removal is the smallest line item.' },
+        { table: { head: ['Stage', 'What happens', 'Where the time goes'], rows: [
+          ['Detection', 'Something breaks, and nobody connects it to the plugin', 'Half a day, because the first hypothesis is usually the application'],
+          ['Containment', 'The plugin gets disabled or the machine gets isolated', 'One hour with a rollback plan, most of a day without one'],
+          ['Assessment', 'You work out what it touched, read, wrote or sent', 'Two hours to two days, depending on how good your logs are'],
+          ['Recovery', 'Rebuild, reconfigure, restore', 'Half a day for one machine, longer for a shared build runner'],
+          ['Reporting', 'Someone outside the team needs a written account', 'Two to four hours, and it lands on the most senior person available'],
+        ] } },
+        { h2: 'The bad install impact that never gets counted' },
+        { p: 'The rows above are the ones that show up in a ticket. Three more costs are real and almost never written down.' },
+        { ul: [
+          'Context loss. The engineer who knows the setup spends the afternoon on the incident instead of the work they were doing, and whatever they were building moves by a day.',
+          'Trust cost. After one bad install, the team stops approving plugins quickly. Reviews that took ten minutes start taking a week, and that delay costs more than the incident did.',
+          'Audit debt. If the plugin touched credentials or build output, somebody has to state what it could have reached. That statement has to hold up months later, which means evidence gathered during the incident rather than recollection afterwards. The evidence format is at /blog/plugin-supply-chain-security-team-enforcement.',
+        ] },
+        { h2: 'A plugin incident response order that holds up' },
+        { p: 'Under pressure people skip straight to fixing. Fixing second is usually faster overall, because restoring something you have not examined can restore the problem along with it.' },
+        { ul: [
+          'Freeze the blast radius first: disable the plugin, isolate the machine, and revoke any credential the plugin could read. Do all three even if you only suspect one of them.',
+          'Preserve evidence before restoring: copy the plugin directory, the install logs, and the plugin manifest. Restoration overwrites the only copy of what happened.',
+          'Establish what it could reach: file paths, environment variables, network destinations, and child processes. Write it as a list rather than a narrative.',
+          'Then restore, from a known-good state rather than by removing the plugin and hoping.',
+          'Close with a decision record: what happened, what it reached, what you changed, and when it gets reviewed. The template sits at /blog/plugin-supply-chain-security-team-enforcement.',
+        ] },
+        { blockquote: 'Order matters more than speed. Restoring a machine you have not examined can restore the problem and destroy the evidence in a single step.' },
+        { h2: 'Write the plugin rollback plan first' },
+        { p: 'A rollback plan is twenty minutes of work that only pays off during an incident, which is exactly why it never gets written. Four lines cover most plugins.' },
+        { ul: [
+          'Where the plugin writes: config path, cache path, and any file it creates outside its own directory.',
+          'What it can read: credentials, environment variables, and repository contents.',
+          'How to disable it completely, including any service or hook it registered, not just the uninstall command.',
+          'The last known-good state and how long restoring it takes. If you have never timed it, the number in your head is wrong.',
+        ] },
+        { p: 'Keep the plan next to the approval record. When something breaks, the person reading it is not the person who wrote it, and they are reading it with the clock running.' },
+        { h2: 'Prevention, priced' },
+        { p: 'Most prevention here is cheap. The expensive parts are optional.' },
+        { ul: [
+          'Reading install hooks before running them costs five minutes. The mechanics are at /blog/how-install-script-scanning-works.',
+          'Checking the score and the maintenance signals before approval costs two minutes, and what goes into the number is at /blog/dsh-quality-score-decoded.',
+          'Verifying who published the package costs another five. The routine is at /blog/how-to-verify-dsh-plugin-authenticity.',
+          'A sandbox for anything that touches credentials costs an hour to set up once. That is roughly a tenth of one detection phase.',
+        ] },
+        { h2: 'FAQ' },
+        { ul: [
+          'Is the cost really this high for a small plugin? It scales with what the plugin can reach, not how much code it has. A fifty-line plugin with credential access outranks a large one that only formats text.',
+          'Should we remove a plugin before we understand what it did? No. Disable and isolate, copy the logs and the plugin directory, then restore. Removing first destroys the evidence you need for the report.',
+          'How long should we keep the incident record? Follow the retention period that applies to the system the plugin touched, and keep it at least until the decision it informed expires.',
+          'Does a high score mean we can skip the rollback plan? No. The score covers maintenance, documentation, ecosystem health and install behaviour. It does not describe what the plugin reaches on your machine.',
+          'Who should own the decision record? Whoever approved the plugin. Approval and rollback belong to the same person, otherwise both get deferred.',
+        ] },
+        { p: 'Start with the live plugin index at dshquality.com, where every plugin page states what was checked and what was not. The case for keeping that scoring independent of self-reported data is at /blog/why-independent-plugin-scoring-beats-self-reported-ratings, and everything published on the site is at /blog.' },
+      ],
+    },
+    zh: {
+      title: '一次失败的插件安装，到底要付多少代价',
+      excerpt:
+        '移除插件只要五分钟，账单的其余部分才真正伤人：发现问题、隔离环境、那场没人做过预算的汇报，以及之后几个月里明显变慢的审批。',
+      metaDescription:
+        '一次失败安装的真实成本：plugin failure cost 按阶段拆解、多数团队从不落纸面的 bad install impact、能撑住最初十分钟的 plugin incident response 顺序，以及二十分钟就能写好的 plugin rollback plan。附证据保留与决定记录要求。',
+      body: [
+        { p: '一次失败的插件安装，代价不在移除它那五分钟。真正的代价是团队一整个下午没法构建、发布延后一天，以及花一小时向工程部门之外的人解释发生了什么。本文把 plugin failure cost 按时间真正花在哪拆开，补上多数团队从没写进工单的 bad install impact，给出一套能撑住最初十分钟的 plugin incident response 顺序，最后是一份二十分钟就能写完、而不是在故障中临时拼凑的 plugin rollback plan。' },
+        { h2: '时间到底花在哪' },
+        { p: '团队只会给"移除"这一步做预算，忘了它周围的所有事情。而移除是最小的一项。' },
+        { table: { head: ['阶段', '发生了什么', '时间花在哪'], rows: [
+          ['发现', '东西坏了，没人把它和插件联系起来', '半天，因为第一反应通常是应用本身的问题'],
+          ['隔离', '禁用插件或隔离这台机器', '有回滚计划一小时，没有就大半天'],
+          ['评估', '搞清楚它碰过、读过、写过或发出去过什么', '两小时到两天，取决于你的日志质量'],
+          ['恢复', '重建、重配、还原', '单机半天，共享构建机更久'],
+          ['汇报', '团队之外的人需要一份书面说明', '两到四小时，而且落在当时级别最高的人身上'],
+        ] } },
+        { h2: '没人记账的那部分影响' },
+        { p: '上面几行是会出现在工单里的。另外三项成本真实存在，却几乎从不落纸面。' },
+        { ul: [
+          '上下文损耗。最熟悉这套环境的工程师把整个下午给了故障，原本在做的事推后一天。',
+          '信任成本。出过一次事之后，团队不再快速批准插件。原本十分钟的评审变成一周，这个延迟比事故本身更贵。',
+          '审计欠账。如果插件接触过凭据或构建产物，就得有人说明它可能够到什么。这个说法几个月后要经得起查，所以它依赖事故中收集的证据，而不是事后的回忆。证据格式见 /blog/plugin-supply-chain-security-team-enforcement。',
+        ] },
+        { h2: '能撑住压力的处置顺序' },
+        { p: '压力下人会直接跳到修。但把修复放在第二位整体更快，因为还原一个还没检查过的环境，可能把问题一起还原回来。' },
+        { ul: [
+          '先冻结影响面：禁用插件、隔离机器、吊销插件能读到的凭据。哪怕只怀疑其中一项，三项都做。',
+          '恢复前先留证据：复制插件目录、安装日志和插件清单。恢复会覆盖掉唯一一份现场记录。',
+          '确定它能够到什么：文件路径、环境变量、网络目标、子进程。写成清单，不要写成叙述。',
+          '然后再恢复，从已知可用状态恢复，而不是删掉插件然后指望它自己好了。',
+          '最后补一份决定记录：发生了什么、它够到过什么、你改了什么、什么时候复审。模板在 /blog/plugin-supply-chain-security-team-enforcement。',
+        ] },
+        { blockquote: '顺序比速度重要。还原一台还没检查过的机器，会同时把问题还原回来、把证据抹掉。' },
+        { h2: '先把回滚计划写好' },
+        { p: '回滚计划是二十分钟的工作，只在事故中才见效，所以永远没人写。四行能覆盖大多数插件。' },
+        { ul: [
+          '插件写在哪里：配置路径、缓存路径，以及它在自己目录之外创建的任何文件。',
+          '它能读什么：凭据、环境变量、仓库内容。',
+          '如何彻底禁用，包括它注册的 service 或 hook，不只是卸载命令。',
+          '最近的已知可用状态是什么，恢复要多久。没掐过表的话，你脑子里那个数字是错的。',
+        ] },
+        { p: '把这份计划放在批准记录旁边。出事时读它的人不是写它的人，而且是在掐着表读的。' },
+        { h2: '预防的价签' },
+        { p: '这里的预防措施大多便宜，贵的那部分可以不做。' },
+        { ul: [
+          '运行前先读安装钩子，五分钟。机制说明见 /blog/how-install-script-scanning-works。',
+          '批准前看评分和维护信号，两分钟；分数怎么算出来的在 /blog/dsh-quality-score-decoded。',
+          '核验包是谁发布的，再来五分钟。流程在 /blog/how-to-verify-dsh-plugin-authenticity。',
+          '给接触凭据的插件准备一个沙箱，一次性一小时。这大约是单次"发现"阶段的十分之一。',
+        ] },
+        { h2: '常见问题' },
+        { ul: [
+          '小插件的代价也这么高吗？代价取决于插件能够到什么，而不是它有多少行代码。一个能碰凭据的五十行插件，比一个只会格式化文本的大插件更值得担心。',
+          '还没搞清它做了什么，就该先移除吗？不该。先禁用隔离，复制日志和插件目录，再恢复。先移除会毁掉写报告要用的证据。',
+          '事故记录要保留多久？遵循插件所接触系统的保留期要求，并且至少保留到它支撑的那个决定失效为止。',
+          '评分高就能跳过回滚计划吗？不能。评分覆盖维护、文档、生态健康和安装行为，不描述这个插件在你的机器上能够到什么。',
+          '决定记录该由谁负责？批准插件的那个人。批准和回滚应该归同一个人，否则两件事都会被一直往后推。',
+        ] },
+        { p: '从 dshquality.com 的实时插件索引开始，每个插件页都写清了检查过什么、没检查什么。为什么这里的评分坚持独立于自报数据，见 /blog/why-independent-plugin-scoring-beats-self-reported-ratings，站内全部文章在 /blog。' },
+      ],
+    },
+  },
 ];
 
 /** 按日期倒序（新在前） */
