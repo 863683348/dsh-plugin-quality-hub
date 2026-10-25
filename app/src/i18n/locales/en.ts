@@ -800,6 +800,9 @@ const en = {
       title: 'Blog',
       subtitle: 'Notes on the DSH plugin ecosystem: analysis, scoring deep dives, and security findings.',
       comingSoon: 'More articles are on the way — subscribe to DSH Weekly to stay in the loop.',
+      breadcrumb: { home: 'Home' },
+      backToList: 'Back to all posts',
+      relatedPosts: 'Related posts',
       posts: [
         {
           title: 'Welcome to DSH Quality',

@@ -794,6 +794,9 @@ const zh = {
       title: '博客',
       subtitle: 'DSH 插件生态笔记：分析、评分深度解读与安全发现。',
       comingSoon: '更多文章正在路上——订阅 DSH Weekly 第一时间获取。',
+      breadcrumb: { home: '首页' },
+      backToList: '返回全部文章',
+      relatedPosts: '相关文章',
       posts: [
         {
           title: '欢迎来到 DSH Quality',
