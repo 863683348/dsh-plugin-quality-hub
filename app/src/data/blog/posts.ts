@@ -6033,6 +6033,132 @@ export const blogPosts: BlogPost[] = [
       ],
     },
   },
+  {
+    slug: 'dsh-vs-apt-packages',
+    date: '2026-11-03',
+    keywords: ['dsh vs apt packages', 'apt package security', 'linux package manager risk', 'plugin install safety'],
+    longTail: ['apt package risk', 'linux plugin security', 'apt postinstall script review', 'linux package manager trust model'],
+    en: {
+      title: 'DSH Plugins vs Apt Packages: Linux Package Risk Compared',
+      excerpt:
+        'Apt is stronger on provenance and weaker on behaviour. DSH plugin scanning is the other way around. We put the two trust models next to each other and show where each one stops.',
+      metaDescription:
+        'dsh vs apt packages, compared on apt package risk and linux plugin security: where an apt postinstall script review ends, where the linux package manager trust model stops, and what a DSH plugin ships instead. Full side-by-side table.',
+      body: [
+        { p: 'This is the dsh vs apt packages comparison people ask for after they install both on the same machine. They are not competing packaging tools, and that is worth saying before anything else: apt is a distribution package manager with signed archives and a maintainer behind every package, while a DSH plugin is a third-party add-on whose install behaviour is what our scanner reads. What actually deserves comparing is apt package risk on one side against the linux plugin security story on the other, and a large part of that comes down to two things, the apt postinstall script review almost nobody runs and the linux package manager trust model most people assume is stricter than it is.' },
+        { h2: 'What apt actually promises you' },
+        { p: 'An apt package arrives through an archive your machine already trusts. The chain is short: the archive signs a Release file, apt checks that signature against a key sitting in /etc/apt/trusted.gpg.d, and the .deb you install is the file the archive published. That guarantee covers integrity and covers which repository the bytes came from. It says nothing about what the package does once dpkg unpacks it.' },
+        { ul: [
+          'Integrity: the .deb you install matches what the mirror served, checked by hash.',
+          'Archive provenance: the signing key belongs to the repository, not to the individual package, so a compromised upload path inside a trusted archive still produces a signed package.',
+          'No behavioural check: nothing in that chain reads maintainer scripts before they run.',
+          'No monitoring after install: once dpkg finishes, apt is done with the package.',
+        ] },
+        { h2: 'Where apt package risk actually lives' },
+        { p: 'The risk sits in maintainer scripts. preinst, postinst, prerm and postrm run as root during install and removal, and they are ordinary shell. A package can pass every checksum, carry a valid signature and still have a postinst that reaches out over the network for a second-stage payload. That is the apt package risk most teams never model, because the signature check passes and the review stops right there.' },
+        { ul: [
+          'Third-party archives: the apt-key line in a README hands that repository every package it will ever publish, and you probably never audited it.',
+          'Unpinned sources: a sources.list.d entry with no signed-by restriction lets any package from that archive satisfy a dependency.',
+          'postinst behaviour: maintainer scripts run with root privileges and are rarely read line by line.',
+          'Delayed execution: a package that behaves itself during install can still drop a cron entry or a systemd unit that does the interesting part later.',
+        ] },
+        { table: { head: ['Question', 'apt package', 'DSH plugin'], rows: [
+          ['Who signs it', 'The archive, one key covering every package it publishes', 'The publisher identity recorded on the plugin entry'],
+          ['Can you look before installing', 'Yes, apt download then dpkg-deb -R, and almost nobody does it', 'Yes, the install script is scanned before the grade is published'],
+          ['Runs as root', 'Yes, maintainer scripts run as root', 'Depends on the plugin, and the sandbox declaration counts toward the score'],
+          ['What happens after install', 'Nothing watches it', 'Runtime behaviour sits mostly outside the scan'],
+          ['How it gets pulled', 'The archive removes the package, mirrors lag', 'Flag on the plugin entry, grade overridden'],
+          ['Review depth', 'Debian policy review for main, none for third-party archives', 'Automated scan plus a publisher identity check'],
+        ] } },
+        { p: 'Read across those rows and the shape is clear. Apt is stronger on provenance and weaker on behaviour, and the DSH side is the other way round. Running one does not retire the other.' },
+        { h2: 'What installing a DSH plugin actually exposes' },
+        { p: 'A DSH plugin ships an install script, and that script is what gets read. The scanner looks for the patterns that keep showing up in packages people later regret: curl piped into a shell, base64 decoded and executed, PowerShell with an encoded command, and bundle declarations that quietly went missing. /blog/install-scripts-vs-runtime-scripts draws that line precisely, and it is worth reading before you argue with a flag, because the scan covers install behaviour and mostly not what the plugin does afterwards.' },
+        { blockquote: 'A signed package tells you who handed you the box. It does not tell you what is inside, and it tells you nothing about what the box does once you open it.' },
+        { h2: 'The two trust models, side by side' },
+        { p: 'The linux package manager trust model works by delegation: you decide once which archives to trust, and every package from those archives inherits that decision permanently. The DSH model is per item. Each plugin gets its own reading and the reading can change next week. Delegation is cheaper and fails quietly. Per item costs more and fails loudly.' },
+        { ul: [
+          '/blog/dsh-vs-homebrew-ecosystem-risk runs the same comparison against Homebrew, and the conclusion rhymes, since ecosystem size and review depth move in opposite directions.',
+          '/blog/dsh-plugins-vs-npm-packages is the closest sibling post, because npm and apt share the habit of trusting a registry rather than a package.',
+          '/blog/how-to-verify-dsh-plugin-authenticity covers the publisher identity check, which is the DSH equivalent of asking which archive a .deb came from.',
+        ] },
+        { h3: 'On a machine that has both' },
+        { ul: [
+          'List your third-party sources with grep -r deb /etc/apt/sources.list.d and write down every archive your distribution did not give you.',
+          'Read the maintainer scripts of anything you installed by hand: dpkg-deb -R on the .deb, then open postinst.',
+          'Run the same install-script read against your DSH plugin list at /method and keep everything below a C on its own list.',
+          'Treat a network call inside postinst the way you would treat an unsigned download, because that is what it is.',
+        ] },
+        { p: 'Start from the home page at dshquality.com, where the full index lives, with the scoring method written out at /method and the weekly note at /weekly if you want this comparison revisited when the data moves.' },
+        { h2: 'FAQ' },
+        { ul: [
+          'Is apt safer than installing a DSH plugin? For provenance, yes, because the archive signing chain is real. For behaviour the two are closer than most people expect, since apt does not read maintainer scripts either.',
+          'Does a flag from the scanner mean the plugin is malware? No. A flag is a pattern match on install behaviour, not a verdict on intent. /blog/how-to-report-a-malicious-dsh-plugin explains what happens between a flag and a confirmed finding.',
+          'Should I install a plugin through apt when a package exists? If the package comes from your distribution archive, that is a reasonable choice. If it comes from a third-party repository a README told you to add, you swapped one trust decision for another.',
+          'Where does linux plugin security stop? At the install boundary. Whatever runs afterwards needs something else watching it, on either side of this comparison.',
+        ] },
+      ],
+    },
+    zh: {
+      title: 'DSH Plugins vs Apt Packages：Linux 包风险对比',
+      excerpt:
+        'apt 在来源上更强、在行为上更弱，DSH 插件扫描正好反过来。我们把两种信任模型放在一起，说明各自到哪一步为止。',
+      metaDescription:
+        'dsh vs apt packages 对比：从 apt package risk 与 linux plugin security 出发，讲清 apt postinstall script review 到哪一步为止、linux package manager trust model 在哪里停住，以及 DSH 插件实际交付了什么。附完整对照表。',
+      body: [
+        { p: '这就是很多人把两者装到同一台机器上之后会来问的 dsh vs apt packages 对比。先把话说在前面：它们不是互相竞争的打包工具。apt 是发行版级别的包管理器，有签名仓库，每个包背后都有维护者；DSH 插件是第三方扩展，我们的扫描器读的是它的安装行为。真正值得对比的是一边的 apt package risk 和另一边的 linux plugin security，而其中很大一部分落在两件事上：几乎没人真的去做的 apt postinstall script review，以及大多数人以为比实际严格得多的 linux package manager trust model。' },
+        { h2: 'apt 到底承诺了什么' },
+        { p: 'apt 包来自你的机器已经信任的仓库。链条很短：仓库给 Release 文件签名，apt 拿 /etc/apt/trusted.gpg.d 里的钥匙去验，你装上的 .deb 就是仓库发布的那个文件。这份承诺管的是完整性，管的是这些字节来自哪个仓库，不管这个包被 dpkg 解开之后会做什么。' },
+        { ul: [
+          '完整性：你装上的 .deb 与镜像提供的一致，靠哈希校验。',
+          '仓库来源：签名钥匙属于仓库，不属于单个包，所以受信任仓库内部的上传环节一旦出问题，产出的包依然是签过名的。',
+          '行为不检查：整条链路上没有一步会在维护者脚本运行之前把它读一遍。',
+          '装完就不管：dpkg 结束之后，apt 和这个包再无关系。',
+        ] },
+        { h2: 'apt 包的风险具体在哪一层' },
+        { p: '风险集中在维护者脚本上。preinst、postinst、prerm、postrm 在安装与卸载时以 root 身份运行，它们就是普通的 shell。一个包可以在校验和层面完全正常、签名也验得过，而它的 postinst 正在联网拉第二段载荷。这就是大多数团队从没建模过的 apt 包风险，因为签名检查通过了，审查也就停在那里了。' },
+        { ul: [
+          '第三方仓库：README 里让你加进去的那一行，等于把这个仓库今后发布的每一个包都交给了它，而你可能从没审过它。',
+          '来源不钉死：sources.list.d 里没有 signed-by 限制的条目，会让该仓库的任意包都能满足依赖。',
+          'postinst 的行为：维护者脚本以 root 运行，几乎没人逐行读过。',
+          '延迟执行：安装时老老实实的包，也可以顺手放一个 cron 任务或 systemd unit，把真正有意思的部分留到以后。',
+        ] },
+        { table: { head: ['问题', 'apt 包', 'DSH 插件'], rows: [
+          ['谁签名', '仓库，一把钥匙管它发布的所有包', '插件条目上记录的发布者身份'],
+          ['装之前能看吗', '能，apt download 再 dpkg-deb -R，但几乎没人这么做', '能，安装脚本在等级发布之前就被扫描过'],
+          ['是否以 root 运行', '是，维护者脚本以 root 运行', '取决于插件，沙箱声明本身计入评分'],
+          ['装完之后呢', '没有任何东西在监控', '运行时行为大部分在扫描范围之外'],
+          ['怎么撤回', '仓库下架，各镜像仍有延迟', '插件条目上打标记，等级被覆盖'],
+          ['审查深度', 'main 仓库有 Debian 策略审查，第三方仓库没有', '自动扫描加上发布者身份核验'],
+        ] } },
+        { p: '横着读完这几行，形状就清楚了：apt 在来源上更强、在行为上更弱，DSH 这一边正好反过来。跑了其中一个，不等于另一个可以省掉。' },
+        { h2: '装一个 DSH 插件到底暴露了什么' },
+        { p: 'DSH 插件带着一份安装脚本，被读的就是这份脚本。扫描器找的是后来让人后悔的那些包里反复出现的模式：curl 直接管道给 shell、base64 解码后执行、PowerShell 带编码命令，以及悄悄缺失的 bundle 声明。/blog/install-scripts-vs-runtime-scripts 把这条界线划得很清楚，建议你在跟一个标记抬杠之前先读一遍，因为扫描覆盖的是安装行为，插件装完之后做什么大部分扫不到。' },
+        { blockquote: '签名过的包只告诉你这个盒子是谁递给你的。它不告诉你盒子里有什么，更不会告诉你打开之后它会做什么。' },
+        { h2: '两种信任模型并排放' },
+        { p: 'linux package manager trust model 是委托式的：你只做一次决定，决定信任哪几个仓库，然后这些仓库里的每一个包永久继承这个决定。DSH 这一边是逐条的，每个插件都有自己的读数，而下周这个读数可能就变了。委托式更省事，坏也坏得安静；逐条式更费事，但坏的时候会响。' },
+        { ul: [
+          '/blog/dsh-vs-homebrew-ecosystem-risk 对 Homebrew 做了同一套对比，结论很像，因为生态规模与审查深度是往两个方向走的。',
+          '/blog/dsh-plugins-vs-npm-packages 是最接近的姐妹篇，npm 和 apt 有同一个习惯：信任的是注册表，而不是包本身。',
+          '/blog/how-to-verify-dsh-plugin-authenticity 讲的是发布者身份核验，它在 DSH 这边相当于查一个 .deb 来自哪个仓库。',
+        ] },
+        { h3: '两者都装的机器，该做什么' },
+        { ul: [
+          '用 grep -r deb /etc/apt/sources.list.d 列出第三方来源，把不是发行版给的每一个仓库都记下来。',
+          '凡是手动装过的包，去看它的维护者脚本：对 .deb 跑 dpkg-deb -R，然后打开 postinst。',
+          '对着 /method 把 DSH 插件清单也过一遍同样的安装脚本审查，把 C 以下的单独列一张表。',
+          '把 postinst 里的联网请求当成未签名下载来处理，因为它本来就是。',
+        ] },
+        { p: '从 DSH Quality 首页 dshquality.com 开始，完整索引都在那里，评分方法写在 /method，想在这份对比随数据更新时被提醒一次，去 /weekly 订阅。' },
+        { h2: '常见问题' },
+        { ul: [
+          'apt 比装 DSH 插件更安全吗？在来源这一层，是的，仓库签名链是真实存在的。在行为这一层，两者比多数人以为的更接近，因为 apt 同样不读维护者脚本。',
+          '被扫描器标记的插件算恶意软件吗？不算。标记是对安装行为的模式匹配，不是对意图的判定。/blog/how-to-report-a-malicious-dsh-plugin 写了从标记到确认发现之间会发生什么。',
+          '有 apt 包的时候是不是该改用 apt 装插件？如果这个包来自你的发行版仓库，这么选说得通。如果它来自 README 让你添加的第三方仓库，那你只是把一个信任决定换成了另一个。',
+          'linux plugin security 到哪一步为止？到安装这个边界为止。装完之后跑起来的东西，两边都需要别的东西来看着。',
+        ] },
+      ],
+    },
+  },
 ];
 
 /** 按日期倒序（新在前） */
@@ -6042,3 +6168,4 @@ export function getBlogPosts(): BlogPost[] {
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
 }
+
