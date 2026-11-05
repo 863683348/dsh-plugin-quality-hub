@@ -6158,7 +6158,101 @@ export const blogPosts: BlogPost[] = [
         ] },
       ],
     },
+  },  {
+    slug: 'trust-but-verify-plugin-installer',
+    date: '2026-11-06',
+    keywords: ['trust but verify plugins', 'plugin install security', 'dsh plugin verification'],
+    longTail: ['verify plugins', 'trust plugin installs', 'check plugin before install', 'plugin trust signals'],
+    en: {
+      title: 'Trust, but Verify: The Plugin Installer\'s Mantra',
+      excerpt:
+        'Trust but verify plugins is old advice that keeps earning its keep. What verification means for DSH plugin installs, which checks matter before you click install, and how to keep a trusted install trustworthy across updates.',
+      metaDescription:
+        'Trust but verify plugins: a five-minute routine to verify plugins before install, read grades and install-script warnings, and treat trust plugin installs as a habit with a paper trail, not a one-off decision.',
+      body: [
+        { p: 'Trust but verify plugins is old advice, and it survives because plugin ecosystems keep proving it right. You should trust plugin installs that come from a registry you have audited, but the install itself is where third-party code gets its first real access to your machine, and trust is not a scan. Whether you verify plugins before installing them decides whether a bad day ends as a warning or as an incident report.' },
+        { h2: 'What trust actually buys you' },
+        { p: 'Trust in a plugin ecosystem is compressed history: the maintainer shipped updates, the package did what the README said, nothing odd happened on your machine. That history is real information, and it goes stale the moment the repo changes hands, the install script gains a new line, or a version lands without review. Trust is a hypothesis about the next install. Verification is the test.' },
+        { blockquote: 'A plugin you trusted last month is not a plugin you verified this month.' },
+        { h2: 'What verify plugins means in practice' },
+        { p: 'For DSH plugins, verification is four checks you can finish before the install prompt does.' },
+        { table: { head: ['Check', 'What it answers', 'Where it lives'], rows: [
+          ['Quality grade and score', 'Has the plugin passed a documented audit recently?', 'Plugin card, DSH Quality index'],
+          ['Install script scan', 'Does the script pipe curl to shell, decode base64, or run encoded PowerShell?', 'Security warnings column'],
+          ['dsh.bundle declaration', 'Is the package self-contained and are dependencies scoped?', 'Plugin manifest'],
+          ['Last push date', 'Is maintenance active, or has the repo gone quiet?', 'Plugin card'],
+        ] } },
+        { h2: 'The five-minute routine before any install' },
+        { ul: [
+          'Read the grade first. A and B passed the full audit; C deserves a slower read; D needs a reason, not a mood.',
+          'Read the security warnings in full, beyond the headline. The gap between no warnings and warnings you have not read yet is the whole game.',
+          'If a warning exists, read what the install script actually does. /blog/how-install-script-scanning-works breaks down each pattern.',
+          'Pin the exact version so a later silent update cannot swap behavior underneath you. /blog/pin-exact-plugin-versions-lockfile-discipline covers how.',
+          'Re-verify on updates. The check you skip is the one the regression hides behind.',
+        ] },
+        { h2: 'Trust plugin installs as a habit, not a one-off' },
+        { p: 'The phrase trust plugin installs sounds like permission, but the useful reading is operational: installs you have decided to trust need a paper trail. Which version, what score, which warnings you accepted and why. Teams that keep that record see a plugin drift from B to C across an update, because the movement shows up instead of being absorbed.' },
+        { ul: [
+          'Keep an allowlist for team machines so unreviewed plugins cannot slip in at all.',
+          'Watch score movement, beyond the current grade. A plugin crossing two grades in a month is louder than a stable C.',
+          'Quarantine anything flagged instead of deleting it, so what it tried to do stays inspectable.',
+        ] },
+        { p: 'Start from the DSH Quality homepage (/ and dshquality.com), where the full plugin index lives, the scoring method is documented at /method, and the weekly advisory roundup lands at /weekly. The background for this whole routine is in /blog/why-independent-plugin-scoring-beats-self-reported-ratings. Pair it with /blog/how-to-verify-dsh-plugin-authenticity for the identity side, and /blog/install-scripts-vs-runtime-scripts for the line the scanner can and cannot cover.' },
+        { h2: 'Common questions' },
+        { ul: [
+          'Does verifying plugins take long? No. The four checks are minutes of reading, and the scanner does the heavy part for you.',
+          'Is a B-grade plugin safe to trust? Reasonable to trust after reading the warnings. A grade summarizes an audit, it does not replace the thirty seconds of reading.',
+          'What if a plugin I trusted drops to D? Stop installing it on new machines, quarantine the existing installs, and see /blog/how-to-report-a-malicious-dsh-plugin if the change looks deliberate.',
+          'Where do check plugin before install habits break down? At updates. Install-time checks decay quietly, which is why the re-verify step exists.',
+        ] },
+      ],
+    },
+    zh: {
+      title: 'Trust, but Verify：插件安装者的信条',
+      excerpt:
+        'Trust, but Verify 是老话，但插件生态一再证明它没过时。对 DSH 插件来说验证意味着什么，点下安装之前哪些检查真正有用，以及怎么让一次被信任的安装在下个版本仍然可信。',
+      metaDescription:
+        'Trust, but Verify plugins：一条五分钟流程，帮你在安装前验证插件（verify plugins）、读懂等级与安装脚本警告，把信任插件安装（trust plugin installs）变成带记录的习惯，而不是一次性决定。',
+      body: [
+        { p: 'Trust, but Verify（先信任，后验证）这句老话在插件生态里一再应验。你可以信任来自已审计注册表的插件安装（trust plugin installs），但安装本身就是第三方代码第一次拿到真实系统权限的时刻，信任不等于扫描。装之前验证插件（verify plugins），决定了糟糕的一天是收在一条警告上，还是收在一次事故复盘里。' },
+        { h2: '信任实际买到的是什么' },
+        { p: '对插件生态的信任是压缩过的历史：维护者持续发版、包和 README 说的一样、你的机器上没出过怪事。这些历史是真实信息，同时也是会过期的：仓库换手、安装脚本多出一行、新版本未经评审就落地的那一刻，历史就作废了。信任是关于下一次安装的假设，验证是那次测试。' },
+        { blockquote: '上个月信任过的插件，不等于这个月验证过的插件。' },
+        { h2: '验证插件具体验什么' },
+        { p: '对 DSH 插件来说，验证是四项在安装提示跑完之前就能做完的检查。' },
+        { table: { head: ['检查项', '回答的问题', '在哪看'], rows: [
+          ['质量等级与分数', '插件最近是否通过有文档依据的审计？', '插件卡片、DSH Quality 索引'],
+          ['安装脚本扫描', '脚本是否把 curl 管道给 shell、解码 base64 执行、运行带编码的 PowerShell？', '安全警告列'],
+          ['dsh.bundle 声明', '包是否自包含、依赖是否被正确作用域化？', '插件 manifest'],
+          ['最后推送日期', '维护是活跃的，还是仓库已经安静太久？', '插件卡片'],
+        ] } },
+        { h2: '任何安装之前的五分钟流程' },
+        { ul: [
+          '先读等级。A 和 B 通过了完整审计；C 值得慢一点读；D 需要理由，而不是心情。',
+          '安全警告读全文，不只读标题。「没有警告」和「你还没读的警告」之间的差距就是全部输赢。',
+          '有警告的话，去看安装脚本实际做什么。/blog/how-install-script-scanning-works 拆解了每种模式的含义。',
+          '把版本钉死，避免之后的静默更新在底下换掉行为。/blog/pin-exact-plugin-versions-lockfile-discipline 讲怎么钉。',
+          '更新时重新验证。你跳过的那次检查，就是回归藏身的地方。',
+        ] },
+        { h2: '把信任插件安装变成习惯，而不是一次性决定' },
+        { p: 'trust plugin installs 这个说法听起来像许可，但有用的读法是操作层面的：你决定信任的安装需要留痕。哪个版本、什么分数、接受了哪些警告、为什么。留下这份记录的团队，能在插件跨版本从 B 滑到 C 时看见位移，而不是把变化吸收掉。' },
+        { ul: [
+          '给团队机器设一份允许清单，未评审的插件根本进不来。',
+          '盯分数的移动，不只盯当前等级；一个月内连跨两级，比一个稳定的 C 吵得多。',
+          '被标记的插件先进隔离再决定，它做过什么要留得可以查。',
+        ] },
+        { p: '这一切从 DSH Quality 首页（/ 与 dshquality.com）开始，完整插件索引都在那里，评分方法写在 /method，每周安全通告去 /weekly 订阅。这套流程的背景在 /blog/why-independent-plugin-scoring-beats-self-reported-ratings，身份核验那一步见 /blog/how-to-verify-dsh-plugin-authenticity，扫描器能覆盖与覆盖不到的界线见 /blog/install-scripts-vs-runtime-scripts。' },
+        { h2: '常见问题' },
+        { ul: [
+          '验证插件费时间吗？不费。上面四项检查是几分钟的阅读，重的活扫描器已经替你做了。',
+          'B 级插件可以直接信任吗？读完警告之后可以。等级概括一次审计的结果，但代替不了那三十秒的阅读。',
+          '信任过的插件掉到 D 怎么办？停止在新机器上安装它，已有的安装先隔离，如果变化看起来是故意的，去 /blog/how-to-report-a-malicious-dsh-plugin 看上报流程。',
+          'check plugin before install 的习惯最容易在哪一步断掉？在更新的时候。安装时的检查会悄悄失效，所以才有重新验证这一步。',
+        ] },
+      ],
+    },
   },
+
 ];
 
 /** 按日期倒序（新在前） */
