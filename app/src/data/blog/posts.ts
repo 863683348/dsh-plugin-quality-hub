@@ -6251,7 +6251,85 @@ export const blogPosts: BlogPost[] = [
         ] },
       ],
     },
+  },  {
+    slug: 'enterprise-plugin-policy-template',
+    date: '2026-11-07',
+    keywords: ['enterprise plugin policy', 'plugin policy template', 'plugin governance'],
+    longTail: ['org plugin policy', 'enterprise security template', 'plugin governance'],
+    en: {
+      title: 'Enterprise Plugin Policy: A Template for Your Org',
+      excerpt:
+        'A copy-ready enterprise plugin policy: six sections, three enforceable clauses with acceptance checks, and answers on rolling it out in one quarter.',
+      metaDescription:
+        'An enterprise plugin policy template you can copy: scope, allowlist and admission, permissions and data boundaries, audit cadence, offboarding, and exceptions. This org plugin policy doubles as an enterprise security template and a working plugin governance checklist.',
+      body: [
+        { p: 'An enterprise plugin policy decides, before anything goes wrong, which third-party plugins your team may install, who owns that decision, and how the list stays honest. This post gives you a template you can copy into your wiki today: scope, allowlist and admission, permissions and data boundaries, audit cadence, offboarding, and an exception process. Whether your docs call it org plugin policy, plugin governance, or part of your enterprise security template, the six sections below are what make the document enforceable instead of decorative.' },
+        { h2: 'The policy skeleton you can copy' },
+        { p: 'Six sections. Fill each one in a sentence or two; the standard is that a reader can answer the question the section poses without asking you.' },
+        { ul: [
+          'Scope: which machines, which teams, which plugin types. Personal laptops used for work count.',
+          'Allowlist and admission: a named list of approved plugins; a plugin joins only after a recorded review of its grade, install script, and maintainer.',
+          'Permissions and data boundaries: what a plugin may touch (network, files, secrets) and what it may never touch.',
+          'Audit cadence: when the allowlist is re-reviewed and what triggers an out-of-cycle check.',
+          'Offboarding and rotation: what happens to existing installs when an owner leaves or a credential rotates.',
+          'Exception process: who can approve a non-listed plugin, for how long, and where that approval is written down.',
+        ] },
+        { h2: 'Clauses, requirements, and how acceptance works' },
+        { p: 'Three clauses from the template, written the way we would enforce them. Adjust the thresholds to your team size.' },
+        { table: { head: ['Clause', 'Requirement', 'Acceptance check'], rows: [
+          ['Allowlist admission', 'Every listed plugin has a DSH Quality grade of B or higher, a named owner, and a dated install-script review', 'On a machine with the allowlist enforced, installing an unlisted plugin fails closed; the list contains no entry without an owner'],
+          ['Permissions and data boundaries', 'Plugins that declare network or file-system access are flagged and limited to their dsh.bundle scope', 'A quarterly spot-check of ten flagged plugins; any access beyond the declaration sends the plugin back to review'],
+          ['Audit cadence', 'The allowlist is re-reviewed every quarter, and a flag or score drop triggers review within one business day', 'The quarterly review has a calendar invite and minutes; flagged plugins each have a quarantine ticket'],
+        ] } },
+        { h2: 'Offboarding, rotation, and exceptions' },
+        { p: 'Owners leave and credentials rotate, so the template treats those as scheduled events, not surprises. When a plugin owner leaves, their plugins get a new owner the same week or leave the allowlist; when an API key a plugin uses rotates, the plugin is re-tested before its next scheduled update. Exceptions expire: an approval for an unlisted plugin carries an end date, and the exception list is reviewed together with the allowlist. For what to do with a flagged plugin between reviews, see /blog/quarantine-workflow-flagged-plugin, and for wiring the allowlist into CI, /blog/ci-cd-plugin-scanning shows what fail-closed looks like in a pipeline.' },
+        { p: 'The template above needs one input you cannot fake: grades you trust. DSH Quality scores DSH plugins on maintenance, docs, npm health, and security, and the homepage at / holds the complete index. Start from /blog/setting-up-a-plugin-allowlist-for-your-dev-team to build the list, then read /blog/plugin-supply-chain-security-team-enforcement for the team-level enforcement this policy assumes.' },
+        { h2: 'We are a ten-person startup. Does an enterprise plugin policy still apply?' },
+        { p: 'Yes; scale the document, not the idea. At ten people, one page covers it: the allowlist, the quarterly review, one named owner. The six sections above are the same at any size, and the table turns into three checklist lines. What you should not skip at small scale is admission review, because a ten-person team feels one bad install far more than a thousand-person one.' },
+        { h2: 'How do we land the first quarter with this org plugin policy?' },
+        { p: 'Week one, export the plugins actually installed and grade them. Week two, write the allowlist and assign owners. Week three, publish the policy and the exception process. Week four, enforce the allowlist on one volunteer team and fix what breaks. From then on it is the quarterly cadence, and the first review will be mostly about pruning. /blog/setting-up-a-plugin-allowlist-for-your-dev-team is the working guide for that build-out.' },
+        { h2: 'How does plugin governance merge with our existing security processes?' },
+        { p: 'As a section, not a parallel process. Plug the allowlist check into your existing software onboarding review, add plugin removal to your offboarding checklist, and let the quarterly review share the meeting your dependency review already has. An enterprise security template that lives next to those processes gets followed; one that opens a new ticket queue gets ignored.' },
+      ],
+    },
+    zh: {
+      title: '企业插件策略：给你团队的一份模板',
+      excerpt:
+        '一份可直接套用的企业插件策略模板：六节骨架、三条带验收方式的条目，以及第一个季度怎么落地。',
+      metaDescription:
+        '一份可直接套用的企业插件策略（enterprise plugin policy）模板：适用范围、白名单与准入、权限与数据边界、审计频率、离职与轮换、例外流程。org plugin policy、enterprise security template 与 plugin governance 三个角度都覆盖，附条目-要求-验收表格。',
+      body: [
+        { p: '一份企业插件策略（enterprise plugin policy）的作用，是在出事之前就定好：团队允许装哪些第三方插件、这个决定归谁、以及名单靠什么保持诚实。这篇给你一份可以直接抄进 wiki 的模板：适用范围、白名单与准入、权限与数据边界、审计频率、离职与轮换、例外流程。不管你的文档叫 org plugin policy、plugin governance，还是企业安全模板（enterprise security template）的一部分，下面这六节才是让文档可执行而不是装点门面的部分。' },
+        { h2: '可以直接抄的策略骨架' },
+        { p: '六节，每节一两句话就够。标准是：读的人不用来问你，就能回答这一节提出的问题。' },
+        { ul: [
+          '适用范围：哪些机器、哪些团队、哪些插件类型。用于工作的个人电脑也算在内。',
+          '白名单与准入：一份具名的已批准插件清单；插件必须经过留痕评审（等级、安装脚本、维护者）才能加入。',
+          '权限与数据边界：插件可以碰什么（网络、文件、密钥），永远不能碰什么。',
+          '审计频率：白名单多久重审一次，什么情况触发计划外检查。',
+          '离职与轮换：插件负责人离开或凭据轮换时，已有安装怎么办。',
+          '例外流程：谁能批准清单外插件、批准多久有效、记录写在哪里。',
+        ] },
+        { h2: '条目、要求与验收方式' },
+        { p: '模板里的三个条目，按我们能执行的写法给出，阈值按团队规模自行调整。' },
+        { table: { head: ['条目', '要求', '验收方式'], rows: [
+          ['白名单准入', '每个在列插件有 B 级以上的 DSH Quality 等级、具名负责人，以及一份标注日期的安装脚本评审', '在启用白名单的机器上安装清单外插件失败（fail closed）；清单里不存在没有负责人的条目'],
+          ['权限与数据边界', '声明了网络或文件系统访问的插件被标记，并被限制在其 dsh.bundle 声明范围内', '每季度抽查十个被标记插件；任何超出声明的访问都会让插件回到评审状态'],
+          ['审计频率', '白名单每季度重审一次；被标记或分数下跌在下一个工作日内触发评审', '季度评审有日历邀请和会议记录；每个被标记插件都有对应的隔离工单'],
+        ] } },
+        { h2: '离职、轮换与例外流程' },
+        { p: '负责人会离开，凭据会轮换，所以模板把它们当成计划内事件而不是意外。插件负责人离开的当周，其名下插件要么换新负责人，要么退出白名单；插件用到的 API key 轮换后，插件要重新测试才能进入下一次计划内更新。例外会过期：清单外插件的批准都带截止日期，例外清单和白名单一起重审。被标记插件在两次评审之间怎么处理，见 /blog/quarantine-workflow-flagged-plugin；白名单怎么接进 CI、流水线里的 fail closed 长什么样，见 /blog/ci-cd-plugin-scanning。' },
+        { p: '上面这份模板有一个造不了假的输入：可信的等级。DSH Quality 按维护、文档、npm 健康度和安全四个维度给 DSH 插件评分，完整索引在首页 /。从 /blog/setting-up-a-plugin-allowlist-for-your-dev-team 开始建清单，再用 /blog/plugin-supply-chain-security-team-enforcement 补上这份策略假设的团队级执行。' },
+        { h2: '我们是十个人的小团队，企业插件策略也适用吗？' },
+        { p: '适用；缩的是文档规模，不是想法本身。十个人一页纸就够：白名单、季度评审、一个具名负责人。上面六节在任何规模都一样，表格可以压缩成三行清单。小规模最不该省的是准入评审，因为十人团队对一次坏安装的痛感比千人团队大得多。' },
+        { h2: '这份 org plugin policy 的第一个季度怎么落地？' },
+        { p: '第一周，导出实际装了哪些插件并逐一评级。第二周，写白名单、指定负责人。第三周，发布策略和例外流程。第四周，在一个自愿团队上强制启用白名单，把踩到的问题修掉。之后就是季度节奏，而且第一次评审的主要内容多半是删减。操作手册见 /blog/setting-up-a-plugin-allowlist-for-your-dev-team。' },
+        { h2: 'plugin governance 怎么和现有安全流程合并？' },
+        { p: '作为一节并进去，而不是另起一套流程。把白名单检查并进现有的软件引入评审，把插件下架加进离职清单，让季度评审蹭依赖评审已有的那个会。贴着现有流程放的企业安全模板会被执行；新开一条工单队列的只会被无视。' },
+      ],
+    },
   },
+
 
 ];
 
